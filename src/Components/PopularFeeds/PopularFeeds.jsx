@@ -28,7 +28,7 @@ function PopularFeeds(props) {
                 setPrevBlogItems(PrevgetOneBlogItems)
             } 
 
-            if (blogID = 1) {
+            if (blogID === 1) {
                 const PrevgetOneData1 = await BlogsApi.getOne(9)
                 const PrevgetOneBlogItems1 = PrevgetOneData1.data
                 setPrevBlogItems1(PrevgetOneBlogItems1)
@@ -40,14 +40,14 @@ function PopularFeeds(props) {
                 setNextBlogItems(NextgetOneBlogItems)
             } 
 
-            if (blogID = 10) {
+            if (blogID === 10) {
                 const NextgetOneData1 = await BlogsApi.getOne(0)
                 const NextgetOneBlogItems1 = NextgetOneData1.data
                 setNextBlogItems1(NextgetOneBlogItems1)
             } 
         }
         getBlogsApi()
-    }, [])
+    }, [blogID])
 
     return (
     <div class="widget mb-40">

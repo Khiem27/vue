@@ -11,6 +11,7 @@ import {
 MiniCart.propTypes = {};
 
 function MiniCart(props) {
+  const dispatch = useDispatch();
   useEffect(() => {
     const local = localStorage.getItem("productsInCart");
     const localParse = JSON.parse(local);
@@ -18,11 +19,10 @@ function MiniCart(props) {
       const action = addFromLocal(localParse);
       dispatch(action);
     }
-  }, []);
+  },[dispatch]);
 
-  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+  const { enqueueSnackbar } = useSnackbar();
 
-  const dispatch = useDispatch();
   const products = useSelector((state) => state.addToCart.products);
   const productsTotal = useSelector((state) => state.addToCart.cartTotal);
   const handleRemoveItem = (id) => {

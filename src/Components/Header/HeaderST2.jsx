@@ -268,9 +268,9 @@ function HeaderST2(props) {
               <div class="header-right header-right-3 f-right">
                 <ul>
                   <li class="search-btn">
-                    <a class="search-btn nav-search search-trigger" href="#">
+                    <Link class="search-btn nav-search search-trigger">
                       <i class="fas fa-search"></i>
-                    </a>
+                    </Link>
                   </li>
                   <div class="search-wrap ">
                     <div class="search-inner">
@@ -312,9 +312,9 @@ function HeaderST2(props) {
                     <ul>
                       <li>
                         <Link to="/">Home</Link>
-                        <a class="mean-expand" href="#">
+                        <Link class="mean-expand">
                           +
-                        </a>
+                        </Link>
                         <ul class="submenu ">
                           <li>
                             <Link to="/">Home Style 1</Link>
@@ -335,9 +335,9 @@ function HeaderST2(props) {
                       </li>
                       <li class="mega-menu">
                         <Link to="/shop">Shop</Link>
-                        <a class="mean-expand" href="#">
+                        <Link class="mean-expand">
                           +
-                        </a>
+                        </Link>
                         <ul class="submenu ">
                           <li>
                             <Link to="#">Category View</Link>
@@ -358,9 +358,9 @@ function HeaderST2(props) {
                                 <Link to="/shop/list">List View</Link>
                               </li>
                             </ul>
-                            <a class="mean-expand" href="#">
+                            <Link class="mean-expand">
                               +
-                            </a>
+                            </Link>
                           </li>
                           <li>
                             <Link to="#">Category View</Link>
@@ -385,9 +385,9 @@ function HeaderST2(props) {
                                 <Link to="/wishlist">My Wishlist</Link>
                               </li>
                             </ul>
-                            <a class="mean-expand" href="#">
+                            <Link class="mean-expand">
                               +
-                            </a>
+                            </Link>
                           </li>
                           <li>
                             <Link to="#">Products Types</Link>
@@ -412,9 +412,9 @@ function HeaderST2(props) {
                                 <Link to="/compare">Compare</Link>
                               </li>
                             </ul>
-                            <a class="mean-expand" href="#">
+                            <Link class="mean-expand">
                               +
-                            </a>
+                            </Link>
                           </li>
                         </ul>
                       </li>
@@ -443,9 +443,9 @@ function HeaderST2(props) {
                             <Link to="/blog/10">Blog Details Video</Link>
                           </li>
                         </ul>
-                        <a class="mean-expand" href="#">
+                        <Link class="mean-expand">
                           +
-                        </a>
+                        </Link>
                       </li>
                       <li>
                         <Link to="#">Pages</Link>
@@ -478,9 +478,9 @@ function HeaderST2(props) {
                             <Link to="/order-success">Order Success</Link>
                           </li>
                         </ul>
-                        <a class="mean-expand" href="#">
+                        <Link class="mean-expand">
                           +
-                        </a>
+                        </Link>
                       </li>
                       <li class="mean-last">
                         <Link to="/contact">Contact</Link>

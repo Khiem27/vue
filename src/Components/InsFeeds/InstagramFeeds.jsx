@@ -1,4 +1,7 @@
 import React from 'react';
+import {
+    Link
+} from "react-router-dom";
 
 InstagramFeeds.propTypes = {
     
@@ -9,9 +12,9 @@ function InstagramFeeds(props) {
         <div class="widget mb-40">
             <div class="widget-title-box mb-30"><span class="animate-border"></span>
                 <h3 class="widget-title">Instagram Feeds</h3></div>
-            <div class="tag"><a href="#">Popular</a><a href="#">desgin</a><a href="#">usability</a><a href="#">develop</a><a href="#">consult</a><a href="#">icon</a><a href="#">HTML</a><a href="#">ux</a><a href="#">business</a><a href="#">kit</a><a href="#">keyboard</a>
-                <a
-                    href="#">tech</a>
+            <div class="tag"><Link >Popular</Link><Link >desgin</Link><Link >usability</Link><Link >develop</Link><Link >consult</Link><Link >icon</Link><Link >HTML</Link><Link >ux</Link><Link >business</Link><Link >kit</Link><Link >keyboard</Link>
+                <Link
+                    >tech</Link>
             </div>
         </div>
     );

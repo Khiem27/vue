@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { filterValueSize } from '../ProductsSizeFilter/ProductsSizeFilterSlice';
 
 ProductsSizeFilter.propTypes = {
@@ -32,11 +33,11 @@ function ProductsSizeFilter(props) {
     return (
         <form action="">
             <ul class="shop-link">
-            <li><a class="checkBox"><input onClick={clickL} type="radio" id="L" name="filter"/> <label for="L">L</label></a></li>
-            <li><a class="checkBox"><input onClick={clickM} type="radio" id="M" name="filter"/> <label for="M">M</label></a></li>
-            <li><a class="checkBox"><input onClick={clickX} type="radio" id="X" name="filter"/> <label for="X">X</label></a></li>
-            <li><a class="checkBox"><input onClick={clickXL} type="radio" id="XL" name="filter"/> <label for="XL">XL</label></a></li>
-            <li><a class="checkBox"><input onClick={clickXXL} type="radio" id="XXL" name="filter"/> <label for="XXL">XXL</label></a></li>
+            <li><Link class="checkBox"><input onClick={clickL} type="radio" id="L" name="filter"/> <label for="L">L</label></Link></li>
+            <li><Link class="checkBox"><input onClick={clickM} type="radio" id="M" name="filter"/> <label for="M">M</label></Link></li>
+            <li><Link class="checkBox"><input onClick={clickX} type="radio" id="X" name="filter"/> <label for="X">X</label></Link></li>
+            <li><Link class="checkBox"><input onClick={clickXL} type="radio" id="XL" name="filter"/> <label for="XL">XL</label></Link></li>
+            <li><Link class="checkBox"><input onClick={clickXXL} type="radio" id="XXL" name="filter"/> <label for="XXL">XXL</label></Link></li>
         </ul>
         </form>
     );

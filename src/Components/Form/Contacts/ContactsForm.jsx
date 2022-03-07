@@ -1,4 +1,7 @@
 import React from "react";
+import {
+  Link
+} from "react-router-dom";
 
 ContactsForm.propTypes = {};
 
@@ -18,9 +21,9 @@ function ContactsForm(props) {
             </div>
             <div class="col-xl-4 col-lg-3 d-none d-xl-block ">
               <div class="section-link mb-80 text-right">
-                <a class="btn theme-btn" href="#">
+                <Link class="btn theme-btn" >
                   <i class="fas fa-phone"></i> make call
-                </a>
+                </Link>
               </div>
             </div>
           </div>

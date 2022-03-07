@@ -1,5 +1,7 @@
 import React from "react";
-
+import {
+  Link
+} from "react-router-dom";
 FooterHome.propTypes = {};
 
 function FooterHome(props) {
@@ -15,7 +17,7 @@ function FooterHome(props) {
             <div class="col-xl-3 col-lg-5 col-md-6 ">
               <div class="footer-widget mb-40">
                 <div class="footer-logo">
-                  <a href="/">
+                  <Link href="/">
                     <div
                       style={{
                         display: "inline-block",
@@ -68,7 +70,7 @@ function FooterHome(props) {
                         }}
                       />
                     </div>
-                  </a>
+                  </Link>
                 </div>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
@@ -143,22 +145,22 @@ function FooterHome(props) {
                 <h3>Social Media</h3>
                 <ul class="footer-link">
                   <li>
-                    <a href="#">Facebook</a>
+                    <Link>Facebook</Link>
                   </li>
                   <li>
-                    <a href="#">Twitter</a>
+                    <Link>Twitter</Link>
                   </li>
                   <li>
-                    <a href="#">Behance</a>
+                    <Link>Behance</Link>
                   </li>
                   <li>
-                    <a href="#"> Dribbble</a>
+                    <Link> Dribbble</Link>
                   </li>
                   <li>
-                    <a href="#">Linkedin</a>
+                    <Link>Linkedin</Link>
                   </li>
                   <li>
-                    <a href="#">Youtube</a>
+                    <Link>Youtube</Link>
                   </li>
                 </ul>
               </div>
@@ -168,22 +170,22 @@ function FooterHome(props) {
                 <h3>Location</h3>
                 <ul class="footer-link">
                   <li>
-                    <a href="#">New York</a>
+                    <Link>New York</Link>
                   </li>
                   <li>
-                    <a href="#">Tokyo</a>
+                    <Link>Tokyo</Link>
                   </li>
                   <li>
-                    <a href="#">Dhaka</a>
+                    <Link>Dhaka</Link>
                   </li>
                   <li>
-                    <a href="#"> Chittagong</a>
+                    <Link> Chittagong</Link>
                   </li>
                   <li>
-                    <a href="#">China</a>
+                    <Link>China</Link>
                   </li>
                   <li>
-                    <a href="#">Japan</a>
+                    <Link>Japan</Link>
                   </li>
                 </ul>
               </div>
@@ -193,22 +195,22 @@ function FooterHome(props) {
                 <h3>About</h3>
                 <ul class="footer-link">
                   <li>
-                    <a href="#">Terms &amp; Conditions</a>
+                    <Link>Terms &amp; Conditions</Link>
                   </li>
                   <li>
-                    <a href="#"> Privacy Policy</a>
+                    <Link> Privacy Policy</Link>
                   </li>
                   <li>
-                    <a href="#">Contact Us</a>
+                    <Link>Contact Us</Link>
                   </li>
                   <li>
-                    <a href="#">FAQ</a>
+                    <Link>FAQ</Link>
                   </li>
                   <li>
-                    <a href="#">Wholesale</a>
+                    <Link>Wholesale</Link>
                   </li>
                   <li>
-                    <a href="#">Direction</a>
+                    <Link>Direction</Link>
                   </li>
                 </ul>
               </div>
@@ -216,7 +218,7 @@ function FooterHome(props) {
             <div class="col-xl-3 col-lg-5 col-md-6">
               <div class="footer-widget mb-40">
                 <div class="footer-banner">
-                  <a href="/shop">
+                  <Link href="/shop">
                     <div
                       style={{
                         display: "inline-block",
@@ -269,7 +271,7 @@ function FooterHome(props) {
                         }}
                       />
                     </div>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -283,28 +285,28 @@ function FooterHome(props) {
               <div class="col-xl-6 col-lg-6 col-md-6">
                 <div class="copyright text-center  text-md-left">
                   <p>
-                    Copyright © 2022 <a href="#">BasicTheme</a>. All Rights
+                    Copyright © 2022 <Link>BasicTheme</Link>. All Rights
                     Reserved
                   </p>
                 </div>
               </div>
               <div class="col-xl-6 col-lg-6 col-md-6">
                 <div class="footer-icon text-center text-md-right ">
-                  <a href="#">
+                  <Link>
                     <i class="fab fa-facebook-f"></i>
-                  </a>
-                  <a href="#">
+                  </Link>
+                  <Link>
                     <i class="fab fa-twitter"></i>
-                  </a>
-                  <a href="#">
+                  </Link>
+                  <Link>
                     <i class="fab fa-behance"></i>
-                  </a>
-                  <a href="#">
+                  </Link>
+                  <Link>
                     <i class="fab fa-linkedin-in"></i>
-                  </a>
-                  <a href="#">
+                  </Link>
+                  <Link>
                     <i class="fab fa-youtube"></i>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

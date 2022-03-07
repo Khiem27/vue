@@ -1,4 +1,3 @@
-import AppBar from "@mui/material/AppBar";
 import Backdrop from "@mui/material/Backdrop";
 // Modal Start
 import Box from "@mui/material/Box";
@@ -17,7 +16,6 @@ import {
 } from "react-router-dom";
 import SwipeableViews from "react-swipeable-views";
 import ProductApi from "../../../Api/Product/ProductApi";
-import AddToCart from "../../AddToCart/AddToCart";
 import { addToCart } from "../../AddToCart/AddToCartSlice";
 import CheckSearchErro from "../../Search/CheckSearchErro";
 import { newArrFilter } from "../../Showing/ShowingResultSlice";
@@ -72,7 +70,7 @@ function a11yProps(index) {
 // Modal End
 
 function ProductsGrid3Column(props) {
-  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+  const { enqueueSnackbar } = useSnackbar();
   const dispatch = useDispatch();
   const [products, setProducts] = useState(null);
   // Products sau khi search
@@ -143,14 +141,7 @@ function ProductsGrid3Column(props) {
       dispatch(newArrFilter(newArr));
     };
     getAllProducts();
-  }, [
-    productsSearchValue,
-    productsFilterCateValue,
-    productsFilterBrandValue,
-    productsFilterSizeValue,
-    productsFilterTagsValue,
-    productsFilterColorValue,
-  ]);
+  }, [productsSearchValue, productsFilterCateValue, productsFilterBrandValue, productsFilterSizeValue, productsFilterTagsValue, productsFilterColorValue, dispatch]);
 
   // Modal
   const modalValue = useRef(null);
@@ -213,21 +204,21 @@ function ProductsGrid3Column(props) {
                           />
                         </Link>
                         <div class="product-action text-center">
-                          <a
-                            href="javascript:void(0)"
+                          <Link
+                            
                             onClick={() => handleSendProduct(index)}
                           >
                             <i class="fas fa-shopping-cart"></i>
-                          </a>
-                          <a
-                            href="javascript:void(0)"
+                          </Link>
+                          <Link
+                            
                             onClick={() => handleOpen(index)}
                           >
                             <i class="fas fa-eye"></i>
-                          </a>
-                          <a href="javascript:void(0)">
+                          </Link>
+                          <Link >
                             <i class="fas fa-compress-alt"></i>
-                          </a>
+                          </Link>
                         </div>
                         <div class="sale-tag">
                           {item.new ? <span class="new">new</span> : null}
@@ -248,9 +239,9 @@ function ProductsGrid3Column(props) {
                           </div>
                         </div>
                         <div class="product-wishlist">
-                          <a href="#" class="  ">
+                          <Link  class="  ">
                             <i class="far fa-heart" title="Wishlist"></i>
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -330,7 +321,7 @@ function ProductsGrid3Column(props) {
                               </div>
                             </TabPanel>
                           </SwipeableViews>
-                          <AppBar position="static">
+                          <appBar position="static">
                             <Tabs
                               value={value}
                               onChange={handleChange}
@@ -377,16 +368,16 @@ function ProductsGrid3Column(props) {
                                 {...a11yProps(2)}
                               />
                             </Tabs>
-                          </AppBar>
+                          </appBar>
                         </Box>
                       </div>
                       <div class="col-xl-6 col-lg-6">
                         <div class="product-details ">
                           <div class="details-cat mb-10 d-flex align-items-center justify-content-between">
                             <div>
-                              <a href="#">
+                              <Link >
                                 {products[modalValue.current].category}
-                              </a>
+                              </Link>
                             </div>
                             <i
                               onClick={handleClose}
@@ -414,13 +405,13 @@ function ProductsGrid3Column(props) {
                               </div>
                               <ul class="shop-link shop-color">
                                 <li>
-                                  <a href="#">
+                                  <Link >
                                     <span
                                       class={products[
                                         modalValue.current
                                       ].color.toLowerCase()}
                                     ></span>
-                                  </a>
+                                  </Link>
                                 </li>
                               </ul>
                             </div>
@@ -436,7 +427,7 @@ function ProductsGrid3Column(props) {
                                       : " "
                                   }
                                 >
-                                  <a href="#">L</a>
+                                  <Link >L</Link>
                                 </li>
                                 <li
                                   class={
@@ -445,7 +436,7 @@ function ProductsGrid3Column(props) {
                                       : " "
                                   }
                                 >
-                                  <a href="#">M</a>
+                                  <Link >M</Link>
                                 </li>
                                 <li
                                   class={
@@ -454,7 +445,7 @@ function ProductsGrid3Column(props) {
                                       : " "
                                   }
                                 >
-                                  <a href="#">X</a>
+                                  <Link >X</Link>
                                 </li>
                                 <li
                                   class={
@@ -463,7 +454,7 @@ function ProductsGrid3Column(props) {
                                       : " "
                                   }
                                 >
-                                  <a href="#">XL</a>
+                                  <Link >XL</Link>
                                 </li>
                                 <li
                                   class={
@@ -472,7 +463,7 @@ function ProductsGrid3Column(props) {
                                       : " "
                                   }
                                 >
-                                  <a href="#">XXL</a>
+                                  <Link >XXL</Link>
                                 </li>
                               </ul>
                             </div>
@@ -497,7 +488,7 @@ function ProductsGrid3Column(props) {
                                 </li>
                               </ul>
                             </div>
-                            <AddToCart productInfo = {products[modalValue.current]} />
+                            <addToCart productInfo = {products[modalValue.current]} />
                           </div>
                         </div>
                       </div>

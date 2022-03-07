@@ -1,4 +1,3 @@
-import AppBar from "@mui/material/AppBar";
 // Modal Start
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
@@ -15,7 +14,6 @@ import {
 } from "react-router-dom";
 import SwipeableViews from "react-swipeable-views";
 import ProductApi from "../../Api/Product/ProductApi";
-import AddToCart from "../AddToCart/AddToCart";
 import { addToCart } from "../AddToCart/AddToCartSlice";
 import CheckSearchErro from "../Search/CheckSearchErro";
 import { newArrFilter } from "../Showing/ShowingResultSlice";
@@ -70,7 +68,7 @@ function a11yProps(index) {
 // Modal End
 
 function ProductsList(props) {
-  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+  const { enqueueSnackbar } = useSnackbar();
 
   const dispatch = useDispatch();
   const [products, setProducts] = useState(null);
@@ -142,14 +140,7 @@ function ProductsList(props) {
       dispatch(newArrFilter(newArr));
     };
     getAllProducts();
-  }, [
-    productsSearchValue,
-    productsFilterCateValue,
-    productsFilterBrandValue,
-    productsFilterSizeValue,
-    productsFilterTagsValue,
-    productsFilterColorValue,
-  ]);
+  }, [productsSearchValue, productsFilterCateValue, productsFilterBrandValue, productsFilterSizeValue, productsFilterTagsValue, productsFilterColorValue, dispatch]);
 
   // Modal
   const modalValue = useRef(null);
@@ -237,19 +228,18 @@ function ProductsList(props) {
                         </div>
                         <p>{item.description}</p>
                         <div class="product-action">
-                          <a
-                            href="javascript:void(0)"
+                          <Link
                             title="Shoppingb Cart"
                             onClick={() => handleSendProduct(index)}
                           >
                             <i class="fas fa-shopping-cart"></i>
-                          </a>
-                          <a onClick={() => handleOpen(index)}>
+                          </Link>
+                          <Link onClick={() => handleOpen(index)}>
                             <i class="fas fa-eye"></i>
-                          </a>
-                          <a href="#" class="  ">
+                          </Link>
+                          <Link href="#" class="  ">
                             <i class="far fa-heart" title="Wishlist"></i>
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -323,7 +313,7 @@ function ProductsList(props) {
                             </div>
                           </TabPanel>
                         </SwipeableViews>
-                        <AppBar position="static">
+                        <appBar position="static">
                           <Tabs
                             value={value}
                             onChange={handleChange}
@@ -368,16 +358,16 @@ function ProductsList(props) {
                               {...a11yProps(2)}
                             />
                           </Tabs>
-                        </AppBar>
+                        </appBar>
                       </Box>
                     </div>
                     <div class="col-xl-6 col-lg-6">
                       <div class="product-details ">
                         <div class="details-cat mb-10 d-flex align-items-center justify-content-between">
                           <div>
-                            <a href="#">
+                            <Link href="#">
                               {products[modalValue.current].category}
-                            </a>
+                            </Link>
                           </div>
                           <i
                             onClick={handleClose}
@@ -403,13 +393,13 @@ function ProductsList(props) {
                             </div>
                             <ul class="shop-link shop-color">
                               <li>
-                                <a href="#">
+                                <Link href="#">
                                   <span
                                     class={products[
                                       modalValue.current
                                     ].color.toLowerCase()}
                                   ></span>
-                                </a>
+                                </Link>
                               </li>
                             </ul>
                           </div>
@@ -425,7 +415,7 @@ function ProductsList(props) {
                                     : " "
                                 }
                               >
-                                <a href="#">L</a>
+                                <Link href="#">L</Link>
                               </li>
                               <li
                                 class={
@@ -434,7 +424,7 @@ function ProductsList(props) {
                                     : " "
                                 }
                               >
-                                <a href="#">M</a>
+                                <Link href="#">M</Link>
                               </li>
                               <li
                                 class={
@@ -443,7 +433,7 @@ function ProductsList(props) {
                                     : " "
                                 }
                               >
-                                <a href="#">X</a>
+                                <Link href="#">X</Link>
                               </li>
                               <li
                                 class={
@@ -452,7 +442,7 @@ function ProductsList(props) {
                                     : " "
                                 }
                               >
-                                <a href="#">XL</a>
+                                <Link href="#">XL</Link>
                               </li>
                               <li
                                 class={
@@ -461,7 +451,7 @@ function ProductsList(props) {
                                     : " "
                                 }
                               >
-                                <a href="#">XXL</a>
+                                <Link href="#">XXL</Link>
                               </li>
                             </ul>
                           </div>
@@ -486,7 +476,7 @@ function ProductsList(props) {
                               </li>
                             </ul>
                           </div>
-                         <AddToCart productInfo = {products[modalValue.current]}  />
+                         <addToCart productInfo = {products[modalValue.current]}  />
                         </div>
                       </div>
                     </div>
