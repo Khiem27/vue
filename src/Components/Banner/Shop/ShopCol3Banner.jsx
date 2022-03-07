@@ -1,0 +1,16 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+
+ShopCol3Banner.propTypes = {
+    
+};
+
+function ShopCol3Banner(props) {
+    return (
+        <div class="shop-banner mb-50">
+            <img src="https://vue-plum-chi.vercel.app/img/bg/shop-banner-2.jpg" alt="Banner" />
+        </div>
+    );
+}
+
+export default ShopCol3Banner;
