@@ -1,6 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
-import ProductApi from '../../Api/Product/ProductApi';
 import { getSearchInput } from '../Search/ProductSearchSlice';
 
 ProductSearch.propTypes = {
@@ -8,19 +7,8 @@ ProductSearch.propTypes = {
 };
 
 function ProductSearch(props) {
-    const [products, setProducts] = useState(null)
-
-    useEffect(() => {
-        const getAllProducts = async () => {
-            const allProducts = await ProductApi.getAll()
-            const getProducts = allProducts.data
-            setProducts(getProducts);
-        }
-        getAllProducts()
-    }, [])
-
     const dispatch = useDispatch()
-
+    
     const inputEl = useRef(null)
 
     const submitSearch = () => {

@@ -1,7 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import {
-    useParams
-} from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import ProductApi from '../../Api/Product/ProductApi';
 import AddToCart from '../../Components/AddToCart/AddToCart';
 import Header from '../../Components/Header/Header';
@@ -54,20 +52,20 @@ function ShopDetails(props) {
                             <div class="shop-thumb-tab mb-30">
                                 <ul class="nav" role="tablist">
                                     <li class="nav-item">
-                                        <a href="javascript:void(0)" onClick={() => handleClick(1)} role="tab" data-rb-event-key="tum-0" aria-selected="true" class={click === 1 ? "nav-link active" : "nav-link"}><img src={product.image} alt="tum"/></a>
+                                        <Link  onClick={() => handleClick(1)} role="tab" data-rb-event-key="tum-0" aria-selected="true" class={click === 1 ? "nav-link active" : "nav-link"}><img src={product.image} alt="tum"/></Link>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="javascript:void(0)" onClick={() => handleClick(2)} role="tab" data-rb-event-key="tum-1" aria-selected="false" class={click === 2 ? "nav-link active" : "nav-link"}><img src={product.navImage} alt="tum"/></a>
+                                        <Link  onClick={() => handleClick(2)} role="tab" data-rb-event-key="tum-1" aria-selected="false" class={click === 2 ? "nav-link active" : "nav-link"}><img src={product.navImage} alt="tum"/></Link>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="javascript:void(0)" onClick={() => handleClick(3)} role="tab" data-rb-event-key="tum-2" aria-selected="false" class={click === 3 ? "nav-link active" : "nav-link"}><img src={product.hoverImage} alt="tum"/></a>
+                                        <Link  onClick={() => handleClick(3)} role="tab" data-rb-event-key="tum-2" aria-selected="false" class={click === 3 ? "nav-link active" : "nav-link"}><img src={product.hoverImage} alt="tum"/></Link>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-8">
                             <div class="product-details mb-30 pl-30">
-                                <div class="details-cat mb-20"><a href="#">{product.brand}</a></div>
+                                <div class="details-cat mb-20"><Link href="#">{product.brand}</Link></div>
                                 <h2 class="pro-details-title mb-15">{product.title}</h2>
                                 <div class="details-price mb-20">
                                     <span>${product.price} USD</span>
@@ -79,17 +77,17 @@ function ShopDetails(props) {
                                             <span>Colors</span>
                                         </div>
                                         <ul class="shop-link shop-color">
-                                            <li><a href="#"><span class={product.color}></span></a></li>
+                                            <li><Link href="#"><span class={product.color}></span></Link></li>
                                         </ul>
                                     </div>
                                     <div class="product-size variant-item modal-p-15">
                                         <div class="variant-name"><span>size</span></div>
                                         <ul class="shop-link shop-size">
-                                            <li class={product.size === "l" ? "active" : " "}><a href="#">L</a></li>
-                                            <li class={product.size === "m" ? "active" : " "}><a href="#">M</a></li>
-                                            <li class={product.size === "x" ? "active" : " "}><a href="#">X</a></li>
-                                            <li class={product.size === "xl" ? "active" : " "}><a href="#">XL</a></li>
-                                            <li class={product.size === "xxl" ? "active" : " "}><a href="#">XXL</a></li>
+                                            <li class={product.size === "l" ? "active" : " "}><Link href="#">L</Link></li>
+                                            <li class={product.size === "m" ? "active" : " "}><Link href="#">M</Link></li>
+                                            <li class={product.size === "x" ? "active" : " "}><Link href="#">X</Link></li>
+                                            <li class={product.size === "xl" ? "active" : " "}><Link href="#">XL</Link></li>
+                                            <li class={product.size === "xxl" ? "active" : " "}><Link href="#">XXL</Link></li>
                                         </ul>
                                     </div>
                                     <div class="product-desc variant-item">
@@ -112,8 +110,8 @@ function ShopDetails(props) {
                         <div class="col-xl-8 col-lg-8">
                             <div class="product-review">
                                 <ul class="review-tab nav" role="tablist">
-                                    <li class="nav-item"><a onClick={() => setClick2(false)} href="javascript:void(0)" role="tab" data-rb-event-key="dec" aria-selected="true" class={click2 ? "nav-link" : "nav-link active"}>Description </a></li>
-                                    <li class="nav-item"><a onClick={() => setClick2(true)} href="javascript:void(0)" role="tab" data-rb-event-key="review" aria-selected="false" class={click2 ? "nav-link active" : "nav-link"}>Reviews (2)</a></li>
+                                    <li class="nav-item"><Link onClick={() => setClick2(false)}  role="tab" data-rb-event-key="dec" aria-selected="true" class={click2 ? "nav-link" : "nav-link active"}>Description </Link></li>
+                                    <li class="nav-item"><Link onClick={() => setClick2(true)}  role="tab" data-rb-event-key="review" aria-selected="false" class={click2 ? "nav-link active" : "nav-link"}>Reviews (2)</Link></li>
                                 </ul>
                                 <div id="myTabContent2" class="tab-content">
                                     <div role="tabpanel" aria-hidden="false" class={click2 ? "fade tab-pane" : "fade tab-pane active show"}>
@@ -149,7 +147,7 @@ function ShopDetails(props) {
                                             <div class="review-box mt-50">
                                                 <h4>Add a Review</h4>
                                                 <div class="your-rating mb-40"><span>Your Rating:</span>
-                                                    <div class="rating-list"><a href="#"><i class="far fa-star"></i></a><a href="#"><i class="far fa-star"></i></a><a href="#"><i class="far fa-star"></i></a><a href="#"><i class="far fa-star"></i></a><a href="#"><i class="far fa-star"></i></a></div>
+                                                    <div class="rating-list"><Link href="#"><i class="far fa-star"></i></Link><Link href="#"><i class="far fa-star"></i></Link><Link href="#"><i class="far fa-star"></i></Link><Link href="#"><i class="far fa-star"></i></Link><Link href="#"><i class="far fa-star"></i></Link></div>
                                                 </div>
                                                 <form class="review-form">
                                                     <div class="row">

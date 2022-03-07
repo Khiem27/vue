@@ -22,7 +22,7 @@ function Products(props) {
     useEffect(() => {
         window.scrollTo(0,0)
         dispatch(changeCol3Nav(3))
-    }, [])
+    }, [dispatch])
 
     return (
         <>

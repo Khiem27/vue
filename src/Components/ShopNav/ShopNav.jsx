@@ -1,22 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import ProductApi from '../../Api/Product/ProductApi';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import {
+    Link
+} from "react-router-dom";
 import { changeCol3Nav } from '../ShopNav/ShopNavSlice';
 
 function ShopNav(props) {
-    const [products, setProducts] = useState(null)
-    const column = useSelector((state) => state.shopNav.col3Nav)
     const [displayActive, setDisplayActive] = useState(true)
     const dispatch = useDispatch()
-
-    useEffect(() => {
-        const getAllProducts = async () => {
-            const allProducts = await ProductApi.getAll()
-            const getProducts = allProducts.data
-            setProducts(getProducts);
-        }
-        getAllProducts()
-    }, [])
 
     // Event đổi giao diện
     const clickDisplayActiveTrue = () => {
@@ -34,15 +25,15 @@ function ShopNav(props) {
             <div class="shop-tab f-right">
                 <ul class="nav text-center nav" id="myTab" role="tablist">
                     <li class="nav-item">
-                        <a onClick={clickDisplayActiveFalse} role="tab" data-rb-event-key="list" class={displayActive ? "nav-link" : "nav-link active"}>
+                        <Link onClick={clickDisplayActiveFalse} role="tab" data-rb-event-key="list" class={displayActive ? "nav-link" : "nav-link active"}>
                             <i class="fas fa-list-ul"></i>
-                        </a>
+                        </Link>
                     </li>
                     
                     <li class="nav-item">
-                        <a onClick={clickDisplayActiveTrue} role="tab" data-rb-event-key="grid" class={displayActive ? "nav-link active" : "nav-link"}>
+                        <Link onClick={clickDisplayActiveTrue} role="tab" data-rb-event-key="grid" class={displayActive ? "nav-link active" : "nav-link"}>
                             <i class="fas fa-th-large"></i>
-                        </a>
+                        </Link>
                     </li>
                 </ul>
             </div>

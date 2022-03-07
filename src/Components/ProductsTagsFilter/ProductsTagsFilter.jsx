@@ -1,5 +1,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import {
+    Link
+} from "react-router-dom";
 import { filterValueTags } from '../ProductsTagsFilter/ProductsTagsFilterSlice';
 
 function ProductsTagsFilter(props) {
@@ -39,14 +42,14 @@ function ProductsTagsFilter(props) {
 
     return (
         <ul class="shop-tag">
-            <li><a href="javascript:void(0)" onClick={clickFurniture} className="text-capitalize "> furniture </a></li>
-            <li><a href="javascript:void(0)" onClick={clickLadies} className="text-capitalize "> ladies </a></li>
-            <li><a href="javascript:void(0)" onClick={clickGent} className="text-capitalize "> gent </a></li>
-            <li><a href="javascript:void(0)" onClick={clickClothing} className="text-capitalize "> Clothing </a></li>
-            <li><a href="javascript:void(0)" onClick={clickJacket} className="text-capitalize "> jacket </a></li>
-            <li><a href="javascript:void(0)" onClick={clickTshart} className="text-capitalize "> tshart </a></li>
-            <li><a href="javascript:void(0)" onClick={clickLamp} className="text-capitalize "> lamp </a></li>
-            <li><a href="javascript:void(0)" onClick={clickChair} className="text-capitalize "> chair </a></li>
+            <li><Link onClick={clickFurniture} className="text-capitalize "> furniture </Link></li>
+            <li><Link onClick={clickLadies} className="text-capitalize "> ladies </Link></li>
+            <li><Link onClick={clickGent} className="text-capitalize "> gent </Link></li>
+            <li><Link onClick={clickClothing} className="text-capitalize "> Clothing </Link></li>
+            <li><Link onClick={clickJacket} className="text-capitalize "> jacket </Link></li>
+            <li><Link onClick={clickTshart} className="text-capitalize "> tshart </Link></li>
+            <li><Link onClick={clickLamp} className="text-capitalize "> lamp </Link></li>
+            <li><Link onClick={clickChair} className="text-capitalize "> chair </Link></li>
         </ul>
     );
 }

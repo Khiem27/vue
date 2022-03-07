@@ -1,22 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
+import {
+    Link
+} from "react-router-dom";
 
 ScrollUp.propTypes = {
     
 };
 
 function ScrollUp(props) {
-    const [visible, setVisible] = useState(false)
-
-    const toggleVisible = () => {
-        const scrolled = document.documentElement.scrollTop;
-        if (scrolled > 300){
-          setVisible(true)
-        } 
-        else if (scrolled <= 300){
-          setVisible(false)
-        }
-    };
-
     const scrollToTop = () =>{
     window.scrollTo({
         top: 0, 
@@ -24,13 +15,11 @@ function ScrollUp(props) {
     });
     };
 
-    window.addEventListener('scroll', toggleVisible);
-
     return (
         <>
-            <a style={{"display": "visible" ? 'inline' : 'none'}} onClick={scrollToTop} id="scrollUp" style={{"position": "fixed", "zIndex": "2147483647", "display": "block"}}>
+            <Link onClick={scrollToTop} id="scrollUp" style={{"position": "fixed", "zIndex": "2147483647", "display": "block"}}>
                 <i className="fas fa-arrow-up"></i>
-            </a>
+            </Link>
         </>
     );
 }

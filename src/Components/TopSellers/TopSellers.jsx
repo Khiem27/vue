@@ -1,4 +1,7 @@
 import React from 'react';
+import {
+    Link
+} from "react-router-dom";
 
 TopSellers.propTypes = {
     
@@ -36,7 +39,7 @@ function TopSellers(props) {
                             <div class="sellet-2-content">
                                 <h2><a href="/shop">Xcross Comoer Furniture</a></h2>
                                 <div class="pro-price mb-25"><span>$ 207.00 USD</span><span class="old-price">$230.00 USD</span></div>
-                                <div class="top-seller-btn"><a class="btn theme-btn-2 mr-20" href="/shop">view details</a><a href="#" class="shop-btn"><i class="fas fa-shopping-cart"></i></a></div>
+                                <div class="top-seller-btn"><a class="btn theme-btn-2 mr-20" href="/shop">view details</a><Link class="shop-btn"><i class="fas fa-shopping-cart"></i></Link></div>
                             </div>
                         </div>
                     </div>

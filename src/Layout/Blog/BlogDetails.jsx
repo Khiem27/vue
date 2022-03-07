@@ -6,7 +6,6 @@ import {
   useParams
 } from "react-router-dom";
 import BlogsApi from "../../Api/Blogs/BlogsApi";
-import AboutMe from "../../Components/AboutMe/AboutMe";
 import Blogbanner from "../../Components/Banner/Blog/Blogbanner";
 import Categories from "../../Components/Categories/Categories";
 import Footer from "../../Components/Footer/Footer";
@@ -57,7 +56,7 @@ function BlogDetails(props) {
       }
     };
     getBlogsApi();
-  }, []);
+  }, [blogID]);
   return (
     <>
       <Header />
@@ -71,14 +70,13 @@ function BlogDetails(props) {
                 <article class="postbox post format-image mb-40">
                   {blogItems.video1 ? (
                     <div class="postbox__video mb-35">
-                      <img src={blogItems.video1} alt="blog image" />
-                      <a
+                      <img src={blogItems.video1} alt="blogimage" />
+                      <Link
                         onClick={handleOpen}
                         class="popup-video video-btn"
-                        href="javascript:void(0)"
                       >
                         <i class="fas fa-play"></i>
-                      </a>
+                      </Link>
                       <Modal
                         open={open}
                         onClose={handleClose}
@@ -100,7 +98,7 @@ function BlogDetails(props) {
                     </div>
                   ) : (
                     <div class="postbox__thumb mb-35">
-                      <img src={blogItems.image1} alt="blog image" />
+                      <img src={blogItems.image1} alt="blogimage" />
                     </div>
                   )}
                   <div class="postbox__text bg-none">
@@ -109,14 +107,14 @@ function BlogDetails(props) {
                         <i class="far fa-calendar-check"></i> {blogItems.date}{" "}
                       </span>
                       <span>
-                        <a href="#">
+                        <Link href="#">
                           <i class="far fa-user"></i> MD. Salim Rana
-                        </a>
+                        </Link>
                       </span>
                       <span>
-                        <a href="#">
+                        <Link href="#">
                           <i class="far fa-comments"></i> 2 Comments
-                        </a>
+                        </Link>
                       </span>
                     </div>
                     <h3 class="blog-title">{blogItems.title}</h3>
@@ -126,7 +124,7 @@ function BlogDetails(props) {
                       <Quotes />
                       <p>{blogItems.desc3}</p>
                       <div class="blog-inner-img mb-30 mt-30">
-                        <img src={blogItems.image2} alt="blog image" />
+                        <img src={blogItems.image2} alt="blogimage" />
                       </div>
                       <div class="inner-content">
                         <h4>{blogItems.subtitle1}</h4>
@@ -141,29 +139,29 @@ function BlogDetails(props) {
                       <div class="col-xl-8 col-lg-8 col-md-8 mb-15">
                         <div class="blog-post-tag">
                           <span>Releted Tags</span>
-                          <a href="#">organic</a>
-                          <a href="#">Foods</a>
-                          <a href="#">tasty</a>
+                          <Link href="#">organic</Link>
+                          <Link href="#">Foods</Link>
+                          <Link href="#">tasty</Link>
                         </div>
                       </div>
                       <div class="col-xl-4 col-lg-4 col-md-4 mb-15">
                         <div class="blog-share-icon text-left text-md-right">
                           <span>Share: </span>
-                          <a href="#">
+                          <Link href="#">
                             <i class="fab fa-facebook-f"></i>
-                          </a>
-                          <a href="#">
+                          </Link>
+                          <Link href="#">
                             <i class="fab fa-twitter"></i>
-                          </a>
-                          <a href="#">
+                          </Link>
+                          <Link href="#">
                             <i class="fab fa-instagram"></i>
-                          </a>
-                          <a href="#">
+                          </Link>
+                          <Link href="#">
                             <i class="fab fa-google-plus-g"></i>
-                          </a>
-                          <a href="#">
+                          </Link>
+                          <Link href="#">
                             <i class="fab fa-vimeo-v"></i>
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -178,20 +176,20 @@ function BlogDetails(props) {
                               <Link to={`/blog/${blogID - 1}`}>Prev Post</Link>
                             </span>
                             <h4>
-                              <a href="/blog/1">{prevBlogItems.title}</a>
+                              <Link href="/blog/1">{prevBlogItems.title}</Link>
                             </h4>
                           </div>
                         ) : null}
                       </div>
                       <div class="col-xl-2 col-lg-2 col-md-2 ">
                         <div class="bakix-filter text-left text-md-center mb-30">
-                          <a href="#">
+                          <Link href="#">
                             <img
                               style={{ width: "40px" }}
                               src="https://vue-plum-chi.vercel.app/img/icon/filter.png"
                               alt="filter"
                             />
-                          </a>
+                          </Link>
                         </div>
                       </div>
                       <div class="col-xl-5 col-lg-5 col-md-5">
@@ -201,7 +199,7 @@ function BlogDetails(props) {
                               <Link to={`/blog/${blogID + 1}`}>Next Post</Link>
                             </span>
                             <h4>
-                              <a href="/blog/2">{nextBlogItems.title}</a>
+                              <Link href="/blog/2">{nextBlogItems.title}</Link>
                             </h4>
                           </div>
                         ) : null}
@@ -213,27 +211,27 @@ function BlogDetails(props) {
                       <img
                         style={{ width: "120px" }}
                         src="https://vue-plum-chi.vercel.app/img/blog/details/author.png"
-                        alt="Author image"
+                        alt="Authorimage"
                       />
                     </div>
                     <div class="author-text text-center">
                       <h3>MD. Salim Rana</h3>
                       <div class="author-icon">
-                        <a href="#">
+                        <Link href="#">
                           <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#">
+                        </Link>
+                        <Link href="#">
                           <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#">
+                        </Link>
+                        <Link href="#">
                           <i class="fab fa-behance-square"></i>
-                        </a>
-                        <a href="#">
+                        </Link>
+                        <Link href="#">
                           <i class="fab fa-youtube"></i>
-                        </a>
-                        <a href="#">
+                        </Link>
+                        <Link href="#">
                           <i class="fab fa-vimeo-v"></i>
-                        </a>
+                        </Link>
                       </div>
                       <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -262,9 +260,9 @@ function BlogDetails(props) {
                               <div class="avatar-name">
                                 <h5>Karon Balina</h5>
                                 <span>19TH MAY 2018</span>
-                                <a class="reply" href="#">
+                                <Link class="reply" href="#">
                                   <i class="fas fa-reply"></i>Reply
-                                </a>
+                                </Link>
                               </div>
                               <p>
                                 Lorem ipsum dolor sit amet, consectetur
@@ -295,9 +293,9 @@ function BlogDetails(props) {
                                   <div class="avatar-name">
                                     <h5>Karon Balina</h5>
                                     <span>19TH MAY 2018</span>
-                                    <a class="reply" href="#">
+                                    <Link class="reply" href="#">
                                       <i class="fas fa-reply"></i>Reply
-                                    </a>
+                                    </Link>
                                   </div>
                                   <p>
                                     Lorem ipsum dolor sit amet, consectetur
@@ -324,9 +322,9 @@ function BlogDetails(props) {
                               <div class="avatar-name">
                                 <h5>Arista Williamson</h5>
                                 <span>19TH MAY 2018</span>
-                                <a class="reply" href="#">
+                                <Link class="reply" href="#">
                                   <i class="fas fa-reply"></i>Reply
-                                </a>
+                                </Link>
                               </div>
                               <p>
                                 Lorem ipsum dolor sit amet, consectetur
@@ -390,7 +388,7 @@ function BlogDetails(props) {
               ) : null}
             </div>
             <div className="col-lg-4">
-              <AboutMe />
+              <aboutMe />
               <PopularFeeds />
               <Categories />
               <InstagramFeeds />

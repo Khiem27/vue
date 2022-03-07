@@ -22,7 +22,7 @@ function SidebarLeft(props) {
     useEffect(() => {
         window.scrollTo(0,0)
         dispatch(changeCol3Nav(3))
-    }, [])
+    }, [dispatch])
 
     const column = useSelector((state) => state.shopNav.col3Nav)
 

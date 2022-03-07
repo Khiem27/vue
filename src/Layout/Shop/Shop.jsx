@@ -22,7 +22,7 @@ function Shop(props) {
     useEffect(() => {
         dispatch(changeCol3Nav(3))
         window.scrollTo(0,0)
-    }, [])
+    }, [dispatch])
 
     const column = useSelector((state) => state.shopNav.col3Nav)
 
