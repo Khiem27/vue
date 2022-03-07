@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import ProductApi from '../../Api/Product/ProductApi';
-import { useSelector, useDispatch } from 'react-redux'
-import { changeCol3Nav } from '../ShopNav/ShopNavSlice'
+import { changeCol3Nav } from '../ShopNav/ShopNavSlice';
 
 function ShopNav(props) {
     const [products, setProducts] = useState(null)

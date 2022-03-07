@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
-import { useSelector, useDispatch } from 'react-redux';
-import { filterValueColor } from './ProductsColorFilterSlice'
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { filterValueColor } from './ProductsColorFilterSlice';
 
 ProductsColorFilter.propTypes = {
     

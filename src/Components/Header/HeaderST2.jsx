@@ -1,13 +1,8 @@
-import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
-import MiniCart from "../MiniCart/MiniCart";
+import React, { useEffect, useState } from "react";
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useParams,
+  Link
 } from "react-router-dom";
+import MiniCart from "../MiniCart/MiniCart";
 import ScrollUp from "../ScrollUp/ScrollUp";
 
 HeaderST2.propTypes = {};

@@ -1,8 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { useSelector, useDispatch } from 'react-redux'
-import { filterValue } from './ProductsFilterCategoriesSlice'
-import ProductApi from '../../Api/Product/ProductApi';
-import { productsFilterCate } from '../ProductsCategoriesFilter/ProductsFilterCategoriesSlice'
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { filterValue } from './ProductsFilterCategoriesSlice';
 
 function ProductFilterCategories(props) {
     const dispatch = useDispatch()

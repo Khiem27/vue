@@ -1,18 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
-import ProductApi from '../../Api/Product/ProductApi'
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
     useParams
 } from "react-router-dom";
-import ShopDetailsTitle from '../../Components/PageTitle/Shop/ShopDetailsTitle';
-import WishlistContainer from '../../Components/Wishlist Container/WishlistContainer';
-import WishlistContainerCompare from '../../Components/Wishlist Container/WishlistContainerCompare';
-import ScrollUp from '../../Components/ScrollUp/ScrollUp';
+import ProductApi from '../../Api/Product/ProductApi';
 import AddToCart from '../../Components/AddToCart/AddToCart';
 import Header from '../../Components/Header/Header';
+import ShopDetailsTitle from '../../Components/PageTitle/Shop/ShopDetailsTitle';
 
 function ShopDetails(props) {
     let { shopid } = useParams();

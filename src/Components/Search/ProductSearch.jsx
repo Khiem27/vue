@@ -1,8 +1,7 @@
-import React, { useRef, useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
-import { useSelector, useDispatch } from 'react-redux'
+import React, { useEffect, useRef, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import ProductApi from '../../Api/Product/ProductApi';
-import { getSearchInput, getProductsSearch } from '../Search/ProductSearchSlice'
+import { getSearchInput } from '../Search/ProductSearchSlice';
 
 ProductSearch.propTypes = {
     

@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
-import PropTypes from "prop-types";
-import BlogTitle from "../../Components/PageTitle/Blog/BlogTitle";
 import AboutMe from "../../Components/AboutMe/AboutMe";
-import Categories from "../../Components/Categories/Categories";
-import InstagramFeeds from "../../Components/InsFeeds/InstagramFeeds";
 import Blogbanner from "../../Components/Banner/Blog/Blogbanner";
-import Footer from "../../Components/Footer/Footer";
 import BlogItems from "../../Components/BlogItems/BlogItems";
+import Categories from "../../Components/Categories/Categories";
+import Footer from "../../Components/Footer/Footer";
 import Header from "../../Components/Header/Header";
+import InstagramFeeds from "../../Components/InsFeeds/InstagramFeeds";
+import BlogTitle from "../../Components/PageTitle/Blog/BlogTitle";
 Blog.propTypes = {};
 
 function Blog(props) {

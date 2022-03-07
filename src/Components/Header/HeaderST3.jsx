@@ -1,11 +1,6 @@
-import React, { useState, useRef } from "react";
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useParams,
+  Link
 } from "react-router-dom";
 import MiniCart from "../MiniCart/MiniCart";
 import ScrollUp from "../ScrollUp/ScrollUp";

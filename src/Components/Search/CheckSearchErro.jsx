@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux';
 
 function CheckSearchErro(props) {
     const productsSearch = useSelector((state) => state.productSearch.productsSearch)

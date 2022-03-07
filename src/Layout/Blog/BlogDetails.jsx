@@ -1,28 +1,22 @@
-import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
-import BlogsApi from "../../Api/Blogs/BlogsApi";
-import Categories from "../../Components/Categories/Categories";
-import InstagramFeeds from "../../Components/InsFeeds/InstagramFeeds";
-import Blogbanner from "../../Components/Banner/Blog/Blogbanner";
-
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-
+import React, { useEffect, useState } from "react";
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
   Link,
-  useParams,
+  useParams
 } from "react-router-dom";
-import BlogTitle from "../../Components/PageTitle/Blog/BlogTitle";
+import BlogsApi from "../../Api/Blogs/BlogsApi";
 import AboutMe from "../../Components/AboutMe/AboutMe";
-import Quotes from "../../Components/Quotes/Quotes";
+import Blogbanner from "../../Components/Banner/Blog/Blogbanner";
+import Categories from "../../Components/Categories/Categories";
 import Footer from "../../Components/Footer/Footer";
-import PopularFeeds from "../../Components/PopularFeeds/PopularFeeds";
 import Header from "../../Components/Header/Header";
+import InstagramFeeds from "../../Components/InsFeeds/InstagramFeeds";
+import BlogTitle from "../../Components/PageTitle/Blog/BlogTitle";
+import PopularFeeds from "../../Components/PopularFeeds/PopularFeeds";
+import Quotes from "../../Components/Quotes/Quotes";
+
+
 
 BlogDetails.propTypes = {};
 

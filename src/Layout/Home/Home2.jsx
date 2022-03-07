@@ -1,13 +1,12 @@
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
-import Header from '../../Components/Header/Header';
-import SliderIndex2 from '../../Components/Slider/SliderIndex2';
 import BannerHome2 from '../../Components/Banner/Home2/BannerHome2';
 import BrandNewProducts from '../../Components/BrandNewProducts/BrandNewProducts';
-import SpecialFeatues from '../../Components/SpecialFeatures/SpecialFeatues';
-import NewsFeedsHome2 from '../../Components/NewsFeeds/NewsFeedsHome2';
-import Subcribe from '../../Components/Subcribe/Subcribe';
 import FooterHome from '../../Components/Footer/FooterHome';
+import Header from '../../Components/Header/Header';
+import NewsFeedsHome2 from '../../Components/NewsFeeds/NewsFeedsHome2';
+import SliderIndex2 from '../../Components/Slider/SliderIndex2';
+import SpecialFeatues from '../../Components/SpecialFeatures/SpecialFeatues';
+import Subcribe from '../../Components/Subcribe/Subcribe';
 
 Home2.propTypes = {
     

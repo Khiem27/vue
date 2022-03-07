@@ -1,19 +1,12 @@
-import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
-import { useSelector, useDispatch } from "react-redux";
-import {
-  addFromLocal,
-  removeFromCart,
-  calculatorTotalProducts,
-} from "../AddToCart/AddToCartSlice";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useParams,
-} from "react-router-dom";
 import { useSnackbar } from "notistack";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  Link
+} from "react-router-dom";
+import {
+  addFromLocal, calculatorTotalProducts, removeFromCart
+} from "../AddToCart/AddToCartSlice";
 
 MiniCart.propTypes = {};
 

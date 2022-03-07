@@ -1,7 +1,4 @@
-import React, { useRef } from 'react';
-import PropTypes from 'prop-types';
-import { useEffect } from 'react';
-import { useState } from 'react';
+import React from 'react';
 
 InstagramArea.propTypes = {
     

@@ -1,13 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import HeaderST2 from '../../Components/Header/HeaderST2';
-import SliderIndex5 from '../../Components/Slider/SliderIndex5';
 import BannerHome5 from '../../Components/Banner/Home5/BannerHome5';
 import BrandNewProducts from '../../Components/BrandNewProducts/BrandNewProducts';
 import FeaturesHome5 from '../../Components/Features/Home5/FeaturesHome5';
-import NewFeedsHome4 from '../../Components/NewsFeeds/NewFeedsHome4';
-import Subcribe from '../../Components/Subcribe/Subcribe';
 import Footer from '../../Components/Footer/Footer';
+import HeaderST2 from '../../Components/Header/HeaderST2';
+import NewFeedsHome4 from '../../Components/NewsFeeds/NewFeedsHome4';
+import SliderIndex5 from '../../Components/Slider/SliderIndex5';
+import Subcribe from '../../Components/Subcribe/Subcribe';
 
 Home5.propTypes = {
     

@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
-import BlogsApi from '../../Api/Blogs/BlogsApi'
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
     Link,
     useParams
 } from "react-router-dom";
+import BlogsApi from '../../Api/Blogs/BlogsApi';
 
 PopularFeeds.propTypes = {
     

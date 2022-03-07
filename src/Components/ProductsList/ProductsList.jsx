@@ -1,31 +1,26 @@
-import React, { useEffect, useState, useRef } from "react";
-import PropTypes from "prop-types";
-import ProductApi from "../../Api/Product/ProductApi";
-import { useSelector, useDispatch } from "react-redux";
-import CheckSearchErro from "../Search/CheckSearchErro";
-import { newArrFilter } from "../Showing/ShowingResultSlice";
-import { addToCart } from "../AddToCart/AddToCartSlice";
-import { useSnackbar } from "notistack";
-
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useParams,
-} from "react-router-dom";
-
+import AppBar from "@mui/material/AppBar";
 // Modal Start
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-import SwipeableViews from "react-swipeable-views";
 import { useTheme } from "@mui/material/styles";
-import AppBar from "@mui/material/AppBar";
-import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
+import Tabs from "@mui/material/Tabs";
+import Typography from "@mui/material/Typography";
+import { useSnackbar } from "notistack";
+import PropTypes from "prop-types";
+import React, { useEffect, useRef, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  Link
+} from "react-router-dom";
+import SwipeableViews from "react-swipeable-views";
+import ProductApi from "../../Api/Product/ProductApi";
 import AddToCart from "../AddToCart/AddToCart";
+import { addToCart } from "../AddToCart/AddToCartSlice";
+import CheckSearchErro from "../Search/CheckSearchErro";
+import { newArrFilter } from "../Showing/ShowingResultSlice";
+
+
 
 const style = {
   top: "50%",

@@ -1,20 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
-import { useSelector, useDispatch } from 'react-redux'
-import CheckSearchErro from '../../Search/CheckSearchErro';
-import ProductApi from '../../../Api/Product/ProductApi'
-import { useRef } from 'react';
-
+import AppBar from '@mui/material/AppBar';
 // Modal Start
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import SwipeableViews from 'react-swipeable-views';
 import { useTheme } from '@mui/material/styles';
-import AppBar from '@mui/material/AppBar';
-import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
+import Tabs from '@mui/material/Tabs';
+import Typography from '@mui/material/Typography';
+import PropTypes from 'prop-types';
+import React, { useEffect, useRef, useState } from 'react';
+import { useSelector } from 'react-redux';
+import SwipeableViews from 'react-swipeable-views';
+import ProductApi from '../../../Api/Product/ProductApi';
+
 
 const style = {
     top: '50%',

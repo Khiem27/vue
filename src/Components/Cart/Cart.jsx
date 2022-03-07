@@ -1,16 +1,12 @@
-import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
-import CartTitle from "../PageTitle/Cart/CartTitle";
-import { useSelector, useDispatch } from "react-redux";
-import Footer from "../Footer/Footer";
-import {
-  updateQuantity,
-  calculatorTotalProducts,
-  removeFromCart,
-  addFromLocal,
-} from "../AddToCart/AddToCartSlice";
 import { useSnackbar } from "notistack";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addFromLocal, removeFromCart, updateQuantity
+} from "../AddToCart/AddToCartSlice";
+import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
+import CartTitle from "../PageTitle/Cart/CartTitle";
 
 Cart.propTypes = {};
 

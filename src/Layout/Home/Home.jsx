@@ -1,15 +1,14 @@
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
-import Header from '../../Components/Header/Header';
 import HomeBanner from '../../Components/Banner/Home/HomeBanner';
 import HomeSubBanner from '../../Components/Banner/Home/HomeSubBanner';
-import BrandNewProducts from '../../Components/BrandNewProducts/BrandNewProducts';
-import TopSellers from '../../Components/TopSellers/TopSellers';
 import BestSaleProducts from '../../Components/BestSaleProducts/BestSaleProducts';
-import UpcomingProduct from '../../Components/UpcomingProduct/UpcomingProduct';
+import BrandNewProducts from '../../Components/BrandNewProducts/BrandNewProducts';
+import FooterHome from '../../Components/Footer/FooterHome';
+import Header from '../../Components/Header/Header';
 import NewsFeeds from '../../Components/NewsFeeds/NewsFeeds';
 import Subcribe from '../../Components/Subcribe/Subcribe';
-import FooterHome from '../../Components/Footer/FooterHome';
+import TopSellers from '../../Components/TopSellers/TopSellers';
+import UpcomingProduct from '../../Components/UpcomingProduct/UpcomingProduct';
 
 Home.propTypes = {
     

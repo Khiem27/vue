@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
-import { filterValueBrand } from '../ProductsBrandFilter/ProductsBrandFilterSlice'
-import { useSelector, useDispatch } from 'react-redux';
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { filterValueBrand } from '../ProductsBrandFilter/ProductsBrandFilterSlice';
 
 function ProductsBrandFilter(props) {
     const dispatch = useDispatch()

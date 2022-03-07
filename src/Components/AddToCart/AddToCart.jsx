@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { useSelector, useDispatch } from 'react-redux'
-import { addToCart } from './AddToCartSlice'
-
 import { useSnackbar } from 'notistack';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addToCart } from './AddToCartSlice';
+
 
 AddToCart.propTypes = {
     

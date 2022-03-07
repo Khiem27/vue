@@ -1,14 +1,13 @@
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
+import Footer from '../../Components/Footer/Footer';
+import Header from '../../Components/Header/Header';
 import ShopPageTitle from '../../Components/PageTitle/Shop/ShopPageTitle';
-import ShowingResult from '../../Components/Showing/ShowingResult';
-import ShopNav from '../../Components/ShopNav/ShopNav';
 import ProductsGrid3Column from '../../Components/ProductsGrid/ProductsGrid3Column/ProductsGrid3Column';
 import ProductsList from '../../Components/ProductsList/ProductsList';
-import { useSelector, useDispatch } from 'react-redux';
-import Footer from '../../Components/Footer/Footer';
+import ShopNav from '../../Components/ShopNav/ShopNav';
 import { changeCol3Nav } from '../../Components/ShopNav/ShopNavSlice';
-import Header from '../../Components/Header/Header';
+import ShowingResult from '../../Components/Showing/ShowingResult';
 
 
 
