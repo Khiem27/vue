@@ -11,7 +11,7 @@ function BannerHome2(props) {
                 <div class="row">
                     <div class="col-lg-6 col-md-12">
                         <div class="banner-2 pos-relative mb-30">
-                            <a href="/shop"><img alt="Banner image" src="https://vue-plum-chi.vercel.app/img/banner/banner-2/banner1.jpg"/></a>
+                            <a href="/shop"><img alt="Bannerimage" src="https://vue-plum-chi.vercel.app/img/banner/banner-2/banner1.jpg" /></a>
                             <div class="banner-trend"><span>Trendy Item</span>
                                 <h2><a href="/shop">New Year Trend Coming 2022</a></h2>
                                 <div class="discover-link"><a href="/shop">discover</a></div>

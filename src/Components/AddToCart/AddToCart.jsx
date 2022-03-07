@@ -9,7 +9,7 @@ AddToCart.propTypes = {
 };
 
 function AddToCart(props) {
-    const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+    const { enqueueSnackbar } = useSnackbar();
 
     const { productInfo } = props;
     const [count, setCount] = useState(1)

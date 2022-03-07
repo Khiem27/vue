@@ -1,5 +1,7 @@
 import React from "react";
-
+import {
+  Link
+} from "react-router-dom";
 Categories.propTypes = {};
 
 function Categories(props) {
@@ -11,29 +13,29 @@ function Categories(props) {
       </div>
       <ul class="cat">
         <li>
-          <a href="#">
+          <Link>
             Lifestyle <span class="f-right">78</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#">
+          <Link>
             Travel <span class="f-right">42</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#">
+          <Link>
             Fashion <span class="f-right">32</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#">
+          <Link>
             Music <span class="f-right">85</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#">
+          <Link>
             Branding <span class="f-right">05</span>
-          </a>
+          </Link>
         </li>
       </ul>
     </div>

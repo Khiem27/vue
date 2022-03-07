@@ -1,31 +1,26 @@
-import logo from './logo.svg';
+import {
+  BrowserRouter as Router, Route, Switch
+} from "react-router-dom";
 import './App.css';
+import Cart from './Components/Cart/Cart';
+import Header from './Components/Header/Header';
 import WishlistContainer from './Components/Wishlist Container/WishlistContainer';
 import WishlistContainerCompare from './Components/Wishlist Container/WishlistContainerCompare';
-import Header from './Components/Header/Header';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useParams
-} from "react-router-dom";
 import Blog from './Layout/Blog/Blog';
 import BlogDetails from './Layout/Blog/BlogDetails';
+import Contacts from './Layout/Contacts/Contacts';
 import Home from './Layout/Home/Home';
+import Home2 from './Layout/Home/Home2';
+import Home3 from './Layout/Home/Home3';
+import Home4 from './Layout/Home/Home4';
+import Home5 from './Layout/Home/Home5';
+import Checkout from './Layout/Pages/Checkout/Checkout';
 import Products from './Layout/Products/Products';
 import Shop from './Layout/Shop/Shop';
 import ShopCol3 from './Layout/Shop/ShopCol3';
 import ShopDetails from './Layout/Shop/ShopDetails';
 import ShopList from './Layout/Shop/ShopList';
 import SidebarLeft from './Layout/Shop/SidebarLeft';
-import Cart from './Components/Cart/Cart';
-import Home2 from './Layout/Home/Home2';
-import Home3 from './Layout/Home/Home3';
-import Home4 from './Layout/Home/Home4';
-import Home5 from './Layout/Home/Home5';
-import Contacts from './Layout/Contacts/Contacts';
-import Checkout from './Layout/Pages/Checkout/Checkout';
 
 function App() {
   return (

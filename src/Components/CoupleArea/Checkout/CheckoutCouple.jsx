@@ -1,5 +1,7 @@
 import React from "react";
-
+import {
+  Link
+} from "react-router-dom";
 CheckoutCouple.propTypes = {};
 
 function CheckoutCouple(props) {
@@ -65,7 +67,7 @@ function CheckoutCouple(props) {
                         </label>
                       </p>
                       <p class="lost-password">
-                        <a href="#">Lost your password?</a>
+                        <Link >Lost your password?</Link>
                       </p>
                     </form>
                   </div>

@@ -30,15 +30,15 @@ function BlogItems(props) {
               >
                 {item.image1 ? (
                   <div class="postbox__thumb">
-                    <img src={item.image1} alt="blog image" />
+                    <img src={item.image1} alt="blogimage" />
                   </div>
                 ) : null}
                 {item.video1 ? (
                   <div class="postbox__video">
-                    <img src={item.video1} alt="blog image" />
-                    <a class="popup-video video-btn" href="javascript:void(0)">
+                    <img src={item.video1} alt="blogimage" />
+                    <Link class="popup-video video-btn">
                       <i class="fas fa-play"></i>
-                    </a>
+                    </Link>
                   </div>
                 ) : null}
                 <div class="postbox__text p-50">
@@ -47,15 +47,15 @@ function BlogItems(props) {
                       <i class="far fa-calendar-check"></i> {item.date}{" "}
                     </span>
                     <span>
-                      <a href="#">
+                      <Link>
                         <i class="far fa-user"></i>
                         {item.author}
-                      </a>
+                      </Link>
                     </span>
                     <span>
-                      <a href="#">
+                      <Link>
                         <i class="far fa-comments"></i> {item.comments} Comments
-                      </a>
+                      </Link>
                     </span>
                   </div>
                   <h3 class="blog-title">

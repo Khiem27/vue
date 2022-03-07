@@ -20,7 +20,6 @@ import ProductApi from "../../Api/Product/ProductApi";
 import AddToCart from "../AddToCart/AddToCart";
 import { addToCart } from "../AddToCart/AddToCartSlice";
 
-
 const style = {
   top: "50%",
   left: "50%",
@@ -69,7 +68,7 @@ function a11yProps(index) {
 // Modal End
 
 function BestSaleNewProducts(props) {
-  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+  const { enqueueSnackbar } = useSnackbar();
   const dispatch = useDispatch();
   const [idTab, setIdTab] = useState(1);
   const [products, setProducts] = useState(null);
@@ -99,11 +98,11 @@ function BestSaleNewProducts(props) {
   };
 
   const handleTrans = (action) => {
-    if (trans == -5248) {
+    if (trans === -5248) {
       setTrans(0);
     }
 
-    if (trans == 0) {
+    if (trans === 0) {
       setTrans(-5248);
     }
 
@@ -175,14 +174,14 @@ function BestSaleNewProducts(props) {
                   role="tablist"
                 >
                   <li class="nav-item">
-                    <a
+                    <Link
                       onClick={() => handleActiveTabs(1)}
                       id="home-tab"
                       data-toggle="tab"
                       role="tab"
                       aria-controls="home"
                       aria-selected="true"
-                      href="javascript:void(0)"
+                      
                       data-rb-event-key="all"
                       class={
                         idTab === 1
@@ -191,17 +190,17 @@ function BestSaleNewProducts(props) {
                       }
                     >
                       all
-                    </a>
+                    </Link>
                   </li>
                   <li class="nav-item">
-                    <a
+                    <Link
                       onClick={() => handleActiveTabs(2)}
                       id="profile-tab"
                       data-toggle="tab"
                       role="tab"
                       aria-controls="profile"
                       aria-selected="false"
-                      href="javascript:void(0)"
+                      
                       data-rb-event-key="furniture"
                       class={
                         idTab === 2
@@ -210,17 +209,17 @@ function BestSaleNewProducts(props) {
                       }
                     >
                       Men's Clothing
-                    </a>
+                    </Link>
                   </li>
                   <li class="nav-item">
-                    <a
+                    <Link
                       onClick={() => handleActiveTabs(3)}
                       id="contact-tab"
                       data-toggle="tab"
                       role="tab"
                       aria-controls="contact"
                       aria-selected="false"
-                      href="javascript:void(0)"
+                      
                       data-rb-event-key="gent"
                       class={
                         idTab === 3
@@ -229,17 +228,17 @@ function BestSaleNewProducts(props) {
                       }
                     >
                       Jewelery
-                    </a>
+                    </Link>
                   </li>
                   <li class="nav-item">
-                    <a
+                    <Link
                       onClick={() => handleActiveTabs(4)}
                       id="contact-tab1"
                       data-toggle="tab"
                       role="tab"
                       aria-controls="contact"
                       aria-selected="false"
-                      href="javascript:void(0)"
+                      
                       data-rb-event-key="ladies"
                       class={
                         idTab === 4
@@ -248,7 +247,7 @@ function BestSaleNewProducts(props) {
                       }
                     >
                       Electronics
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -314,33 +313,33 @@ function BestSaleNewProducts(props) {
                                               />
                                             </Link>
                                             <div class="product-action text-center">
-                                              <a
-                                                href="javascript:void(0)"
+                                              <Link
+                                                
                                                 title="Shoppingb Cart"
                                                 onClick={() =>
                                                   handleSendProduct(item.id - 1)
                                                 }
                                               >
                                                 <i class="fas fa-shopping-cart"></i>
-                                              </a>
-                                              <a
-                                                href="javascript:void(0)"
+                                              </Link>
+                                              <Link
+                                                
                                                 onClick={() =>
                                                   handleOpen(index)
                                                 }
                                                 title="Quick View"
                                               >
                                                 <i class="fas fa-eye"></i>
-                                              </a>
-                                              <a
-                                                href="javascript:void(0)"
+                                              </Link>
+                                              <Link
+                                                
                                                 data-toggle="tooltip"
                                                 data-placement="right"
                                                 title="Compare"
                                                 class=""
                                               >
                                                 <i class="fas fa-compress-alt"></i>
-                                              </a>
+                                              </Link>
                                             </div>
                                             <div class="sale-tag">
                                               {item.new ? (
@@ -369,15 +368,15 @@ function BestSaleNewProducts(props) {
                                               </div>
                                             </div>
                                             <div class="product-wishlist">
-                                              <a
-                                                href="javascript:void(0)"
+                                              <Link
+                                                
                                                 class="  "
                                               >
                                                 <i
                                                   class="far fa-heart"
                                                   title="Wishlist"
                                                 ></i>
-                                              </a>
+                                              </Link>
                                             </div>
                                           </div>
                                         </div>
@@ -446,33 +445,33 @@ function BestSaleNewProducts(props) {
                                                 />
                                               </Link>
                                               <div class="product-action text-center">
-                                                <a
-                                                  href="javascript:void(0)"
+                                                <Link
+                                                  
                                                   title="Shoppingb Cart"
                                                   onClick={() =>
                                                     handleSendProduct(item.id - 1)
                                                   }
                                                 >
                                                   <i class="fas fa-shopping-cart"></i>
-                                                </a>
-                                                <a
-                                                  href="javascript:void(0)"
+                                                </Link>
+                                                <Link
+                                                  
                                                   onClick={() =>
                                                     handleOpen(index)
                                                   }
                                                   title="Quick View"
                                                 >
                                                   <i class="fas fa-eye"></i>
-                                                </a>
-                                                <a
-                                                  href="javascript:void(0)"
+                                                </Link>
+                                                <Link
+                                                  
                                                   data-toggle="tooltip"
                                                   data-placement="right"
                                                   title="Compare"
                                                   class=""
                                                 >
                                                   <i class="fas fa-compress-alt"></i>
-                                                </a>
+                                                </Link>
                                               </div>
                                               <div class="sale-tag">
                                                 {item.new ? (
@@ -501,15 +500,15 @@ function BestSaleNewProducts(props) {
                                                 </div>
                                               </div>
                                               <div class="product-wishlist">
-                                                <a
-                                                  href="javascript:void(0)"
+                                                <Link
+                                                  
                                                   class="  "
                                                 >
                                                   <i
                                                     class="far fa-heart"
                                                     title="Wishlist"
                                                   ></i>
-                                                </a>
+                                                </Link>
                                               </div>
                                             </div>
                                           </div>
@@ -573,33 +572,33 @@ function BestSaleNewProducts(props) {
                                                 />
                                               </Link>
                                               <div class="product-action text-center">
-                                                <a
-                                                  href="javascript:void(0)"
+                                                <Link
+                                                  
                                                   title="Shoppingb Cart"
                                                   onClick={() =>
                                                     handleSendProduct(item.id - 1)
                                                   }
                                                 >
                                                   <i class="fas fa-shopping-cart"></i>
-                                                </a>
-                                                <a
-                                                  href="javascript:void(0)"
+                                                </Link>
+                                                <Link
+                                                  
                                                   onClick={() =>
                                                     handleOpen(index)
                                                   }
                                                   title="Quick View"
                                                 >
                                                   <i class="fas fa-eye"></i>
-                                                </a>
-                                                <a
-                                                  href="javascript:void(0)"
+                                                </Link>
+                                                <Link
+                                                  
                                                   data-toggle="tooltip"
                                                   data-placement="right"
                                                   title="Compare"
                                                   class=""
                                                 >
                                                   <i class="fas fa-compress-alt"></i>
-                                                </a>
+                                                </Link>
                                               </div>
                                               <div class="sale-tag">
                                                 {item.new ? (
@@ -628,15 +627,15 @@ function BestSaleNewProducts(props) {
                                                 </div>
                                               </div>
                                               <div class="product-wishlist">
-                                                <a
-                                                  href="javascript:void(0)"
+                                                <Link
+                                                  
                                                   class="  "
                                                 >
                                                   <i
                                                     class="far fa-heart"
                                                     title="Wishlist"
                                                   ></i>
-                                                </a>
+                                                </Link>
                                               </div>
                                             </div>
                                           </div>
@@ -700,33 +699,33 @@ function BestSaleNewProducts(props) {
                                                 />
                                               </Link>
                                               <div class="product-action text-center">
-                                                <a
-                                                  href="javascript:void(0)"
+                                                <Link
+                                                  
                                                   title="Shoppingb Cart"
                                                   onClick={() =>
                                                     handleSendProduct(item.id - 1)
                                                   }
                                                 >
                                                   <i class="fas fa-shopping-cart"></i>
-                                                </a>
-                                                <a
-                                                  href="javascript:void(0)"
+                                                </Link>
+                                                <Link
+                                                  
                                                   onClick={() =>
                                                     handleOpen(index)
                                                   }
                                                   title="Quick View"
                                                 >
                                                   <i class="fas fa-eye"></i>
-                                                </a>
-                                                <a
-                                                  href="javascript:void(0)"
+                                                </Link>
+                                                <Link
+                                                  
                                                   data-toggle="tooltip"
                                                   data-placement="right"
                                                   title="Compare"
                                                   class=""
                                                 >
                                                   <i class="fas fa-compress-alt"></i>
-                                                </a>
+                                                </Link>
                                               </div>
                                               <div class="sale-tag">
                                                 {item.new ? (
@@ -755,15 +754,15 @@ function BestSaleNewProducts(props) {
                                                 </div>
                                               </div>
                                               <div class="product-wishlist">
-                                                <a
-                                                  href="javascript:void(0)"
+                                                <Link
+                                                  
                                                   class="  "
                                                 >
                                                   <i
                                                     class="far fa-heart"
                                                     title="Wishlist"
                                                   ></i>
-                                                </a>
+                                                </Link>
                                               </div>
                                             </div>
                                           </div>
@@ -908,9 +907,9 @@ function BestSaleNewProducts(props) {
                         <div class="product-details ">
                           <div class="details-cat mb-10 d-flex align-items-center justify-content-between">
                             <div>
-                              <a href="javascript:void(0)">
+                              <Link >
                                 {products[modalValue.current].category}
-                              </a>
+                              </Link>
                             </div>
                             <i
                               onClick={handleClose}
@@ -938,13 +937,13 @@ function BestSaleNewProducts(props) {
                               </div>
                               <ul class="shop-link shop-color">
                                 <li>
-                                  <a href="javascript:void(0)">
+                                  <Link >
                                     <span
                                       class={products[
                                         modalValue.current
                                       ].color.toLowerCase()}
                                     ></span>
-                                  </a>
+                                  </Link>
                                 </li>
                               </ul>
                             </div>
@@ -960,7 +959,7 @@ function BestSaleNewProducts(props) {
                                       : " "
                                   }
                                 >
-                                  <a href="javascript:void(0)">L</a>
+                                  <Link >L</Link>
                                 </li>
                                 <li
                                   class={
@@ -969,7 +968,7 @@ function BestSaleNewProducts(props) {
                                       : " "
                                   }
                                 >
-                                  <a href="javascript:void(0)">M</a>
+                                  <Link >M</Link>
                                 </li>
                                 <li
                                   class={
@@ -978,7 +977,7 @@ function BestSaleNewProducts(props) {
                                       : " "
                                   }
                                 >
-                                  <a href="javascript:void(0)">X</a>
+                                  <Link >X</Link>
                                 </li>
                                 <li
                                   class={
@@ -987,7 +986,7 @@ function BestSaleNewProducts(props) {
                                       : " "
                                   }
                                 >
-                                  <a href="javascript:void(0)">XL</a>
+                                  <Link >XL</Link>
                                 </li>
                                 <li
                                   class={
@@ -996,7 +995,7 @@ function BestSaleNewProducts(props) {
                                       : " "
                                   }
                                 >
-                                  <a href="javascript:void(0)">XXL</a>
+                                  <Link >XXL</Link>
                                 </li>
                               </ul>
                             </div>

@@ -1,6 +1,7 @@
 import { useSnackbar } from "notistack";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import {
   addFromLocal, removeFromCart, updateQuantity
 } from "../AddToCart/AddToCartSlice";
@@ -11,24 +12,21 @@ import CartTitle from "../PageTitle/Cart/CartTitle";
 Cart.propTypes = {};
 
 function Cart(props) {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  const dispatch = useDispatch();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const local = localStorage.getItem("productsInCart");
     const localParse = JSON.parse(local);
     if (localParse) {
       const action = addFromLocal(localParse);
       dispatch(action);
     }
-  }, []);
+  },[dispatch]);
 
   const products = useSelector((state) => state.addToCart.products);
   const productsTotal = useSelector((state) => state.addToCart.cartTotal);
-  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
-
-  const dispatch = useDispatch();
+  const { enqueueSnackbar } = useSnackbar();
 
   const sendInfo = (id, stt) => {
     const updateValue = {
@@ -76,12 +74,12 @@ function Cart(props) {
                               return (
                                 <tr>
                                   <td class="product-thumbnail">
-                                    <a href="#">
+                                    <Link href="#">
                                       <img src={item.image} alt="cart" />
-                                    </a>
+                                    </Link>
                                   </td>
                                   <td class="product-name">
-                                    <a href="#">{item.title}</a>
+                                    <Link href="#">{item.title}</Link>
                                   </td>
                                   <td class="product-price">
                                     <span class="amount">${item.price}</span>
@@ -111,12 +109,11 @@ function Cart(props) {
                                     <span class="amount">${item.total}</span>
                                   </td>
                                   <td class="product-remove">
-                                    <a
-                                      href="javascript:void(0)"
+                                    <Link
                                       onClick={() => handleRemoveItem(item.id)}
                                     >
                                       <i class="fa fa-times"></i>
-                                    </a>
+                                    </Link>
                                   </td>
                                 </tr>
                               );
@@ -147,9 +144,9 @@ function Cart(props) {
                           </form>
                         </div>
                         <div class="coupon2">
-                          <a class="btn theme-btn" href="/checkout">
+                          <Link class="btn theme-btn" href="/checkout">
                             Submit
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -166,9 +163,9 @@ function Cart(props) {
                             Total <span>${productsTotal}</span>
                           </li>
                         </ul>
-                        <a class="btn theme-btn" href="/checkout">
+                        <Link class="btn theme-btn" href="/checkout">
                           Proceed to checkout
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>

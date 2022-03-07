@@ -16,7 +16,7 @@ function HomeSubBanner(props) {
                         </div>
                         <div class="col-lg-4 col-md-6">
                             <div class="banner mb-30">
-                                <a href="/shop"><img src="https://vue-plum-chi.vercel.app/img/banner/banner-1/banner2.jpg"/></a>
+                                <a href="/shop"><img src="https://vue-plum-chi.vercel.app/img/banner/banner-1/banner2.jpg" alt="announcement"/></a>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6">
