@@ -1,11 +1,6 @@
-import Backdrop from "@mui/material/Backdrop";
 // Modal Start
 import Box from "@mui/material/Box";
-import Fade from "@mui/material/Fade";
 import Modal from "@mui/material/Modal";
-import { useTheme } from "@mui/material/styles";
-import Tab from "@mui/material/Tab";
-import Tabs from "@mui/material/Tabs";
 import Typography from "@mui/material/Typography";
 import { useSnackbar } from "notistack";
 import PropTypes from "prop-types";
@@ -14,26 +9,11 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   Link
 } from "react-router-dom";
-import SwipeableViews from "react-swipeable-views";
 import ProductApi from "../../../Api/Product/ProductApi";
+import AddToCart from "../../AddToCart/AddToCart";
 import { addToCart } from "../../AddToCart/AddToCartSlice";
 import CheckSearchErro from "../../Search/CheckSearchErro";
 import { newArrFilter } from "../../Showing/ShowingResultSlice";
-
-
-
-const style = {
-  top: "50%",
-  left: "50%",
-  overflow: "scroll",
-  display: "block",
-  height: "100%",
-  "max-width": "70%",
-  width: "100%",
-  margin: "1.75rem auto",
-  border: 0,
-  outline: "none",
-};
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -61,12 +41,6 @@ TabPanel.propTypes = {
   value: PropTypes.number.isRequired,
 };
 
-function a11yProps(index) {
-  return {
-    id: `full-width-tab-${index}`,
-    "aria-controls": `full-width-tabpanel-${index}`,
-  };
-}
 // Modal End
 
 function ProductsGrid2Column(props) {
@@ -151,17 +125,6 @@ function ProductsGrid2Column(props) {
     modalValue.current = index;
   };
   const handleClose = () => setOpen(false);
-
-  const theme = useTheme();
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
-  const handleChangeIndex = (index) => {
-    setValue(index);
-  };
 
   const handleSendProduct = (id) => {
     const product = {
@@ -257,238 +220,242 @@ function ProductsGrid2Column(props) {
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
-        closeAfterTransition
-        BackdropComponent={Backdrop}
-        BackdropProps={{
-          timeout: 500,
-        }}
       >
-        <Fade in={open}>
-          <Box sx={style}>
-            {modalValue.current || modalValue.current === 0 ? (
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-body">
-                    <div className="row-modal">
-                      <div class="col-xl-6 col-lg-6 col-lg-6-fix">
-                        <Box
-                          sx={{
-                            bgcolor: "background.paper",
-                            width: 500,
-                            flexGrow: 1,
-                          }}
-                        >
-                          <SwipeableViews
-                            axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-                            index={value}
-                            onChangeIndex={handleChangeIndex}
-                          >
-                            <TabPanel
-                              value={value}
-                              index={0}
-                              dir={theme.direction}
-                            >
-                              <div class="product-large-img">
-                                <img
-                                  src={products[modalValue.current].image}
-                                  alt=""
-                                />
+        <Box>
+          {modalValue.current || modalValue.current === 0 ? (
+            <>
+              <div class="fade modal-backdrop show"></div>
+              <div
+                role="dialog"
+                aria-modal="true"
+                class="fade modal show"
+                tabindex="-1"
+                style={{
+                  display: "block",
+                  paddingLeft: "16px",
+                  maxHeight: "100%",
+                  overflowY: "auto",
+                }}
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-body">
+                      <div class="row">
+                        <div class="col-xl-6 col-lg-6">
+                          <div class="product-details-img mb-10">
+                            <div id="myTabContentpro" class="tab-content">
+                              <div
+                                role="tabpanel"
+                                aria-hidden="false"
+                                class="fade tab-pane active show"
+                              >
+                                <div class="product-large-img">
+                                  <img
+                                    src={products[modalValue.current].image}
+                                    alt="tum"
+                                  />
+                                </div>
                               </div>
-                            </TabPanel>
-
-                            <TabPanel
-                              value={value}
-                              index={1}
-                              dir={theme.direction}
-                            >
-                              <div class="product-large-img">
-                                <img
-                                  src={products[modalValue.current].navImage}
-                                  alt=""
-                                />
+                              <div
+                                role="tabpanel"
+                                aria-hidden="true"
+                                class="fade tab-pane"
+                              >
+                                <div class="product-large-img">
+                                  <img
+                                    src={products[modalValue.current].navImage}
+                                    alt="tum"
+                                  />
+                                </div>
                               </div>
-                            </TabPanel>
-                            <TabPanel
-                              value={value}
-                              index={2}
-                              dir={theme.direction}
-                            >
-                              <div class="product-large-img">
-                                <img
-                                  src={products[modalValue.current].hoverImage}
-                                  alt=""
-                                />
+                              <div
+                                role="tabpanel"
+                                aria-hidden="true"
+                                class="fade tab-pane"
+                              >
+                                <div class="product-large-img">
+                                  <img
+                                    src={
+                                      products[modalValue.current].hoverImage
+                                    }
+                                    alt="tum"
+                                  />
+                                </div>
                               </div>
-                            </TabPanel>
-                          </SwipeableViews>
-                          <appBar position="static">
-                            <Tabs
-                              value={value}
-                              onChange={handleChange}
-                              indicatorColor="secondary"
-                              textColor="inherit"
-                              variant="fullWidth"
-                              aria-label="full width tabs example"
-                            >
-                              <Tab
-                                label={
-                                  <div>
-                                    <img
-                                      src={products[modalValue.current].image}
-                                      alt=""
-                                    />
-                                  </div>
-                                }
-                                {...a11yProps(0)}
-                              />
-                              <Tab
-                                label={
-                                  <div>
-                                    <img
-                                      src={
-                                        products[modalValue.current].navImage
-                                      }
-                                      alt=""
-                                    />
-                                  </div>
-                                }
-                                {...a11yProps(1)}
-                              />
-                              <Tab
-                                label={
-                                  <div>
-                                    <img
-                                      src={
-                                        products[modalValue.current].hoverImage
-                                      }
-                                      alt=""
-                                    />
-                                  </div>
-                                }
-                                {...a11yProps(2)}
-                              />
-                            </Tabs>
-                          </appBar>
-                        </Box>
-                      </div>
-                      <div class="col-xl-6 col-lg-6">
-                        <div class="product-details ">
-                          <div class="details-cat mb-10 d-flex align-items-center justify-content-between">
-                            <div>
-                              <Link href="#">
-                                {products[modalValue.current].category}
-                              </Link>
                             </div>
-                            <i
-                              onClick={handleClose}
-                              class="fa fa-times modal-icon "
-                            ></i>
                           </div>
-
-                          <h2 class="pro-details-title mb-15 fs-30">
-                            {products[modalValue.current].title}
-                          </h2>
-                          <div class="details-price mb-10 fs-25">
-                            <span>
-                              ${products[modalValue.current].price} USD
-                            </span>
-                            {products[modalValue.current].oldPrice ? (
-                              <span class="old-price">
-                                ${products[modalValue.current].oldPrice} USD
+                          <div class="shop-thumb-tab ">
+                            <ul class="nav" role="tablist">
+                              <li class="nav-item">
+                                <Link
+                                  href="#"
+                                  role="tab"
+                                  data-rb-event-key="tum-0"
+                                  aria-selected="true"
+                                  class="nav-link active"
+                                >
+                                  <img
+                                    src={products[modalValue.current].image}
+                                    alt="Tum"
+                                  />{" "}
+                                </Link>
+                              </li>
+                              <li class="nav-item">
+                                <Link
+                                  href="#"
+                                  role="tab"
+                                  data-rb-event-key="tum-1"
+                                  aria-selected="false"
+                                  class="nav-link"
+                                >
+                                  <img
+                                    src={products[modalValue.current].navImage}
+                                    alt="Tum"
+                                  />{" "}
+                                </Link>
+                              </li>
+                              <li class="nav-item">
+                                <Link
+                                  href="#"
+                                  role="tab"
+                                  data-rb-event-key="tum-2"
+                                  aria-selected="false"
+                                  class="nav-link"
+                                >
+                                  <img
+                                    src={
+                                      products[modalValue.current].hoverImage
+                                    }
+                                    alt="Tum"
+                                  />{" "}
+                                </Link>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6">
+                          <div class="product-details ">
+                            <div class="details-cat mb-10 d-flex align-items-center justify-content-between">
+                              <div>
+                                <Link href="#">
+                                  {products[modalValue.current].category}
+                                </Link>
+                              </div>
+                              <i
+                                class="fa fa-times modal-icon "
+                                onClick={handleClose}
+                              ></i>
+                            </div>
+                            <h2 class="pro-details-title mb-15 fs-30">
+                              {products[modalValue.current].title}
+                            </h2>
+                            <div class="details-price mb-10 fs-25">
+                              <span>
+                                ${products[modalValue.current].price} USD
                               </span>
-                            ) : null}
-                          </div>
-                          <div class="product-variant ">
-                            <div class="product-color variant-item modal-p-15">
-                              <div class="variant-name">
-                                <span>Colors</span>
+                              {products[modalValue.current].oldPrice ? (
+                                <span class="old-price">
+                                  ${products[modalValue.current].oldPrice} USD
+                                </span>
+                              ) : null}
+                            </div>
+                            <div class="product-variant ">
+                              <div class="product-color variant-item modal-p-15">
+                                <div class="variant-name">
+                                  <span>Colors</span>
+                                </div>
+                                <ul class="shop-link shop-color">
+                                  <li>
+                                    <Link href="#">
+                                      <span
+                                        class={products[
+                                          modalValue.current
+                                        ].color.toLowerCase()}
+                                      ></span>
+                                    </Link>
+                                  </li>
+                                </ul>
                               </div>
-                              <ul class="shop-link shop-color">
-                                <li>
-                                  <Link href="#">
-                                    <span
-                                      class={products[
-                                        modalValue.current
-                                      ].color.toLowerCase()}
-                                    ></span>
-                                  </Link>
-                                </li>
-                              </ul>
-                            </div>
-                            <div class="product-size variant-item modal-p-15">
-                              <div class="variant-name">
-                                <span>size</span>
+                              <div class="product-size variant-item modal-p-15">
+                                <div class="variant-name">
+                                  <span>size</span>
+                                </div>
+                                <ul class="shop-link shop-size">
+                                  <li
+                                    class={
+                                      products[modalValue.current].size === "l"
+                                        ? "active"
+                                        : " "
+                                    }
+                                  >
+                                    <Link href="#">L</Link>
+                                  </li>
+                                  <li
+                                    class={
+                                      products[modalValue.current].size === "m"
+                                        ? "active"
+                                        : " "
+                                    }
+                                  >
+                                    <Link href="#">M</Link>
+                                  </li>
+                                  <li
+                                    class={
+                                      products[modalValue.current].size === "x"
+                                        ? "active"
+                                        : " "
+                                    }
+                                  >
+                                    <Link href="#">X</Link>
+                                  </li>
+                                  <li
+                                    class={
+                                      products[modalValue.current].size === "xl"
+                                        ? "active"
+                                        : " "
+                                    }
+                                  >
+                                    <Link href="#">XL</Link>
+                                  </li>
+                                  <li
+                                    class={
+                                      products[modalValue.current].size ===
+                                      "xxl"
+                                        ? "active"
+                                        : " "
+                                    }
+                                  >
+                                    <Link href="#">XXL</Link>
+                                  </li>
+                                </ul>
                               </div>
-                              <ul class="shop-link shop-size">
-                                <li
-                                  class={
-                                    products[modalValue.current].size === "l"
-                                      ? "active"
-                                      : " "
-                                  }
-                                >
-                                  <Link href="#">L</Link>
-                                </li>
-                                <li
-                                  class={
-                                    products[modalValue.current].size === "m"
-                                      ? "active"
-                                      : " "
-                                  }
-                                >
-                                  <Link href="#">M</Link>
-                                </li>
-                                <li
-                                  class={
-                                    products[modalValue.current].size === "x"
-                                      ? "active"
-                                      : " "
-                                  }
-                                >
-                                  <Link href="#">X</Link>
-                                </li>
-                                <li
-                                  class={
-                                    products[modalValue.current].size === "xl"
-                                      ? "active"
-                                      : " "
-                                  }
-                                >
-                                  <Link href="#">XL</Link>
-                                </li>
-                                <li
-                                  class={
-                                    products[modalValue.current].size === "xxl"
-                                      ? "active"
-                                      : " "
-                                  }
-                                >
-                                  <Link href="#">XXL</Link>
-                                </li>
-                              </ul>
+                              <div class="product-desc variant-item modal-p-15">
+                                <p>
+                                  {products[modalValue.current].description}
+                                </p>
+                              </div>
+                              <div class="product-info-list variant-item modal-p-15">
+                                <ul>
+                                  <li class="text-capitalize">
+                                    <span>Brands:</span>{" "}
+                                    {products[modalValue.current].brand}
+                                  </li>
+                                  <li>
+                                    <span>Product Code:</span> f3
+                                  </li>
+                                  <li>
+                                    <span>Reward Points:</span> 100
+                                  </li>
+                                  <li>
+                                    <span>Stock:</span>{" "}
+                                    <span class="in-stock">Out Of Stock</span>
+                                  </li>
+                                </ul>
+                              </div>
+                              <AddToCart
+                                productInfo={products[modalValue.current]}
+                              />
                             </div>
-                            <div class="product-desc variant-item modal-p-15">
-                              <p>{products[modalValue.current].description}</p>
-                            </div>
-                            <div class="product-info-list variant-item modal-p-15">
-                              <ul>
-                                <li class="text-capitalize">
-                                  <span>Brands:</span>{" "}
-                                  {products[modalValue.current].brand}
-                                </li>
-                                <li>
-                                  <span>Product Code:</span> f3
-                                </li>
-                                <li>
-                                  <span>Reward Points:</span> 100
-                                </li>
-                                <li>
-                                  <span>Stock:</span>{" "}
-                                  <span class="in-stock">Out Of Stock</span>
-                                </li>
-                              </ul>
-                            </div>
-                            <addToCart productInfo = {products[modalValue.current]} />
                           </div>
                         </div>
                       </div>
@@ -496,9 +463,9 @@ function ProductsGrid2Column(props) {
                   </div>
                 </div>
               </div>
-            ) : null}
-          </Box>
-        </Fade>
+            </>
+          ) : null}
+        </Box>
       </Modal>
     </>
   );
