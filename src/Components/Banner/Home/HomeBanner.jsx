@@ -41,7 +41,7 @@ function HomeBanner(props) {
                                 </div>
                             </div>
                         </div>
-                        <div data-index="1" class={active ? "slick-slide slick-active slick-current" : "slick-slide" } tabindex="-1" aria-hidden="false" style={active ? {"outline":"none","width":"calc(100%/5)","position":"relative","left":"-20%","opacity":"1","transition":"opacity 500ms linear 0s, visibility 500ms linear 0s"} : {"outline":"none","width":"calc(100%/5)","position":"relative","left":"-1519px","opacity":"0","transition":"opacity 500ms linear 0s, visibility 500ms linear 0s"}}>
+                        <div data-index="1" class={active ? "slick-slide slick-active slick-current" : "slick-slide" } tabindex="-1" aria-hidden="false" style={active ? {"outline":"none","width":"calc(100%/5)","position":"relative","left":"-20%","opacity":"1","transition":"opacity 500ms linear 0s, visibility 500ms linear 0s"} : {"outline":"none","width":"calc(100%/5)","position":"relative","left":"-20%","opacity":"0","transition":"opacity 500ms linear 0s, visibility 500ms linear 0s"}}>
                             <div>
                                 <div class=" single-slider slide-1-style slider-1-1 slide-height d-flex align-items-center" data-background="https://vue-plum-chi.vercel.app/img/slider/slide1.jpg" tabindex="-1" style={{"width":"100%","display":"inline-block","backgroundImage":"url(https://vue-plum-chi.vercel.app/img/slider/slide1-1.jpg)"}}>
                                     <div class="shape-title wow bounce-animate animated" style={{"zIndex": "unset", "visibility": "visible"}}>

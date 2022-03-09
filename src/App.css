@@ -25048,3 +25048,107 @@ html {
     color: #fff
 }
 /* Copy trên mạng */
+
+/* Responsive slider index 5 */
+@media (max-width:575px) {
+    .slick-track-index-5-ltk {
+        width: 664%;
+    }
+
+    .slick-slide-index-51-ltk {
+        width: calc(100%/6);
+        left: 0px;
+    }
+    
+    .slick-slide-index-52-ltk {
+        width: calc(100%/6);
+        left: calc(-100%/6);
+    }
+
+    .slick-slide-index-53-ltk {
+        width: calc(100%/6);
+        left: calc(-100%/3);
+    }
+}
+
+@media (min-width:576px) {
+    .slick-track-index-5-ltk {
+        width: 3570px;
+    }
+
+    .slick-slide-index-51-ltk {
+        width: 510px;
+        left: 0px;
+    }
+    
+    .slick-slide-index-52-ltk {
+        width: 510px;
+        left: -510px;
+    }
+
+    .slick-slide-index-53-ltk {
+        width: 510px;
+        left: -1020px;
+    }
+}
+
+@media (min-width:768px) {
+    .slick-track-index-5-ltk {
+        width: 4830px;
+    }
+
+    .slick-slide-index-51-ltk {
+        width: 690px;
+        left: 0px;
+    }
+    
+    .slick-slide-index-52-ltk {
+        width: 690px;
+        left: -690px;
+    }
+
+    .slick-slide-index-53-ltk {
+        width: 690px;
+        left: -1380px;
+    }
+}
+
+@media (min-width:992px) {
+    .slick-track-index-5-ltk {
+        width: 6510px;
+    }
+
+    .slick-slide-index-51-ltk {
+        width: 930px;
+    }
+
+    .slick-slide-index-52-ltk {
+        width: 930px;
+        left: -930px;
+    }
+
+    .slick-slide-index-53-ltk {
+        width: 930px;
+        left: -1860px;
+    }
+}
+
+@media (min-width:1200px) {
+    .slick-track-index-5-ltk {
+        width: 8190px;
+    }
+
+    .slick-slide-index-51-ltk {
+        width: 1170px;
+    }
+
+    .slick-slide-index-52-ltk {
+        width: 1170px;
+        left: -1170px;
+    }
+
+    .slick-slide-index-53-ltk {
+        width: 1170px;
+        left: -2340px;
+    }
+}
