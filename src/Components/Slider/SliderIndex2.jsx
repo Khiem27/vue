@@ -4,7 +4,6 @@ SliderIndex2.propTypes = {};
 
 function SliderIndex2(props) {
   const [active, setActive] = useState(1);
-  const [width, setWidth] = useState();
   const handleActive = (action) => {
     if (action === "next" && active > 2) {
       setActive(1);
