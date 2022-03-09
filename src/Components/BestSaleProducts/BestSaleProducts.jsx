@@ -1,38 +1,15 @@
-import AppBar from "@mui/material/AppBar";
-import Backdrop from "@mui/material/Backdrop";
 // Modal Start
 import Box from "@mui/material/Box";
-import Fade from "@mui/material/Fade";
 import Modal from "@mui/material/Modal";
-import { useTheme } from "@mui/material/styles";
-import Tab from "@mui/material/Tab";
-import Tabs from "@mui/material/Tabs";
 import Typography from "@mui/material/Typography";
 import { useSnackbar } from "notistack";
 import PropTypes from "prop-types";
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
-import {
-  Link
-} from "react-router-dom";
-import SwipeableViews from "react-swipeable-views";
+import { Link } from "react-router-dom";
 import ProductApi from "../../Api/Product/ProductApi";
 import AddToCart from "../AddToCart/AddToCart";
 import { addToCart } from "../AddToCart/AddToCartSlice";
-
-const style = {
-  top: "50%",
-  left: "50%",
-  overflow: "scroll",
-  display: "block",
-  height: "100%",
-  "max-width": "70%",
-  width: "100%",
-  margin: "1.75rem auto",
-  border: 0,
-  outline: "none",
-};
-
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -59,31 +36,25 @@ TabPanel.propTypes = {
   value: PropTypes.number.isRequired,
 };
 
-function a11yProps(index) {
-  return {
-    id: `full-width-tab-${index}`,
-    "aria-controls": `full-width-tabpanel-${index}`,
-  };
-}
 // Modal End
 
-function BestSaleNewProducts(props) {
+function BestSaleProducts(props) {
   const { enqueueSnackbar } = useSnackbar();
   const dispatch = useDispatch();
   const [idTab, setIdTab] = useState(1);
   const [products, setProducts] = useState(null);
-  const [trans, setTrans] = useState(-1312);
+  const [trans, setTrans] = useState(-4);
 
   const [mens, setMens] = useState([]);
   const [jewelery, setJewelery] = useState([]);
   const [electronics, setElectronics] = useState([]);
+  const [widthE, setWidthE] = useState(1);
 
   useEffect(() => {
     const getAllProducts = async () => {
       const allProducts = await ProductApi.getAll();
       const getProducts = allProducts.data;
       setProducts(getProducts);
-
       setMens(getProducts.filter((item) => item.category === "men's clothing"));
       setJewelery(getProducts.filter((item) => item.category === "jewelery"));
       setElectronics(
@@ -91,25 +62,37 @@ function BestSaleNewProducts(props) {
       );
     };
     getAllProducts();
-  }, []);
+    const cc = document.querySelector(".slick-list-1");
+    let width = cc.clientWidth;
+    if (width <= 670) {
+      setWidthE(width);
+    } else if (width <= 782) {
+      setWidthE(width / 2);
+    } else if (width <= 934) {
+      setWidthE(width / 3);
+    } else if (width > 934) {
+      setWidthE(width / 4);
+    }
+    
+  }, [trans]);
 
   const handleActiveTabs = (id, event) => {
     setIdTab(id);
   };
 
   const handleTrans = (action) => {
-    if (trans === -5248) {
-      setTrans(0);
+    if (trans === -1) {
+      setTrans(-15);
     }
 
-    if (trans === 0) {
-      setTrans(-5248);
+    if (trans === -15) {
+      setTrans(-1);
     }
 
-    if (trans !== -5248 && action === "next") {
-      setTrans(trans - 328);
-    } else if (trans !== 0 && action === "prev") {
-      setTrans(trans + 328);
+    if (trans !== -15 && action === "next") {
+      setTrans(trans - 1);
+    } else if (trans !== -1 && action === "prev") {
+      setTrans(trans + 1);
     }
     console.log(trans);
   };
@@ -122,17 +105,6 @@ function BestSaleNewProducts(props) {
     modalValue.current = index;
   };
   const handleClose = () => setOpen(false);
-
-  const theme = useTheme();
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
-  const handleChangeIndex = (index) => {
-    setValue(index);
-  };
 
   const handleSendProduct = (id) => {
     const product = {
@@ -181,7 +153,6 @@ function BestSaleNewProducts(props) {
                       role="tab"
                       aria-controls="home"
                       aria-selected="true"
-                      
                       data-rb-event-key="all"
                       class={
                         idTab === 1
@@ -200,7 +171,6 @@ function BestSaleNewProducts(props) {
                       role="tab"
                       aria-controls="profile"
                       aria-selected="false"
-                      
                       data-rb-event-key="furniture"
                       class={
                         idTab === 2
@@ -219,7 +189,6 @@ function BestSaleNewProducts(props) {
                       role="tab"
                       aria-controls="contact"
                       aria-selected="false"
-                      
                       data-rb-event-key="gent"
                       class={
                         idTab === 3
@@ -238,7 +207,6 @@ function BestSaleNewProducts(props) {
                       role="tab"
                       aria-controls="contact"
                       aria-selected="false"
-                      
                       data-rb-event-key="ladies"
                       class={
                         idTab === 4
@@ -274,13 +242,14 @@ function BestSaleNewProducts(props) {
                         >
                           <i class="fas fa-arrow-left"></i>
                         </div>
-                        <div className="slick-list">
+                        <div className="slick-list slick-list-1">
                           <div
-                            className="slick-track"
+                            className="slick-track slick-track-brand-new-products"
                             style={{
-                              width: "11152px",
                               opacity: "1",
-                              transform: `translate3d(${trans}px, 0px, 0px)`,
+                              transform: `translate3d(${
+                                trans * widthE
+                              }px, 0px, 0px)`,
                               transition: "500ms ease 0s",
                             }}
                           >
@@ -289,13 +258,12 @@ function BestSaleNewProducts(props) {
                                   return (
                                     <div
                                       data-index="0"
-                                      class="slick-slide slick-active slick-current"
+                                      class="slick-slide slick-active slick-current slick-slide-brand-new-products"
                                       key={index}
                                       tabindex="-1"
                                       aria-hidden="false"
                                       style={{
                                         outline: "none",
-                                        width: "328px",
                                       }}
                                     >
                                       <div>
@@ -314,7 +282,6 @@ function BestSaleNewProducts(props) {
                                             </Link>
                                             <div class="product-action text-center">
                                               <Link
-                                                
                                                 title="Shoppingb Cart"
                                                 onClick={() =>
                                                   handleSendProduct(item.id - 1)
@@ -323,7 +290,6 @@ function BestSaleNewProducts(props) {
                                                 <i class="fas fa-shopping-cart"></i>
                                               </Link>
                                               <Link
-                                                
                                                 onClick={() =>
                                                   handleOpen(index)
                                                 }
@@ -332,7 +298,6 @@ function BestSaleNewProducts(props) {
                                                 <i class="fas fa-eye"></i>
                                               </Link>
                                               <Link
-                                                
                                                 data-toggle="tooltip"
                                                 data-placement="right"
                                                 title="Compare"
@@ -368,10 +333,7 @@ function BestSaleNewProducts(props) {
                                               </div>
                                             </div>
                                             <div class="product-wishlist">
-                                              <Link
-                                                
-                                                class="  "
-                                              >
+                                              <Link class="  ">
                                                 <i
                                                   class="far fa-heart"
                                                   title="Wishlist"
@@ -410,11 +372,10 @@ function BestSaleNewProducts(props) {
                         <div class="slick-slider slick-initialized">
                           <div className="slick-list">
                             <div
-                              className="slick-track"
+                              className="slick-track slick-track-brand-new-products"
                               style={{
-                                width: "11152px",
                                 opacity: "1",
-                                transform: `translate3d(0 px, 0px, 0px)`,
+                                transform: `translate3d(0px, 0px, 0px)`,
                               }}
                             >
                               {mens
@@ -422,12 +383,11 @@ function BestSaleNewProducts(props) {
                                     return (
                                       <div
                                         data-index="0"
-                                        class="slick-slide slick-active slick-current"
+                                        class="slick-slide slick-active slick-current slick-slide-brand-new-products"
                                         tabindex="-1"
                                         aria-hidden="false"
                                         style={{
                                           outline: "none",
-                                          width: "328px",
                                         }}
                                       >
                                         <div>
@@ -446,16 +406,16 @@ function BestSaleNewProducts(props) {
                                               </Link>
                                               <div class="product-action text-center">
                                                 <Link
-                                                  
                                                   title="Shoppingb Cart"
                                                   onClick={() =>
-                                                    handleSendProduct(item.id - 1)
+                                                    handleSendProduct(
+                                                      item.id - 1
+                                                    )
                                                   }
                                                 >
                                                   <i class="fas fa-shopping-cart"></i>
                                                 </Link>
                                                 <Link
-                                                  
                                                   onClick={() =>
                                                     handleOpen(index)
                                                   }
@@ -464,7 +424,6 @@ function BestSaleNewProducts(props) {
                                                   <i class="fas fa-eye"></i>
                                                 </Link>
                                                 <Link
-                                                  
                                                   data-toggle="tooltip"
                                                   data-placement="right"
                                                   title="Compare"
@@ -500,10 +459,7 @@ function BestSaleNewProducts(props) {
                                                 </div>
                                               </div>
                                               <div class="product-wishlist">
-                                                <Link
-                                                  
-                                                  class="  "
-                                                >
+                                                <Link class="  ">
                                                   <i
                                                     class="far fa-heart"
                                                     title="Wishlist"
@@ -537,9 +493,8 @@ function BestSaleNewProducts(props) {
                         <div class="slick-slider slick-initialized">
                           <div className="slick-list">
                             <div
-                              className="slick-track"
+                              className="slick-track slick-track-brand-new-products"
                               style={{
-                                width: "11152px",
                                 opacity: "1",
                                 transform: `translate3d(0 px, 0px, 0px)`,
                               }}
@@ -549,12 +504,11 @@ function BestSaleNewProducts(props) {
                                     return (
                                       <div
                                         data-index="0"
-                                        class="slick-slide slick-active slick-current"
+                                        class="slick-slide slick-active slick-current slick-slide-brand-new-products"
                                         tabindex="-1"
                                         aria-hidden="false"
                                         style={{
                                           outline: "none",
-                                          width: "328px",
                                         }}
                                       >
                                         <div>
@@ -573,16 +527,16 @@ function BestSaleNewProducts(props) {
                                               </Link>
                                               <div class="product-action text-center">
                                                 <Link
-                                                  
                                                   title="Shoppingb Cart"
                                                   onClick={() =>
-                                                    handleSendProduct(item.id - 1)
+                                                    handleSendProduct(
+                                                      item.id - 1
+                                                    )
                                                   }
                                                 >
                                                   <i class="fas fa-shopping-cart"></i>
                                                 </Link>
                                                 <Link
-                                                  
                                                   onClick={() =>
                                                     handleOpen(index)
                                                   }
@@ -591,7 +545,6 @@ function BestSaleNewProducts(props) {
                                                   <i class="fas fa-eye"></i>
                                                 </Link>
                                                 <Link
-                                                  
                                                   data-toggle="tooltip"
                                                   data-placement="right"
                                                   title="Compare"
@@ -627,10 +580,7 @@ function BestSaleNewProducts(props) {
                                                 </div>
                                               </div>
                                               <div class="product-wishlist">
-                                                <Link
-                                                  
-                                                  class="  "
-                                                >
+                                                <Link class="  ">
                                                   <i
                                                     class="far fa-heart"
                                                     title="Wishlist"
@@ -664,9 +614,8 @@ function BestSaleNewProducts(props) {
                         <div class="slick-slider slick-initialized">
                           <div className="slick-list">
                             <div
-                              className="slick-track"
+                              className="slick-track slick-track-brand-new-products"
                               style={{
-                                width: "11152px",
                                 opacity: "1",
                                 transform: `translate3d(0 px, 0px, 0px)`,
                               }}
@@ -676,12 +625,11 @@ function BestSaleNewProducts(props) {
                                     return (
                                       <div
                                         data-index="0"
-                                        class="slick-slide slick-active slick-current"
+                                        class="slick-slide slick-active slick-current slick-slide-brand-new-products"
                                         tabindex="-1"
                                         aria-hidden="false"
                                         style={{
                                           outline: "none",
-                                          width: "328px",
                                         }}
                                       >
                                         <div>
@@ -700,16 +648,16 @@ function BestSaleNewProducts(props) {
                                               </Link>
                                               <div class="product-action text-center">
                                                 <Link
-                                                  
                                                   title="Shoppingb Cart"
                                                   onClick={() =>
-                                                    handleSendProduct(item.id - 1)
+                                                    handleSendProduct(
+                                                      item.id - 1
+                                                    )
                                                   }
                                                 >
                                                   <i class="fas fa-shopping-cart"></i>
                                                 </Link>
                                                 <Link
-                                                  
                                                   onClick={() =>
                                                     handleOpen(index)
                                                   }
@@ -718,7 +666,6 @@ function BestSaleNewProducts(props) {
                                                   <i class="fas fa-eye"></i>
                                                 </Link>
                                                 <Link
-                                                  
                                                   data-toggle="tooltip"
                                                   data-placement="right"
                                                   title="Compare"
@@ -754,10 +701,7 @@ function BestSaleNewProducts(props) {
                                                 </div>
                                               </div>
                                               <div class="product-wishlist">
-                                                <Link
-                                                  
-                                                  class="  "
-                                                >
+                                                <Link class="  ">
                                                   <i
                                                     class="far fa-heart"
                                                     title="Wishlist"
@@ -789,238 +733,242 @@ function BestSaleNewProducts(props) {
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
-        closeAfterTransition
-        BackdropComponent={Backdrop}
-        BackdropProps={{
-          timeout: 500,
-        }}
       >
-        <Fade in={open}>
-          <Box sx={style}>
-            {modalValue.current || modalValue.current === 0 ? (
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-body">
-                    <div className="row-modal">
-                      <div class="col-xl-6 col-lg-6 col-lg-6-fix">
-                        <Box
-                          sx={{
-                            bgcolor: "background.paper",
-                            width: 500,
-                            flexGrow: 1,
-                          }}
-                        >
-                          <SwipeableViews
-                            axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-                            index={value}
-                            onChangeIndex={handleChangeIndex}
-                          >
-                            <TabPanel
-                              value={value}
-                              index={0}
-                              dir={theme.direction}
-                            >
-                              <div class="product-large-img">
-                                <img
-                                  src={products[modalValue.current].image}
-                                  alt=""
-                                />
+        <Box>
+          {modalValue.current || modalValue.current === 0 ? (
+            <>
+              <div class="fade modal-backdrop show"></div>
+              <div
+                role="dialog"
+                aria-modal="true"
+                class="fade modal show"
+                tabindex="-1"
+                style={{
+                  display: "block",
+                  paddingLeft: "16px",
+                  maxHeight: "100%",
+                  overflowY: "auto",
+                }}
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-body">
+                      <div class="row">
+                        <div class="col-xl-6 col-lg-6">
+                          <div class="product-details-img mb-10">
+                            <div id="myTabContentpro" class="tab-content">
+                              <div
+                                role="tabpanel"
+                                aria-hidden="false"
+                                class="fade tab-pane active show"
+                              >
+                                <div class="product-large-img">
+                                  <img
+                                    src={products[modalValue.current].image}
+                                    alt="tum"
+                                  />
+                                </div>
                               </div>
-                            </TabPanel>
-
-                            <TabPanel
-                              value={value}
-                              index={1}
-                              dir={theme.direction}
-                            >
-                              <div class="product-large-img">
-                                <img
-                                  src={products[modalValue.current].navImage}
-                                  alt=""
-                                />
+                              <div
+                                role="tabpanel"
+                                aria-hidden="true"
+                                class="fade tab-pane"
+                              >
+                                <div class="product-large-img">
+                                  <img
+                                    src={products[modalValue.current].navImage}
+                                    alt="tum"
+                                  />
+                                </div>
                               </div>
-                            </TabPanel>
-                            <TabPanel
-                              value={value}
-                              index={2}
-                              dir={theme.direction}
-                            >
-                              <div class="product-large-img">
-                                <img
-                                  src={products[modalValue.current].hoverImage}
-                                  alt=""
-                                />
+                              <div
+                                role="tabpanel"
+                                aria-hidden="true"
+                                class="fade tab-pane"
+                              >
+                                <div class="product-large-img">
+                                  <img
+                                    src={
+                                      products[modalValue.current].hoverImage
+                                    }
+                                    alt="tum"
+                                  />
+                                </div>
                               </div>
-                            </TabPanel>
-                          </SwipeableViews>
-                          <AppBar position="static">
-                            <Tabs
-                              value={value}
-                              onChange={handleChange}
-                              indicatorColor="secondary"
-                              textColor="inherit"
-                              variant="fullWidth"
-                              aria-label="full width tabs example"
-                            >
-                              <Tab
-                                label={
-                                  <div>
-                                    <img
-                                      src={products[modalValue.current].image}
-                                      alt=""
-                                    />
-                                  </div>
-                                }
-                                {...a11yProps(0)}
-                              />
-                              <Tab
-                                label={
-                                  <div>
-                                    <img
-                                      src={
-                                        products[modalValue.current].navImage
-                                      }
-                                      alt=""
-                                    />
-                                  </div>
-                                }
-                                {...a11yProps(1)}
-                              />
-                              <Tab
-                                label={
-                                  <div>
-                                    <img
-                                      src={
-                                        products[modalValue.current].hoverImage
-                                      }
-                                      alt=""
-                                    />
-                                  </div>
-                                }
-                                {...a11yProps(2)}
-                              />
-                            </Tabs>
-                          </AppBar>
-                        </Box>
-                      </div>
-                      <div class="col-xl-6 col-lg-6">
-                        <div class="product-details ">
-                          <div class="details-cat mb-10 d-flex align-items-center justify-content-between">
-                            <div>
-                              <Link >
-                                {products[modalValue.current].category}
-                              </Link>
                             </div>
-                            <i
-                              onClick={handleClose}
-                              class="fa fa-times modal-icon "
-                            ></i>
                           </div>
-
-                          <h2 class="pro-details-title mb-15 fs-30">
-                            {products[modalValue.current].title}
-                          </h2>
-                          <div class="details-price mb-10 fs-25">
-                            <span>
-                              ${products[modalValue.current].price} USD
-                            </span>
-                            {products[modalValue.current].oldPrice ? (
-                              <span class="old-price">
-                                ${products[modalValue.current].oldPrice} USD
+                          <div class="shop-thumb-tab ">
+                            <ul class="nav" role="tablist">
+                              <li class="nav-item">
+                                <Link
+                                  href="#"
+                                  role="tab"
+                                  data-rb-event-key="tum-0"
+                                  aria-selected="true"
+                                  class="nav-link active"
+                                >
+                                  <img
+                                    src={products[modalValue.current].image}
+                                    alt="Tum"
+                                  />{" "}
+                                </Link>
+                              </li>
+                              <li class="nav-item">
+                                <Link
+                                  href="#"
+                                  role="tab"
+                                  data-rb-event-key="tum-1"
+                                  aria-selected="false"
+                                  class="nav-link"
+                                >
+                                  <img
+                                    src={products[modalValue.current].navImage}
+                                    alt="Tum"
+                                  />{" "}
+                                </Link>
+                              </li>
+                              <li class="nav-item">
+                                <Link
+                                  href="#"
+                                  role="tab"
+                                  data-rb-event-key="tum-2"
+                                  aria-selected="false"
+                                  class="nav-link"
+                                >
+                                  <img
+                                    src={
+                                      products[modalValue.current].hoverImage
+                                    }
+                                    alt="Tum"
+                                  />{" "}
+                                </Link>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6">
+                          <div class="product-details ">
+                            <div class="details-cat mb-10 d-flex align-items-center justify-content-between">
+                              <div>
+                                <Link href="#">
+                                  {products[modalValue.current].category}
+                                </Link>
+                              </div>
+                              <i
+                                class="fa fa-times modal-icon "
+                                onClick={handleClose}
+                              ></i>
+                            </div>
+                            <h2 class="pro-details-title mb-15 fs-30">
+                              {products[modalValue.current].title}
+                            </h2>
+                            <div class="details-price mb-10 fs-25">
+                              <span>
+                                ${products[modalValue.current].price} USD
                               </span>
-                            ) : null}
-                          </div>
-                          <div class="product-variant ">
-                            <div class="product-color variant-item modal-p-15">
-                              <div class="variant-name">
-                                <span>Colors</span>
+                              {products[modalValue.current].oldPrice ? (
+                                <span class="old-price">
+                                  ${products[modalValue.current].oldPrice} USD
+                                </span>
+                              ) : null}
+                            </div>
+                            <div class="product-variant ">
+                              <div class="product-color variant-item modal-p-15">
+                                <div class="variant-name">
+                                  <span>Colors</span>
+                                </div>
+                                <ul class="shop-link shop-color">
+                                  <li>
+                                    <Link href="#">
+                                      <span
+                                        class={products[
+                                          modalValue.current
+                                        ].color.toLowerCase()}
+                                      ></span>
+                                    </Link>
+                                  </li>
+                                </ul>
                               </div>
-                              <ul class="shop-link shop-color">
-                                <li>
-                                  <Link >
-                                    <span
-                                      class={products[
-                                        modalValue.current
-                                      ].color.toLowerCase()}
-                                    ></span>
-                                  </Link>
-                                </li>
-                              </ul>
-                            </div>
-                            <div class="product-size variant-item modal-p-15">
-                              <div class="variant-name">
-                                <span>size</span>
+                              <div class="product-size variant-item modal-p-15">
+                                <div class="variant-name">
+                                  <span>size</span>
+                                </div>
+                                <ul class="shop-link shop-size">
+                                  <li
+                                    class={
+                                      products[modalValue.current].size === "l"
+                                        ? "active"
+                                        : " "
+                                    }
+                                  >
+                                    <Link href="#">L</Link>
+                                  </li>
+                                  <li
+                                    class={
+                                      products[modalValue.current].size === "m"
+                                        ? "active"
+                                        : " "
+                                    }
+                                  >
+                                    <Link href="#">M</Link>
+                                  </li>
+                                  <li
+                                    class={
+                                      products[modalValue.current].size === "x"
+                                        ? "active"
+                                        : " "
+                                    }
+                                  >
+                                    <Link href="#">X</Link>
+                                  </li>
+                                  <li
+                                    class={
+                                      products[modalValue.current].size === "xl"
+                                        ? "active"
+                                        : " "
+                                    }
+                                  >
+                                    <Link href="#">XL</Link>
+                                  </li>
+                                  <li
+                                    class={
+                                      products[modalValue.current].size ===
+                                      "xxl"
+                                        ? "active"
+                                        : " "
+                                    }
+                                  >
+                                    <Link href="#">XXL</Link>
+                                  </li>
+                                </ul>
                               </div>
-                              <ul class="shop-link shop-size">
-                                <li
-                                  class={
-                                    products[modalValue.current].size === "l"
-                                      ? "active"
-                                      : " "
-                                  }
-                                >
-                                  <Link >L</Link>
-                                </li>
-                                <li
-                                  class={
-                                    products[modalValue.current].size === "m"
-                                      ? "active"
-                                      : " "
-                                  }
-                                >
-                                  <Link >M</Link>
-                                </li>
-                                <li
-                                  class={
-                                    products[modalValue.current].size === "x"
-                                      ? "active"
-                                      : " "
-                                  }
-                                >
-                                  <Link >X</Link>
-                                </li>
-                                <li
-                                  class={
-                                    products[modalValue.current].size === "xl"
-                                      ? "active"
-                                      : " "
-                                  }
-                                >
-                                  <Link >XL</Link>
-                                </li>
-                                <li
-                                  class={
-                                    products[modalValue.current].size === "xxl"
-                                      ? "active"
-                                      : " "
-                                  }
-                                >
-                                  <Link >XXL</Link>
-                                </li>
-                              </ul>
+                              <div class="product-desc variant-item modal-p-15">
+                                <p>
+                                  {products[modalValue.current].description}
+                                </p>
+                              </div>
+                              <div class="product-info-list variant-item modal-p-15">
+                                <ul>
+                                  <li class="text-capitalize">
+                                    <span>Brands:</span>{" "}
+                                    {products[modalValue.current].brand}
+                                  </li>
+                                  <li>
+                                    <span>Product Code:</span> f3
+                                  </li>
+                                  <li>
+                                    <span>Reward Points:</span> 100
+                                  </li>
+                                  <li>
+                                    <span>Stock:</span>{" "}
+                                    <span class="in-stock">Out Of Stock</span>
+                                  </li>
+                                </ul>
+                              </div>
+                              <AddToCart
+                                productInfo={products[modalValue.current]}
+                              />
                             </div>
-                            <div class="product-desc variant-item modal-p-15">
-                              <p>{products[modalValue.current].description}</p>
-                            </div>
-                            <div class="product-info-list variant-item modal-p-15">
-                              <ul>
-                                <li class="text-capitalize">
-                                  <span>Brands:</span>{" "}
-                                  {products[modalValue.current].brand}
-                                </li>
-                                <li>
-                                  <span>Product Code:</span> f3
-                                </li>
-                                <li>
-                                  <span>Reward Points:</span> 100
-                                </li>
-                                <li>
-                                  <span>Stock:</span>{" "}
-                                  <span class="in-stock">Out Of Stock</span>
-                                </li>
-                              </ul>
-                            </div>
-                           <AddToCart productInfo = {products[modalValue.current]}/>
                           </div>
                         </div>
                       </div>
@@ -1028,12 +976,12 @@ function BestSaleNewProducts(props) {
                   </div>
                 </div>
               </div>
-            ) : null}
-          </Box>
-        </Fade>
+            </>
+          ) : null}
+        </Box>
       </Modal>
     </>
   );
 }
 
-export default BestSaleNewProducts;
+export default BestSaleProducts;
