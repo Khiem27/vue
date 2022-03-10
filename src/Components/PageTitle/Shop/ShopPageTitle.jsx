@@ -16,7 +16,7 @@ function ShopPageTitle(props) {
                         <div className="breadcrumb-text text-center">
                             <h1 className="">Our Shop</h1>
                             <ul className="breadcrumb-menu">
-                                <li><Link to="/">home</Link></li>
+                                <li><Link to="#">home</Link></li>
                                 <li><span>Shop</span></li>
                             </ul>
                         </div>

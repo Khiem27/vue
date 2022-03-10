@@ -22,7 +22,7 @@ function Subcribe(props) {
                         <div className="col-xl-7">
                             <div className="subscribe fix">
                                 <div className="subscribe-form mb-50">
-                                    <form action="#"><input type="text" placeholder="Enter your email address"/><button className="btn theme-btn" type="submit">subscribe now</button></form>
+                                    <form ><input type="text" placeholder="Enter your email address"/><button className="btn theme-btn" type="button">subscribe now</button></form>
                                 </div>
                             </div>
                         </div>

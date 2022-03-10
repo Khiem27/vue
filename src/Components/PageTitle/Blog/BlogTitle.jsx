@@ -16,7 +16,7 @@ function BlogTitle(props) {
                         <div className="breadcrumb-text text-center">
                             <h1 className="">Blog</h1>
                             <ul className="breadcrumb-menu">
-                                <li><Link to="/">home</Link></li>
+                                <li><Link to="#">home</Link></li>
                                 <li><span>Blog</span></li>
                             </ul>
                         </div>

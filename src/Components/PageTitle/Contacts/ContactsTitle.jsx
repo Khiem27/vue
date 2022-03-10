@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  Link
+    Link
 } from "react-router-dom";
 
 ContactsTitle.propTypes = {};
@@ -21,7 +21,7 @@ function ContactsTitle(props) {
               <h1 className="">Contacts</h1>
               <ul className="breadcrumb-menu">
                 <li>
-                  <Link to="/">home</Link>
+                  <Link to="#">home</Link>
                 </li>
                 <li>
                   <span>Cart</span>

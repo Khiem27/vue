@@ -150,7 +150,7 @@ function BestSaleProducts(props) {
                       id="home-tab"
                       data-toggle="tab"
                       role="tab"
-                      to="/"
+                      to="#"
                       aria-controls="home"
                       aria-selected="true"
                       data-rb-event-key="all"
@@ -168,7 +168,7 @@ function BestSaleProducts(props) {
                       onClick={() => handleActiveTabs(2)}
                       id="profile-tab"
                       data-toggle="tab"
-                      to="/"
+                      to="#"
                       role="tab"
                       aria-controls="profile"
                       aria-selected="false"
@@ -187,7 +187,7 @@ function BestSaleProducts(props) {
                       onClick={() => handleActiveTabs(3)}
                       id="contact-tab"
                       data-toggle="tab"
-                      to="/"
+                      to="#"
                       role="tab"
                       aria-controls="contact"
                       aria-selected="false"
@@ -209,7 +209,7 @@ function BestSaleProducts(props) {
                       role="tab"
                       aria-controls="contact"
                       aria-selected="false"
-                      to="/"
+                      to="#"
                       data-rb-event-key="ladies"
                       className={
                         idTab === 4
@@ -286,7 +286,7 @@ function BestSaleProducts(props) {
                                             <div className="product-action text-center">
                                               <Link
                                                 title="Shoppingb Cart"
-                                                to="/"
+                                                to="#"
                                                 onClick={() =>
                                                   handleSendProduct(item.id - 1)
                                                 }
@@ -298,7 +298,7 @@ function BestSaleProducts(props) {
                                                   handleOpen(index)
                                                 }
                                                 title="Quick View"
-                                                to="/"
+                                                to="#"
                                               >
                                                 <i className="fas fa-eye"></i>
                                               </Link>
@@ -307,7 +307,7 @@ function BestSaleProducts(props) {
                                                 data-placement="right"
                                                 title="Compare"
                                                 className=""
-                                                to="/"
+                                                to="#"
                                               >
                                                 <i className="fas fa-compress-alt"></i>
                                               </Link>
@@ -339,7 +339,7 @@ function BestSaleProducts(props) {
                                               </div>
                                             </div>
                                             <div className="product-wishlist">
-                                              <Link to="/" className="  ">
+                                              <Link to="#" className="  ">
                                                 <i
                                                   className="far fa-heart"
                                                   title="Wishlist"
@@ -414,7 +414,7 @@ function BestSaleProducts(props) {
                                               <div className="product-action text-center">
                                                 <Link
                                                   title="Shoppingb Cart"
-                                                  to="/"
+                                                  to="#"
                                                   onClick={() =>
                                                     handleSendProduct(
                                                       item.id - 1
@@ -428,7 +428,7 @@ function BestSaleProducts(props) {
                                                     handleOpen(index)
                                                   }
                                                   title="Quick View"
-                                                  to="/"
+                                                  to="#"
                                                 >
                                                   <i className="fas fa-eye"></i>
                                                 </Link>
@@ -437,7 +437,7 @@ function BestSaleProducts(props) {
                                                   data-placement="right"
                                                   title="Compare"
                                                   className=""
-                                                  to="/"
+                                                  to="#"
                                                 >
                                                   <i className="fas fa-compress-alt"></i>
                                                 </Link>
@@ -469,7 +469,7 @@ function BestSaleProducts(props) {
                                                 </div>
                                               </div>
                                               <div className="product-wishlist">
-                                                <Link to="/" className="  ">
+                                                <Link to="#" className="  ">
                                                   <i
                                                     className="far fa-heart"
                                                     title="Wishlist"
@@ -539,7 +539,7 @@ function BestSaleProducts(props) {
                                               <div className="product-action text-center">
                                                 <Link
                                                   title="Shoppingb Cart"
-                                                  to="/"
+                                                  to="#"
                                                   onClick={() =>
                                                     handleSendProduct(
                                                       item.id - 1
@@ -553,7 +553,7 @@ function BestSaleProducts(props) {
                                                     handleOpen(index)
                                                   }
                                                   title="Quick View"
-                                                  to="/"
+                                                  to="#"
                                                 >
                                                   <i className="fas fa-eye"></i>
                                                 </Link>
@@ -562,7 +562,7 @@ function BestSaleProducts(props) {
                                                   data-placement="right"
                                                   title="Compare"
                                                   className=""
-                                                  to="/"
+                                                  to="#"
                                                 >
                                                   <i className="fas fa-compress-alt"></i>
                                                 </Link>
@@ -594,7 +594,7 @@ function BestSaleProducts(props) {
                                                 </div>
                                               </div>
                                               <div className="product-wishlist">
-                                                <Link to="/" className="  ">
+                                                <Link to="#" className="  ">
                                                   <i
                                                     className="far fa-heart"
                                                     title="Wishlist"
@@ -664,7 +664,7 @@ function BestSaleProducts(props) {
                                               <div className="product-action text-center">
                                                 <Link
                                                   title="Shoppingb Cart"
-                                                  to="/"
+                                                  to="#"
                                                   onClick={() =>
                                                     handleSendProduct(
                                                       item.id - 1
@@ -678,7 +678,7 @@ function BestSaleProducts(props) {
                                                     handleOpen(index)
                                                   }
                                                   title="Quick View"
-                                                  to="/"
+                                                  to="#"
                                                 >
                                                   <i className="fas fa-eye"></i>
                                                 </Link>
@@ -686,7 +686,7 @@ function BestSaleProducts(props) {
                                                   data-toggle="tooltip"
                                                   data-placement="right"
                                                   title="Compare"
-                                                  to="/"
+                                                  to="#"
                                                   className=""
                                                 >
                                                   <i className="fas fa-compress-alt"></i>
@@ -719,7 +719,7 @@ function BestSaleProducts(props) {
                                                 </div>
                                               </div>
                                               <div className="product-wishlist">
-                                                <Link to="/" className="  ">
+                                                <Link to="#" className="  ">
                                                   <i
                                                     className="far fa-heart"
                                                     title="Wishlist"
@@ -819,7 +819,7 @@ function BestSaleProducts(props) {
                             <ul className="nav" role="tablist">
                               <li className="nav-item">
                                 <Link
-                                  to="/"
+                                  to="#"
                                   role="tab"
                                   data-rb-event-key="tum-0"
                                   aria-selected="true"
@@ -833,7 +833,7 @@ function BestSaleProducts(props) {
                               </li>
                               <li className="nav-item">
                                 <Link
-                                  to="/"
+                                  to="#"
                                   role="tab"
                                   data-rb-event-key="tum-1"
                                   aria-selected="false"
@@ -847,7 +847,7 @@ function BestSaleProducts(props) {
                               </li>
                               <li className="nav-item">
                                 <Link
-                                  to="/"
+                                  to="#"
                                   role="tab"
                                   data-rb-event-key="tum-2"
                                   aria-selected="false"
@@ -868,7 +868,7 @@ function BestSaleProducts(props) {
                           <div className="product-details ">
                             <div className="details-cat mb-10 d-flex align-items-center justify-content-between">
                               <div>
-                                <Link to="/">
+                                <Link to="#">
                                   {products[modalValue.current].category}
                                 </Link>
                               </div>
@@ -897,7 +897,7 @@ function BestSaleProducts(props) {
                                 </div>
                                 <ul className="shop-link shop-color">
                                   <li>
-                                    <Link to="/">
+                                    <Link to="#">
                                       <span
                                         className={products[
                                           modalValue.current
@@ -919,7 +919,7 @@ function BestSaleProducts(props) {
                                         : " "
                                     }
                                   >
-                                    <Link to="/">L</Link>
+                                    <Link to="#">L</Link>
                                   </li>
                                   <li
                                     className={
@@ -928,7 +928,7 @@ function BestSaleProducts(props) {
                                         : " "
                                     }
                                   >
-                                    <Link to="/">M</Link>
+                                    <Link to="#">M</Link>
                                   </li>
                                   <li
                                     className={
@@ -937,7 +937,7 @@ function BestSaleProducts(props) {
                                         : " "
                                     }
                                   >
-                                    <Link to="/">X</Link>
+                                    <Link to="#">X</Link>
                                   </li>
                                   <li
                                     className={
@@ -946,7 +946,7 @@ function BestSaleProducts(props) {
                                         : " "
                                     }
                                   >
-                                    <Link to="/">XL</Link>
+                                    <Link to="#">XL</Link>
                                   </li>
                                   <li
                                     className={
@@ -956,7 +956,7 @@ function BestSaleProducts(props) {
                                         : " "
                                     }
                                   >
-                                    <Link to="/">XXL</Link>
+                                    <Link to="#">XXL</Link>
                                   </li>
                                 </ul>
                               </div>

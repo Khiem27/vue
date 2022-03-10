@@ -162,7 +162,7 @@ function Header(props) {
                       <Link to="/shop">Shop</Link>
                       <ul className="submenu ">
                         <li>
-                          <Link to="/" onClick={() => handleMenu22(1)}>Category View</Link>
+                          <Link to="#" onClick={() => handleMenu22(1)}>Category View</Link>
                           <ul className="submenu level-1">
                             <li>
                               <Link to="/shop">Shop 2 Column</Link>
@@ -182,7 +182,7 @@ function Header(props) {
                           </ul>
                         </li>
                         <li>
-                          <Link to="/" onClick={() => handleMenu22(2)}>Category View</Link>
+                          <Link to="#" onClick={() => handleMenu22(2)}>Category View</Link>
                           <ul className="submenu  level-1 ">
                             <li>
                               <Link to="/shop/left-sidebar">Sidebar Left</Link>
@@ -204,7 +204,7 @@ function Header(props) {
                           </ul>
                         </li>
                         <li>
-                          <Link to="/" onClick={() => handleMenu22(3)}>Products Types</Link>
+                          <Link to="#" onClick={() => handleMenu22(3)}>Products Types</Link>
                           <ul className="submenu  level-1 ">
                             <li>
                               <Link to="/shop/1">Simple Product</Link>
@@ -307,14 +307,14 @@ function Header(props) {
                 <div className="mean-bar">
                   {clickCtn ? (
                     <Link
-                    to="/"
+                    to="#"
                       onClick={handleClickCtn}
                       className="meanmenu-reveal d-flex align-items-center justify-content-center fs-18"
                     >
                       X
                     </Link>
                   ) : (
-                    <Link to="/" onClick={handleClickCtn} className="meanmenu-reveal ">
+                    <Link to="#" onClick={handleClickCtn} className="meanmenu-reveal ">
                       <span></span>
                       <span></span>
                       <span></span>
@@ -325,7 +325,7 @@ function Header(props) {
                       <li>
                         <Link to="/">Home</Link>
                         {
-                          submenu1 ? <Link to="/" onClick={handleMenu1} className="mean-expand" >-</Link> : 
+                          submenu1 ? <Link to="#" onClick={handleMenu1} className="mean-expand" >-</Link> : 
                         <Link onClick={handleMenu1} className="mean-expand" to="#">
                           +
                         </Link>

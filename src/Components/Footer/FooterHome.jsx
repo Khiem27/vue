@@ -17,7 +17,7 @@ function FooterHome(props) {
             <div className="col-xl-3 col-lg-5 col-md-6 ">
               <div className="footer-widget mb-40">
                 <div className="footer-logo">
-                  <Link to="/">
+                  <Link to="#">
                     <div
                       style={{
                         display: "inline-block",
@@ -145,22 +145,22 @@ function FooterHome(props) {
                 <h3>Social Media</h3>
                 <ul className="footer-link">
                   <li>
-                    <Link to="/">Facebook</Link>
+                    <Link to="#">Facebook</Link>
                   </li>
                   <li>
-                    <Link to="/">Twitter</Link>
+                    <Link to="#">Twitter</Link>
                   </li>
                   <li>
-                    <Link to="/">Behance</Link>
+                    <Link to="#">Behance</Link>
                   </li>
                   <li>
-                    <Link to="/"> Dribbble</Link>
+                    <Link to="#"> Dribbble</Link>
                   </li>
                   <li>
-                    <Link to="/">Linkedin</Link>
+                    <Link to="#">Linkedin</Link>
                   </li>
                   <li>
-                    <Link to="/">Youtube</Link>
+                    <Link to="#">Youtube</Link>
                   </li>
                 </ul>
               </div>
@@ -170,22 +170,22 @@ function FooterHome(props) {
                 <h3>Location</h3>
                 <ul className="footer-link">
                   <li>
-                    <Link to="/">New York</Link>
+                    <Link to="#">New York</Link>
                   </li>
                   <li>
-                    <Link to="/">Tokyo</Link>
+                    <Link to="#">Tokyo</Link>
                   </li>
                   <li>
-                    <Link to="/">Dhaka</Link>
+                    <Link to="#">Dhaka</Link>
                   </li>
                   <li>
-                    <Link to="/"> Chittagong</Link>
+                    <Link to="#"> Chittagong</Link>
                   </li>
                   <li>
-                    <Link to="/">China</Link>
+                    <Link to="#">China</Link>
                   </li>
                   <li>
-                    <Link to="/">Japan</Link>
+                    <Link to="#">Japan</Link>
                   </li>
                 </ul>
               </div>
@@ -195,22 +195,22 @@ function FooterHome(props) {
                 <h3>About</h3>
                 <ul className="footer-link">
                   <li>
-                    <Link to="/">Terms &amp; Conditions</Link>
+                    <Link to="#">Terms &amp; Conditions</Link>
                   </li>
                   <li>
-                    <Link to="/"> Privacy Policy</Link>
+                    <Link to="#"> Privacy Policy</Link>
                   </li>
                   <li>
-                    <Link to="/">Contact Us</Link>
+                    <Link to="#">Contact Us</Link>
                   </li>
                   <li>
-                    <Link to="/">FAQ</Link>
+                    <Link to="#">FAQ</Link>
                   </li>
                   <li>
-                    <Link to="/">Wholesale</Link>
+                    <Link to="#">Wholesale</Link>
                   </li>
                   <li>
-                    <Link to="/">Direction</Link>
+                    <Link to="#">Direction</Link>
                   </li>
                 </ul>
               </div>
@@ -285,26 +285,26 @@ function FooterHome(props) {
               <div className="col-xl-6 col-lg-6 col-md-6">
                 <div className="copyright text-center  text-md-left">
                   <p>
-                    Copyright © 2022 <Link to="/">BasicTheme</Link>. All Rights
+                    Copyright © 2022 <Link to="#">BasicTheme</Link>. All Rights
                     Reserved
                   </p>
                 </div>
               </div>
               <div className="col-xl-6 col-lg-6 col-md-6">
                 <div className="footer-icon text-center text-md-right ">
-                  <Link to="/">
+                  <Link to="#">
                     <i className="fab fa-facebook-f"></i>
                   </Link>
-                  <Link to="/">
+                  <Link to="#">
                     <i className="fab fa-twitter"></i>
                   </Link>
-                  <Link to="/">
+                  <Link to="#">
                     <i className="fab fa-behance"></i>
                   </Link>
-                  <Link to="/">
+                  <Link to="#">
                     <i className="fab fa-linkedin-in"></i>
                   </Link>
-                  <Link to="/">
+                  <Link to="#">
                     <i className="fab fa-youtube"></i>
                   </Link>
                 </div>

@@ -12,7 +12,7 @@ function CartTitle(props) {
                         <div className="breadcrumb-text text-center">
                             <h1 className="">Shoping Cart</h1>
                             <ul className="breadcrumb-menu">
-                                <li><Link to="/">home</Link></li>
+                                <li><Link to="#">home</Link></li>
                                 <li><span>Cart</span></li>
                             </ul>
                         </div>

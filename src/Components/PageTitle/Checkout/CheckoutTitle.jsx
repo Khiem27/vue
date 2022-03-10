@@ -16,7 +16,7 @@ function CheckoutTitle(props) {
                         <div className="breadcrumb-text text-center">
                             <h1 className="">Checkout</h1>
                             <ul className="breadcrumb-menu">
-                                <li><Link to="/">home</Link></li>
+                                <li><Link to="#">home</Link></li>
                                 <li><span>Checkout</span></li>
                             </ul>
                         </div>

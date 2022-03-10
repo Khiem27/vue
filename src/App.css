@@ -25212,3 +25212,12 @@ html {
         width: 850%;
     }
 }
+
+
+@media (max-width:1501px) {
+    .side-menu ul li ul.submenu {
+        top: 0;
+        left: 106%;
+    }
+}
+

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { Link } from "react-router-dom";
 HomeBanner.propTypes = {};
 
 function HomeBanner(props) {
@@ -97,22 +97,22 @@ function HomeBanner(props) {
                               Synnes Dining Chair Upholstered
                             </h1>
                             <div className="slide-btn">
-                              <a
+                              <Link
                                 className="btn theme-btn wow fadeInLeft"
                                 data-delay=".7s"
-                                href="/shop"
+                                to="/shop"
                                 style={{ visibility: "visible" }}
                               >
                                 shop now
-                              </a>
-                              <a
+                              </Link>
+                              <Link
                                 className="btn white-btn wow fadeInLeft"
                                 data-delay=".7s"
-                                href="/shop"
+                                to="/shop"
                                 style={{ visibility: "visible" }}
                               >
                                 category
-                              </a>
+                              </Link>
                             </div>
                           </div>
                         </div>
@@ -213,22 +213,22 @@ function HomeBanner(props) {
                               Synnes Dining Chair Upholstered
                             </h1>
                             <div className="slide-btn">
-                              <a
+                              <Link
                                 className="btn theme-btn wow fadeInLeft"
                                 data-delay=".7s"
-                                href="/shop"
+                                to="/shop"
                                 style={{ visibility: "visible" }}
                               >
                                 shop now
-                              </a>
-                              <a
+                              </Link>
+                              <Link
                                 className="btn white-btn wow fadeInLeft"
                                 data-delay=".7s"
-                                href="/shop"
+                                to="/shop"
                                 style={{ visibility: "visible" }}
                               >
                                 category
-                              </a>
+                              </Link>
                             </div>
                           </div>
                         </div>

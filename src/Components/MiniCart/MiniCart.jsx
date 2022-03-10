@@ -2,10 +2,10 @@ import { useSnackbar } from "notistack";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  Link
+    Link
 } from "react-router-dom";
 import {
-  addFromLocal, calculatorTotalProducts, removeFromCart
+    addFromLocal, calculatorTotalProducts, removeFromCart
 } from "../AddToCart/AddToCartSlice";
 
 MiniCart.propTypes = {};
@@ -63,7 +63,7 @@ function MiniCart(props) {
                   </div>
                 </div>
                 <div className="del-icon">
-                  <Link to="/" onClick={() => handleRemoveItem(item.id)}>
+                  <Link to="#" onClick={() => handleRemoveItem(item.id)}>
                     <i className="far fa-trash-alt"></i>
                   </Link>
                 </div>

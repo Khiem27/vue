@@ -1,57 +1,95 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import {
-    Link
-} from "react-router-dom";
-import { filterValueTags } from '../ProductsTagsFilter/ProductsTagsFilterSlice';
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import React from "react";
+import { useDispatch } from "react-redux";
+import { filterValueTags } from "../ProductsTagsFilter/ProductsTagsFilterSlice";
 
 function ProductsTagsFilter(props) {
-    const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-    const clickFurniture = () => {
-        dispatch(filterValueTags("Furniture"))
-    }
+  const clickFurniture = () => {
+    dispatch(filterValueTags("Furniture"));
+  };
 
-    const clickLadies = () => {
-        dispatch(filterValueTags("Ladies"))
-    }
+  const clickLadies = () => {
+    dispatch(filterValueTags("Ladies"));
+  };
 
-    const clickGent = () => {
-        dispatch(filterValueTags("Gent"))
-    }
+  const clickGent = () => {
+    dispatch(filterValueTags("Gent"));
+  };
 
-    const clickClothing = () => {
-        dispatch(filterValueTags("Clothing"))
-    }
+  const clickClothing = () => {
+    dispatch(filterValueTags("Clothing"));
+  };
 
-    const clickJacket = () => {
-        dispatch(filterValueTags("Jacket"))
-    }
+  const clickJacket = () => {
+    dispatch(filterValueTags("Jacket"));
+  };
 
-    const clickTshart = () => {
-        dispatch(filterValueTags("Tshart"))
-    }
+  const clickTshart = () => {
+    dispatch(filterValueTags("Tshart"));
+  };
 
-    const clickLamp = () => {
-        dispatch(filterValueTags("Lamp"))
-    }
+  const clickLamp = () => {
+    dispatch(filterValueTags("Lamp"));
+  };
 
-    const clickChair = () => {
-        dispatch(filterValueTags("Chair"))
-    }
+  const clickChair = () => {
+    dispatch(filterValueTags("Chair"));
+  };
 
-    return (
-        <ul className="shop-tag">
-            <li><Link onClick={clickFurniture} className="text-capitalize "> furniture </Link></li>
-            <li><Link onClick={clickLadies} className="text-capitalize "> ladies </Link></li>
-            <li><Link onClick={clickGent} className="text-capitalize "> gent </Link></li>
-            <li><Link onClick={clickClothing} className="text-capitalize "> Clothing </Link></li>
-            <li><Link onClick={clickJacket} className="text-capitalize "> jacket </Link></li>
-            <li><Link onClick={clickTshart} className="text-capitalize "> tshart </Link></li>
-            <li><Link onClick={clickLamp} className="text-capitalize "> lamp </Link></li>
-            <li><Link onClick={clickChair} className="text-capitalize "> chair </Link></li>
-        </ul>
-    );
+  return (
+    <ul className="shop-tag">
+      <li>
+        <a onClick={clickFurniture} className="text-capitalize ">
+          {" "}
+          furniture{" "}
+        </a>
+      </li>
+      <li>
+        <a onClick={clickLadies} className="text-capitalize ">
+          {" "}
+          ladies{" "}
+        </a>
+      </li>
+      <li>
+        <a onClick={clickGent} className="text-capitalize ">
+          {" "}
+          gent{" "}
+        </a>
+      </li>
+      <li>
+        <a onClick={clickClothing} className="text-capitalize ">
+          {" "}
+          Clothing{" "}
+        </a>
+      </li>
+      <li>
+        <a onClick={clickJacket} className="text-capitalize ">
+          {" "}
+          jacket{" "}
+        </a>
+      </li>
+      <li>
+        <a onClick={clickTshart} className="text-capitalize ">
+          {" "}
+          tshart{" "}
+        </a>
+      </li>
+      <li>
+        <a onClick={clickLamp} className="text-capitalize ">
+          {" "}
+          lamp{" "}
+        </a>
+      </li>
+      <li>
+        <a onClick={clickChair} className="text-capitalize ">
+          {" "}
+          chair{" "}
+        </a>
+      </li>
+    </ul>
+  );
 }
 
 export default ProductsTagsFilter;
