@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 SliderIndex3.propTypes = {};
 
@@ -17,6 +17,42 @@ function SliderIndex3(props) {
       setActive(active - 1);
     }
   };
+
+  // Sự kiện drag drop
+  const [element, setElement] = useState();
+
+  const posX1 = useRef(0);
+  const posX2 = useRef(0);
+
+  useEffect(() => {
+    const elementActive = document.querySelector(".slider-active");
+    setElement(elementActive);
+  }, []);
+
+  if (element) {
+    element.addEventListener("mousedown", (e) => {
+      e = e || window.event;
+      e.preventDefault();
+      document.onmouseup = dragEnd;
+      document.onmousemove = dragAction;
+      posX1.current = e.clientX;
+    });
+  }
+
+  const dragAction = (e) => {
+    e = e || window.event;
+  };
+
+  const dragEnd = (e) => {
+    posX2.current = e.clientX;
+    document.onmouseup = null;
+    document.onmousemove = null;
+    if (posX1.current > posX2.current) {
+      handleActive("next");
+    } else if (posX1.current < posX2.current) {
+      handleActive("prev");
+    }
+  };
   return (
     <section className="slider-area pos-relative pt-100 pb-100">
       <div className="slider-active slider-3">
@@ -30,7 +66,10 @@ function SliderIndex3(props) {
             <i className="fas fa-arrow-left"></i>{" "}
           </button>
           <div className="slick-list">
-            <div className="slick-track" style={{ width: "700%", opacity: "1" }}>
+            <div
+              className="slick-track"
+              style={{ width: "700%", opacity: "1" }}
+            >
               <div
                 data-index="0"
                 className={

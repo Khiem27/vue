@@ -93,7 +93,7 @@ function BrandNewProducts(props) {
     } else if (trans !== -1 && action === "prev") {
       setTrans(trans + 1);
     }
-    console.log(trans);
+    // console.log(trans);
   };
 
   // Modal
@@ -125,6 +125,46 @@ function BrandNewProducts(props) {
       },
     });
   };
+
+  // Sự kiện drag drop
+  const [element, setElement] = useState()
+
+  const posX1 = useRef(0)
+  const posX2 = useRef(0)
+  const posX3 = useRef(0)
+  
+  useEffect(() => {
+    const elementActive = document.querySelector(".slick-track-brand-new-products")
+    setElement(elementActive)
+  }, [])
+  
+  if (element) {
+    element.addEventListener("mousedown", (e) => {
+        e = e || window.event;
+        e.preventDefault();
+        document.onmouseup = dragEnd;
+        document.onmousemove = dragAction;
+        posX1.current = e.clientX
+    })
+  }
+
+  const dragAction = (e) => {
+    e = e || window.event;
+    posX3.current = e.clientX
+  }
+
+  const dragEnd = (e) => {
+    posX2.current = e.clientX
+    document.onmouseup = null;
+    document.onmousemove = null;
+    console.log(posX1.current);
+    console.log(posX2.current);
+    if (posX1.current > posX2.current) {
+      handleTrans("next");
+    } else if (posX1.current < posX2.current) {
+      handleTrans("prev");
+    }
+  }
 
   return (
     <>

@@ -25221,3 +25221,12 @@ html {
     }
 }
 
+
+
+@media (max-width: 767px) {
+    .arrow-icon.right,
+    .arrow-icon.left {
+        display: none !important;
+    } 
+
+}

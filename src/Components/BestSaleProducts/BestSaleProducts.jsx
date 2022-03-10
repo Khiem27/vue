@@ -93,7 +93,7 @@ function BestSaleProducts(props) {
     } else if (trans !== -1 && action === "prev") {
       setTrans(trans + 1);
     }
-    console.log(trans);
+    // console.log(trans);
   };
 
   // Modal
@@ -125,6 +125,46 @@ function BestSaleProducts(props) {
       },
     });
   };
+
+  // Sự kiện drag drop
+  const [element, setElement] = useState()
+
+  const posX1 = useRef(0)
+  const posX2 = useRef(0)
+  const posX3 = useRef(0)
+  
+  useEffect(() => {
+    const elementActive = document.querySelector(".slick-track-brand-new-products")
+    setElement(elementActive)
+  }, [])
+  
+  if (element) {
+    element.addEventListener("mousedown", (e) => {
+        e = e || window.event;
+        e.preventDefault();
+        document.onmouseup = dragEnd;
+        document.onmousemove = dragAction;
+        posX1.current = e.clientX
+    })
+  }
+
+  const dragAction = (e) => {
+    e = e || window.event;
+    posX3.current = e.clientX
+  }
+
+  const dragEnd = (e) => {
+    posX2.current = e.clientX
+    document.onmouseup = null;
+    document.onmousemove = null;
+    console.log(posX1.current);
+    console.log(posX2.current);
+    if (posX1.current > posX2.current) {
+      handleTrans("next");
+    } else if (posX1.current < posX2.current) {
+      handleTrans("prev");
+    }
+  }
 
   return (
     <>
@@ -187,8 +227,8 @@ function BestSaleProducts(props) {
                       onClick={() => handleActiveTabs(3)}
                       id="contact-tab"
                       data-toggle="tab"
-                      to="#"
                       role="tab"
+                      to="#"
                       aria-controls="contact"
                       aria-selected="false"
                       data-rb-event-key="gent"
@@ -207,9 +247,9 @@ function BestSaleProducts(props) {
                       id="contact-tab1"
                       data-toggle="tab"
                       role="tab"
+                      to="#"
                       aria-controls="contact"
                       aria-selected="false"
-                      to="#"
                       data-rb-event-key="ladies"
                       className={
                         idTab === 4
@@ -285,8 +325,8 @@ function BestSaleProducts(props) {
                                             </Link>
                                             <div className="product-action text-center">
                                               <Link
-                                                title="Shoppingb Cart"
                                                 to="#"
+                                                title="Shoppingb Cart"
                                                 onClick={() =>
                                                   handleSendProduct(item.id - 1)
                                                 }
@@ -294,11 +334,11 @@ function BestSaleProducts(props) {
                                                 <i className="fas fa-shopping-cart"></i>
                                               </Link>
                                               <Link
+                                                to="#"
                                                 onClick={() =>
                                                   handleOpen(index)
                                                 }
                                                 title="Quick View"
-                                                to="#"
                                               >
                                                 <i className="fas fa-eye"></i>
                                               </Link>
@@ -413,8 +453,8 @@ function BestSaleProducts(props) {
                                               </Link>
                                               <div className="product-action text-center">
                                                 <Link
-                                                  title="Shoppingb Cart"
                                                   to="#"
+                                                  title="Shoppingb Cart"
                                                   onClick={() =>
                                                     handleSendProduct(
                                                       item.id - 1
@@ -424,20 +464,20 @@ function BestSaleProducts(props) {
                                                   <i className="fas fa-shopping-cart"></i>
                                                 </Link>
                                                 <Link
+                                                  to="#"
                                                   onClick={() =>
                                                     handleOpen(index)
                                                   }
                                                   title="Quick View"
-                                                  to="#"
                                                 >
                                                   <i className="fas fa-eye"></i>
                                                 </Link>
                                                 <Link
+                                                  to="#"
                                                   data-toggle="tooltip"
                                                   data-placement="right"
                                                   title="Compare"
                                                   className=""
-                                                  to="#"
                                                 >
                                                   <i className="fas fa-compress-alt"></i>
                                                 </Link>
@@ -538,8 +578,8 @@ function BestSaleProducts(props) {
                                               </Link>
                                               <div className="product-action text-center">
                                                 <Link
-                                                  title="Shoppingb Cart"
                                                   to="#"
+                                                  title="Shoppingb Cart"
                                                   onClick={() =>
                                                     handleSendProduct(
                                                       item.id - 1
@@ -548,21 +588,22 @@ function BestSaleProducts(props) {
                                                 >
                                                   <i className="fas fa-shopping-cart"></i>
                                                 </Link>
+
                                                 <Link
+                                                  to="#"
                                                   onClick={() =>
                                                     handleOpen(index)
                                                   }
                                                   title="Quick View"
-                                                  to="#"
                                                 >
                                                   <i className="fas fa-eye"></i>
                                                 </Link>
                                                 <Link
+                                                  to="#"
                                                   data-toggle="tooltip"
                                                   data-placement="right"
                                                   title="Compare"
                                                   className=""
-                                                  to="#"
                                                 >
                                                   <i className="fas fa-compress-alt"></i>
                                                 </Link>
@@ -663,8 +704,8 @@ function BestSaleProducts(props) {
                                               </Link>
                                               <div className="product-action text-center">
                                                 <Link
-                                                  title="Shoppingb Cart"
                                                   to="#"
+                                                  title="Shoppingb Cart"
                                                   onClick={() =>
                                                     handleSendProduct(
                                                       item.id - 1
@@ -674,19 +715,19 @@ function BestSaleProducts(props) {
                                                   <i className="fas fa-shopping-cart"></i>
                                                 </Link>
                                                 <Link
+                                                  to="#"
                                                   onClick={() =>
                                                     handleOpen(index)
                                                   }
                                                   title="Quick View"
-                                                  to="#"
                                                 >
                                                   <i className="fas fa-eye"></i>
                                                 </Link>
                                                 <Link
+                                                  to="#"
                                                   data-toggle="tooltip"
                                                   data-placement="right"
                                                   title="Compare"
-                                                  to="#"
                                                   className=""
                                                 >
                                                   <i className="fas fa-compress-alt"></i>

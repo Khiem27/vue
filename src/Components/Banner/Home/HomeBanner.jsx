@@ -26,7 +26,6 @@ function HomeBanner(props) {
         document.onmouseup = dragEnd;
         document.onmousemove = dragAction;
         posX1.current = e.clientX
-        console.log(posX1.current);
     })
   }
 
@@ -36,9 +35,7 @@ function HomeBanner(props) {
 
   const dragEnd = (e) => {
     setActive(!active);
-
     posX2.current = e.clientX
-    console.log(posX2.current);
     document.onmouseup = null;
     document.onmousemove = null;
   }
