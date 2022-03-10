@@ -36,35 +36,35 @@ function MiniCart(props) {
 
   dispatch(calculatorTotalProducts());
   return (
-    <li class="d-shop-cart">
+    <li className="d-shop-cart">
       <Link to="#">
-        <i class="fas fa-shopping-cart"></i>{" "}
-        <span class="cart-count">{products ? products.length : 0}</span>
+        <i className="fas fa-shopping-cart"></i>{" "}
+        <span className="cart-count">{products ? products.length : 0}</span>
       </Link>
-      <ul class="minicart">
+      <ul className="minicart">
         {products.length ? (
           products.map((item, index) => {
             return (
               <li key={index}>
-                <div class="cart-img">
+                <div className="cart-img">
                   <Link to="/shop/20">
                     <img src={item.image} alt="Cart" />
                   </Link>
                 </div>
-                <div class="cart-content">
+                <div className="cart-content">
                   <h3>
                     <Link to="/shop/20">{item.title}</Link>
                   </h3>
-                  <div class="cart-price">
-                    <span class="new">
+                  <div className="cart-price">
+                    <span className="new">
                       ${item.price} * {item.quantity}
                     </span>{" "}
-                    =<span class="new ml-1 ">${item.total}</span>
+                    =<span className="new ml-1 ">${item.total}</span>
                   </div>
                 </div>
-                <div class="del-icon">
-                  <Link onClick={() => handleRemoveItem(item.id)}>
-                    <i class="far fa-trash-alt"></i>
+                <div className="del-icon">
+                  <Link to="/" onClick={() => handleRemoveItem(item.id)}>
+                    <i className="far fa-trash-alt"></i>
                   </Link>
                 </div>
               </li>
@@ -74,15 +74,15 @@ function MiniCart(props) {
           <h3>Product Not Found</h3>
         )}
         <li>
-          <div class="total-price">
-            <span class="f-left">Total:</span>
-            <span class="f-right">${productsTotal}</span>
+          <div className="total-price">
+            <span className="f-left">Total:</span>
+            <span className="f-right">${productsTotal}</span>
           </div>
         </li>
         <li>
-          <div class="checkout-link">
+          <div className="checkout-link">
             <Link to="/cart">Shopping Cart</Link>
-            <a class="red-color" href="/checkout">
+            <a className="red-color" href="/checkout">
               Checkout
             </a>
           </div>

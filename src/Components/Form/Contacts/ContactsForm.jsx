@@ -7,46 +7,46 @@ ContactsForm.propTypes = {};
 
 function ContactsForm(props) {
   return (
-    <section class="contact-form-area grey-bg pt-100 pb-100">
-      <div class="container">
-        <div class="form-wrapper">
-          <div class="row align-items-center">
-            <div class="col-xl-8 col-lg-8">
-              <div class="section-title mb-55">
+    <section className="contact-form-area grey-bg pt-100 pb-100">
+      <div className="container">
+        <div className="form-wrapper">
+          <div className="row align-items-center">
+            <div className="col-xl-8 col-lg-8">
+              <div className="section-title mb-55">
                 <p>
                   <span></span> Anything On your Mind
                 </p>
                 <h1>Estimate Your Idea</h1>
               </div>
             </div>
-            <div class="col-xl-4 col-lg-3 d-none d-xl-block ">
-              <div class="section-link mb-80 text-right">
-                <Link class="btn theme-btn" >
-                  <i class="fas fa-phone"></i> make call
+            <div className="col-xl-4 col-lg-3 d-none d-xl-block ">
+              <div className="section-link mb-80 text-right">
+                <Link className="btn theme-btn" >
+                  <i className="fas fa-phone"></i> make call
                 </Link>
               </div>
             </div>
           </div>
-          <div class="contact-form">
+          <div className="contact-form">
             <form id="contact-form" action="#">
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="form-box user-icon mb-30">
+              <div className="row">
+                <div className="col-lg-6">
+                  <div className="form-box user-icon mb-30">
                     <input type="text" name="name" placeholder="Your Name" />
                   </div>
                 </div>
-                <div class="col-lg-6">
-                  <div class="form-box email-icon mb-30">
+                <div className="col-lg-6">
+                  <div className="form-box email-icon mb-30">
                     <input type="text" name="email" placeholder="Your Email" />
                   </div>
                 </div>
-                <div class="col-lg-6">
-                  <div class="form-box phone-icon mb-30">
+                <div className="col-lg-6">
+                  <div className="form-box phone-icon mb-30">
                     <input type="text" name="phone" placeholder="Your Phone" />
                   </div>
                 </div>
-                <div class="col-lg-6">
-                  <div class="form-box subject-icon mb-30">
+                <div className="col-lg-6">
+                  <div className="form-box subject-icon mb-30">
                     <input
                       type="text"
                       name="subject"
@@ -54,8 +54,8 @@ function ContactsForm(props) {
                     />
                   </div>
                 </div>
-                <div class="col-lg-12">
-                  <div class="form-box message-icon mb-30">
+                <div className="col-lg-12">
+                  <div className="form-box message-icon mb-30">
                     <textarea
                       name="message"
                       id="message"
@@ -64,15 +64,15 @@ function ContactsForm(props) {
                       placeholder="Your Message"
                     ></textarea>
                   </div>
-                  <div class="contact-btn text-center">
-                    <button class="btn theme-btn" type="submit">
+                  <div className="contact-btn text-center">
+                    <button className="btn theme-btn" type="submit">
                       get action
                     </button>
                   </div>
                 </div>
               </div>
             </form>
-            <p class="ajax-response text-center"></p>
+            <p className="ajax-response text-center"></p>
           </div>
         </div>
       </div>

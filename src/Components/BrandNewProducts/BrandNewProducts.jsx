@@ -73,7 +73,6 @@ function BrandNewProducts(props) {
     } else if (width > 934) {
       setWidthE(width / 4);
     }
-    
   }, [trans]);
 
   const handleActiveTabs = (id, event) => {
@@ -129,32 +128,33 @@ function BrandNewProducts(props) {
 
   return (
     <>
-      <section class="product-area box-90 pt-70 pb-40 slick-slider">
+      <section className="product-area box-90 pt-70 pb-40 slick-slider">
         <div className="container-fluid">
-          <div class="row">
-            <div class="col-xl-5 col-lg-12">
-              <div class="area-title mb-50">
+          <div className="row">
+            <div className="col-xl-5 col-lg-12">
+              <div className="area-title mb-50">
                 <h2>Brand New Products</h2>
                 <p>Browse the huge variety of our products</p>
               </div>
             </div>
-            <div class="col-xl-7 col-lg-12">
-              <div class="product-tab mb-40">
+            <div className="col-xl-7 col-lg-12">
+              <div className="product-tab mb-40">
                 <ul
-                  class="nav product-nav  justify-content-xl-end nav"
+                  className="nav product-nav  justify-content-xl-end nav"
                   id="myTab1"
                   role="tablist"
                 >
-                  <li class="nav-item">
+                  <li className="nav-item">
                     <Link
                       onClick={() => handleActiveTabs(1)}
                       id="home-tab"
                       data-toggle="tab"
                       role="tab"
+                      to="/"
                       aria-controls="home"
                       aria-selected="true"
                       data-rb-event-key="all"
-                      class={
+                      className={
                         idTab === 1
                           ? "nav-link nav-link active"
                           : "nav-link nav-link"
@@ -163,16 +163,17 @@ function BrandNewProducts(props) {
                       all
                     </Link>
                   </li>
-                  <li class="nav-item">
+                  <li className="nav-item">
                     <Link
                       onClick={() => handleActiveTabs(2)}
                       id="profile-tab"
                       data-toggle="tab"
+                      to="/"
                       role="tab"
                       aria-controls="profile"
                       aria-selected="false"
                       data-rb-event-key="furniture"
-                      class={
+                      className={
                         idTab === 2
                           ? "nav-link nav-link active"
                           : "nav-link nav-link"
@@ -181,16 +182,17 @@ function BrandNewProducts(props) {
                       Men's Clothing
                     </Link>
                   </li>
-                  <li class="nav-item">
+                  <li className="nav-item">
                     <Link
                       onClick={() => handleActiveTabs(3)}
                       id="contact-tab"
                       data-toggle="tab"
                       role="tab"
+                      to="/"
                       aria-controls="contact"
                       aria-selected="false"
                       data-rb-event-key="gent"
-                      class={
+                      className={
                         idTab === 3
                           ? "nav-link nav-link active"
                           : "nav-link nav-link"
@@ -199,16 +201,17 @@ function BrandNewProducts(props) {
                       Jewelery
                     </Link>
                   </li>
-                  <li class="nav-item">
+                  <li className="nav-item">
                     <Link
                       onClick={() => handleActiveTabs(4)}
                       id="contact-tab1"
                       data-toggle="tab"
                       role="tab"
+                      to="/"
                       aria-controls="contact"
                       aria-selected="false"
                       data-rb-event-key="ladies"
-                      class={
+                      className={
                         idTab === 4
                           ? "nav-link nav-link active"
                           : "nav-link nav-link"
@@ -221,26 +224,26 @@ function BrandNewProducts(props) {
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-xl-12">
-              <div class="product-tab-content">
-                <div id="myTabContent" class="tab-content tab-content">
+          <div className="row">
+            <div className="col-xl-12">
+              <div className="product-tab-content">
+                <div id="myTabContent" className="tab-content tab-content">
                   <div
                     role="tabpanel"
                     aria-hidden="false"
-                    class={
+                    className={
                       idTab === 1
                         ? "fade tab-pane active show"
                         : "fade tab-pane"
                     }
                   >
-                    <div class="product-slider owl-carousel">
-                      <div class="slick-slider slick-initialized">
+                    <div className="product-slider owl-carousel">
+                      <div className="slick-slider slick-initialized">
                         <div
                           onClick={() => handleTrans("prev")}
-                          class="owl-prev arrow-icon left"
+                          className="owl-prev arrow-icon left"
                         >
-                          <i class="fas fa-arrow-left"></i>
+                          <i className="fas fa-arrow-left"></i>
                         </div>
                         <div className="slick-list slick-list-1">
                           <div
@@ -258,66 +261,69 @@ function BrandNewProducts(props) {
                                   return (
                                     <div
                                       data-index="0"
-                                      class="slick-slide slick-active slick-current slick-slide-brand-new-products"
+                                      className="slick-slide slick-active slick-current slick-slide-brand-new-products"
                                       key={index}
-                                      tabindex="-1"
+                                      tabIndex="-1"
                                       aria-hidden="false"
                                       style={{
                                         outline: "none",
                                       }}
                                     >
                                       <div>
-                                        <div class="product-wrapper mb-50 ">
-                                          <div class="product-img mb-25">
+                                        <div className="product-wrapper mb-50 ">
+                                          <div className="product-img mb-25">
                                             <Link to={`/shop/${item.id}`}>
                                               <img
                                                 src={item.image}
                                                 alt="img 1"
                                               />
                                               <img
-                                                class="secondary-img"
+                                                className="secondary-img"
                                                 src={item.hoverImage}
                                                 alt="imge 2"
                                               />
                                             </Link>
-                                            <div class="product-action text-center">
+                                            <div className="product-action text-center">
                                               <Link
+                                                to="/"
                                                 title="Shoppingb Cart"
                                                 onClick={() =>
                                                   handleSendProduct(item.id - 1)
                                                 }
                                               >
-                                                <i class="fas fa-shopping-cart"></i>
+                                                <i className="fas fa-shopping-cart"></i>
                                               </Link>
                                               <Link
+                                                to="/"
                                                 onClick={() =>
                                                   handleOpen(index)
                                                 }
                                                 title="Quick View"
                                               >
-                                                <i class="fas fa-eye"></i>
+                                                <i className="fas fa-eye"></i>
                                               </Link>
                                               <Link
                                                 data-toggle="tooltip"
                                                 data-placement="right"
                                                 title="Compare"
-                                                class=""
+                                                className=""
+                                                to="/"
                                               >
-                                                <i class="fas fa-compress-alt"></i>
+                                                <i className="fas fa-compress-alt"></i>
                                               </Link>
                                             </div>
-                                            <div class="sale-tag">
+                                            <div className="sale-tag">
                                               {item.new ? (
-                                                <span class="new">new</span>
+                                                <span className="new">new</span>
                                               ) : null}
 
                                               {item.sale ? (
-                                                <span class="sale">sale</span>
+                                                <span className="sale">sale</span>
                                               ) : null}
                                             </div>
                                           </div>
-                                          <div class="product-content">
-                                            <div class="pro-cat mb-10">
+                                          <div className="product-content">
+                                            <div className="pro-cat mb-10">
                                               <Link to={`/shop/${item.id}`}>
                                                 {item.brand}
                                               </Link>
@@ -327,15 +333,15 @@ function BrandNewProducts(props) {
                                                 {item.title}
                                               </Link>
                                             </h4>
-                                            <div class="product-meta">
-                                              <div class="pro-price">
+                                            <div className="product-meta">
+                                              <div className="pro-price">
                                                 <span>${item.price} USD</span>
                                               </div>
                                             </div>
-                                            <div class="product-wishlist">
-                                              <Link class="  ">
+                                            <div className="product-wishlist">
+                                              <Link to="/" className="  ">
                                                 <i
-                                                  class="far fa-heart"
+                                                  className="far fa-heart"
                                                   title="Wishlist"
                                                 ></i>
                                               </Link>
@@ -351,9 +357,9 @@ function BrandNewProducts(props) {
                         </div>
                         <div
                           onClick={() => handleTrans("next")}
-                          class="owl-prev arrow-icon right"
+                          className="owl-prev arrow-icon right"
                         >
-                          <i class="fas fa-arrow-right"></i>
+                          <i className="fas fa-arrow-right"></i>
                         </div>
                       </div>
                     </div>
@@ -361,15 +367,15 @@ function BrandNewProducts(props) {
                   <div
                     role="tabpanel"
                     aria-hidden="false"
-                    class={
+                    className={
                       idTab === 2
                         ? "fade tab-pane active show"
                         : "fade tab-pane"
                     }
                   >
                     {mens.length ? (
-                      <div class="product-slider owl-carousel">
-                        <div class="slick-slider slick-initialized">
+                      <div className="product-slider owl-carousel">
+                        <div className="slick-slider slick-initialized">
                           <div className="slick-list">
                             <div
                               className="slick-track slick-track-brand-new-products"
@@ -383,29 +389,31 @@ function BrandNewProducts(props) {
                                     return (
                                       <div
                                         data-index="0"
-                                        class="slick-slide slick-active slick-current slick-slide-brand-new-products"
-                                        tabindex="-1"
+                                        className="slick-slide slick-active slick-current slick-slide-brand-new-products"
+                                        tabIndex="-1"
                                         aria-hidden="false"
                                         style={{
                                           outline: "none",
                                         }}
+                                        key={index}
                                       >
                                         <div>
-                                          <div class="product-wrapper mb-50 ">
-                                            <div class="product-img mb-25">
+                                          <div className="product-wrapper mb-50 ">
+                                            <div className="product-img mb-25">
                                               <Link to={`/shop/${item.id}`}>
                                                 <img
                                                   src={item.image}
                                                   alt="img 1"
                                                 />
                                                 <img
-                                                  class="secondary-img"
+                                                  className="secondary-img"
                                                   src={item.hoverImage}
                                                   alt="imge 2"
                                                 />
                                               </Link>
-                                              <div class="product-action text-center">
+                                              <div className="product-action text-center">
                                                 <Link
+                                                  to="/"
                                                   title="Shoppingb Cart"
                                                   onClick={() =>
                                                     handleSendProduct(
@@ -413,37 +421,39 @@ function BrandNewProducts(props) {
                                                     )
                                                   }
                                                 >
-                                                  <i class="fas fa-shopping-cart"></i>
+                                                  <i className="fas fa-shopping-cart"></i>
                                                 </Link>
                                                 <Link
+                                                  to="/"
                                                   onClick={() =>
                                                     handleOpen(index)
                                                   }
                                                   title="Quick View"
                                                 >
-                                                  <i class="fas fa-eye"></i>
+                                                  <i className="fas fa-eye"></i>
                                                 </Link>
                                                 <Link
+                                                  to="/"
                                                   data-toggle="tooltip"
                                                   data-placement="right"
                                                   title="Compare"
-                                                  class=""
+                                                  className=""
                                                 >
-                                                  <i class="fas fa-compress-alt"></i>
+                                                  <i className="fas fa-compress-alt"></i>
                                                 </Link>
                                               </div>
-                                              <div class="sale-tag">
+                                              <div className="sale-tag">
                                                 {item.new ? (
-                                                  <span class="new">new</span>
+                                                  <span className="new">new</span>
                                                 ) : null}
 
                                                 {item.sale ? (
-                                                  <span class="sale">sale</span>
+                                                  <span className="sale">sale</span>
                                                 ) : null}
                                               </div>
                                             </div>
-                                            <div class="product-content">
-                                              <div class="pro-cat mb-10">
+                                            <div className="product-content">
+                                              <div className="pro-cat mb-10">
                                                 <Link to={`/shop/${item.id}`}>
                                                   {item.brand}
                                                 </Link>
@@ -453,15 +463,15 @@ function BrandNewProducts(props) {
                                                   {item.title}
                                                 </Link>
                                               </h4>
-                                              <div class="product-meta">
-                                                <div class="pro-price">
+                                              <div className="product-meta">
+                                                <div className="pro-price">
                                                   <span>${item.price} USD</span>
                                                 </div>
                                               </div>
-                                              <div class="product-wishlist">
-                                                <Link class="  ">
+                                              <div className="product-wishlist">
+                                                <Link to="/" className="  ">
                                                   <i
-                                                    class="far fa-heart"
+                                                    className="far fa-heart"
                                                     title="Wishlist"
                                                   ></i>
                                                 </Link>
@@ -482,15 +492,15 @@ function BrandNewProducts(props) {
                   <div
                     role="tabpanel"
                     aria-hidden="false"
-                    class={
+                    className={
                       idTab === 3
                         ? "fade tab-pane active show"
                         : "fade tab-pane"
                     }
                   >
                     {jewelery.length ? (
-                      <div class="product-slider owl-carousel">
-                        <div class="slick-slider slick-initialized">
+                      <div className="product-slider owl-carousel">
+                        <div className="slick-slider slick-initialized">
                           <div className="slick-list">
                             <div
                               className="slick-track slick-track-brand-new-products"
@@ -504,29 +514,31 @@ function BrandNewProducts(props) {
                                     return (
                                       <div
                                         data-index="0"
-                                        class="slick-slide slick-active slick-current slick-slide-brand-new-products"
-                                        tabindex="-1"
+                                        className="slick-slide slick-active slick-current slick-slide-brand-new-products"
+                                        tabIndex="-1"
                                         aria-hidden="false"
                                         style={{
                                           outline: "none",
                                         }}
+                                        key={index}
                                       >
                                         <div>
-                                          <div class="product-wrapper mb-50 ">
-                                            <div class="product-img mb-25">
+                                          <div className="product-wrapper mb-50 ">
+                                            <div className="product-img mb-25">
                                               <Link to={`/shop/${item.id}`}>
                                                 <img
                                                   src={item.image}
                                                   alt="img 1"
                                                 />
                                                 <img
-                                                  class="secondary-img"
+                                                  className="secondary-img"
                                                   src={item.hoverImage}
                                                   alt="imge 2"
                                                 />
                                               </Link>
-                                              <div class="product-action text-center">
+                                              <div className="product-action text-center">
                                                 <Link
+                                                  to="/"
                                                   title="Shoppingb Cart"
                                                   onClick={() =>
                                                     handleSendProduct(
@@ -534,37 +546,40 @@ function BrandNewProducts(props) {
                                                     )
                                                   }
                                                 >
-                                                  <i class="fas fa-shopping-cart"></i>
+                                                  <i className="fas fa-shopping-cart"></i>
                                                 </Link>
+
                                                 <Link
+                                                  to="/"
                                                   onClick={() =>
                                                     handleOpen(index)
                                                   }
                                                   title="Quick View"
                                                 >
-                                                  <i class="fas fa-eye"></i>
+                                                  <i className="fas fa-eye"></i>
                                                 </Link>
                                                 <Link
+                                                  to="/"
                                                   data-toggle="tooltip"
                                                   data-placement="right"
                                                   title="Compare"
-                                                  class=""
+                                                  className=""
                                                 >
-                                                  <i class="fas fa-compress-alt"></i>
+                                                  <i className="fas fa-compress-alt"></i>
                                                 </Link>
                                               </div>
-                                              <div class="sale-tag">
+                                              <div className="sale-tag">
                                                 {item.new ? (
-                                                  <span class="new">new</span>
+                                                  <span className="new">new</span>
                                                 ) : null}
 
                                                 {item.sale ? (
-                                                  <span class="sale">sale</span>
+                                                  <span className="sale">sale</span>
                                                 ) : null}
                                               </div>
                                             </div>
-                                            <div class="product-content">
-                                              <div class="pro-cat mb-10">
+                                            <div className="product-content">
+                                              <div className="pro-cat mb-10">
                                                 <Link to={`/shop/${item.id}`}>
                                                   {item.brand}
                                                 </Link>
@@ -574,15 +589,15 @@ function BrandNewProducts(props) {
                                                   {item.title}
                                                 </Link>
                                               </h4>
-                                              <div class="product-meta">
-                                                <div class="pro-price">
+                                              <div className="product-meta">
+                                                <div className="pro-price">
                                                   <span>${item.price} USD</span>
                                                 </div>
                                               </div>
-                                              <div class="product-wishlist">
-                                                <Link class="  ">
+                                              <div className="product-wishlist">
+                                                <Link to="/" className="  ">
                                                   <i
-                                                    class="far fa-heart"
+                                                    className="far fa-heart"
                                                     title="Wishlist"
                                                   ></i>
                                                 </Link>
@@ -603,15 +618,15 @@ function BrandNewProducts(props) {
                   <div
                     role="tabpanel"
                     aria-hidden="false"
-                    class={
+                    className={
                       idTab === 4
                         ? "fade tab-pane active show"
                         : "fade tab-pane"
                     }
                   >
                     {electronics.length ? (
-                      <div class="product-slider owl-carousel">
-                        <div class="slick-slider slick-initialized">
+                      <div className="product-slider owl-carousel">
+                        <div className="slick-slider slick-initialized">
                           <div className="slick-list">
                             <div
                               className="slick-track slick-track-brand-new-products"
@@ -625,29 +640,31 @@ function BrandNewProducts(props) {
                                     return (
                                       <div
                                         data-index="0"
-                                        class="slick-slide slick-active slick-current slick-slide-brand-new-products"
-                                        tabindex="-1"
+                                        className="slick-slide slick-active slick-current slick-slide-brand-new-products"
+                                        tabIndex="-1"
                                         aria-hidden="false"
                                         style={{
                                           outline: "none",
                                         }}
+                                        key={index}
                                       >
                                         <div>
-                                          <div class="product-wrapper mb-50 ">
-                                            <div class="product-img mb-25">
+                                          <div className="product-wrapper mb-50 ">
+                                            <div className="product-img mb-25">
                                               <Link to={`/shop/${item.id}`}>
                                                 <img
                                                   src={item.image}
                                                   alt="img 1"
                                                 />
                                                 <img
-                                                  class="secondary-img"
+                                                  className="secondary-img"
                                                   src={item.hoverImage}
                                                   alt="imge 2"
                                                 />
                                               </Link>
-                                              <div class="product-action text-center">
+                                              <div className="product-action text-center">
                                                 <Link
+                                                  to="/"
                                                   title="Shoppingb Cart"
                                                   onClick={() =>
                                                     handleSendProduct(
@@ -655,37 +672,39 @@ function BrandNewProducts(props) {
                                                     )
                                                   }
                                                 >
-                                                  <i class="fas fa-shopping-cart"></i>
+                                                  <i className="fas fa-shopping-cart"></i>
                                                 </Link>
                                                 <Link
+                                                  to="/"
                                                   onClick={() =>
                                                     handleOpen(index)
                                                   }
                                                   title="Quick View"
                                                 >
-                                                  <i class="fas fa-eye"></i>
+                                                  <i className="fas fa-eye"></i>
                                                 </Link>
                                                 <Link
+                                                  to="/"
                                                   data-toggle="tooltip"
                                                   data-placement="right"
                                                   title="Compare"
-                                                  class=""
+                                                  className=""
                                                 >
-                                                  <i class="fas fa-compress-alt"></i>
+                                                  <i className="fas fa-compress-alt"></i>
                                                 </Link>
                                               </div>
-                                              <div class="sale-tag">
+                                              <div className="sale-tag">
                                                 {item.new ? (
-                                                  <span class="new">new</span>
+                                                  <span className="new">new</span>
                                                 ) : null}
 
                                                 {item.sale ? (
-                                                  <span class="sale">sale</span>
+                                                  <span className="sale">sale</span>
                                                 ) : null}
                                               </div>
                                             </div>
-                                            <div class="product-content">
-                                              <div class="pro-cat mb-10">
+                                            <div className="product-content">
+                                              <div className="pro-cat mb-10">
                                                 <Link to={`/shop/${item.id}`}>
                                                   {item.brand}
                                                 </Link>
@@ -695,15 +714,15 @@ function BrandNewProducts(props) {
                                                   {item.title}
                                                 </Link>
                                               </h4>
-                                              <div class="product-meta">
-                                                <div class="pro-price">
+                                              <div className="product-meta">
+                                                <div className="pro-price">
                                                   <span>${item.price} USD</span>
                                                 </div>
                                               </div>
-                                              <div class="product-wishlist">
-                                                <Link class="  ">
+                                              <div className="product-wishlist">
+                                                <Link to="/" className="  ">
                                                   <i
-                                                    class="far fa-heart"
+                                                    className="far fa-heart"
                                                     title="Wishlist"
                                                   ></i>
                                                 </Link>
@@ -737,12 +756,12 @@ function BrandNewProducts(props) {
         <Box>
           {modalValue.current || modalValue.current === 0 ? (
             <>
-              <div class="fade modal-backdrop show"></div>
+              <div className="fade modal-backdrop show"></div>
               <div
                 role="dialog"
                 aria-modal="true"
-                class="fade modal show"
-                tabindex="-1"
+                className="fade modal show"
+                tabIndex="-1"
                 style={{
                   display: "block",
                   paddingLeft: "16px",
@@ -750,19 +769,19 @@ function BrandNewProducts(props) {
                   overflowY: "auto",
                 }}
               >
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-body">
-                      <div class="row">
-                        <div class="col-xl-6 col-lg-6">
-                          <div class="product-details-img mb-10">
-                            <div id="myTabContentpro" class="tab-content">
+                <div className="modal-dialog">
+                  <div className="modal-content">
+                    <div className="modal-body">
+                      <div className="row">
+                        <div className="col-xl-6 col-lg-6">
+                          <div className="product-details-img mb-10">
+                            <div id="myTabContentpro" className="tab-content">
                               <div
                                 role="tabpanel"
                                 aria-hidden="false"
-                                class="fade tab-pane active show"
+                                className="fade tab-pane active show"
                               >
-                                <div class="product-large-img">
+                                <div className="product-large-img">
                                   <img
                                     src={products[modalValue.current].image}
                                     alt="tum"
@@ -772,9 +791,9 @@ function BrandNewProducts(props) {
                               <div
                                 role="tabpanel"
                                 aria-hidden="true"
-                                class="fade tab-pane"
+                                className="fade tab-pane"
                               >
-                                <div class="product-large-img">
+                                <div className="product-large-img">
                                   <img
                                     src={products[modalValue.current].navImage}
                                     alt="tum"
@@ -784,9 +803,9 @@ function BrandNewProducts(props) {
                               <div
                                 role="tabpanel"
                                 aria-hidden="true"
-                                class="fade tab-pane"
+                                className="fade tab-pane"
                               >
-                                <div class="product-large-img">
+                                <div className="product-large-img">
                                   <img
                                     src={
                                       products[modalValue.current].hoverImage
@@ -797,15 +816,15 @@ function BrandNewProducts(props) {
                               </div>
                             </div>
                           </div>
-                          <div class="shop-thumb-tab ">
-                            <ul class="nav" role="tablist">
-                              <li class="nav-item">
+                          <div className="shop-thumb-tab ">
+                            <ul className="nav" role="tablist">
+                              <li className="nav-item">
                                 <Link
-                                  href="#"
+                                  to="/"
                                   role="tab"
                                   data-rb-event-key="tum-0"
                                   aria-selected="true"
-                                  class="nav-link active"
+                                  className="nav-link active"
                                 >
                                   <img
                                     src={products[modalValue.current].image}
@@ -813,13 +832,13 @@ function BrandNewProducts(props) {
                                   />{" "}
                                 </Link>
                               </li>
-                              <li class="nav-item">
+                              <li className="nav-item">
                                 <Link
-                                  href="#"
+                                  to="/"
                                   role="tab"
                                   data-rb-event-key="tum-1"
                                   aria-selected="false"
-                                  class="nav-link"
+                                  className="nav-link"
                                 >
                                   <img
                                     src={products[modalValue.current].navImage}
@@ -827,13 +846,13 @@ function BrandNewProducts(props) {
                                   />{" "}
                                 </Link>
                               </li>
-                              <li class="nav-item">
+                              <li className="nav-item">
                                 <Link
-                                  href="#"
+                                  to="/"
                                   role="tab"
                                   data-rb-event-key="tum-2"
                                   aria-selected="false"
-                                  class="nav-link"
+                                  className="nav-link"
                                 >
                                   <img
                                     src={
@@ -846,42 +865,42 @@ function BrandNewProducts(props) {
                             </ul>
                           </div>
                         </div>
-                        <div class="col-xl-6 col-lg-6">
-                          <div class="product-details ">
-                            <div class="details-cat mb-10 d-flex align-items-center justify-content-between">
+                        <div className="col-xl-6 col-lg-6">
+                          <div className="product-details ">
+                            <div className="details-cat mb-10 d-flex align-items-center justify-content-between">
                               <div>
-                                <Link href="#">
+                                <Link to="/">
                                   {products[modalValue.current].category}
                                 </Link>
                               </div>
                               <i
-                                class="fa fa-times modal-icon "
+                                className="fa fa-times modal-icon "
                                 onClick={handleClose}
                               ></i>
                             </div>
-                            <h2 class="pro-details-title mb-15 fs-30">
+                            <h2 className="pro-details-title mb-15 fs-30">
                               {products[modalValue.current].title}
                             </h2>
-                            <div class="details-price mb-10 fs-25">
+                            <div className="details-price mb-10 fs-25">
                               <span>
                                 ${products[modalValue.current].price} USD
                               </span>
                               {products[modalValue.current].oldPrice ? (
-                                <span class="old-price">
+                                <span className="old-price">
                                   ${products[modalValue.current].oldPrice} USD
                                 </span>
                               ) : null}
                             </div>
-                            <div class="product-variant ">
-                              <div class="product-color variant-item modal-p-15">
-                                <div class="variant-name">
+                            <div className="product-variant ">
+                              <div className="product-color variant-item modal-p-15">
+                                <div className="variant-name">
                                   <span>Colors</span>
                                 </div>
-                                <ul class="shop-link shop-color">
+                                <ul className="shop-link shop-color">
                                   <li>
-                                    <Link href="#">
+                                    <Link to="/">
                                       <span
-                                        class={products[
+                                        className={products[
                                           modalValue.current
                                         ].color.toLowerCase()}
                                       ></span>
@@ -889,67 +908,67 @@ function BrandNewProducts(props) {
                                   </li>
                                 </ul>
                               </div>
-                              <div class="product-size variant-item modal-p-15">
-                                <div class="variant-name">
+                              <div className="product-size variant-item modal-p-15">
+                                <div className="variant-name">
                                   <span>size</span>
                                 </div>
-                                <ul class="shop-link shop-size">
+                                <ul className="shop-link shop-size">
                                   <li
-                                    class={
+                                    className={
                                       products[modalValue.current].size === "l"
                                         ? "active"
                                         : " "
                                     }
                                   >
-                                    <Link href="#">L</Link>
+                                    <Link to="/">L</Link>
                                   </li>
                                   <li
-                                    class={
+                                    className={
                                       products[modalValue.current].size === "m"
                                         ? "active"
                                         : " "
                                     }
                                   >
-                                    <Link href="#">M</Link>
+                                    <Link to="/">M</Link>
                                   </li>
                                   <li
-                                    class={
+                                    className={
                                       products[modalValue.current].size === "x"
                                         ? "active"
                                         : " "
                                     }
                                   >
-                                    <Link href="#">X</Link>
+                                    <Link to="/">X</Link>
                                   </li>
                                   <li
-                                    class={
+                                    className={
                                       products[modalValue.current].size === "xl"
                                         ? "active"
                                         : " "
                                     }
                                   >
-                                    <Link href="#">XL</Link>
+                                    <Link to="/">XL</Link>
                                   </li>
                                   <li
-                                    class={
+                                    className={
                                       products[modalValue.current].size ===
                                       "xxl"
                                         ? "active"
                                         : " "
                                     }
                                   >
-                                    <Link href="#">XXL</Link>
+                                    <Link to="/">XXL</Link>
                                   </li>
                                 </ul>
                               </div>
-                              <div class="product-desc variant-item modal-p-15">
+                              <div className="product-desc variant-item modal-p-15">
                                 <p>
                                   {products[modalValue.current].description}
                                 </p>
                               </div>
-                              <div class="product-info-list variant-item modal-p-15">
+                              <div className="product-info-list variant-item modal-p-15">
                                 <ul>
-                                  <li class="text-capitalize">
+                                  <li className="text-capitalize">
                                     <span>Brands:</span>{" "}
                                     {products[modalValue.current].brand}
                                   </li>
@@ -961,7 +980,7 @@ function BrandNewProducts(props) {
                                   </li>
                                   <li>
                                     <span>Stock:</span>{" "}
-                                    <span class="in-stock">Out Of Stock</span>
+                                    <span className="in-stock">Out Of Stock</span>
                                   </li>
                                 </ul>
                               </div>

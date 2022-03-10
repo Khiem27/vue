@@ -6,7 +6,7 @@ ShopCol3Banner.propTypes = {
 
 function ShopCol3Banner(props) {
     return (
-        <div class="shop-banner mb-50">
+        <div className="shop-banner mb-50">
             <img src="https://vue-plum-chi.vercel.app/img/bg/shop-banner-2.jpg" alt="Banner" />
         </div>
     );

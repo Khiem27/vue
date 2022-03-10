@@ -14,12 +14,12 @@ function ContactsTitle(props) {
           "url(https://vue-plum-chi.vercel.app/img/bg/page-title.png)",
       }}
     >
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-12">
-            <div class="breadcrumb-text text-center">
-              <h1 class="">Contacts</h1>
-              <ul class="breadcrumb-menu">
+      <div className="container">
+        <div className="row">
+          <div className="col-xl-12">
+            <div className="breadcrumb-text text-center">
+              <h1 className="">Contacts</h1>
+              <ul className="breadcrumb-menu">
                 <li>
                   <Link to="/">home</Link>
                 </li>

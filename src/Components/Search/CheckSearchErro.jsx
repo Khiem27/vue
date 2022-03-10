@@ -9,7 +9,7 @@ function CheckSearchErro(props) {
             {
                 productsSearch ?
                     productsSearch.length === 0 ? 
-                        <h2 class="text-center d-block w-100 mt-5">No Product Found</h2>
+                        <h2 className="text-center d-block w-100 mt-5">No Product Found</h2>
                     : null
                 : null
             }

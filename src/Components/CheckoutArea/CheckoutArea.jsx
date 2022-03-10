@@ -5,8 +5,8 @@ CheckoutArea.propTypes = {};
 
 function CheckoutArea(props) {
   return (
-    <section class="checkout-area pb-70">
-      <div class="container">
+    <section className="checkout-area pb-70">
+      <div className="container">
         <FormCheckout />
       </div>
     </section>

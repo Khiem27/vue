@@ -18,22 +18,22 @@ function SliderIndex4(props) {
     }
   };
   return (
-    <section class="slider-area pos-relative">
-      <div class="slider-active">
-        <div class="slick-slider slick-initialized" dir="ltr">
+    <section className="slider-area pos-relative">
+      <div className="slider-active">
+        <div className="slick-slider slick-initialized" dir="ltr">
           <button
             onClick={() => handleActive("prev")}
             type="button"
-            class="slick-arrow slick-prev"
+            className="slick-arrow slick-prev"
           >
             {" "}
-            <i class="fas fa-arrow-left"></i>{" "}
+            <i className="fas fa-arrow-left"></i>{" "}
           </button>
-          <div class="slick-list">
-            <div class="slick-track" style={{ opacity: "1", width: "700%" }}>
+          <div className="slick-list">
+            <div className="slick-track" style={{ opacity: "1", width: "700%" }}>
               <div
                 data-index="0"
-                class={
+                className={
                   active === 1
                     ? "slick-slide slick-active slick-current"
                     : "slick-slide"
@@ -64,7 +64,7 @@ function SliderIndex4(props) {
               >
                 <div>
                   <div
-                    class="single-slider slide-1-style slide-height-2 slide-height-4 d-flex align-items-center"
+                    className="single-slider slide-1-style slide-height-2 slide-height-4 d-flex align-items-center"
                     data-background="https://vue-plum-chi.vercel.app/img/slider/slide5.jpg"
                     tabindex="-1"
                     style={{
@@ -75,27 +75,27 @@ function SliderIndex4(props) {
                     }}
                   >
                     <div
-                      class="shape-title shape-title-4 bounce-animate"
+                      className="shape-title shape-title-4 bounce-animate"
                       style={{ zIndex: "unset" }}
                     >
                       <h2>2022</h2>
                     </div>
-                    <div class="shape-icon shape-icon-4 bounce-animate">
+                    <div className="shape-icon shape-icon-4 bounce-animate">
                       <img
                         src="https://vue-plum-chi.vercel.app/img/slider/shape-icon-2.png"
                         alt="Shap"
                       />
                     </div>
-                    <div class="container">
-                      <div class="row">
-                        <div class="col-xl-12">
-                          <div class="slide-content slide-content-4 text-center pt-40">
+                    <div className="container">
+                      <div className="row">
+                        <div className="col-xl-12">
+                          <div className="slide-content slide-content-4 text-center pt-40">
                             <h1 data-animation="fadeInUp" data-delay=".3s">
                               New Arrival
                             </h1>
-                            <div class="slide-btn">
+                            <div className="slide-btn">
                               <a
-                                class="btn theme-btn"
+                                className="btn theme-btn"
                                 data-animation="fadeInLeft"
                                 data-delay=".6s"
                                 href="/shop"
@@ -103,7 +103,7 @@ function SliderIndex4(props) {
                                 shop now
                               </a>
                               <a
-                                class="btn white-btn"
+                                className="btn white-btn"
                                 data-animation="fadeInRight"
                                 data-delay=".9s"
                                 href="/shop"
@@ -120,7 +120,7 @@ function SliderIndex4(props) {
               </div>
               <div
                 data-index="1"
-                class={
+                className={
                   active === 2
                     ? "slick-slide slick-active slick-current"
                     : "slick-slide"
@@ -151,7 +151,7 @@ function SliderIndex4(props) {
               >
                 <div>
                   <div
-                    class="single-slider slide-1-style slide-height-2 slide-height-4 d-flex align-items-center"
+                    className="single-slider slide-1-style slide-height-2 slide-height-4 d-flex align-items-center"
                     data-background="/img/slider/slide5-2.jpg"
                     tabindex="-1"
                     style={{
@@ -162,27 +162,27 @@ function SliderIndex4(props) {
                     }}
                   >
                     <div
-                      class="shape-title shape-title-4 bounce-animate"
+                      className="shape-title shape-title-4 bounce-animate"
                       style={{ zIndex: "unset" }}
                     >
                       <h2>2022</h2>
                     </div>
-                    <div class="shape-icon shape-icon-4 bounce-animate">
+                    <div className="shape-icon shape-icon-4 bounce-animate">
                       <img
                         src="https://vue-plum-chi.vercel.app/img/slider/shape-icon-2.png"
                         alt="Shap"
                       />
                     </div>
-                    <div class="container">
-                      <div class="row">
-                        <div class="col-xl-12">
-                          <div class="slide-content slide-content-4 text-center pt-40">
+                    <div className="container">
+                      <div className="row">
+                        <div className="col-xl-12">
+                          <div className="slide-content slide-content-4 text-center pt-40">
                             <h1 data-animation="fadeInUp" data-delay=".3s">
                               Trendy Collection
                             </h1>
-                            <div class="slide-btn">
+                            <div className="slide-btn">
                               <a
-                                class="btn theme-btn"
+                                className="btn theme-btn"
                                 data-animation="fadeInLeft"
                                 data-delay=".6s"
                                 href="/shop"
@@ -190,7 +190,7 @@ function SliderIndex4(props) {
                                 shop now
                               </a>
                               <a
-                                class="btn white-btn"
+                                className="btn white-btn"
                                 data-animation="fadeInRight"
                                 data-delay=".9s"
                                 href="/shop"
@@ -207,7 +207,7 @@ function SliderIndex4(props) {
               </div>
               <div
                 data-index="2"
-                class={
+                className={
                   active === 3
                     ? "slick-slide slick-active slick-current"
                     : "slick-slide"
@@ -238,7 +238,7 @@ function SliderIndex4(props) {
               >
                 <div>
                   <div
-                    class="single-slider slide-1-style slide-height-2 slide-height-4 d-flex align-items-center"
+                    className="single-slider slide-1-style slide-height-2 slide-height-4 d-flex align-items-center"
                     data-background="https://vue-plum-chi.vercel.app/img/slider/slide5-3.jpg"
                     tabindex="-1"
                     style={{
@@ -249,27 +249,27 @@ function SliderIndex4(props) {
                     }}
                   >
                     <div
-                      class="shape-title shape-title-4 bounce-animate"
+                      className="shape-title shape-title-4 bounce-animate"
                       style={{ zIndex: "unset" }}
                     >
                       <h2>2022</h2>
                     </div>
-                    <div class="shape-icon shape-icon-4 bounce-animate">
+                    <div className="shape-icon shape-icon-4 bounce-animate">
                       <img
                         src="https://vue-plum-chi.vercel.app/img/slider/shape-icon-2.png"
                         alt="Shap"
                       />
                     </div>
-                    <div class="container">
-                      <div class="row">
-                        <div class="col-xl-12">
-                          <div class="slide-content slide-content-4 text-center pt-40">
+                    <div className="container">
+                      <div className="row">
+                        <div className="col-xl-12">
+                          <div className="slide-content slide-content-4 text-center pt-40">
                             <h1 data-animation="fadeInUp" data-delay=".3s">
                               Men Collection
                             </h1>
-                            <div class="slide-btn">
+                            <div className="slide-btn">
                               <a
-                                class="btn theme-btn"
+                                className="btn theme-btn"
                                 data-animation="fadeInLeft"
                                 data-delay=".6s"
                                 href="/shop"
@@ -277,7 +277,7 @@ function SliderIndex4(props) {
                                 shop now
                               </a>
                               <a
-                                class="btn white-btn"
+                                className="btn white-btn"
                                 data-animation="fadeInRight"
                                 data-delay=".9s"
                                 href="/shop"
@@ -297,10 +297,10 @@ function SliderIndex4(props) {
           <button
             onClick={() => handleActive("next")}
             type="button"
-            class="slick-arrow slick-next"
+            className="slick-arrow slick-next"
           >
             {" "}
-            <i class="fas fa-arrow-right"></i>
+            <i className="fas fa-arrow-right"></i>
           </button>
         </div>
       </div>

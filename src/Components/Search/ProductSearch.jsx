@@ -20,9 +20,9 @@ function ProductSearch(props) {
 
     return (
         <div>
-            <form action="#" class="shop-search" ref={inputEl}>
+            <form action="#" className="shop-search" ref={inputEl}>
                 <input type="text" onChange={submitSearch} placeholder="Your keyword...." name='search'/>
-                <button type='button' onClick={submitSearch}><i class="fa fa-search"></i></button>
+                <button type='button' onClick={submitSearch}><i className="fa fa-search"></i></button>
             </form>
         </div>
     );

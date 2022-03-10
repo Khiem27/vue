@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import {
-  addFromLocal, removeFromCart, updateQuantity
+    addFromLocal, removeFromCart, updateQuantity
 } from "../AddToCart/AddToCartSlice";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
@@ -51,21 +51,21 @@ function Cart(props) {
       <Header />
       <CartTitle />
       {products.length !== 0 ? (
-        <section class="cart-area pt-100 pb-100">
-          <div class="container">
-            <div class="row">
-              <div class="col-12">
+        <section className="cart-area pt-100 pb-100">
+          <div className="container">
+            <div className="row">
+              <div className="col-12">
                 <form action="#">
-                  <div class="table-content table-responsive">
-                    <table class="table">
+                  <div className="table-content table-responsive">
+                    <table className="table">
                       <thead>
                         <tr>
-                          <th class="product-thumbnail">Images</th>
-                          <th class="cart-product-name">Product</th>
-                          <th class="product-price">Unit Price</th>
-                          <th class="product-quantity">Quantity</th>
-                          <th class="product-subtotal">Total</th>
-                          <th class="product-remove">Remove</th>
+                          <th className="product-thumbnail">Images</th>
+                          <th className="cart-product-name">Product</th>
+                          <th className="product-price">Unit Price</th>
+                          <th className="product-quantity">Quantity</th>
+                          <th className="product-subtotal">Total</th>
+                          <th className="product-remove">Remove</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -73,22 +73,22 @@ function Cart(props) {
                           ? products.map((item, index) => {
                               return (
                                 <tr>
-                                  <td class="product-thumbnail">
+                                  <td className="product-thumbnail">
                                     <Link href="#">
                                       <img src={item.image} alt="cart" />
                                     </Link>
                                   </td>
-                                  <td class="product-name">
+                                  <td className="product-name">
                                     <Link href="#">{item.title}</Link>
                                   </td>
-                                  <td class="product-price">
-                                    <span class="amount">${item.price}</span>
+                                  <td className="product-price">
+                                    <span className="amount">${item.price}</span>
                                   </td>
-                                  <td class="product-quantity">
-                                    <div class="cart-plus-minus">
+                                  <td className="product-quantity">
+                                    <div className="cart-plus-minus">
                                       <p>{item.quantity}</p>
                                       <div
-                                        class="dec qtybutton"
+                                        className="dec qtybutton"
                                         onClick={() =>
                                           sendInfo(item.id, "decrease")
                                         }
@@ -96,7 +96,7 @@ function Cart(props) {
                                         -
                                       </div>
                                       <div
-                                        class="inc qtybutton"
+                                        className="inc qtybutton"
                                         onClick={() =>
                                           sendInfo(item.id, "increase")
                                         }
@@ -105,14 +105,14 @@ function Cart(props) {
                                       </div>
                                     </div>
                                   </td>
-                                  <td class="product-subtotal">
-                                    <span class="amount">${item.total}</span>
+                                  <td className="product-subtotal">
+                                    <span className="amount">${item.total}</span>
                                   </td>
-                                  <td class="product-remove">
+                                  <td className="product-remove">
                                     <Link
                                       onClick={() => handleRemoveItem(item.id)}
                                     >
-                                      <i class="fa fa-times"></i>
+                                      <i className="fa fa-times"></i>
                                     </Link>
                                   </td>
                                 </tr>
@@ -122,20 +122,20 @@ function Cart(props) {
                       </tbody>
                     </table>
                   </div>
-                  <div class="row">
-                    <div class="col-12">
-                      <div class="coupon-all">
-                        <div class="coupon">
+                  <div className="row">
+                    <div className="col-12">
+                      <div className="coupon-all">
+                        <div className="coupon">
                           <form>
                             <input
                               id="coupon_code"
-                              class="input-text"
+                              className="input-text"
                               name="coupon_code"
                               placeholder="Coupon code"
                               type="text"
                             />
                             <button
-                              class="btn theme-btn-2"
+                              className="btn theme-btn-2"
                               name="apply_coupon"
                               type="submit"
                             >
@@ -143,19 +143,19 @@ function Cart(props) {
                             </button>
                           </form>
                         </div>
-                        <div class="coupon2">
-                          <Link class="btn theme-btn" href="/checkout">
+                        <div className="coupon2">
+                          <Link className="btn theme-btn" href="/checkout">
                             Submit
                           </Link>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="row">
-                    <div class="col-md-5 ml-auto">
-                      <div class="cart-page-total">
+                  <div className="row">
+                    <div className="col-md-5 ml-auto">
+                      <div className="cart-page-total">
                         <h2>Cart totals</h2>
-                        <ul class="mb-20">
+                        <ul className="mb-20">
                           <li>
                             Subtotal <span>${productsTotal}</span>
                           </li>
@@ -163,7 +163,7 @@ function Cart(props) {
                             Total <span>${productsTotal}</span>
                           </li>
                         </ul>
-                        <Link class="btn theme-btn" href="/checkout">
+                        <Link className="btn theme-btn" href="/checkout">
                           Proceed to checkout
                         </Link>
                       </div>
@@ -175,7 +175,7 @@ function Cart(props) {
           </div>
         </section>
       ) : (
-        <h2 class="pt-100 pb-50 text-center w-100">No Product Found</h2>
+        <h2 className="pt-100 pb-50 text-center w-100">No Product Found</h2>
       )}
       <Footer />
     </>

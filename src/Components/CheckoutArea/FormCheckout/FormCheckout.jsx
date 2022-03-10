@@ -301,13 +301,13 @@ function FormCheckout(props) {
 
   return (
     <form ref={form} onSubmit={sendEmail}>
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="checkbox-form">
+      <div className="row">
+        <div className="col-lg-6">
+          <div className="checkbox-form">
             <h3>Billing Details</h3>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="country-select">
+            <div className="row">
+              <div className="col-md-12">
+                <div className="country-select">
                   <Autocomplete
                     value={value}
                     onChange={(event, newValue) => {
@@ -326,46 +326,46 @@ function FormCheckout(props) {
                   />
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="checkout-form-list">
+              <div className="col-md-6">
+                <div className="checkout-form-list">
                   <label for="fName">
-                    First Name <span class="required">*</span>
+                    First Name <span className="required">*</span>
                   </label>
-                  <input type="text" id="fName" name="fName" class="mb-0" />
+                  <input type="text" id="fName" name="fName" className="mb-0" />
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="checkout-form-list">
+              <div className="col-md-6">
+                <div className="checkout-form-list">
                   <label for="lName">
-                    Last Name <span class="required">*</span>
+                    Last Name <span className="required">*</span>
                   </label>
-                  <input type="text" id="lName" name="lName" class="mb-0" />
+                  <input type="text" id="lName" name="lName" className="mb-0" />
                 </div>
               </div>
-              <div class="col-md-12">
-                <div class="checkout-form-list">
+              <div className="col-md-12">
+                <div className="checkout-form-list">
                   <label for="cName">
-                    Company Name <span class="required">*</span>
+                    Company Name <span className="required">*</span>
                   </label>
-                  <input type="text" id="cName" name="cName" class="mb-0" />
+                  <input type="text" id="cName" name="cName" className="mb-0" />
                 </div>
               </div>
-              <div class="col-md-12">
-                <div class="checkout-form-list">
+              <div className="col-md-12">
+                <div className="checkout-form-list">
                   <label for="address">
-                    Address <span class="required">*</span>
+                    Address <span className="required">*</span>
                   </label>
                   <input
                     type="text"
                     id="address"
                     name="address"
                     placeholder="Street address"
-                    class="mb-0"
+                    className="mb-0"
                   />
                 </div>
               </div>
-              <div class="col-md-12">
-                <div class="checkout-form-list">
+              <div className="col-md-12">
+                <div className="checkout-form-list">
                   <input
                     type="text"
                     placeholder="Apartment, suite, unit etc. (optional)"
@@ -373,69 +373,69 @@ function FormCheckout(props) {
                   />
                 </div>
               </div>
-              <div class="col-md-12">
-                <div class="checkout-form-list">
+              <div className="col-md-12">
+                <div className="checkout-form-list">
                   <label for="city">
-                    Town / City <span class="required">*</span>
+                    Town / City <span className="required">*</span>
                   </label>
                   <input
                     type="text"
                     id="city"
                     name="city"
                     placeholder="Town / City"
-                    class="mb-0"
+                    className="mb-0"
                   />
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="checkout-form-list">
+              <div className="col-md-6">
+                <div className="checkout-form-list">
                   <label for="state">
-                    State / County <span class="required">*</span>
+                    State / County <span className="required">*</span>
                   </label>
                   <input
                     type="text"
                     id="state"
                     name="state"
                     placeholder="State / County"
-                    class="mb-0"
+                    className="mb-0"
                   />
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="checkout-form-list">
+              <div className="col-md-6">
+                <div className="checkout-form-list">
                   <label for="zip">
-                    Postcode / Zip <span class="required">*</span>
+                    Postcode / Zip <span className="required">*</span>
                   </label>
                   <input
                     type="text"
                     id="zip"
                     name="zip"
                     placeholder="Postcode / Zip"
-                    class="mb-0"
+                    className="mb-0"
                   />
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="checkout-form-list">
+              <div className="col-md-6">
+                <div className="checkout-form-list">
                   <label for="email">
-                    Email Address <span class="required">*</span>
+                    Email Address <span className="required">*</span>
                   </label>
-                  <input type="email" id="email" name="email" class="mb-0" />
+                  <input type="email" id="email" name="email" className="mb-0" />
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="checkout-form-list">
+              <div className="col-md-6">
+                <div className="checkout-form-list">
                   <label for="phone">
-                    Phone <span class="required">*</span>
+                    Phone <span className="required">*</span>
                   </label>
-                  <input type="text" id="phone" name="phone" class="mb-0" />
+                  <input type="text" id="phone" name="phone" className="mb-0" />
                 </div>
               </div>
-              <div class="col-md-12"></div>
+              <div className="col-md-12"></div>
             </div>
-            <div class="different-address">
-              <div class="order-notes">
-                <div class="checkout-form-list">
+            <div className="different-address">
+              <div className="order-notes">
+                <div className="checkout-form-list">
                   <label>Order Notes</label>
                   <textarea
                     id="checkout-mess"
@@ -449,31 +449,31 @@ function FormCheckout(props) {
             </div>
           </div>
         </div>
-        <div class="col-lg-6">
-          <div class="your-order mb-30 ">
+        <div className="col-lg-6">
+          <div className="your-order mb-30 ">
             <h3>Your order</h3>
-            <div class="your-order-table table-responsive">
+            <div className="your-order-table table-responsive">
               <table>
                 <thead>
                   <tr>
-                    <th class="product-name">Product</th>
-                    <th class="product-total">Total</th>
+                    <th className="product-name">Product</th>
+                    <th className="product-total">Total</th>
                   </tr>
                 </thead>
                 <tbody>
                   {products.length
                     ? products.map((item, index) => {
                         return (
-                          <tr class="cart_item">
-                            <td class="product-name">
+                          <tr className="cart_item">
+                            <td className="product-name">
                               {item.title}
-                              <strong class="product-quantity">
+                              <strong className="product-quantity">
                                 {" "}
                                 × {item.quantity}
                               </strong>
                             </td>
-                            <td class="product-total">
-                              <span class="amount">${item.price}</span>
+                            <td className="product-total">
+                              <span className="amount">${item.price}</span>
                             </td>
                           </tr>
                         );
@@ -481,20 +481,20 @@ function FormCheckout(props) {
                     : null}
                 </tbody>
                 <tfoot>
-                  <tr class="cart-subtotal">
+                  <tr className="cart-subtotal">
                     <th>Cart Subtotal</th>
                     <td>
-                      <span class="amount">${productsTotal}</span>
+                      <span className="amount">${productsTotal}</span>
                     </td>
                   </tr>
-                  <tr class="shipping">
+                  <tr className="shipping">
                     <th>Shipping</th>
                     <td>
                       <ul>
                         <li>
                           <input type="checkbox" id="flat" />{" "}
                           <label for="flat">
-                            Flat Rate: <span class="amount">$7.00</span>
+                            Flat Rate: <span className="amount">$7.00</span>
                           </label>
                         </li>
                         <li>
@@ -505,18 +505,18 @@ function FormCheckout(props) {
                       </ul>
                     </td>
                   </tr>
-                  <tr class="order-total">
+                  <tr className="order-total">
                     <th>Order Total</th>
                     <td>
                       <strong>
-                        <span class="amount">${productsTotal}</span>
+                        <span className="amount">${productsTotal}</span>
                       </strong>
                     </td>
                   </tr>
                 </tfoot>
               </table>
             </div>
-            <div class="payment-method">
+            <div className="payment-method">
               <Accordion
                 expanded={expanded === "panel1"}
                 onChange={handleChange("panel1")}
@@ -629,8 +629,8 @@ function FormCheckout(props) {
                   </Typography>
                 </AccordionDetails>
               </Accordion>
-              <div class="order-button-payment mt-20">
-                <button type="submit" value="Send" class="btn theme-btn">
+              <div className="order-button-payment mt-20">
+                <button type="submit" value="Send" className="btn theme-btn">
                   Place order
                 </button>
               </div>

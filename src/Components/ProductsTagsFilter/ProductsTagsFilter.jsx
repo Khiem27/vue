@@ -41,7 +41,7 @@ function ProductsTagsFilter(props) {
     }
 
     return (
-        <ul class="shop-tag">
+        <ul className="shop-tag">
             <li><Link onClick={clickFurniture} className="text-capitalize "> furniture </Link></li>
             <li><Link onClick={clickLadies} className="text-capitalize "> ladies </Link></li>
             <li><Link onClick={clickGent} className="text-capitalize "> gent </Link></li>

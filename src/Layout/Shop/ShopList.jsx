@@ -36,7 +36,7 @@ function ShopList(props) {
             <div className="col-xl-8 col-lg-8">
               <ShopBanner />
               <div className="shop-col3-products">
-                <div class="row">
+                <div className="row">
                   <ShowingResult />
                   <ShopNavList />
                 </div>
@@ -47,32 +47,32 @@ function ShopList(props) {
                 ) : null}
               </div>
             </div>
-            <div class="col-xl-4 col-lg-4">
-              <div class="sidebar-box">
-                <div class="shop-widget">
-                  <h3 class="shop-title">Search by</h3>
+            <div className="col-xl-4 col-lg-4">
+              <div className="sidebar-box">
+                <div className="shop-widget">
+                  <h3 className="shop-title">Search by</h3>
                   <ProductSearch />
                 </div>
-                <div class="shop-widget">
-                  <h3 class="shop-title">Catergories</h3>
+                <div className="shop-widget">
+                  <h3 className="shop-title">Catergories</h3>
                   <ProductFilterCategories />
                 </div>
-                <div class="shop-widget">
-                  <h3 class="shop-title">Brand</h3>
+                <div className="shop-widget">
+                  <h3 className="shop-title">Brand</h3>
                   <ProductsBrandFilter />
                 </div>
-                <div class="shop-widget">
-                  <h3 class="shop-title">Product size</h3>
+                <div className="shop-widget">
+                  <h3 className="shop-title">Product size</h3>
                   <ProductsSizeFilter />
                 </div>
 
-                <div class="shop-widget">
-                  <h3 class="shop-title">Tags</h3>
+                <div className="shop-widget">
+                  <h3 className="shop-title">Tags</h3>
                   <ProductsTagsFilter />
                 </div>
 
-                <div class="shop-widget">
-                  <h3 class="shop-title">Color</h3>
+                <div className="shop-widget">
+                  <h3 className="shop-title">Color</h3>
                   <ProductsColorFilter />
                 </div>
               </div>

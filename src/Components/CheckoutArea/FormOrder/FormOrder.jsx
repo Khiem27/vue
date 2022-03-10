@@ -1,12 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { useSelector, useDispatch } from "react-redux";
-import { useState } from "react";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import Typography from "@mui/material/Typography";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
 
 FormOrder.propTypes = {};
 
@@ -20,31 +18,31 @@ function FormOrder(props) {
     setExpanded(isExpanded ? panel : false);
   };
   return (
-    <div class="col-lg-6">
-      <div class="your-order mb-30 ">
+    <div className="col-lg-6">
+      <div className="your-order mb-30 ">
         <h3>Your order</h3>
-        <div class="your-order-table table-responsive">
+        <div className="your-order-table table-responsive">
           <table>
             <thead>
               <tr>
-                <th class="product-name">Product</th>
-                <th class="product-total">Total</th>
+                <th className="product-name">Product</th>
+                <th className="product-total">Total</th>
               </tr>
             </thead>
             <tbody>
               {products.length
                 ? products.map((item, index) => {
                     return (
-                      <tr class="cart_item">
-                        <td class="product-name">
+                      <tr className="cart_item">
+                        <td className="product-name">
                           {item.title}
-                          <strong class="product-quantity">
+                          <strong className="product-quantity">
                             {" "}
                             × {item.quantity}
                           </strong>
                         </td>
-                        <td class="product-total">
-                          <span class="amount">${item.price}</span>
+                        <td className="product-total">
+                          <span className="amount">${item.price}</span>
                         </td>
                       </tr>
                     );
@@ -52,20 +50,20 @@ function FormOrder(props) {
                 : null}
             </tbody>
             <tfoot>
-              <tr class="cart-subtotal">
+              <tr className="cart-subtotal">
                 <th>Cart Subtotal</th>
                 <td>
-                  <span class="amount">${productsTotal}</span>
+                  <span className="amount">${productsTotal}</span>
                 </td>
               </tr>
-              <tr class="shipping">
+              <tr className="shipping">
                 <th>Shipping</th>
                 <td>
                   <ul>
                     <li>
                       <input type="checkbox" id="flat" />{" "}
                       <label for="flat">
-                        Flat Rate: <span class="amount">$7.00</span>
+                        Flat Rate: <span className="amount">$7.00</span>
                       </label>
                     </li>
                     <li>
@@ -76,18 +74,18 @@ function FormOrder(props) {
                   </ul>
                 </td>
               </tr>
-              <tr class="order-total">
+              <tr className="order-total">
                 <th>Order Total</th>
                 <td>
                   <strong>
-                    <span class="amount">${productsTotal}</span>
+                    <span className="amount">${productsTotal}</span>
                   </strong>
                 </td>
               </tr>
             </tfoot>
           </table>
         </div>
-        <div class="payment-method">
+        <div className="payment-method">
           <Accordion
             expanded={expanded === "panel1"}
             onChange={handleChange("panel1")}
@@ -149,8 +147,8 @@ function FormOrder(props) {
               </Typography>
             </AccordionDetails>
           </Accordion>
-          <div class="order-button-payment mt-20">
-            <button type="submit" class="btn theme-btn">
+          <div className="order-button-payment mt-20">
+            <button type="submit" className="btn theme-btn">
               Place order
             </button>
           </div>

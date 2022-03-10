@@ -1,40 +1,40 @@
 import React from "react";
 import {
-  Link
+    Link
 } from "react-router-dom";
 Categories.propTypes = {};
 
 function Categories(props) {
   return (
-    <div class="widget mb-40">
-      <div class="widget-title-box mb-30">
-        <span class="animate-border"></span>
-        <h3 class="widget-title">Categories</h3>
+    <div className="widget mb-40">
+      <div className="widget-title-box mb-30">
+        <span className="animate-border"></span>
+        <h3 className="widget-title">Categories</h3>
       </div>
-      <ul class="cat">
+      <ul className="cat">
         <li>
           <Link>
-            Lifestyle <span class="f-right">78</span>
+            Lifestyle <span className="f-right">78</span>
           </Link>
         </li>
         <li>
           <Link>
-            Travel <span class="f-right">42</span>
+            Travel <span className="f-right">42</span>
           </Link>
         </li>
         <li>
           <Link>
-            Fashion <span class="f-right">32</span>
+            Fashion <span className="f-right">32</span>
           </Link>
         </li>
         <li>
           <Link>
-            Music <span class="f-right">85</span>
+            Music <span className="f-right">85</span>
           </Link>
         </li>
         <li>
           <Link>
-            Branding <span class="f-right">05</span>
+            Branding <span className="f-right">05</span>
           </Link>
         </li>
       </ul>

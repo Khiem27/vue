@@ -27,24 +27,24 @@ function HeaderST2(props) {
   });
 
   return (
-    <header className="header-all-page">
+    <header classNameName="header-all-page">
       {pos <= -400 ? <ScrollUp /> : null}
-      <div class="header-area header-3 pt-35 pb-35">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-xl-4 col-lg-3 col-md-3 col-7 d-none d-lg-block d-flex align-items-center d-xs-disable">
-              <div onClick={handleClick} class="basic-bar info-bar">
-                <span class="bar1"></span>
-                <span class="bar2"></span>
-                <span class="bar3"></span>
+      <div className="header-area header-3 pt-35 pb-35">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-xl-4 col-lg-3 col-md-3 col-7 d-none d-lg-block d-flex align-items-center d-xs-disable">
+              <div onClick={handleClick} className="basic-bar info-bar">
+                <span className="bar1"></span>
+                <span className="bar2"></span>
+                <span className="bar3"></span>
               </div>
-              <div class={active ? "extra-info info-open" : "extra-info"}>
-                <div class="close-icon">
+              <div className={active ? "extra-info info-open" : "extra-info"}>
+                <div className="close-icon">
                   <button onClick={handleClick}>
-                    <i class="far fa-window-close"></i>
+                    <i className="far fa-window-close"></i>
                   </button>
                 </div>
-                <div class="logo-side">
+                <div className="logo-side">
                   <div
                     style={{
                       display: "inline-block",
@@ -97,13 +97,13 @@ function HeaderST2(props) {
                     />
                   </div>
                 </div>
-                <div class="side-info mb-30">
-                  <div class="main-menu side-menu">
+                <div className="side-info mb-30">
+                  <div className="main-menu side-menu">
                     <nav id="mobile-menu-3" style={{ display: "block" }}>
                       <ul>
                         <li>
                           <Link to="/">Home</Link>
-                          <ul class="submenu">
+                          <ul className="submenu">
                             <li>
                               <Link to="/">Home Style 1</Link>
                             </li>
@@ -121,12 +121,12 @@ function HeaderST2(props) {
                             </li>
                           </ul>
                         </li>
-                        <li class="mega-menu">
+                        <li className="mega-menu">
                           <Link to="/shop">Shop</Link>
-                          <ul class="submenu ">
+                          <ul className="submenu ">
                             <li>
                               <Link to="#">Category View</Link>
-                              <ul class="submenu  level-1">
+                              <ul className="submenu  level-1">
                                 <li>
                                   <Link to="/shop">Shop 2 Column</Link>
                                 </li>
@@ -146,7 +146,7 @@ function HeaderST2(props) {
                             </li>
                             <li>
                               <Link to="#">Category View</Link>
-                              <ul class="submenu">
+                              <ul className="submenu">
                                 <li>
                                   <Link to="/shop/left-sidebar">
                                     Sidebar Left
@@ -170,7 +170,7 @@ function HeaderST2(props) {
                             </li>
                             <li>
                               <Link to="#">Products Types</Link>
-                              <ul class="submenu">
+                              <ul className="submenu">
                                 <li>
                                   <Link to="/shop/1">Simple Product</Link>
                                 </li>
@@ -197,7 +197,7 @@ function HeaderST2(props) {
                         </li>
                         <li>
                           <Link to="#">Pages</Link>
-                          <ul class="submenu">
+                          <ul className="submenu">
                             <li>
                               <Link to="/contact">Contact Us</Link>
                             </li>
@@ -231,30 +231,30 @@ function HeaderST2(props) {
                     </nav>
                   </div>
                 </div>
-                <div class="side-info-bottom">
-                  <div class="side-cta">
+                <div className="side-info-bottom">
+                  <div className="side-cta">
                     <p>info@example.com</p>
                     <h4>+(090) 8765 86543 85</h4>
                   </div>
-                  <div class="social-icon-right mt-20">
+                  <div className="social-icon-right mt-20">
                     <Link to="#">
-                      <i class="fab fa-facebook-f"></i>
+                      <i className="fab fa-facebook-f"></i>
                     </Link>
                     <Link to="#">
-                      <i class="fab fa-twitter"></i>
+                      <i className="fab fa-twitter"></i>
                     </Link>
                     <Link to="#">
-                      <i class="fab fa-google-plus-g"></i>
+                      <i className="fab fa-google-plus-g"></i>
                     </Link>
                     <Link to="#">
-                      <i class="fab fa-instagram"></i>
+                      <i className="fab fa-instagram"></i>
                     </Link>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-xl-4 col-lg-5 col-md-4 col-5">
-              <div class="logo text-left text-md-center">
+            <div className="col-xl-4 col-lg-5 col-md-4 col-5">
+              <div className="logo text-left text-md-center">
                 <Link to="/shop">
                   <img
                     src="https://vue-plum-chi.vercel.app/img/logo/logo.png"
@@ -264,26 +264,26 @@ function HeaderST2(props) {
                 </Link>
               </div>
             </div>
-            <div class="col-xl-4 col-lg-4 col-md-8 col-7 pl-0">
-              <div class="header-right header-right-3 f-right">
+            <div className="col-xl-4 col-lg-4 col-md-8 col-7 pl-0">
+              <div className="header-right header-right-3 f-right">
                 <ul>
-                  <li class="search-btn">
-                    <Link class="search-btn nav-search search-trigger">
-                      <i class="fas fa-search"></i>
+                  <li className="search-btn">
+                    <Link className="search-btn nav-search search-trigger">
+                      <i className="fas fa-search"></i>
                     </Link>
                   </li>
-                  <div class="search-wrap ">
-                    <div class="search-inner">
+                  <div className="search-wrap ">
+                    <div className="search-inner">
                       <i
-                        class="fas fa-times search-close"
+                        className="fas fa-times search-close"
                         id="search-close"
                       ></i>
-                      <div class="search-cell">
+                      <div className="search-cell">
                         <form method="get">
-                          <div class="search-field-holder">
+                          <div className="search-field-holder">
                             <input
                               type="search"
-                              class="main-search-input"
+                              className="main-search-input"
                               placeholder="Search Entire Store..."
                             />
                           </div>
@@ -291,31 +291,31 @@ function HeaderST2(props) {
                       </div>
                     </div>
                   </div>
-                  <li class="login-btn">
+                  <li className="login-btn">
                     <Link to="/login">
-                      <i class="far fa-user"></i>
+                      <i className="far fa-user"></i>
                     </Link>
                   </li>
                   <MiniCart />
                 </ul>
               </div>
             </div>
-            <div class="col-12 d-lg-none">
-              <div class="mobile-menu mean-container">
-                <div class="mean-bar">
-                  <Link to="#nav" class="meanmenu-reveal ">
+            <div className="col-12 d-lg-none">
+              <div className="mobile-menu mean-container">
+                <div className="mean-bar">
+                  <Link to="#nav" className="meanmenu-reveal ">
                     <span></span>
                     <span></span>
                     <span></span>
                   </Link>
-                  <nav class="mean-nav mobile-header ">
+                  <nav className="mean-nav mobile-header ">
                     <ul>
                       <li>
                         <Link to="/">Home</Link>
-                        <Link class="mean-expand">
+                        <Link className="mean-expand">
                           +
                         </Link>
-                        <ul class="submenu ">
+                        <ul className="submenu ">
                           <li>
                             <Link to="/">Home Style 1</Link>
                           </li>
@@ -333,15 +333,15 @@ function HeaderST2(props) {
                           </li>
                         </ul>
                       </li>
-                      <li class="mega-menu">
+                      <li className="mega-menu">
                         <Link to="/shop">Shop</Link>
-                        <Link class="mean-expand">
+                        <Link className="mean-expand">
                           +
                         </Link>
-                        <ul class="submenu ">
+                        <ul className="submenu ">
                           <li>
                             <Link to="#">Category View</Link>
-                            <ul class="submenu ">
+                            <ul className="submenu ">
                               <li>
                                 <Link to="/shop">Shop 2 Column</Link>
                               </li>
@@ -358,13 +358,13 @@ function HeaderST2(props) {
                                 <Link to="/shop/list">List View</Link>
                               </li>
                             </ul>
-                            <Link class="mean-expand">
+                            <Link className="mean-expand">
                               +
                             </Link>
                           </li>
                           <li>
                             <Link to="#">Category View</Link>
-                            <ul class="submenu ">
+                            <ul className="submenu ">
                               <li>
                                 <Link to="/shop/left-sidebar">
                                   Sidebar Left
@@ -385,13 +385,13 @@ function HeaderST2(props) {
                                 <Link to="/wishlist">My Wishlist</Link>
                               </li>
                             </ul>
-                            <Link class="mean-expand">
+                            <Link className="mean-expand">
                               +
                             </Link>
                           </li>
                           <li>
                             <Link to="#">Products Types</Link>
-                            <ul class="submenu ">
+                            <ul className="submenu ">
                               <li>
                                 <Link to="/shop/1">Simple Product</Link>
                               </li>
@@ -412,7 +412,7 @@ function HeaderST2(props) {
                                 <Link to="/compare">Compare</Link>
                               </li>
                             </ul>
-                            <Link class="mean-expand">
+                            <Link className="mean-expand">
                               +
                             </Link>
                           </li>
@@ -423,7 +423,7 @@ function HeaderST2(props) {
                       </li>
                       <li>
                         <Link to="/blog">Blog</Link>
-                        <ul class="submenu ">
+                        <ul className="submenu ">
                           <li>
                             <Link to="/blog/col-2">Blog 2 Column</Link>
                           </li>
@@ -443,13 +443,13 @@ function HeaderST2(props) {
                             <Link to="/blog/10">Blog Details Video</Link>
                           </li>
                         </ul>
-                        <Link class="mean-expand">
+                        <Link className="mean-expand">
                           +
                         </Link>
                       </li>
                       <li>
                         <Link to="#">Pages</Link>
-                        <ul class="submenu ">
+                        <ul className="submenu ">
                           <li>
                             <Link to="/about">About Us</Link>
                           </li>
@@ -478,11 +478,11 @@ function HeaderST2(props) {
                             <Link to="/order-success">Order Success</Link>
                           </li>
                         </ul>
-                        <Link class="mean-expand">
+                        <Link className="mean-expand">
                           +
                         </Link>
                       </li>
-                      <li class="mean-last">
+                      <li className="mean-last">
                         <Link to="/contact">Contact</Link>
                       </li>
                     </ul>
@@ -494,7 +494,7 @@ function HeaderST2(props) {
         </div>
       </div>
       <div
-        class="header-sep"
+        className="header-sep"
         data-background="img/bg/header-sep.png"
         style={{ backgroundImage: "url(&quot;img/bg/header-sep.png&quot;)" }}
       ></div>

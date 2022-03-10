@@ -6,11 +6,11 @@ WishlistContainer.propTypes = {
 
 function WishlistContainer(props) {
     return (
-        <div class="wishlist-container">
-            <div class="bg"></div>
-            <a class="icon" href="/wishlist">
-                <i class="fas fa-heart  mt-1 mr-1"></i>
-                <span class="count">0</span>
+        <div className="wishlist-container">
+            <div className="bg"></div>
+            <a className="icon" href="/wishlist">
+                <i className="fas fa-heart  mt-1 mr-1"></i>
+                <span className="count">0</span>
             </a>
         </div>
     );

@@ -18,7 +18,7 @@ function Home4(props) {
     }, [])
     return (
         <>
-            <header class="transparent-header transparent-header-2">
+            <header className="transparent-header transparent-header-2">
                 <HeaderST3 />
             </header>
             <main>

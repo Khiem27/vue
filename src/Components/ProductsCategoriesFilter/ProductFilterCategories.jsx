@@ -29,23 +29,23 @@ function ProductFilterCategories(props) {
         <div>
             <form>
                 
-            <ul class="shop-link">
-                <li ><Link class="checkBox checkBox-K">
+            <ul className="shop-link">
+                <li ><Link className="checkBox checkBox-K">
                     <input onClick={clickMenClothing} type="radio" id="menClothing" name="filterRadio" />
                     <label for="menClothing">Men's clothing</label>
                 </Link></li>
 
-                <li><Link class="checkBox checkBox-K">
+                <li><Link className="checkBox checkBox-K">
                     <input onClick={clickWomenClothing} type="radio" id="womenClothing" name="filterRadio" />
                     <label for="womenClothing">Women's clothing</label>
                 </Link></li>
 
-                <li><Link class="checkBox checkBox-K" >
+                <li><Link className="checkBox checkBox-K" >
                     <input onClick={clickJewelery} type="radio" id="jewelery" name="filterRadio" />
                     <label for="jewelery">Jewelery</label>
                 </Link></li>
 
-                <li><Link class="checkBox checkBox-K">
+                <li><Link className="checkBox checkBox-K">
                     <input onClick={clickElectronics} type="radio" id="electronics" name="filterRadio" />
                     <label for="electronics">Electronics</label>
                 </Link></li>

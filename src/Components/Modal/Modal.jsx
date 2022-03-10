@@ -115,11 +115,11 @@ function ProductsGrid3Column(props) {
         <Box sx={style}>
             {
                 modalValue.current || modalValue.current === 0 ? 
-                  <div class="modal-dialog">
-                      <div class="modal-content">
-                          <div class="modal-body">
+                  <div className="modal-dialog">
+                      <div className="modal-content">
+                          <div className="modal-body">
                               <div className="row-modal">
-                                  <div class="col-xl-6 col-lg-6 col-lg-6-fix">
+                                  <div className="col-xl-6 col-lg-6 col-lg-6-fix">
                                     <Box sx={{ bgcolor: 'background.paper', width: 500, flexGrow: 1 }}>
                                         <SwipeableViews
                                             axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
@@ -127,18 +127,18 @@ function ProductsGrid3Column(props) {
                                             onChangeIndex={handleChangeIndex}
                                         >   
                                             <TabPanel value={value} index={0} dir={theme.direction}>
-                                                <div class="product-large-img">
+                                                <div className="product-large-img">
                                                     <img src={products[modalValue.current].image} alt="" />
                                                 </div>
                                             </TabPanel>
                                             
                                             <TabPanel value={value} index={1} dir={theme.direction}>
-                                                <div class="product-large-img">
+                                                <div className="product-large-img">
                                                     <img src={products[modalValue.current].navImage} alt="" />
                                                 </div>
                                             </TabPanel>
                                             <TabPanel value={value} index={2} dir={theme.direction}>
-                                                <div class="product-large-img">
+                                                <div className="product-large-img">
                                                     <img src={products[modalValue.current].hoverImage} alt="" />
                                                 </div>
                                             </TabPanel>
@@ -159,54 +159,54 @@ function ProductsGrid3Column(props) {
                                         </AppBar>
                                         </Box>
                                   </div>
-                                  <div class="col-xl-6 col-lg-6">
-                                    <div class="product-details ">
-                                        <div class="details-cat mb-10 d-flex align-items-center justify-content-between">
+                                  <div className="col-xl-6 col-lg-6">
+                                    <div className="product-details ">
+                                        <div className="details-cat mb-10 d-flex align-items-center justify-content-between">
                                             <div> 
                                                 <a href="#">{products[modalValue.current].category}</a>
                                             </div>
-                                            <i onClick={handleClose} class="fa fa-times modal-icon "></i>
+                                            <i onClick={handleClose} className="fa fa-times modal-icon "></i>
                                         </div>
-                                        <h2 class="pro-details-title mb-15 fs-30">{products[modalValue.current].title}</h2>
-                                        <div class="details-price mb-10 fs-25">
+                                        <h2 className="pro-details-title mb-15 fs-30">{products[modalValue.current].title}</h2>
+                                        <div className="details-price mb-10 fs-25">
                                             <span>${products[modalValue.current].price} USD</span>
                                             {
                                                 products[modalValue.current].oldPrice ? 
-                                                    <span class="old-price">${products[modalValue.current].oldPrice} USD</span>
+                                                    <span className="old-price">${products[modalValue.current].oldPrice} USD</span>
                                                 : null
                                             }
                                         </div>
-                                        <div class="product-variant ">
-                                            <div class="product-desc variant-item modal-p-15">
+                                        <div className="product-variant ">
+                                            <div className="product-desc variant-item modal-p-15">
                                                 <p>{products[modalValue.current].description}
                                                 </p>
                                             </div>
-                                            <div class="product-info-list variant-item modal-p-15">
+                                            <div className="product-info-list variant-item modal-p-15">
                                                 <ul>
-                                                    <li class="text-capitalize"><span>Brands:</span> {products[modalValue.current].brand}</li>
+                                                    <li className="text-capitalize"><span>Brands:</span> {products[modalValue.current].brand}</li>
                                                     <li><span>Product Code:</span> f3</li>
                                                     <li><span>Reward Points:</span> 100</li>
-                                                    <li><span>Stock:</span> <span class="in-stock">Out Of Stock</span></li>
+                                                    <li><span>Stock:</span> <span className="in-stock">Out Of Stock</span></li>
                                                 </ul>
                                             </div>
-                                            <div class="product-action-details variant-item modal-p-15">
-                                                <div class="product-details-action d-flex">
-                                                    <div class="product-quantity">
-                                                        <div class="cart-plus-minus">
+                                            <div className="product-action-details variant-item modal-p-15">
+                                                <div className="product-details-action d-flex">
+                                                    <div className="product-quantity">
+                                                        <div className="cart-plus-minus">
                                                             <p>1</p>
-                                                            <div class="dec qtybutton">-</div>
-                                                            <div class="inc qtybutton">+</div>
+                                                            <div className="dec qtybutton">-</div>
+                                                            <div className="inc qtybutton">+</div>
                                                         </div>
                                                     </div>
-                                                    <button class="active details-action-icon" type="submit">
-                                                        <i class="fas fa-heart"></i>
+                                                    <button className="active details-action-icon" type="submit">
+                                                        <i className="fas fa-heart"></i>
                                                     </button>
-                                                    <button class="details-action-icon" type="submit">
-                                                        <i class="fas fa-hourglass"></i>
+                                                    <button className="details-action-icon" type="submit">
+                                                        <i className="fas fa-hourglass"></i>
                                                     </button>
                                                 </div>
-                                                <div class="details-cart mt-20">
-                                                    <button class="btn theme-btn">purchase now</button>
+                                                <div className="details-cart mt-20">
+                                                    <button className="btn theme-btn">purchase now</button>
                                                 </div>
                                             </div>
                                         </div>

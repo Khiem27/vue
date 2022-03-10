@@ -127,55 +127,55 @@ function ProductsGrid3Column(props) {
 
   return (
     <>
-      <div class="fade tab-pane active show">
+      <div className="fade tab-pane active show">
         <div className="row">
           <CheckSearchErro />
           {products
             ? products.map((item, index) => {
                 return (
-                  <div class="col-xl-4 col-lg-6 col-md-6 d-block" key={index}>
-                    <div class="product-wrapper mb-50 p-0">
-                      <div class="product-img mb-25">
+                  <div className="col-xl-4 col-lg-6 col-md-6 d-block" key={index}>
+                    <div className="product-wrapper mb-50 p-0">
+                      <div className="product-img mb-25">
                         <Link to={`/shop/${item.id}`}>
                           <img src={item.image} alt="" />
                           <img
-                            class="secondary-img"
+                            className="secondary-img"
                             src={item.hoverImage}
                             alt=""
                           />
                         </Link>
-                        <div class="product-action text-center">
+                        <div className="product-action text-center">
                           <Link onClick={() => handleSendProduct(index)}>
-                            <i class="fas fa-shopping-cart"></i>
+                            <i className="fas fa-shopping-cart"></i>
                           </Link>
                           <Link onClick={() => handleOpen(index)}>
-                            <i class="fas fa-eye"></i>
+                            <i className="fas fa-eye"></i>
                           </Link>
                           <Link>
-                            <i class="fas fa-compress-alt"></i>
+                            <i className="fas fa-compress-alt"></i>
                           </Link>
                         </div>
-                        <div class="sale-tag">
-                          {item.new ? <span class="new">new</span> : null}
-                          {item.sale ? <span class="sale">sale</span> : null}
+                        <div className="sale-tag">
+                          {item.new ? <span className="new">new</span> : null}
+                          {item.sale ? <span className="sale">sale</span> : null}
                         </div>
                       </div>
-                      <div class="product-content">
-                        <div class="pro-cat mb-10">
+                      <div className="product-content">
+                        <div className="pro-cat mb-10">
                           <Link to={`/shop/${item.id}`}>{item.category}</Link>
                         </div>
                         <h4>
                           <Link to={`/shop/${item.id}`}>{item.title}</Link>
                         </h4>
-                        <div class="product-meta">
-                          <div class="pro-price">
+                        <div className="product-meta">
+                          <div className="pro-price">
                             <span>${item.price} USD</span>
-                            <span class="old-price">${item.oldPrice} USD</span>
+                            <span className="old-price">${item.oldPrice} USD</span>
                           </div>
                         </div>
-                        <div class="product-wishlist">
-                          <Link class="  ">
-                            <i class="far fa-heart" title="Wishlist"></i>
+                        <div className="product-wishlist">
+                          <Link className="  ">
+                            <i className="far fa-heart" title="Wishlist"></i>
                           </Link>
                         </div>
                       </div>
@@ -195,11 +195,11 @@ function ProductsGrid3Column(props) {
         <Box>
           {modalValue.current || modalValue.current === 0 ? (
             <>
-              <div class="fade modal-backdrop show"></div>
+              <div className="fade modal-backdrop show"></div>
               <div
                 role="dialog"
                 aria-modal="true"
-                class="fade modal show"
+                className="fade modal show"
                 tabindex="-1"
                 style={{
                   display: "block",
@@ -208,19 +208,19 @@ function ProductsGrid3Column(props) {
                   overflowY: "auto",
                 }}
               >
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-body">
-                      <div class="row">
-                        <div class="col-xl-6 col-lg-6">
-                          <div class="product-details-img mb-10">
-                            <div id="myTabContentpro" class="tab-content">
+                <div className="modal-dialog">
+                  <div className="modal-content">
+                    <div className="modal-body">
+                      <div className="row">
+                        <div className="col-xl-6 col-lg-6">
+                          <div className="product-details-img mb-10">
+                            <div id="myTabContentpro" className="tab-content">
                               <div
                                 role="tabpanel"
                                 aria-hidden="false"
-                                class="fade tab-pane active show"
+                                className="fade tab-pane active show"
                               >
-                                <div class="product-large-img">
+                                <div className="product-large-img">
                                   <img
                                     src={products[modalValue.current].image}
                                     alt="tum"
@@ -230,9 +230,9 @@ function ProductsGrid3Column(props) {
                               <div
                                 role="tabpanel"
                                 aria-hidden="true"
-                                class="fade tab-pane"
+                                className="fade tab-pane"
                               >
-                                <div class="product-large-img">
+                                <div className="product-large-img">
                                   <img
                                     src={products[modalValue.current].navImage}
                                     alt="tum"
@@ -242,9 +242,9 @@ function ProductsGrid3Column(props) {
                               <div
                                 role="tabpanel"
                                 aria-hidden="true"
-                                class="fade tab-pane"
+                                className="fade tab-pane"
                               >
-                                <div class="product-large-img">
+                                <div className="product-large-img">
                                   <img
                                     src={
                                       products[modalValue.current].hoverImage
@@ -255,15 +255,15 @@ function ProductsGrid3Column(props) {
                               </div>
                             </div>
                           </div>
-                          <div class="shop-thumb-tab ">
-                            <ul class="nav" role="tablist">
-                              <li class="nav-item">
+                          <div className="shop-thumb-tab ">
+                            <ul className="nav" role="tablist">
+                              <li className="nav-item">
                                 <Link
                                   href="#"
                                   role="tab"
                                   data-rb-event-key="tum-0"
                                   aria-selected="true"
-                                  class="nav-link active"
+                                  className="nav-link active"
                                 >
                                   <img
                                     src={products[modalValue.current].image}
@@ -271,13 +271,13 @@ function ProductsGrid3Column(props) {
                                   />{" "}
                                 </Link>
                               </li>
-                              <li class="nav-item">
+                              <li className="nav-item">
                                 <Link
                                   href="#"
                                   role="tab"
                                   data-rb-event-key="tum-1"
                                   aria-selected="false"
-                                  class="nav-link"
+                                  className="nav-link"
                                 >
                                   <img
                                     src={products[modalValue.current].navImage}
@@ -285,13 +285,13 @@ function ProductsGrid3Column(props) {
                                   />{" "}
                                 </Link>
                               </li>
-                              <li class="nav-item">
+                              <li className="nav-item">
                                 <Link
                                   href="#"
                                   role="tab"
                                   data-rb-event-key="tum-2"
                                   aria-selected="false"
-                                  class="nav-link"
+                                  className="nav-link"
                                 >
                                   <img
                                     src={
@@ -304,42 +304,42 @@ function ProductsGrid3Column(props) {
                             </ul>
                           </div>
                         </div>
-                        <div class="col-xl-6 col-lg-6">
-                          <div class="product-details ">
-                            <div class="details-cat mb-10 d-flex align-items-center justify-content-between">
+                        <div className="col-xl-6 col-lg-6">
+                          <div className="product-details ">
+                            <div className="details-cat mb-10 d-flex align-items-center justify-content-between">
                               <div>
                                 <Link href="#">
                                   {products[modalValue.current].category}
                                 </Link>
                               </div>
                               <i
-                                class="fa fa-times modal-icon "
+                                className="fa fa-times modal-icon "
                                 onClick={handleClose}
                               ></i>
                             </div>
-                            <h2 class="pro-details-title mb-15 fs-30">
+                            <h2 className="pro-details-title mb-15 fs-30">
                               {products[modalValue.current].title}
                             </h2>
-                            <div class="details-price mb-10 fs-25">
+                            <div className="details-price mb-10 fs-25">
                               <span>
                                 ${products[modalValue.current].price} USD
                               </span>
                               {products[modalValue.current].oldPrice ? (
-                                <span class="old-price">
+                                <span className="old-price">
                                   ${products[modalValue.current].oldPrice} USD
                                 </span>
                               ) : null}
                             </div>
-                            <div class="product-variant ">
-                              <div class="product-color variant-item modal-p-15">
-                                <div class="variant-name">
+                            <div className="product-variant ">
+                              <div className="product-color variant-item modal-p-15">
+                                <div className="variant-name">
                                   <span>Colors</span>
                                 </div>
-                                <ul class="shop-link shop-color">
+                                <ul className="shop-link shop-color">
                                   <li>
                                     <Link href="#">
                                       <span
-                                        class={products[
+                                        className={products[
                                           modalValue.current
                                         ].color.toLowerCase()}
                                       ></span>
@@ -347,13 +347,13 @@ function ProductsGrid3Column(props) {
                                   </li>
                                 </ul>
                               </div>
-                              <div class="product-size variant-item modal-p-15">
-                                <div class="variant-name">
+                              <div className="product-size variant-item modal-p-15">
+                                <div className="variant-name">
                                   <span>size</span>
                                 </div>
-                                <ul class="shop-link shop-size">
+                                <ul className="shop-link shop-size">
                                   <li
-                                    class={
+                                    className={
                                       products[modalValue.current].size === "l"
                                         ? "active"
                                         : " "
@@ -362,7 +362,7 @@ function ProductsGrid3Column(props) {
                                     <Link href="#">L</Link>
                                   </li>
                                   <li
-                                    class={
+                                    className={
                                       products[modalValue.current].size === "m"
                                         ? "active"
                                         : " "
@@ -371,7 +371,7 @@ function ProductsGrid3Column(props) {
                                     <Link href="#">M</Link>
                                   </li>
                                   <li
-                                    class={
+                                    className={
                                       products[modalValue.current].size === "x"
                                         ? "active"
                                         : " "
@@ -380,7 +380,7 @@ function ProductsGrid3Column(props) {
                                     <Link href="#">X</Link>
                                   </li>
                                   <li
-                                    class={
+                                    className={
                                       products[modalValue.current].size === "xl"
                                         ? "active"
                                         : " "
@@ -389,7 +389,7 @@ function ProductsGrid3Column(props) {
                                     <Link href="#">XL</Link>
                                   </li>
                                   <li
-                                    class={
+                                    className={
                                       products[modalValue.current].size ===
                                       "xxl"
                                         ? "active"
@@ -400,14 +400,14 @@ function ProductsGrid3Column(props) {
                                   </li>
                                 </ul>
                               </div>
-                              <div class="product-desc variant-item modal-p-15">
+                              <div className="product-desc variant-item modal-p-15">
                                 <p>
                                   {products[modalValue.current].description}
                                 </p>
                               </div>
-                              <div class="product-info-list variant-item modal-p-15">
+                              <div className="product-info-list variant-item modal-p-15">
                                 <ul>
-                                  <li class="text-capitalize">
+                                  <li className="text-capitalize">
                                     <span>Brands:</span>{" "}
                                     {products[modalValue.current].brand}
                                   </li>
@@ -419,7 +419,7 @@ function ProductsGrid3Column(props) {
                                   </li>
                                   <li>
                                     <span>Stock:</span>{" "}
-                                    <span class="in-stock">Out Of Stock</span>
+                                    <span className="in-stock">Out Of Stock</span>
                                   </li>
                                 </ul>
                               </div>

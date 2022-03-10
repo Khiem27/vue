@@ -28,10 +28,10 @@ function Products(props) {
         <>
             <Header />
             <ShopPageTitle />
-            <section class="shop-area pt-100 pb-100">
-                <div class="container">
+            <section className="shop-area pt-100 pb-100">
+                <div className="container">
                     <div className="row">
-                        <div class="col-xl-12">
+                        <div className="col-xl-12">
                             <div className="row">
                                 <ShowingResult />
                                 <ShopNav />

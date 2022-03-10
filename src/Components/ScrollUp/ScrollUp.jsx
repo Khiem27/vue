@@ -17,7 +17,7 @@ function ScrollUp(props) {
 
     return (
         <>
-            <Link onClick={scrollToTop} id="scrollUp" style={{"position": "fixed", "zIndex": "2147483647", "display": "block"}}>
+            <Link to="/" onClick={scrollToTop} id="scrollUp" style={{"position": "fixed", "zIndex": "2147483647", "display": "block"}}>
                 <i className="fas fa-arrow-up"></i>
             </Link>
         </>

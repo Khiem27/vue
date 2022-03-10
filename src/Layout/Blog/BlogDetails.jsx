@@ -2,8 +2,8 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import React, { useEffect, useState } from "react";
 import {
-  Link,
-  useParams
+    Link,
+    useParams
 } from "react-router-dom";
 import BlogsApi from "../../Api/Blogs/BlogsApi";
 import Blogbanner from "../../Components/Banner/Blog/Blogbanner";
@@ -62,20 +62,20 @@ function BlogDetails(props) {
       <Header />
       <BlogTitle />
 
-      <div class="blog-area pt-120 pb-80">
+      <div className="blog-area pt-120 pb-80">
         <div className="container">
           <div className="row">
             <div className="col-lg-8">
               {blogItems ? (
-                <article class="postbox post format-image mb-40">
+                <article className="postbox post format-image mb-40">
                   {blogItems.video1 ? (
-                    <div class="postbox__video mb-35">
+                    <div className="postbox__video mb-35">
                       <img src={blogItems.video1} alt="blogimage" />
                       <Link
                         onClick={handleOpen}
-                        class="popup-video video-btn"
+                        className="popup-video video-btn"
                       >
-                        <i class="fas fa-play"></i>
+                        <i className="fas fa-play"></i>
                       </Link>
                       <Modal
                         open={open}
@@ -97,81 +97,81 @@ function BlogDetails(props) {
                       </Modal>
                     </div>
                   ) : (
-                    <div class="postbox__thumb mb-35">
+                    <div className="postbox__thumb mb-35">
                       <img src={blogItems.image1} alt="blogimage" />
                     </div>
                   )}
-                  <div class="postbox__text bg-none">
-                    <div class="post-meta mb-15">
+                  <div className="postbox__text bg-none">
+                    <div className="post-meta mb-15">
                       <span>
-                        <i class="far fa-calendar-check"></i> {blogItems.date}{" "}
+                        <i className="far fa-calendar-check"></i> {blogItems.date}{" "}
                       </span>
                       <span>
                         <Link href="#">
-                          <i class="far fa-user"></i> MD. Salim Rana
+                          <i className="far fa-user"></i> MD. Salim Rana
                         </Link>
                       </span>
                       <span>
                         <Link href="#">
-                          <i class="far fa-comments"></i> 2 Comments
+                          <i className="far fa-comments"></i> 2 Comments
                         </Link>
                       </span>
                     </div>
-                    <h3 class="blog-title">{blogItems.title}</h3>
-                    <div class="post-text mb-20">
+                    <h3 className="blog-title">{blogItems.title}</h3>
+                    <div className="post-text mb-20">
                       <p>{blogItems.desc1}</p>
                       <p>{blogItems.desc2}</p>
                       <Quotes />
                       <p>{blogItems.desc3}</p>
-                      <div class="blog-inner-img mb-30 mt-30">
+                      <div className="blog-inner-img mb-30 mt-30">
                         <img src={blogItems.image2} alt="blogimage" />
                       </div>
-                      <div class="inner-content">
+                      <div className="inner-content">
                         <h4>{blogItems.subtitle1}</h4>
                         <p>{blogItems.desc4}</p>
                       </div>
-                      <div class="inner-content">
+                      <div className="inner-content">
                         <h4>{blogItems.subtitle2}</h4>
                         <p>{blogItems.desc5}</p>
                       </div>
                     </div>
-                    <div class="row mt-50">
-                      <div class="col-xl-8 col-lg-8 col-md-8 mb-15">
-                        <div class="blog-post-tag">
+                    <div className="row mt-50">
+                      <div className="col-xl-8 col-lg-8 col-md-8 mb-15">
+                        <div className="blog-post-tag">
                           <span>Releted Tags</span>
                           <Link href="#">organic</Link>
                           <Link href="#">Foods</Link>
                           <Link href="#">tasty</Link>
                         </div>
                       </div>
-                      <div class="col-xl-4 col-lg-4 col-md-4 mb-15">
-                        <div class="blog-share-icon text-left text-md-right">
+                      <div className="col-xl-4 col-lg-4 col-md-4 mb-15">
+                        <div className="blog-share-icon text-left text-md-right">
                           <span>Share: </span>
                           <Link href="#">
-                            <i class="fab fa-facebook-f"></i>
+                            <i className="fab fa-facebook-f"></i>
                           </Link>
                           <Link href="#">
-                            <i class="fab fa-twitter"></i>
+                            <i className="fab fa-twitter"></i>
                           </Link>
                           <Link href="#">
-                            <i class="fab fa-instagram"></i>
+                            <i className="fab fa-instagram"></i>
                           </Link>
                           <Link href="#">
-                            <i class="fab fa-google-plus-g"></i>
+                            <i className="fab fa-google-plus-g"></i>
                           </Link>
                           <Link href="#">
-                            <i class="fab fa-vimeo-v"></i>
+                            <i className="fab fa-vimeo-v"></i>
                           </Link>
                         </div>
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="col-12">
-                        <div class="navigation-border pt-50 mt-40"></div>
+                    <div className="row">
+                      <div className="col-12">
+                        <div className="navigation-border pt-50 mt-40"></div>
                       </div>
-                      <div class="col-xl-5 col-lg-5 col-md-5">
+                      <div className="col-xl-5 col-lg-5 col-md-5">
                         {prevBlogItems ? (
-                          <div class="bakix-navigation b-next-post text-left mb-30">
+                          <div className="bakix-navigation b-next-post text-left mb-30">
                             <span>
                               <Link to={`/blog/${blogID - 1}`}>Prev Post</Link>
                             </span>
@@ -181,8 +181,8 @@ function BlogDetails(props) {
                           </div>
                         ) : null}
                       </div>
-                      <div class="col-xl-2 col-lg-2 col-md-2 ">
-                        <div class="bakix-filter text-left text-md-center mb-30">
+                      <div className="col-xl-2 col-lg-2 col-md-2 ">
+                        <div className="bakix-filter text-left text-md-center mb-30">
                           <Link href="#">
                             <img
                               style={{ width: "40px" }}
@@ -192,9 +192,9 @@ function BlogDetails(props) {
                           </Link>
                         </div>
                       </div>
-                      <div class="col-xl-5 col-lg-5 col-md-5">
+                      <div className="col-xl-5 col-lg-5 col-md-5">
                         {nextBlogItems ? (
-                          <div class="bakix-navigation b-next-post text-left text-md-right  mb-30">
+                          <div className="bakix-navigation b-next-post text-left text-md-right  mb-30">
                             <span>
                               <Link to={`/blog/${blogID + 1}`}>Next Post</Link>
                             </span>
@@ -206,31 +206,31 @@ function BlogDetails(props) {
                       </div>
                     </div>
                   </div>
-                  <div class="author mt-80 mb-40">
-                    <div class="author-img text-center">
+                  <div className="author mt-80 mb-40">
+                    <div className="author-img text-center">
                       <img
                         style={{ width: "120px" }}
                         src="https://vue-plum-chi.vercel.app/img/blog/details/author.png"
                         alt="Authorimage"
                       />
                     </div>
-                    <div class="author-text text-center">
+                    <div className="author-text text-center">
                       <h3>MD. Salim Rana</h3>
-                      <div class="author-icon">
+                      <div className="author-icon">
                         <Link href="#">
-                          <i class="fab fa-facebook-f"></i>
+                          <i className="fab fa-facebook-f"></i>
                         </Link>
                         <Link href="#">
-                          <i class="fab fa-twitter"></i>
+                          <i className="fab fa-twitter"></i>
                         </Link>
                         <Link href="#">
-                          <i class="fab fa-behance-square"></i>
+                          <i className="fab fa-behance-square"></i>
                         </Link>
                         <Link href="#">
-                          <i class="fab fa-youtube"></i>
+                          <i className="fab fa-youtube"></i>
                         </Link>
                         <Link href="#">
-                          <i class="fab fa-vimeo-v"></i>
+                          <i className="fab fa-vimeo-v"></i>
                         </Link>
                       </div>
                       <p>
@@ -242,26 +242,26 @@ function BlogDetails(props) {
                       </p>
                     </div>
                   </div>
-                  <div class="post-comments">
-                    <div class="blog-coment-title mb-30">
+                  <div className="post-comments">
+                    <div className="blog-coment-title mb-30">
                       <h2>02 Comments</h2>
                     </div>
-                    <div class="latest-comments">
+                    <div className="latest-comments">
                       <ul>
                         <li>
-                          <div class="comments-box">
-                            <div class="comments-avatar">
+                          <div className="comments-box">
+                            <div className="comments-avatar">
                               <img
                                 src="https://vue-plum-chi.vercel.app/img/blog/details/comments1.png"
                                 alt="profilePic"
                               />
                             </div>
-                            <div class="comments-text">
-                              <div class="avatar-name">
+                            <div className="comments-text">
+                              <div className="avatar-name">
                                 <h5>Karon Balina</h5>
                                 <span>19TH MAY 2018</span>
-                                <Link class="reply" href="#">
-                                  <i class="fas fa-reply"></i>Reply
+                                <Link className="reply" href="#">
+                                  <i className="fas fa-reply"></i>Reply
                                 </Link>
                               </div>
                               <p>
@@ -275,26 +275,26 @@ function BlogDetails(props) {
                             </div>
                           </div>
                           <ul>
-                            <li class="children">
+                            <li className="children">
                               <div
-                                class="comments-box"
+                                className="comments-box"
                                 style={{
                                   padding: "30px 0px",
                                   borderTop: "1px solid rgb(234, 237, 255)",
                                 }}
                               >
-                                <div class="comments-avatar">
+                                <div className="comments-avatar">
                                   <img
                                     src="https://vue-plum-chi.vercel.app/img/blog/details/comments1.png"
                                     alt="Profile Pic"
                                   />
                                 </div>
-                                <div class="comments-text">
-                                  <div class="avatar-name">
+                                <div className="comments-text">
+                                  <div className="avatar-name">
                                     <h5>Karon Balina</h5>
                                     <span>19TH MAY 2018</span>
-                                    <Link class="reply" href="#">
-                                      <i class="fas fa-reply"></i>Reply
+                                    <Link className="reply" href="#">
+                                      <i className="fas fa-reply"></i>Reply
                                     </Link>
                                   </div>
                                   <p>
@@ -311,19 +311,19 @@ function BlogDetails(props) {
                           </ul>
                         </li>
                         <li>
-                          <div class="comments-box">
-                            <div class="comments-avatar">
+                          <div className="comments-box">
+                            <div className="comments-avatar">
                               <img
                                 src="https://vue-plum-chi.vercel.app/img/blog/details/comments2.png"
                                 alt="profilePic"
                               />
                             </div>
-                            <div class="comments-text">
-                              <div class="avatar-name">
+                            <div className="comments-text">
+                              <div className="avatar-name">
                                 <h5>Arista Williamson</h5>
                                 <span>19TH MAY 2018</span>
-                                <Link class="reply" href="#">
-                                  <i class="fas fa-reply"></i>Reply
+                                <Link className="reply" href="#">
+                                  <i className="fas fa-reply"></i>Reply
                                 </Link>
                               </div>
                               <p>
@@ -340,18 +340,18 @@ function BlogDetails(props) {
                       </ul>
                     </div>
                   </div>
-                  <div class="post-comments-form">
-                    <div class="post-comments-title">
+                  <div className="post-comments-form">
+                    <div className="post-comments-title">
                       <h2>Post Comments</h2>
                     </div>
                     <form
                       id="contacts-form"
-                      class="conatct-post-form"
+                      className="conatct-post-form"
                       action="#"
                     >
-                      <div class="row">
-                        <div class="col-xl-12">
-                          <div class="contact-icon contacts-message">
+                      <div className="row">
+                        <div className="col-xl-12">
+                          <div className="contact-icon contacts-message">
                             <textarea
                               name="comments"
                               id="comments"
@@ -361,23 +361,23 @@ function BlogDetails(props) {
                             ></textarea>
                           </div>
                         </div>
-                        <div class="col-xl-12">
-                          <div class="contact-icon contacts-name">
+                        <div className="col-xl-12">
+                          <div className="contact-icon contacts-name">
                             <input type="text" placeholder="Your Name.... " />
                           </div>
                         </div>
-                        <div class="col-xl-12">
-                          <div class="contact-icon contacts-email">
+                        <div className="col-xl-12">
+                          <div className="contact-icon contacts-email">
                             <input type="email" placeholder="Your Email...." />
                           </div>
                         </div>
-                        <div class="col-xl-12">
-                          <div class="contact-icon contacts-website">
+                        <div className="col-xl-12">
+                          <div className="contact-icon contacts-website">
                             <input type="text" placeholder="Your Website...." />
                           </div>
                         </div>
-                        <div class="col-xl-12">
-                          <button class="btn theme-btn" type="submit">
+                        <div className="col-xl-12">
+                          <button className="btn theme-btn" type="submit">
                             Post comment
                           </button>
                         </div>

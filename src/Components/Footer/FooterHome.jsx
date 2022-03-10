@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  Link
+    Link
 } from "react-router-dom";
 FooterHome.propTypes = {};
 
@@ -8,16 +8,16 @@ function FooterHome(props) {
   return (
     <footer>
       <div
-        class="footer-area box-90 pt-100 pb-60"
+        className="footer-area box-90 pt-100 pb-60"
         data-background="/img/bg/footer.jpg"
         style={{ backgroundImage: "url()" }}
       >
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-xl-3 col-lg-5 col-md-6 ">
-              <div class="footer-widget mb-40">
-                <div class="footer-logo">
-                  <Link href="/">
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-xl-3 col-lg-5 col-md-6 ">
+              <div className="footer-widget mb-40">
+                <div className="footer-logo">
+                  <Link to="/">
                     <div
                       style={{
                         display: "inline-block",
@@ -78,8 +78,8 @@ function FooterHome(props) {
                   aliqua. Ut enim ad minim veniam, quis nostrud exercitation
                   ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
-                <div class="footer-time d-flex mt-30">
-                  <div class="time-icon">
+                <div className="footer-time d-flex mt-30">
+                  <div className="time-icon">
                     <div
                       style={{
                         display: "inline-block",
@@ -133,92 +133,92 @@ function FooterHome(props) {
                       />
                     </div>
                   </div>
-                  <div class="time-text">
+                  <div className="time-text">
                     <span>Got Questions ? Call us 24/7!</span>
                     <h2>(0600) 874 548</h2>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-xl-2 col-lg-2 col-md-3 d-lg-none d-xl-block">
-              <div class="footer-widget pl-50 mb-40">
+            <div className="col-xl-2 col-lg-2 col-md-3 d-lg-none d-xl-block">
+              <div className="footer-widget pl-50 mb-40">
                 <h3>Social Media</h3>
-                <ul class="footer-link">
+                <ul className="footer-link">
                   <li>
-                    <Link>Facebook</Link>
+                    <Link to="/">Facebook</Link>
                   </li>
                   <li>
-                    <Link>Twitter</Link>
+                    <Link to="/">Twitter</Link>
                   </li>
                   <li>
-                    <Link>Behance</Link>
+                    <Link to="/">Behance</Link>
                   </li>
                   <li>
-                    <Link> Dribbble</Link>
+                    <Link to="/"> Dribbble</Link>
                   </li>
                   <li>
-                    <Link>Linkedin</Link>
+                    <Link to="/">Linkedin</Link>
                   </li>
                   <li>
-                    <Link>Youtube</Link>
+                    <Link to="/">Youtube</Link>
                   </li>
                 </ul>
               </div>
             </div>
-            <div class="col-xl-2 col-lg-2 col-md-3 d-lg-none d-xl-block">
-              <div class="footer-widget pl-30 mb-40">
+            <div className="col-xl-2 col-lg-2 col-md-3 d-lg-none d-xl-block">
+              <div className="footer-widget pl-30 mb-40">
                 <h3>Location</h3>
-                <ul class="footer-link">
+                <ul className="footer-link">
                   <li>
-                    <Link>New York</Link>
+                    <Link to="/">New York</Link>
                   </li>
                   <li>
-                    <Link>Tokyo</Link>
+                    <Link to="/">Tokyo</Link>
                   </li>
                   <li>
-                    <Link>Dhaka</Link>
+                    <Link to="/">Dhaka</Link>
                   </li>
                   <li>
-                    <Link> Chittagong</Link>
+                    <Link to="/"> Chittagong</Link>
                   </li>
                   <li>
-                    <Link>China</Link>
+                    <Link to="/">China</Link>
                   </li>
                   <li>
-                    <Link>Japan</Link>
+                    <Link to="/">Japan</Link>
                   </li>
                 </ul>
               </div>
             </div>
-            <div class="col-xl-2 col-lg-2 col-md-3">
-              <div class="footer-widget mb-40">
+            <div className="col-xl-2 col-lg-2 col-md-3">
+              <div className="footer-widget mb-40">
                 <h3>About</h3>
-                <ul class="footer-link">
+                <ul className="footer-link">
                   <li>
-                    <Link>Terms &amp; Conditions</Link>
+                    <Link to="/">Terms &amp; Conditions</Link>
                   </li>
                   <li>
-                    <Link> Privacy Policy</Link>
+                    <Link to="/"> Privacy Policy</Link>
                   </li>
                   <li>
-                    <Link>Contact Us</Link>
+                    <Link to="/">Contact Us</Link>
                   </li>
                   <li>
-                    <Link>FAQ</Link>
+                    <Link to="/">FAQ</Link>
                   </li>
                   <li>
-                    <Link>Wholesale</Link>
+                    <Link to="/">Wholesale</Link>
                   </li>
                   <li>
-                    <Link>Direction</Link>
+                    <Link to="/">Direction</Link>
                   </li>
                 </ul>
               </div>
             </div>
-            <div class="col-xl-3 col-lg-5 col-md-6">
-              <div class="footer-widget mb-40">
-                <div class="footer-banner">
-                  <Link href="/shop">
+            <div className="col-xl-3 col-lg-5 col-md-6">
+              <div className="footer-widget mb-40">
+                <div className="footer-banner">
+                  <Link to="/shop">
                     <div
                       style={{
                         display: "inline-block",
@@ -278,34 +278,34 @@ function FooterHome(props) {
           </div>
         </div>
       </div>
-      <div class="copyright-area box-105">
-        <div class="container-fluid">
-          <div class="copyright-border pt-30 pb-30">
-            <div class="row">
-              <div class="col-xl-6 col-lg-6 col-md-6">
-                <div class="copyright text-center  text-md-left">
+      <div className="copyright-area box-105">
+        <div className="container-fluid">
+          <div className="copyright-border pt-30 pb-30">
+            <div className="row">
+              <div className="col-xl-6 col-lg-6 col-md-6">
+                <div className="copyright text-center  text-md-left">
                   <p>
-                    Copyright © 2022 <Link>BasicTheme</Link>. All Rights
+                    Copyright © 2022 <Link to="/">BasicTheme</Link>. All Rights
                     Reserved
                   </p>
                 </div>
               </div>
-              <div class="col-xl-6 col-lg-6 col-md-6">
-                <div class="footer-icon text-center text-md-right ">
-                  <Link>
-                    <i class="fab fa-facebook-f"></i>
+              <div className="col-xl-6 col-lg-6 col-md-6">
+                <div className="footer-icon text-center text-md-right ">
+                  <Link to="/">
+                    <i className="fab fa-facebook-f"></i>
                   </Link>
-                  <Link>
-                    <i class="fab fa-twitter"></i>
+                  <Link to="/">
+                    <i className="fab fa-twitter"></i>
                   </Link>
-                  <Link>
-                    <i class="fab fa-behance"></i>
+                  <Link to="/">
+                    <i className="fab fa-behance"></i>
                   </Link>
-                  <Link>
-                    <i class="fab fa-linkedin-in"></i>
+                  <Link to="/">
+                    <i className="fab fa-linkedin-in"></i>
                   </Link>
-                  <Link>
-                    <i class="fab fa-youtube"></i>
+                  <Link to="/">
+                    <i className="fab fa-youtube"></i>
                   </Link>
                 </div>
               </div>

@@ -17,7 +17,7 @@ function Blog(props) {
     <>
       <Header />
       <BlogTitle />
-      <div class="blog-area pt-120 pb-80">
+      <div className="blog-area pt-120 pb-80">
         <div className="container">
           <div className="row">
             <div className="col-lg-8">

@@ -48,16 +48,16 @@ function AddToCart(props) {
     }
 
     return (
-        <div class="product-action-details variant-item">
-            <div class="product-details-action d-flex">
-                <div class="product-quantity ">
-                    <div class="cart-plus-minus">
+        <div className="product-action-details variant-item">
+            <div className="product-details-action d-flex">
+                <div className="product-quantity ">
+                    <div className="cart-plus-minus">
                         <p>{count}</p>
-                        <button onClick={decrease} class="dec qtybutton">-</button>
-                        <button onClick={increase} class="inc qtybutton">+</button></div>
-                </div><button class=" details-action-icon" type="submit"><i class="fas fa-heart"></i></button><button class="details-action-icon" type="submit"><i class="fas fa-hourglass"></i></button>
+                        <button onClick={decrease} className="dec qtybutton">-</button>
+                        <button onClick={increase} className="inc qtybutton">+</button></div>
+                </div><button className=" details-action-icon" type="submit"><i className="fas fa-heart"></i></button><button className="details-action-icon" type="submit"><i className="fas fa-hourglass"></i></button>
                 </div>
-            <div class="details-cart mt-40"><button onClick={handleSendProduct} class="btn theme-btn">purchase now</button></div>
+            <div className="details-cart mt-40"><button onClick={handleSendProduct} className="btn theme-btn">purchase now</button></div>
         </div>
     );
 }

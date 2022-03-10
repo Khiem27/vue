@@ -18,22 +18,22 @@ function SliderIndex3(props) {
     }
   };
   return (
-    <section class="slider-area pos-relative pt-100 pb-100">
-      <div class="slider-active slider-3">
-        <div class="slick-slider slick-initialized" dir="ltr">
+    <section className="slider-area pos-relative pt-100 pb-100">
+      <div className="slider-active slider-3">
+        <div className="slick-slider slick-initialized" dir="ltr">
           <button
             onClick={() => handleActive("prev")}
             type="button"
-            class="slick-arrow slick-prev"
+            className="slick-arrow slick-prev"
           >
             {" "}
-            <i class="fas fa-arrow-left"></i>{" "}
+            <i className="fas fa-arrow-left"></i>{" "}
           </button>
-          <div class="slick-list">
-            <div class="slick-track" style={{ width: "700%", opacity: "1" }}>
+          <div className="slick-list">
+            <div className="slick-track" style={{ width: "700%", opacity: "1" }}>
               <div
                 data-index="0"
-                class={
+                className={
                   active === 1
                     ? "slick-slide slick-active slick-current"
                     : "slick-slide"
@@ -64,15 +64,15 @@ function SliderIndex3(props) {
               >
                 <div>
                   <div
-                    class="single-slider d-flex align-items-center"
+                    className="single-slider d-flex align-items-center"
                     tabindex="-1"
                     style={{ width: "100%", display: "inline-block" }}
                   >
-                    <div class="container">
-                      <div class="row">
-                        <div class="col-xl-5 col-lg-5 col-md-4">
+                    <div className="container">
+                      <div className="row">
+                        <div className="col-xl-5 col-lg-5 col-md-4">
                           <div
-                            class="slide-img"
+                            className="slide-img"
                             data-animation="fadeInLeft"
                             data-delay=".2s"
                           >
@@ -82,17 +82,17 @@ function SliderIndex3(props) {
                             />
                           </div>
                         </div>
-                        <div class="col-xl-7 col-lg-7 col-md-8">
-                          <div class="shape-title shape-title-3 bounce-animate">
+                        <div className="col-xl-7 col-lg-7 col-md-8">
+                          <div className="shape-title shape-title-3 bounce-animate">
                             <h2>UX</h2>
                           </div>
-                          <div class="shape-icon shape-icon-3 bounce-animate">
+                          <div className="shape-icon shape-icon-3 bounce-animate">
                             <img
                               src="https://vue-plum-chi.vercel.app/img/slider/slide-thumb.png"
                               alt="thumb"
                             />
                           </div>
-                          <div class="slide-content slide-content-3 pt-80 pl-30">
+                          <div className="slide-content slide-content-3 pt-80 pl-30">
                             <span data-animation="fadeInRight" data-delay=".4s">
                               winter Collection
                             </span>
@@ -100,9 +100,9 @@ function SliderIndex3(props) {
                               {" "}
                               2022
                             </h1>
-                            <div class="slide-btn">
+                            <div className="slide-btn">
                               <a
-                                class="btn theme-btn"
+                                className="btn theme-btn"
                                 data-animation="fadeInLeft"
                                 data-delay=".8s"
                                 href="/shop"
@@ -119,7 +119,7 @@ function SliderIndex3(props) {
               </div>
               <div
                 data-index="1"
-                class={
+                className={
                   active === 2
                     ? "slick-slide slick-active slick-current"
                     : "slick-slide"
@@ -150,15 +150,15 @@ function SliderIndex3(props) {
               >
                 <div>
                   <div
-                    class="single-slider d-flex align-items-center"
+                    className="single-slider d-flex align-items-center"
                     tabindex="-1"
                     style={{ width: "100%", display: "inline-block" }}
                   >
-                    <div class="container">
-                      <div class="row">
-                        <div class="col-xl-5 col-lg-5 col-md-4">
+                    <div className="container">
+                      <div className="row">
+                        <div className="col-xl-5 col-lg-5 col-md-4">
                           <div
-                            class="slide-img"
+                            className="slide-img"
                             data-animation="fadeInLeft"
                             data-delay=".2s"
                           >
@@ -168,17 +168,17 @@ function SliderIndex3(props) {
                             />
                           </div>
                         </div>
-                        <div class="col-xl-7 col-lg-7 col-md-8">
-                          <div class="shape-title shape-title-3 bounce-animate">
+                        <div className="col-xl-7 col-lg-7 col-md-8">
+                          <div className="shape-title shape-title-3 bounce-animate">
                             <h2>UX</h2>
                           </div>
-                          <div class="shape-icon shape-icon-3 bounce-animate">
+                          <div className="shape-icon shape-icon-3 bounce-animate">
                             <img
                               src="https://vue-plum-chi.vercel.app/img/slider/slide-thumb-2.png"
                               alt="thumb"
                             />
                           </div>
-                          <div class="slide-content slide-content-3 pt-80 pl-30">
+                          <div className="slide-content slide-content-3 pt-80 pl-30">
                             <span data-animation="fadeInRight" data-delay=".4s">
                               winter Collection
                             </span>
@@ -186,9 +186,9 @@ function SliderIndex3(props) {
                               {" "}
                               2022
                             </h1>
-                            <div class="slide-btn">
+                            <div className="slide-btn">
                               <a
-                                class="btn theme-btn"
+                                className="btn theme-btn"
                                 data-animation="fadeInLeft"
                                 data-delay=".8s"
                                 href="/shop"
@@ -205,7 +205,7 @@ function SliderIndex3(props) {
               </div>
               <div
                 data-index="2"
-                class={
+                className={
                   active === 3
                     ? "slick-slide slick-active slick-current"
                     : "slick-slide"
@@ -236,15 +236,15 @@ function SliderIndex3(props) {
               >
                 <div>
                   <div
-                    class="single-slider d-flex align-items-center"
+                    className="single-slider d-flex align-items-center"
                     tabindex="-1"
                     style={{ width: "100%", display: "inline-block" }}
                   >
-                    <div class="container">
-                      <div class="row">
-                        <div class="col-xl-5 col-lg-5 col-md-4">
+                    <div className="container">
+                      <div className="row">
+                        <div className="col-xl-5 col-lg-5 col-md-4">
                           <div
-                            class="slide-img"
+                            className="slide-img"
                             data-animation="fadeInLeft"
                             data-delay=".2s"
                           >
@@ -254,17 +254,17 @@ function SliderIndex3(props) {
                             />
                           </div>
                         </div>
-                        <div class="col-xl-7 col-lg-7 col-md-8">
-                          <div class="shape-title shape-title-3 bounce-animate">
+                        <div className="col-xl-7 col-lg-7 col-md-8">
+                          <div className="shape-title shape-title-3 bounce-animate">
                             <h2>UX</h2>
                           </div>
-                          <div class="shape-icon shape-icon-3 bounce-animate">
+                          <div className="shape-icon shape-icon-3 bounce-animate">
                             <img
                               src="https://vue-plum-chi.vercel.app/img/slider/slide-thumb-3.png"
                               alt="thumb"
                             />
                           </div>
-                          <div class="slide-content slide-content-3 pt-80 pl-30">
+                          <div className="slide-content slide-content-3 pt-80 pl-30">
                             <span data-animation="fadeInRight" data-delay=".4s">
                               winter Collection
                             </span>
@@ -272,9 +272,9 @@ function SliderIndex3(props) {
                               {" "}
                               2022
                             </h1>
-                            <div class="slide-btn">
+                            <div className="slide-btn">
                               <a
-                                class="btn theme-btn"
+                                className="btn theme-btn"
                                 data-animation="fadeInLeft"
                                 data-delay=".8s"
                                 href="/shop"
@@ -294,10 +294,10 @@ function SliderIndex3(props) {
           <button
             onClick={() => handleActive("next")}
             type="button"
-            class="slick-arrow slick-next"
+            className="slick-arrow slick-next"
           >
             {" "}
-            <i class="fas fa-arrow-right"></i>
+            <i className="fas fa-arrow-right"></i>
           </button>
         </div>
       </div>

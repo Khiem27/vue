@@ -37,13 +37,13 @@ function ProductsColorFilter(props) {
     }
 
     return (
-        <ul class="shop-link">
-            <li><Link onClick={clickBlack} class="text-capitalize c-pointer"><span class="black box-shadow-none"></span> black</Link></li>
-            <li><Link onClick={clickGreen} class="text-capitalize c-pointer"><span class="green box-shadow-none"></span> green</Link></li>
-            <li><Link onClick={clickBlue} class="text-capitalize c-pointer"><span class="blue box-shadow-none"></span> blue</Link></li>
-            <li><Link onClick={clickWhite} class="text-capitalize c-pointer"><span class="white box-shadow-none"></span> white</Link></li>
-            <li><Link onClick={clickRed} class="text-capitalize c-pointer"><span class="red box-shadow-none"></span> red</Link></li>
-            <li><Link onClick={clickGray} class="text-capitalize c-pointer"><span class="gray box-shadow-none"></span> gray</Link></li>
+        <ul className="shop-link">
+            <li><Link onClick={clickBlack} className="text-capitalize c-pointer"><span className="black box-shadow-none"></span> black</Link></li>
+            <li><Link onClick={clickGreen} className="text-capitalize c-pointer"><span className="green box-shadow-none"></span> green</Link></li>
+            <li><Link onClick={clickBlue} className="text-capitalize c-pointer"><span className="blue box-shadow-none"></span> blue</Link></li>
+            <li><Link onClick={clickWhite} className="text-capitalize c-pointer"><span className="white box-shadow-none"></span> white</Link></li>
+            <li><Link onClick={clickRed} className="text-capitalize c-pointer"><span className="red box-shadow-none"></span> red</Link></li>
+            <li><Link onClick={clickGray} className="text-capitalize c-pointer"><span className="gray box-shadow-none"></span> gray</Link></li>
         </ul>
     );
 }
