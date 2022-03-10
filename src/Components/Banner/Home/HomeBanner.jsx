@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 HomeBanner.propTypes = {};
 
@@ -6,8 +6,43 @@ function HomeBanner(props) {
   const [active, setActive] = useState(true);
   const handleBtn = () => {
     setActive(!active);
-    console.log(active);
   };
+  
+  // Sự kiện drag drop
+  const [element, setElement] = useState()
+
+  const posX1 = useRef(0)
+  const posX2 = useRef(0)
+  
+  useEffect(() => {
+    const elementActive = document.querySelector(".slider-active")
+    setElement(elementActive)
+  }, [])
+  
+  if (element) {
+    element.addEventListener("mousedown", (e) => {
+        e = e || window.event;
+        e.preventDefault();
+        document.onmouseup = dragEnd;
+        document.onmousemove = dragAction;
+        posX1.current = e.clientX
+        console.log(posX1.current);
+    })
+  }
+
+  const dragAction = (e) => {
+    e = e || window.event;
+  }
+
+  const dragEnd = (e) => {
+    setActive(!active);
+
+    posX2.current = e.clientX
+    console.log(posX2.current);
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+  
   return (
     <section className="slider-area pos-relative">
       <div className="slider-active">
