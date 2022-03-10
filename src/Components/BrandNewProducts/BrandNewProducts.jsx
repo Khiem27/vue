@@ -93,7 +93,7 @@ function BrandNewProducts(props) {
     } else if (trans !== -1 && action === "prev") {
       setTrans(trans + 1);
     }
-    // console.log(trans);
+    console.log(trans);
   };
 
   // Modal
@@ -134,7 +134,7 @@ function BrandNewProducts(props) {
   const posX3 = useRef(0)
   
   useEffect(() => {
-    const elementActive = document.querySelector(".slick-track-brand-new-products")
+    const elementActive = document.querySelector(".slick-track-brand-new-products-1")
     setElement(elementActive)
   }, [])
   
@@ -154,16 +154,17 @@ function BrandNewProducts(props) {
   }
 
   const dragEnd = (e) => {
-    posX2.current = e.clientX
-    document.onmouseup = null;
-    document.onmousemove = null;
-    console.log(posX1.current);
-    console.log(posX2.current);
     if (posX1.current > posX2.current) {
       handleTrans("next");
     } else if (posX1.current < posX2.current) {
       handleTrans("prev");
     }
+    posX2.current = e.clientX
+    document.onmouseup = null;
+    document.onmousemove = null;
+    console.log(posX1.current);
+    console.log(posX2.current);
+   
   }
 
   return (
@@ -287,7 +288,7 @@ function BrandNewProducts(props) {
                         </div>
                         <div className="slick-list slick-list-1">
                           <div
-                            className="slick-track slick-track-brand-new-products"
+                            className="slick-track slick-track-brand-new-products slick-track-brand-new-products-1"
                             style={{
                               opacity: "1",
                               transform: `translate3d(${
@@ -418,7 +419,7 @@ function BrandNewProducts(props) {
                         <div className="slick-slider slick-initialized">
                           <div className="slick-list">
                             <div
-                              className="slick-track slick-track-brand-new-products"
+                              className="slick-track slick-track-brand-new-products slick-track-brand-new-products-1"
                               style={{
                                 opacity: "1",
                                 transform: `translate3d(0px, 0px, 0px)`,
@@ -543,7 +544,7 @@ function BrandNewProducts(props) {
                         <div className="slick-slider slick-initialized">
                           <div className="slick-list">
                             <div
-                              className="slick-track slick-track-brand-new-products"
+                              className="slick-track slick-track-brand-new-products slick-track-brand-new-products-1"
                               style={{
                                 opacity: "1",
                                 transform: `translate3d(0 px, 0px, 0px)`,
@@ -669,7 +670,7 @@ function BrandNewProducts(props) {
                         <div className="slick-slider slick-initialized">
                           <div className="slick-list">
                             <div
-                              className="slick-track slick-track-brand-new-products"
+                              className="slick-track slick-track-brand-new-products slick-track-brand-new-products-1"
                               style={{
                                 opacity: "1",
                                 transform: `translate3d(0 px, 0px, 0px)`,
