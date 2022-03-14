@@ -35,7 +35,6 @@ TabPanel.propTypes = {
   index: PropTypes.number.isRequired,
   value: PropTypes.number.isRequired,
 };
-
 // Modal End
 
 function BrandNewProducts(props) {
@@ -125,48 +124,7 @@ function BrandNewProducts(props) {
       },
     });
   };
-
-  // Sự kiện drag drop
-  const [element, setElement] = useState()
-
-  const posX1 = useRef(0)
-  const posX2 = useRef(0)
-  const posX3 = useRef(0)
   
-  useEffect(() => {
-    const elementActive = document.querySelector(".slick-track-brand-new-products-1")
-    setElement(elementActive)
-  }, [])
-  
-  if (element) {
-    element.addEventListener("mousedown", (e) => {
-        e = e || window.event;
-        e.preventDefault();
-        document.onmouseup = dragEnd;
-        document.onmousemove = dragAction;
-        posX1.current = e.clientX
-    })
-  }
-
-  const dragAction = (e) => {
-    e = e || window.event;
-    posX3.current = e.clientX
-  }
-
-  const dragEnd = (e) => {
-    if (posX1.current > posX2.current) {
-      handleTrans("next");
-    } else if (posX1.current < posX2.current) {
-      handleTrans("prev");
-    }
-    posX2.current = e.clientX
-    document.onmouseup = null;
-    document.onmousemove = null;
-    console.log(posX1.current);
-    console.log(posX2.current);
-   
-  }
-
   return (
     <>
       <section className="product-area box-90 pt-70 pb-40 slick-slider">
@@ -359,7 +317,9 @@ function BrandNewProducts(props) {
                                               ) : null}
 
                                               {item.sale ? (
-                                                <span className="sale">sale</span>
+                                                <span className="sale">
+                                                  sale
+                                                </span>
                                               ) : null}
                                             </div>
                                           </div>
@@ -485,11 +445,15 @@ function BrandNewProducts(props) {
                                               </div>
                                               <div className="sale-tag">
                                                 {item.new ? (
-                                                  <span className="new">new</span>
+                                                  <span className="new">
+                                                    new
+                                                  </span>
                                                 ) : null}
 
                                                 {item.sale ? (
-                                                  <span className="sale">sale</span>
+                                                  <span className="sale">
+                                                    sale
+                                                  </span>
                                                 ) : null}
                                               </div>
                                             </div>
@@ -611,11 +575,15 @@ function BrandNewProducts(props) {
                                               </div>
                                               <div className="sale-tag">
                                                 {item.new ? (
-                                                  <span className="new">new</span>
+                                                  <span className="new">
+                                                    new
+                                                  </span>
                                                 ) : null}
 
                                                 {item.sale ? (
-                                                  <span className="sale">sale</span>
+                                                  <span className="sale">
+                                                    sale
+                                                  </span>
                                                 ) : null}
                                               </div>
                                             </div>
@@ -736,11 +704,15 @@ function BrandNewProducts(props) {
                                               </div>
                                               <div className="sale-tag">
                                                 {item.new ? (
-                                                  <span className="new">new</span>
+                                                  <span className="new">
+                                                    new
+                                                  </span>
                                                 ) : null}
 
                                                 {item.sale ? (
-                                                  <span className="sale">sale</span>
+                                                  <span className="sale">
+                                                    sale
+                                                  </span>
                                                 ) : null}
                                               </div>
                                             </div>
@@ -1021,7 +993,9 @@ function BrandNewProducts(props) {
                                   </li>
                                   <li>
                                     <span>Stock:</span>{" "}
-                                    <span className="in-stock">Out Of Stock</span>
+                                    <span className="in-stock">
+                                      Out Of Stock
+                                    </span>
                                   </li>
                                 </ul>
                               </div>

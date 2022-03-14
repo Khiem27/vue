@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import {
   Link
 } from "react-router-dom";
+import MiniAuthentication from "../Authentication/MiniAuthentication/MiniAuthentication";
 import MiniCart from "../MiniCart/MiniCart";
 import ScrollUp from "../ScrollUp/ScrollUp";
 
@@ -293,11 +294,7 @@ function Header(props) {
                       </div>
                     </div>
                   </div>
-                  <li className="login-btn">
-                    <Link to="/login">
-                      <i className="far fa-user"></i>
-                    </Link>
-                  </li>
+                  <MiniAuthentication />
                   <MiniCart />
                 </ul>
               </div>

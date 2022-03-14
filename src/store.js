@@ -1,13 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit';
-import ShopNavSlice from './Components/ShopNav/ShopNavSlice';
-import ProductSearchSlice from './Components/Search/ProductSearchSlice';
+import AddToCartSlice from './Components/AddToCart/AddToCartSlice';
+import { LoginSlice } from './Components/Authentication/Login/LoginSlice';
+import { RegisterSlice } from './Components/Authentication/Register/RegisterSlice';
 import { ModalSlice } from './Components/Modal/ModalSlice';
-import FilterCategoriesSlice from './Components/ProductsCategoriesFilter/ProductsFilterCategoriesSlice';
 import FilterBrandSlice from './Components/ProductsBrandFilter/ProductsBrandFilterSlice';
+import FilterCategoriesSlice from './Components/ProductsCategoriesFilter/ProductsFilterCategoriesSlice';
+import FilterColorSlice from './Components/ProductsColorFilter/ProductsColorFilterSlice';
 import ProductsFilterSizeSlice from './Components/ProductsSizeFilter/ProductsSizeFilterSlice';
 import FilterTagsSlice from './Components/ProductsTagsFilter/ProductsTagsFilterSlice';
-import FilterColorSlice from './Components/ProductsColorFilter/ProductsColorFilterSlice';
-import AddToCartSlice from './Components/AddToCart/AddToCartSlice';
+import ProductSearchSlice from './Components/Search/ProductSearchSlice';
+import ShopNavSlice from './Components/ShopNav/ShopNavSlice';
 import ShowingResultSlice from './Components/Showing/ShowingResultSlice';
 
 const rootReducers = {
@@ -21,6 +23,8 @@ const rootReducers = {
   filterColor: FilterColorSlice,
   addToCart: AddToCartSlice,
   showingResult: ShowingResultSlice,
+  login: LoginSlice,
+  register: RegisterSlice,
 
 }
 

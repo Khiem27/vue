@@ -164,7 +164,6 @@ function BestSaleProducts(props) {
     document.onmousemove = null;
     console.log(posX1.current);
     console.log(posX2.current);
-   
   }
 
   return (

@@ -2,6 +2,8 @@ import {
   BrowserRouter as Router, Route, Switch
 } from "react-router-dom";
 import './App.css';
+import Login from "./Components/Authentication/Login/Login";
+import Register from "./Components/Authentication/Register/Register";
 import Cart from './Components/Cart/Cart';
 import Header from './Components/Header/Header';
 import WishlistContainer from './Components/Wishlist Container/WishlistContainer';
@@ -90,6 +92,14 @@ function App() {
 
             <Route path="/cart" exact>
               <Cart />
+            </Route>
+
+            <Route path="/login" exact>
+              <Login />
+            </Route>
+
+            <Route path="/register" exact>
+              <Register />
             </Route>
 
             <Route path="/shop/upcoming/:shopid" exact>
