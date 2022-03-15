@@ -1,5 +1,5 @@
 import { useSnackbar } from "notistack";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import {
@@ -12,7 +12,6 @@ MiniCart.propTypes = {};
 
 function MiniCart(props) {
   const dispatch = useDispatch();
-  const [arrAllUser, setArrAllUser] = useState([]);
   useEffect(() => {
     // Check cart từ localstorage
     const local = localStorage.getItem("productsInCart");
