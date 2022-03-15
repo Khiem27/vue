@@ -14,7 +14,11 @@ const UserApi = {
     add: (data) => {
         const pathUrl = "Users.json"
         return RequestClient.post(pathUrl, data)
-
+    },
+    
+    update: (id, data) => {
+        const pathUrl = `/Users/${id}.json`
+        return RequestClient.put(pathUrl, data)
     }
 }
 

@@ -36,6 +36,7 @@ function Register(props) {
       enqueueSnackbar("Đăng nhập thành công", {
         variant: "success",
       });
+      window.location.reload();
     } else {
       enqueueSnackbar("Đăng nhập thất bại", {
         variant: "error",

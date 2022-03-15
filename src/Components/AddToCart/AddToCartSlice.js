@@ -9,29 +9,29 @@ export const AddToCartSlice = createSlice({
   
   reducers: {
     addToCart: (state, action) => {
-        const { id, quantity } = action.payload
-
-        const index = state.products.findIndex((item) => item.id === id);
-
-        if (index < 0 ) {
-            state.products.push(action.payload)
-        } else {
-            state.products[index].quantity += quantity;
-        }
-
-        // Tính toán tổng giá trị sản phẩm
-        state.products = state.products.map((item) => {
-            const product = {
-                ...item,
-                total: item.price * item.quantity
+            const { id, quantity } = action.payload
+    
+            const index = state.products.findIndex((item) => item.id === id);
+    
+            if (index < 0 ) {
+                state.products.push(action.payload)
+            } else {
+                state.products[index].quantity += quantity;
             }
-
-            return product
-        })
-        
-        if (state.products.length) {
-            localStorage.setItem("productsInCart", JSON.stringify(state.products))
-        }
+    
+            // Tính toán tổng giá trị sản phẩm
+            state.products = state.products.map((item) => {
+                const product = {
+                    ...item,
+                    total: item.price * item.quantity
+                }
+    
+                return product
+            })
+            
+            if (state.products.length) {
+                localStorage.setItem("productsInCart", JSON.stringify(state.products))
+            }
     },
 
     removeFromCart: (state, action) => {

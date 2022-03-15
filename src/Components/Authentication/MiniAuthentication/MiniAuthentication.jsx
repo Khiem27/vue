@@ -19,6 +19,7 @@ function MiniAuthentication(props) {
     enqueueSnackbar("Đăng xuất thành công", {
       variant: "info",
     });
+    window.location.reload();
   };
 
   return (

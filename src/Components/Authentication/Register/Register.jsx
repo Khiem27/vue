@@ -1,11 +1,12 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { unwrapResult } from "@reduxjs/toolkit";
 import { useSnackbar } from "notistack";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import * as yup from "yup";
+import UserApi from "../../../Api/UserApi/UserApi";
 import Header from "../../Header/Header";
 import RegisterTitle from "../../PageTitle/Register/RegisterTitle";
 import { regiterAction } from "./RegisterSlice";
@@ -34,11 +35,25 @@ function Register(props) {
   } = useForm({
     resolver: yupResolver(schema),
   });
+
+  // Tao id cho user moi
+  const [idUser, setID] = useState()
+  useEffect(() => {
+    const getAllUser = async () => {
+      const allUser = await UserApi.getAll();
+      const arrAllUser = Object.values(allUser.data);
+      const keyAllUser = Object.keys(arrAllUser);
+      setID(keyAllUser.length + 1);
+    };
+    getAllUser();
+  })
+  
   const onSubmit = async (data) => {
     const newArr = {
       userName: data.userName,
       userEmail: data.userEmail,
       userPass: data.userPass,
+      id: idUser,
     };
 
     const action = regiterAction(newArr);
@@ -51,6 +66,7 @@ function Register(props) {
       enqueueSnackbar("Đăng ký thành công", {
         variant: "success",
       });
+      window.location.reload();
     } else {
       enqueueSnackbar("Đăng ký thất bại", {
         variant: "error",

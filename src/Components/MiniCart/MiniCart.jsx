@@ -1,25 +1,27 @@
 import { useSnackbar } from "notistack";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import {
-  Link
-} from "react-router-dom";
-import {
-  addFromLocal, calculatorTotalProducts, removeFromCart
+  addFromLocal,
+  calculatorTotalProducts,
+  removeFromCart
 } from "../AddToCart/AddToCartSlice";
 
 MiniCart.propTypes = {};
 
 function MiniCart(props) {
   const dispatch = useDispatch();
+  const [arrAllUser, setArrAllUser] = useState([]);
   useEffect(() => {
+    // Check cart từ localstorage
     const local = localStorage.getItem("productsInCart");
     const localParse = JSON.parse(local);
     if (localParse) {
       const action = addFromLocal(localParse);
       dispatch(action);
     }
-  },[dispatch]);
+  }, [dispatch]);
 
   const { enqueueSnackbar } = useSnackbar();
 
