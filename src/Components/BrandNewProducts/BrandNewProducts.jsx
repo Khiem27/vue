@@ -48,7 +48,6 @@ function BrandNewProducts(props) {
   const [jewelery, setJewelery] = useState([]);
   const [electronics, setElectronics] = useState([]);
   const [widthE, setWidthE] = useState(1);
-
   useEffect(() => {
     const getAllProducts = async () => {
       const allProducts = await ProductApi.getAll();
@@ -92,7 +91,6 @@ function BrandNewProducts(props) {
     } else if (trans !== -1 && action === "prev") {
       setTrans(trans + 1);
     }
-    console.log(trans);
   };
 
   // Modal
@@ -124,7 +122,7 @@ function BrandNewProducts(props) {
       },
     });
   };
-  
+
   return (
     <>
       <section className="product-area box-90 pt-70 pb-40 slick-slider">

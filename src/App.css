@@ -25193,7 +25193,6 @@ html {
     }
 
     .slick-track-brand-new-products {
-        /* width: calc(100%/4.35*34); */
         width: 850%;
     }
 }
@@ -25208,11 +25207,9 @@ html {
     }
 
     .slick-track-brand-new-products {
-        /* width: calc(100%/4.35*34); */
         width: 850%;
     }
 }
-
 
 @media (max-width:1501px) {
     .side-menu ul li ul.submenu {
@@ -25221,12 +25218,10 @@ html {
     }
 }
 
-
-
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
     .arrow-icon.right,
     .arrow-icon.left {
         display: none !important;
     } 
 
-}
+} */

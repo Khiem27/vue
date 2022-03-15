@@ -49,7 +49,6 @@ function BestSaleProducts(props) {
   const [jewelery, setJewelery] = useState([]);
   const [electronics, setElectronics] = useState([]);
   const [widthE, setWidthE] = useState(1);
-
   useEffect(() => {
     const getAllProducts = async () => {
       const allProducts = await ProductApi.getAll();
@@ -62,7 +61,7 @@ function BestSaleProducts(props) {
       );
     };
     getAllProducts();
-    const cc = document.querySelector(".slick-list-1");
+    const cc = document.querySelector(".slick-list-2");
     let width = cc.clientWidth;
     if (width <= 670) {
       setWidthE(width);
@@ -285,7 +284,7 @@ function BestSaleProducts(props) {
                         >
                           <i className="fas fa-arrow-left"></i>
                         </div>
-                        <div className="slick-list slick-list-1">
+                        <div className="slick-list slick-list-2">
                           <div
                             className="slick-track slick-track-brand-new-products slick-track-brand-new-products-2"
                             style={{
