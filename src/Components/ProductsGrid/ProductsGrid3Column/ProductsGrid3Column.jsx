@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import ProductApi from "../../../Api/Product/ProductApi";
 import AddToCart from "../../AddToCart/AddToCart";
 import { addToCart } from "../../AddToCart/AddToCartSlice";
+import AddToCompare from "../../AddToCompare/AddToCompare";
 import AddToWishlist from "../../AddToWishlist/AddToWishlist";
 import CheckSearchErro from "../../Search/CheckSearchErro";
 import { newArrFilter } from "../../Showing/ShowingResultSlice";
@@ -155,9 +156,7 @@ function ProductsGrid3Column(props) {
                           <Link onClick={() => handleOpen(index)}>
                             <i className="fas fa-eye"></i>
                           </Link>
-                          <Link>
-                            <i className="fas fa-compress-alt"></i>
-                          </Link>
+                          <AddToCompare dataProduct={item} />
                         </div>
                         <div className="sale-tag">
                           {item.new ? <span className="new">new</span> : null}

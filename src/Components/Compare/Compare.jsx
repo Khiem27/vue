@@ -1,60 +1,42 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { addToCart } from "../AddToCart/AddToCartSlice";
-import {
-  addFromLocal,
-  removeWishlist
-} from "../AddToWishlist/AddToWishlistSlice";
+import { addFromLocal, removeCompare } from "../AddToCompare/AddToCompareSlice";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
-import WishlistTitle from "../PageTitle/Wishlist/WishlistTitle";
+import CompareTitle from "../PageTitle/Compare/CompareTitle";
 
-WishList.propTypes = {};
+Compare.propTypes = {};
 
-function WishList(props) {
+function Compare(props) {
   const dispatch = useDispatch();
 
-  const wishlistLocal = localStorage.getItem("wishlistProduct");
+  const compareLocal = localStorage.getItem("compareProduct");
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   useEffect(() => {
-    const wishlistData = JSON.parse(wishlistLocal);
+    const compareData = JSON.parse(compareLocal);
 
-    if (wishlistData) {
-      const action = addFromLocal(wishlistData);
+    if (compareData) {
+      const action = addFromLocal(compareData);
       dispatch(action);
     }
-  }, [dispatch, wishlistLocal]);
+  }, [dispatch, compareLocal]);
 
-  const wishlistItemSlice = useSelector(
-    (state) => state.addToWishlist.products
-  );
+  const compareItemSlice = useSelector((state) => state.addToCompare.products);
 
   const handleRemoveItem = (id) => {
-    const action = removeWishlist(id);
-    dispatch(action);
-  };
-
-  const handleSendProduct = (id) => {
-    const product = {
-      id: wishlistItemSlice[id].id,
-      image: wishlistItemSlice[id].image,
-      title: wishlistItemSlice[id].title,
-      price: wishlistItemSlice[id].price,
-      quantity: 1,
-    };
-
-    const action = addToCart(product);
+    const action = removeCompare(id);
     dispatch(action);
   };
 
   return (
     <>
       <Header />
-      <WishlistTitle />
-      {wishlistItemSlice.length !== 0 ? (
+      <CompareTitle />
+
+      {compareItemSlice.length !== 0 ? (
         <section class="cart-area pt-100 pb-100">
           <div class="container">
             <div class="row">
@@ -66,37 +48,29 @@ function WishList(props) {
                         <tr>
                           <th class="product-thumbnail">Images</th>
                           <th class="cart-product-name">Product</th>
-                          <th class="product-price">Unit Price</th>
-                          <th class="product-quantity">Quantity</th>
-                          <th class="product-subtotal">Total</th>
+                          <th class="product-price">Brand</th>
+                          <th class="product-subtotal">Unit Price</th>
                           <th class="product-remove">Remove</th>
                         </tr>
                       </thead>
                       <tbody>
-                        {wishlistItemSlice.map((item, index) => {
+                        {compareItemSlice.map((item) => {
                           return (
-                            <tr key={index}>
+                            <tr>
                               <td class="product-thumbnail">
                                 <Link to="#">
-                                  <img src={item.image} alt="wishlist" />
+                                  <img src={item.image} alt="cart" />
                                 </Link>
                               </td>
                               <td class="product-name">
                                 <Link to="#">{item.title}</Link>
                               </td>
-                              <td class="product-price">
-                                <span class="amount">${item.price}</span>
-                              </td>
-                              <td class="product-quantity">
-                                <Link
-                                  onClick={() => handleSendProduct(index)}
-                                  class="btn theme-btn-2"
-                                  to="#"
-                                >
-                                  Add to cart
+                              <td>
+                                <Link to="#" class="text-capitalize">
+                                  {item.brand}
                                 </Link>
                               </td>
-                              <td class="product-subtotal">
+                              <td class="product-price">
                                 <span class="amount">${item.price}</span>
                               </td>
                               <td class="product-remove">
@@ -126,4 +100,4 @@ function WishList(props) {
   );
 }
 
-export default WishList;
+export default Compare;

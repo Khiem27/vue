@@ -5,6 +5,7 @@ import './App.css';
 import Login from "./Components/Authentication/Login/Login";
 import Register from "./Components/Authentication/Register/Register";
 import Cart from './Components/Cart/Cart';
+import Compare from "./Components/Compare/Compare";
 import Header from './Components/Header/Header';
 import WishlistContainer from './Components/Wishlist Container/WishlistContainer';
 import WishlistContainerCompare from './Components/Wishlist Container/WishlistContainerCompare';
@@ -97,6 +98,10 @@ function App() {
 
             <Route path="/login" exact>
               <Login />
+            </Route>
+
+            <Route path="/compare" exact>
+              <Compare />
             </Route>
 
             <Route path="/register" exact>

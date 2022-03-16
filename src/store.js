@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import AddToCartSlice from "./Components/AddToCart/AddToCartSlice";
+import AddToConpareSlice from "./Components/AddToCompare/AddToCompareSlice";
 import AddToWishlistSlice from "./Components/AddToWishlist/AddToWishlistSlice";
 import { LoginSlice } from "./Components/Authentication/Login/LoginSlice";
 import { RegisterSlice } from "./Components/Authentication/Register/RegisterSlice";
@@ -24,6 +25,7 @@ const rootReducers = {
   filterColor: FilterColorSlice,
   addToCart: AddToCartSlice,
   addToWishlist: AddToWishlistSlice,
+  addToCompare: AddToConpareSlice,
   showingResult: ShowingResultSlice,
   login: LoginSlice,
   register: RegisterSlice,
