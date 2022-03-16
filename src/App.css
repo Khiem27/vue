@@ -25217,3 +25217,10 @@ html {
         left: 106%;
     }
 }
+
+@media (max-width: 720px) {
+   .arrow-icon.left, 
+   .arrow-icon.right {
+        visibility: hidden !important;
+    }
+}
