@@ -23,6 +23,7 @@ function AddToWishlist(props) {
   }, [dispatch, wishlistLocal]);
 
   useEffect(() => {
+    // eslint-disable-next-line array-callback-return
     wishlistItemSlice.map((item) => {
       if (dataProduct.id === item.id) {
         setActive(true);
