@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import ProductApi from "../../Api/Product/ProductApi";
 import AddToCart from "../AddToCart/AddToCart";
 import { addToCart } from "../AddToCart/AddToCartSlice";
+import AddToWishlist from "../AddToWishlist/AddToWishlist";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -338,12 +339,9 @@ function BrandNewProducts(props) {
                                               </div>
                                             </div>
                                             <div className="product-wishlist">
-                                              <Link to="#" className="  ">
-                                                <i
-                                                  className="far fa-heart"
-                                                  title="Wishlist"
-                                                ></i>
-                                              </Link>
+                                              <AddToWishlist
+                                                dataProduct={item}
+                                              />
                                             </div>
                                           </div>
                                         </div>
@@ -472,12 +470,9 @@ function BrandNewProducts(props) {
                                                 </div>
                                               </div>
                                               <div className="product-wishlist">
-                                                <Link to="#" className="  ">
-                                                  <i
-                                                    className="far fa-heart"
-                                                    title="Wishlist"
-                                                  ></i>
-                                                </Link>
+                                                <AddToWishlist
+                                                  dataProduct={item}
+                                                />
                                               </div>
                                             </div>
                                           </div>
@@ -602,12 +597,9 @@ function BrandNewProducts(props) {
                                                 </div>
                                               </div>
                                               <div className="product-wishlist">
-                                                <Link to="#" className="  ">
-                                                  <i
-                                                    className="far fa-heart"
-                                                    title="Wishlist"
-                                                  ></i>
-                                                </Link>
+                                                <AddToWishlist
+                                                  dataProduct={item}
+                                                />
                                               </div>
                                             </div>
                                           </div>
@@ -731,12 +723,9 @@ function BrandNewProducts(props) {
                                                 </div>
                                               </div>
                                               <div className="product-wishlist">
-                                                <Link to="#" className="  ">
-                                                  <i
-                                                    className="far fa-heart"
-                                                    title="Wishlist"
-                                                  ></i>
-                                                </Link>
+                                                <AddToWishlist
+                                                  dataProduct={item}
+                                                />
                                               </div>
                                             </div>
                                           </div>

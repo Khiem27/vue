@@ -6,12 +6,11 @@ import { useSnackbar } from "notistack";
 import PropTypes from "prop-types";
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  Link
-} from "react-router-dom";
+import { Link } from "react-router-dom";
 import ProductApi from "../../../Api/Product/ProductApi";
 import AddToCart from "../../AddToCart/AddToCart";
 import { addToCart } from "../../AddToCart/AddToCartSlice";
+import AddToWishlist from "../../AddToWishlist/AddToWishlist";
 import CheckSearchErro from "../../Search/CheckSearchErro";
 import { newArrFilter } from "../../Showing/ShowingResultSlice";
 
@@ -115,7 +114,15 @@ function ProductsGrid2Column(props) {
       dispatch(newArrFilter(newArr));
     };
     getAllProducts();
-  }, [productsSearchValue, productsFilterCateValue, productsFilterBrandValue, productsFilterSizeValue, productsFilterTagsValue, productsFilterColorValue, dispatch]);
+  }, [
+    productsSearchValue,
+    productsFilterCateValue,
+    productsFilterBrandValue,
+    productsFilterSizeValue,
+    productsFilterTagsValue,
+    productsFilterColorValue,
+    dispatch,
+  ]);
 
   // Modal
   const modalValue = useRef(null);
@@ -167,25 +174,21 @@ function ProductsGrid2Column(props) {
                           />
                         </Link>
                         <div className="product-action text-center">
-                          <Link
-                            
-                            onClick={() => handleSendProduct(index)}
-                          >
+                          <Link onClick={() => handleSendProduct(index)}>
                             <i className="fas fa-shopping-cart"></i>
                           </Link>
-                          <Link
-                            
-                            onClick={() => handleOpen(index)}
-                          >
+                          <Link onClick={() => handleOpen(index)}>
                             <i className="fas fa-eye"></i>
                           </Link>
-                          <Link >
+                          <Link>
                             <i className="fas fa-compress-alt"></i>
                           </Link>
                         </div>
                         <div className="sale-tag">
                           {item.new ? <span className="new">new</span> : null}
-                          {item.sale ? <span className="sale">sale</span> : null}
+                          {item.sale ? (
+                            <span className="sale">sale</span>
+                          ) : null}
                         </div>
                       </div>
                       <div className="product-content">
@@ -198,13 +201,13 @@ function ProductsGrid2Column(props) {
                         <div className="product-meta">
                           <div className="pro-price">
                             <span>${item.price} USD</span>
-                            <span className="old-price">${item.oldPrice} USD</span>
+                            <span className="old-price">
+                              ${item.oldPrice} USD
+                            </span>
                           </div>
                         </div>
                         <div className="product-wishlist">
-                          <Link href="#" className="  ">
-                            <i className="far fa-heart" title="Wishlist"></i>
-                          </Link>
+                          <AddToWishlist dataProduct={item} />
                         </div>
                       </div>
                     </div>
@@ -448,7 +451,9 @@ function ProductsGrid2Column(props) {
                                   </li>
                                   <li>
                                     <span>Stock:</span>{" "}
-                                    <span className="in-stock">Out Of Stock</span>
+                                    <span className="in-stock">
+                                      Out Of Stock
+                                    </span>
                                   </li>
                                 </ul>
                               </div>

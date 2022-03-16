@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import {
-    addFromLocal, removeFromCart, updateQuantity
+  addFromLocal, removeFromCart, updateQuantity
 } from "../AddToCart/AddToCartSlice";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";

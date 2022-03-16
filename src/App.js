@@ -8,6 +8,7 @@ import Cart from './Components/Cart/Cart';
 import Header from './Components/Header/Header';
 import WishlistContainer from './Components/Wishlist Container/WishlistContainer';
 import WishlistContainerCompare from './Components/Wishlist Container/WishlistContainerCompare';
+import WishList from "./Components/WishList/WishList";
 import Blog from './Layout/Blog/Blog';
 import BlogDetails from './Layout/Blog/BlogDetails';
 import Contacts from './Layout/Contacts/Contacts';
@@ -101,6 +102,11 @@ function App() {
             <Route path="/register" exact>
               <Register />
             </Route>
+
+            <Route path="/wishlist" exact>
+              <WishList />
+            </Route>
+
 
             <Route path="/shop/upcoming/:shopid" exact>
                 <ShopDetails />

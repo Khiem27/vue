@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import ProductApi from "../../../Api/Product/ProductApi";
 import AddToCart from "../../AddToCart/AddToCart";
 import { addToCart } from "../../AddToCart/AddToCartSlice";
+import AddToWishlist from "../../AddToWishlist/AddToWishlist";
 import CheckSearchErro from "../../Search/CheckSearchErro";
 import { newArrFilter } from "../../Showing/ShowingResultSlice";
 
@@ -133,7 +134,10 @@ function ProductsGrid3Column(props) {
           {products
             ? products.map((item, index) => {
                 return (
-                  <div className="col-xl-4 col-lg-6 col-md-6 d-block" key={index}>
+                  <div
+                    className="col-xl-4 col-lg-6 col-md-6 d-block"
+                    key={index}
+                  >
                     <div className="product-wrapper mb-50 p-0">
                       <div className="product-img mb-25">
                         <Link to={`/shop/${item.id}`}>
@@ -157,7 +161,9 @@ function ProductsGrid3Column(props) {
                         </div>
                         <div className="sale-tag">
                           {item.new ? <span className="new">new</span> : null}
-                          {item.sale ? <span className="sale">sale</span> : null}
+                          {item.sale ? (
+                            <span className="sale">sale</span>
+                          ) : null}
                         </div>
                       </div>
                       <div className="product-content">
@@ -170,13 +176,13 @@ function ProductsGrid3Column(props) {
                         <div className="product-meta">
                           <div className="pro-price">
                             <span>${item.price} USD</span>
-                            <span className="old-price">${item.oldPrice} USD</span>
+                            <span className="old-price">
+                              ${item.oldPrice} USD
+                            </span>
                           </div>
                         </div>
                         <div className="product-wishlist">
-                          <Link className="  ">
-                            <i className="far fa-heart" title="Wishlist"></i>
-                          </Link>
+                          <AddToWishlist dataProduct={item} />
                         </div>
                       </div>
                     </div>
@@ -419,7 +425,9 @@ function ProductsGrid3Column(props) {
                                   </li>
                                   <li>
                                     <span>Stock:</span>{" "}
-                                    <span className="in-stock">Out Of Stock</span>
+                                    <span className="in-stock">
+                                      Out Of Stock
+                                    </span>
                                   </li>
                                 </ul>
                               </div>

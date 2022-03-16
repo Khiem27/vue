@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import ProductApi from "../../Api/Product/ProductApi";
 import AddToCart from "../AddToCart/AddToCart";
 import { addToCart } from "../AddToCart/AddToCartSlice";
+import AddToWishlist from "../AddToWishlist/AddToWishlist";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -61,7 +62,7 @@ function BestSaleProducts(props) {
       );
     };
     getAllProducts();
-    const cc = document.querySelector(".slick-list-2");
+    const cc = document.querySelector(".slick-list-1");
     let width = cc.clientWidth;
     if (width <= 670) {
       setWidthE(width);
@@ -124,46 +125,6 @@ function BestSaleProducts(props) {
       },
     });
   };
-
-  // Sự kiện drag drop
-  const [element, setElement] = useState()
-
-  const posX1 = useRef(0)
-  const posX2 = useRef(0)
-  const posX3 = useRef(0)
-  
-  useEffect(() => {
-    const elementActive = document.querySelector(".slick-track-brand-new-products-2")
-    setElement(elementActive)
-  }, [])
-  
-  if (element) {
-    element.addEventListener("mousedown", (e) => {
-        e = e || window.event;
-        e.preventDefault();
-        document.onmouseup = dragEnd;
-        document.onmousemove = dragAction;
-        posX1.current = e.clientX
-    })
-  }
-
-  const dragAction = (e) => {
-    e = e || window.event;
-    posX3.current = e.clientX
-  }
-
-  const dragEnd = (e) => {
-    if (posX1.current > posX2.current) {
-      handleTrans("next");
-    } else if (posX1.current < posX2.current) {
-      handleTrans("prev");
-    }
-    posX2.current = e.clientX
-    document.onmouseup = null;
-    document.onmousemove = null;
-    console.log(posX1.current);
-    console.log(posX2.current);
-  }
 
   return (
     <>
@@ -284,7 +245,7 @@ function BestSaleProducts(props) {
                         >
                           <i className="fas fa-arrow-left"></i>
                         </div>
-                        <div className="slick-list slick-list-2">
+                        <div className="slick-list slick-list-1">
                           <div
                             className="slick-track slick-track-brand-new-products slick-track-brand-new-products-2"
                             style={{
@@ -357,7 +318,9 @@ function BestSaleProducts(props) {
                                               ) : null}
 
                                               {item.sale ? (
-                                                <span className="sale">sale</span>
+                                                <span className="sale">
+                                                  sale
+                                                </span>
                                               ) : null}
                                             </div>
                                           </div>
@@ -378,12 +341,9 @@ function BestSaleProducts(props) {
                                               </div>
                                             </div>
                                             <div className="product-wishlist">
-                                              <Link to="#" className="  ">
-                                                <i
-                                                  className="far fa-heart"
-                                                  title="Wishlist"
-                                                ></i>
-                                              </Link>
+                                              <AddToWishlist
+                                                dataProduct={item}
+                                              />
                                             </div>
                                           </div>
                                         </div>
@@ -483,11 +443,15 @@ function BestSaleProducts(props) {
                                               </div>
                                               <div className="sale-tag">
                                                 {item.new ? (
-                                                  <span className="new">new</span>
+                                                  <span className="new">
+                                                    new
+                                                  </span>
                                                 ) : null}
 
                                                 {item.sale ? (
-                                                  <span className="sale">sale</span>
+                                                  <span className="sale">
+                                                    sale
+                                                  </span>
                                                 ) : null}
                                               </div>
                                             </div>
@@ -508,12 +472,9 @@ function BestSaleProducts(props) {
                                                 </div>
                                               </div>
                                               <div className="product-wishlist">
-                                                <Link to="#" className="  ">
-                                                  <i
-                                                    className="far fa-heart"
-                                                    title="Wishlist"
-                                                  ></i>
-                                                </Link>
+                                                <AddToWishlist
+                                                  dataProduct={item}
+                                                />
                                               </div>
                                             </div>
                                           </div>
@@ -609,11 +570,15 @@ function BestSaleProducts(props) {
                                               </div>
                                               <div className="sale-tag">
                                                 {item.new ? (
-                                                  <span className="new">new</span>
+                                                  <span className="new">
+                                                    new
+                                                  </span>
                                                 ) : null}
 
                                                 {item.sale ? (
-                                                  <span className="sale">sale</span>
+                                                  <span className="sale">
+                                                    sale
+                                                  </span>
                                                 ) : null}
                                               </div>
                                             </div>
@@ -634,12 +599,9 @@ function BestSaleProducts(props) {
                                                 </div>
                                               </div>
                                               <div className="product-wishlist">
-                                                <Link to="#" className="  ">
-                                                  <i
-                                                    className="far fa-heart"
-                                                    title="Wishlist"
-                                                  ></i>
-                                                </Link>
+                                                <AddToWishlist
+                                                  dataProduct={item}
+                                                />
                                               </div>
                                             </div>
                                           </div>
@@ -734,11 +696,15 @@ function BestSaleProducts(props) {
                                               </div>
                                               <div className="sale-tag">
                                                 {item.new ? (
-                                                  <span className="new">new</span>
+                                                  <span className="new">
+                                                    new
+                                                  </span>
                                                 ) : null}
 
                                                 {item.sale ? (
-                                                  <span className="sale">sale</span>
+                                                  <span className="sale">
+                                                    sale
+                                                  </span>
                                                 ) : null}
                                               </div>
                                             </div>
@@ -759,12 +725,9 @@ function BestSaleProducts(props) {
                                                 </div>
                                               </div>
                                               <div className="product-wishlist">
-                                                <Link to="#" className="  ">
-                                                  <i
-                                                    className="far fa-heart"
-                                                    title="Wishlist"
-                                                  ></i>
-                                                </Link>
+                                                <AddToWishlist
+                                                  dataProduct={item}
+                                                />
                                               </div>
                                             </div>
                                           </div>
@@ -1019,7 +982,9 @@ function BestSaleProducts(props) {
                                   </li>
                                   <li>
                                     <span>Stock:</span>{" "}
-                                    <span className="in-stock">Out Of Stock</span>
+                                    <span className="in-stock">
+                                      Out Of Stock
+                                    </span>
                                   </li>
                                 </ul>
                               </div>

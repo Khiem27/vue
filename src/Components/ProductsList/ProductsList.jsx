@@ -12,6 +12,7 @@ import {
 import ProductApi from "../../Api/Product/ProductApi";
 import AddToCart from "../AddToCart/AddToCart";
 import { addToCart } from "../AddToCart/AddToCartSlice";
+import AddToWishlist from "../AddToWishlist/AddToWishlist";
 import CheckSearchErro from "../Search/CheckSearchErro";
 import { newArrFilter } from "../Showing/ShowingResultSlice";
 function TabPanel(props) {
@@ -201,9 +202,7 @@ function ProductsList(props) {
                           <Link onClick={() => handleOpen(index)}>
                             <i className="fas fa-eye"></i>
                           </Link>
-                          <Link href="#" className="  ">
-                            <i className="far fa-heart" title="Wishlist"></i>
-                          </Link>
+                          <AddToWishlist dataProduct={item} />
                         </div>
                       </div>
                     </div>
