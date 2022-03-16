@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import ProductApi from "../../Api/Product/ProductApi";
 import AddToCart from "../AddToCart/AddToCart";
 import { addToCart } from "../AddToCart/AddToCartSlice";
+import AddToCompare from "../AddToCompare/AddToCompare";
 import AddToWishlist from "../AddToWishlist/AddToWishlist";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -302,15 +303,9 @@ function BestSaleProducts(props) {
                                               >
                                                 <i className="fas fa-eye"></i>
                                               </Link>
-                                              <Link
-                                                data-toggle="tooltip"
-                                                data-placement="right"
-                                                title="Compare"
-                                                className=""
-                                                to="#"
-                                              >
-                                                <i className="fas fa-compress-alt"></i>
-                                              </Link>
+                                              <AddToCompare
+                                                dataProduct={item}
+                                              />
                                             </div>
                                             <div className="sale-tag">
                                               {item.new ? (
@@ -431,15 +426,9 @@ function BestSaleProducts(props) {
                                                 >
                                                   <i className="fas fa-eye"></i>
                                                 </Link>
-                                                <Link
-                                                  to="#"
-                                                  data-toggle="tooltip"
-                                                  data-placement="right"
-                                                  title="Compare"
-                                                  className=""
-                                                >
-                                                  <i className="fas fa-compress-alt"></i>
-                                                </Link>
+                                                <AddToCompare
+                                                  dataProduct={item}
+                                                />
                                               </div>
                                               <div className="sale-tag">
                                                 {item.new ? (
@@ -558,15 +547,9 @@ function BestSaleProducts(props) {
                                                 >
                                                   <i className="fas fa-eye"></i>
                                                 </Link>
-                                                <Link
-                                                  to="#"
-                                                  data-toggle="tooltip"
-                                                  data-placement="right"
-                                                  title="Compare"
-                                                  className=""
-                                                >
-                                                  <i className="fas fa-compress-alt"></i>
-                                                </Link>
+                                                <AddToCompare
+                                                  dataProduct={item}
+                                                />
                                               </div>
                                               <div className="sale-tag">
                                                 {item.new ? (
@@ -684,15 +667,9 @@ function BestSaleProducts(props) {
                                                 >
                                                   <i className="fas fa-eye"></i>
                                                 </Link>
-                                                <Link
-                                                  to="#"
-                                                  data-toggle="tooltip"
-                                                  data-placement="right"
-                                                  title="Compare"
-                                                  className=""
-                                                >
-                                                  <i className="fas fa-compress-alt"></i>
-                                                </Link>
+                                                <AddToCompare
+                                                  dataProduct={item}
+                                                />
                                               </div>
                                               <div className="sale-tag">
                                                 {item.new ? (
