@@ -83,9 +83,9 @@ function MiniCart(props) {
         <li>
           <div className="checkout-link">
             <Link to="/cart">Shopping Cart</Link>
-            <a className="red-color" href="/checkout">
+            <Link className="red-color" to="/checkout">
               Checkout
-            </a>
+            </Link>
           </div>
         </li>
       </ul>

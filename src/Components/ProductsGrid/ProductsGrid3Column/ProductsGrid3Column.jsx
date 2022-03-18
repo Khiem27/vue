@@ -10,6 +10,7 @@ import AddToCart from "../../AddToCart/AddToCart";
 import { addToCart } from "../../AddToCart/AddToCartSlice";
 import AddToCompare from "../../AddToCompare/AddToCompare";
 import AddToWishlist from "../../AddToWishlist/AddToWishlist";
+import Pagination from "../../Pagination/Pagination";
 import CheckSearchErro from "../../Search/CheckSearchErro";
 import { newArrFilter } from "../../Showing/ShowingResultSlice";
 
@@ -43,6 +44,32 @@ function ProductsGrid3Column(props) {
   const productsFilterColorValue = useSelector(
     (state) => state.filterColor.value
   );
+
+  // Pagination
+  const [posts, setPosts] = useState([]);
+  // Trang mặc đinh
+  const [currentPage, setCurrentPage] = useState(1);
+  // Số products/trang
+  const [postsPerPage] = useState(6);
+
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  // Active pagination
+  const [indexPagination, setIndexPagination] = useState(0);
+  const handleActivePagination = (action) => {
+    if (action === "increase") {
+      setIndexPagination(indexPagination + 1);
+    } else if (action === "decrease") {
+      setIndexPagination(indexPagination - 1);
+    } else {
+      setIndexPagination(action);
+    }
+  };
+
+  // Pagination end
 
   useEffect(() => {
     const getAllProducts = async () => {
@@ -85,6 +112,11 @@ function ProductsGrid3Column(props) {
 
       setProducts(newArr);
       dispatch(newArrFilter(newArr));
+
+      // Pagination
+      let arrPagination = newArr;
+      arrPagination = arrPagination.slice(indexOfFirstPost, indexOfLastPost);
+      setPosts(arrPagination);
     };
     getAllProducts();
   }, [
@@ -95,6 +127,8 @@ function ProductsGrid3Column(props) {
     productsFilterTagsValue,
     productsFilterColorValue,
     dispatch,
+    indexOfFirstPost,
+    indexOfLastPost,
   ]);
 
   // Modal
@@ -132,8 +166,8 @@ function ProductsGrid3Column(props) {
       <div className="fade tab-pane active show">
         <div className="row">
           <CheckSearchErro />
-          {products
-            ? products.map((item, index) => {
+          {posts
+            ? posts.map((item, index) => {
                 return (
                   <div
                     className="col-xl-4 col-lg-6 col-md-6 d-block"
@@ -190,6 +224,15 @@ function ProductsGrid3Column(props) {
               })
             : null}
         </div>
+        {products ? (
+          <Pagination
+            postsPerPage={postsPerPage}
+            totalPosts={products.length}
+            paginate={paginate}
+            handleActivePagination={handleActivePagination}
+            indexPagination={indexPagination}
+          />
+        ) : null}
       </div>
       <Modal
         open={open}

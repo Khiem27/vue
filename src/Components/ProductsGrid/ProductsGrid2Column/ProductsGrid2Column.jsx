@@ -12,9 +12,9 @@ import AddToCart from "../../AddToCart/AddToCart";
 import { addToCart } from "../../AddToCart/AddToCartSlice";
 import AddToCompare from "../../AddToCompare/AddToCompare";
 import AddToWishlist from "../../AddToWishlist/AddToWishlist";
+import Pagination from "../../Pagination/Pagination";
 import CheckSearchErro from "../../Search/CheckSearchErro";
 import { newArrFilter } from "../../Showing/ShowingResultSlice";
-
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -72,6 +72,32 @@ function ProductsGrid2Column(props) {
     (state) => state.filterColor.value
   );
 
+  // Pagination
+  const [posts, setPosts] = useState([]);
+  // Trang mặc đinh
+  const [currentPage, setCurrentPage] = useState(1);
+  // Số products/trang
+  const [postsPerPage] = useState(4);
+
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  // Active pagination
+  const [indexPagination, setIndexPagination] = useState(0);
+  const handleActivePagination = (action) => {
+    if (action === "increase") {
+      setIndexPagination(indexPagination + 1);
+    } else if (action === "decrease") {
+      setIndexPagination(indexPagination - 1);
+    } else {
+      setIndexPagination(action);
+    }
+  };
+
+  // Pagination end
+
   useEffect(() => {
     const getAllProducts = async () => {
       const allProducts = await ProductApi.getAll();
@@ -110,9 +136,13 @@ function ProductsGrid2Column(props) {
           (item) => item.color === productsFilterColorValue
         );
       }
-
       setProducts(newArr);
       dispatch(newArrFilter(newArr));
+
+      // Pagination
+      let arrPagination = newArr;
+      arrPagination = arrPagination.slice(indexOfFirstPost, indexOfLastPost);
+      setPosts(arrPagination);
     };
     getAllProducts();
   }, [
@@ -123,6 +153,8 @@ function ProductsGrid2Column(props) {
     productsFilterTagsValue,
     productsFilterColorValue,
     dispatch,
+    indexOfFirstPost,
+    indexOfLastPost,
   ]);
 
   // Modal
@@ -160,8 +192,8 @@ function ProductsGrid2Column(props) {
       <div className="fade tab-pane active show">
         <div className="row">
           <CheckSearchErro />
-          {products
-            ? products.map((item, index) => {
+          {posts
+            ? posts.map((item, index) => {
                 return (
                   <div className="col-lg-6 col-md-6 d-block" key={index}>
                     <div className="product-wrapper mb-50 p-0">
@@ -215,6 +247,15 @@ function ProductsGrid2Column(props) {
               })
             : null}
         </div>
+        {products ? (
+          <Pagination
+            postsPerPage={postsPerPage}
+            totalPosts={products.length}
+            paginate={paginate}
+            handleActivePagination={handleActivePagination}
+            indexPagination={indexPagination}
+          />
+        ) : null}
       </div>
       {/* Modal */}
       <Modal

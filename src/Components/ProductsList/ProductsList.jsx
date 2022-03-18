@@ -6,13 +6,12 @@ import { useSnackbar } from "notistack";
 import PropTypes from "prop-types";
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  Link
-} from "react-router-dom";
+import { Link } from "react-router-dom";
 import ProductApi from "../../Api/Product/ProductApi";
 import AddToCart from "../AddToCart/AddToCart";
 import { addToCart } from "../AddToCart/AddToCartSlice";
 import AddToWishlist from "../AddToWishlist/AddToWishlist";
+import Pagination from "../Pagination/Pagination";
 import CheckSearchErro from "../Search/CheckSearchErro";
 import { newArrFilter } from "../Showing/ShowingResultSlice";
 function TabPanel(props) {
@@ -73,6 +72,32 @@ function ProductsList(props) {
     (state) => state.filterColor.value
   );
 
+  // Pagination
+  const [posts, setPosts] = useState([]);
+  // Trang mặc đinh
+  const [currentPage, setCurrentPage] = useState(1);
+  // Số products/trang
+  const [postsPerPage] = useState(6);
+
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  // Active pagination
+  const [indexPagination, setIndexPagination] = useState(0);
+  const handleActivePagination = (action) => {
+    if (action === "increase") {
+      setIndexPagination(indexPagination + 1);
+    } else if (action === "decrease") {
+      setIndexPagination(indexPagination - 1);
+    } else {
+      setIndexPagination(action);
+    }
+  };
+
+  // Pagination end
+
   useEffect(() => {
     const getAllProducts = async () => {
       const allProducts = await ProductApi.getAll();
@@ -114,9 +139,24 @@ function ProductsList(props) {
 
       setProducts(newArr);
       dispatch(newArrFilter(newArr));
+
+      // Pagination
+      let arrPagination = newArr;
+      arrPagination = arrPagination.slice(indexOfFirstPost, indexOfLastPost);
+      setPosts(arrPagination);
     };
     getAllProducts();
-  }, [productsSearchValue, productsFilterCateValue, productsFilterBrandValue, productsFilterSizeValue, productsFilterTagsValue, productsFilterColorValue, dispatch]);
+  }, [
+    productsSearchValue,
+    productsFilterCateValue,
+    productsFilterBrandValue,
+    productsFilterSizeValue,
+    productsFilterTagsValue,
+    productsFilterColorValue,
+    dispatch,
+    indexOfFirstPost,
+    indexOfLastPost,
+  ]);
 
   // Modal
   const modalValue = useRef(null);
@@ -152,8 +192,8 @@ function ProductsList(props) {
     <>
       <div className="fade tab-pane active show">
         <CheckSearchErro />
-        {products
-          ? products.map((item, index) => {
+        {posts
+          ? posts.map((item, index) => {
               return (
                 <div className="d-block" key={index}>
                   <div className="row">
@@ -171,7 +211,9 @@ function ProductsList(props) {
                           <div className="sale-tag">
                             {item.new ? <span className="new">new</span> : null}
 
-                            {item.sale ? <span className="sale">sale</span> : null}
+                            {item.sale ? (
+                              <span className="sale">sale</span>
+                            ) : null}
                           </div>
                         </div>
                       </div>
@@ -188,7 +230,9 @@ function ProductsList(props) {
                         <div className="product-meta mb-10">
                           <div className="pro-price">
                             <span>${item.price} USD</span>
-                            <span className="old-price">${item.oldPrice} USD</span>
+                            <span className="old-price">
+                              ${item.oldPrice} USD
+                            </span>
                           </div>
                         </div>
                         <p>{item.description}</p>
@@ -211,6 +255,15 @@ function ProductsList(props) {
               );
             })
           : null}
+        {products ? (
+          <Pagination
+            postsPerPage={postsPerPage}
+            totalPosts={products.length}
+            paginate={paginate}
+            handleActivePagination={handleActivePagination}
+            indexPagination={indexPagination}
+          />
+        ) : null}
       </div>
       {/* Modal */}
       <Modal
@@ -446,7 +499,9 @@ function ProductsList(props) {
                                   </li>
                                   <li>
                                     <span>Stock:</span>{" "}
-                                    <span className="in-stock">Out Of Stock</span>
+                                    <span className="in-stock">
+                                      Out Of Stock
+                                    </span>
                                   </li>
                                 </ul>
                               </div>
