@@ -24,7 +24,7 @@ function CheckoutCouple(props) {
                     </p>
                     <form>
                       <p className="form-row-first">
-                        <label for="email">
+                        <label htmlFor="email">
                           Email Address <span className="required">*</span>
                         </label>
                         <input
@@ -42,7 +42,7 @@ function CheckoutCouple(props) {
                         ></div>
                       </p>
                       <p className="form-row-last">
-                        <label for="password">
+                        <label htmlFor="password">
                           Password <span className="required">*</span>
                         </label>
                         <input

@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 import PropTypes from 'prop-types';
 import React, { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from "react-router-dom";
 import SwipeableViews from 'react-swipeable-views';
 import ProductApi from '../../../Api/Product/ProductApi';
 
@@ -163,7 +164,7 @@ function ProductsGrid3Column(props) {
                                     <div className="product-details ">
                                         <div className="details-cat mb-10 d-flex align-items-center justify-content-between">
                                             <div> 
-                                                <a href="#">{products[modalValue.current].category}</a>
+                                                <Link to="#">{products[modalValue.current].category}</Link>
                                             </div>
                                             <i onClick={handleClose} className="fa fa-times modal-icon "></i>
                                         </div>

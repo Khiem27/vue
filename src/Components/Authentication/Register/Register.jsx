@@ -78,92 +78,92 @@ function Register(props) {
       <Header />
       <RegisterTitle />
 
-      <section class="login-area pt-100 pb-100">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 offset-lg-2">
+      <section className="login-area pt-100 pb-100">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-8 offset-lg-2">
               <div className="basic-login">
-                <h3 class="text-center mb-60">Signup From Here</h3>
+                <h3 className="text-center mb-60">Signup From Here</h3>
                 <form onSubmit={handleSubmit(onSubmit)}>
                   {/* Tên đăng nhập */}
-                  <label for="username">
-                    Username <span class="required">*</span>
+                  <label htmlFor="username">
+                    Username <span className="required">*</span>
                   </label>
                   <input
                     id="username"
                     placeholder="Enter Username ..."
-                    class="mb-0"
+                    className="mb-0"
                     {...register("userName", { required: true })}
                   />
                   <div
                     id="val-username1-error"
-                    class="invalid-feedback animated fadeInUp mb-3"
+                    className="invalid-feedback animated fadeInUp mb-3"
                     style={{ display: "block" }}
                   >
                     {errors.userName?.message}
                   </div>
 
                   {/* Email */}
-                  <label for="email">
-                    Email Address <span class="required">*</span>
+                  <label htmlFor="email">
+                    Email Address <span className="required">*</span>
                   </label>
                   <input
                     id="email"
                     placeholder="Enter Email address..."
-                    class="mb-0"
+                    className="mb-0"
                     {...register("userEmail", { required: true })}
                   />
                   <div
                     id="val-username1-error"
-                    class="invalid-feedback animated fadeInUp mb-3"
+                    className="invalid-feedback animated fadeInUp mb-3"
                     style={{ display: "block" }}
                   >
                     {errors.userEmail?.message}
                   </div>
 
                   {/* Pass */}
-                  <label for="email">
-                    Password <span class="required">*</span>
+                  <label htmlFor="email">
+                    Password <span className="required">*</span>
                   </label>
                   <input
                     id="email"
                     placeholder="Enter password..."
-                    class="mb-0"
+                    className="mb-0"
                     {...register("userPass", { required: true })}
                   />
                   <div
                     id="val-username1-error"
-                    class="invalid-feedback animated fadeInUp mb-3"
+                    className="invalid-feedback animated fadeInUp mb-3"
                     style={{ display: "block" }}
                   >
                     {errors.userPass?.message}
                   </div>
 
                   {/* Retype pass */}
-                  <label for="email">
-                    Nhập lại password <span class="required">*</span>
+                  <label htmlFor="email">
+                    Nhập lại password <span className="required">*</span>
                   </label>
                   <input
                     id="email"
                     placeholder="Enter password..."
-                    class="mb-0"
+                    className="mb-0"
                     {...register("userRetypePass", { required: true })}
                   />
                   <div
                     id="val-username1-error"
-                    class="invalid-feedback animated fadeInUp mb-3"
+                    className="invalid-feedback animated fadeInUp mb-3"
                     style={{ display: "block" }}
                   >
                     {errors.userRetypePass?.message}
                   </div>
 
-                  <button type="submit" class="btn theme-btn-2 w-100">
+                  <button type="submit" className="btn theme-btn-2 w-100">
                     Register Now
                   </button>
-                  <div class="or-divide">
+                  <div className="or-divide">
                     <span>or</span>
                   </div>
-                  <Link class="btn theme-btn w-100" to="/login">
+                  <Link className="btn theme-btn w-100" to="/login">
                     Login Now
                   </Link>
                 </form>

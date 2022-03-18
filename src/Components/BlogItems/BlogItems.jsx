@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import {
-    Link
+  Link
 } from "react-router-dom";
 import BlogsApi from "../../Api/Blogs/BlogsApi";
+import Pagination from "../Pagination/Pagination";
 
 
 BlogItems.propTypes = {};
@@ -10,19 +11,51 @@ BlogItems.propTypes = {};
 function BlogItems(props) {
   const [blogItems, setBlogItems] = useState([]);
 
+    // Pagination
+    const [posts, setPosts] = useState([]);
+    // Trang mặc đinh
+    const [currentPage, setCurrentPage] = useState(1);
+    // Số products/trang
+    const [postsPerPage] = useState(2);
+  
+    const indexOfLastPost = currentPage * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  
+    // Active pagination
+    const [indexPagination, setIndexPagination] = useState(0);
+    const handleActivePagination = (action) => {
+      if (action === "increase") {
+        setIndexPagination(indexPagination + 1);
+      } else if (action === "decrease") {
+        setIndexPagination(indexPagination - 1);
+      } else {
+        setIndexPagination(action);
+      }
+    };
+  
+    // Pagination end
+
   useEffect(() => {
     const getBlogsApi = async () => {
       const getAllData = await BlogsApi.getAll();
       const getAllBlogItems = getAllData.data;
       setBlogItems(getAllBlogItems);
+      let newArr = getAllBlogItems
+
+      let arrPagination = newArr;
+      arrPagination = arrPagination.slice(indexOfFirstPost, indexOfLastPost);
+      setPosts(arrPagination);
     };
     getBlogsApi();
-  }, []);
+
+  }, [indexOfFirstPost, indexOfLastPost]);
 
   return (
     <>
-      {blogItems.length > 0
-        ? blogItems.map((item, index) => {
+      {posts.length > 0
+        ? posts.map((item, index) => {
             return (
               <article
                 className="postbox post format-image mb-40 d-block"
@@ -74,6 +107,15 @@ function BlogItems(props) {
             );
           })
         : null}
+         {blogItems ? (
+          <Pagination
+            postsPerPage={postsPerPage}
+            totalPosts={blogItems.length}
+            paginate={paginate}
+            handleActivePagination={handleActivePagination}
+            indexPagination={indexPagination}
+          />
+        ) : null}
     </>
   );
 }

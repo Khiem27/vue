@@ -62,13 +62,13 @@ function FormOrder(props) {
                   <ul>
                     <li>
                       <input type="checkbox" id="flat" />{" "}
-                      <label for="flat">
+                      <label htmlFor="flat">
                         Flat Rate: <span className="amount">$7.00</span>
                       </label>
                     </li>
                     <li>
                       <input type="checkbox" id="shipping" />{" "}
-                      <label for="shipping">Free Shipping: $30.00</label>
+                      <label htmlFor="shipping">Free Shipping: $30.00</label>
                     </li>
                     <li></li>
                   </ul>

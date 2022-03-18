@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 SliderIndex2.propTypes = {};
 
@@ -18,41 +19,41 @@ function SliderIndex2(props) {
     }
   };
 
-   // Sự kiện drag drop
-   const [element, setElement] = useState()
+  // Sự kiện drag drop
+  const [element, setElement] = useState();
 
-   const posX1 = useRef(0)
-   const posX2 = useRef(0)
-   
-   useEffect(() => {
-     const elementActive = document.querySelector(".slider-active")
-     setElement(elementActive)
-   }, [])
-   
-   if (element) {
-     element.addEventListener("mousedown", (e) => {
-         e = e || window.event;
-         e.preventDefault();
-         document.onmouseup = dragEnd;
-         document.onmousemove = dragAction;
-         posX1.current = e.clientX
-     })
-   }
- 
-   const dragAction = (e) => {
-     e = e || window.event;
-   }
- 
-   const dragEnd = (e) => {
-     posX2.current = e.clientX
-     document.onmouseup = null;
-     document.onmousemove = null;
-     if (posX1.current > posX2.current) {
-       handleActive("next")
-     } else if (posX1.current < posX2.current) {
-      handleActive("prev")
+  const posX1 = useRef(0);
+  const posX2 = useRef(0);
+
+  useEffect(() => {
+    const elementActive = document.querySelector(".slider-active");
+    setElement(elementActive);
+  }, []);
+
+  if (element) {
+    element.addEventListener("mousedown", (e) => {
+      e = e || window.event;
+      e.preventDefault();
+      document.onmouseup = dragEnd;
+      document.onmousemove = dragAction;
+      posX1.current = e.clientX;
+    });
+  }
+
+  const dragAction = (e) => {
+    e = e || window.event;
+  };
+
+  const dragEnd = (e) => {
+    posX2.current = e.clientX;
+    document.onmouseup = null;
+    document.onmousemove = null;
+    if (posX1.current > posX2.current) {
+      handleActive("next");
+    } else if (posX1.current < posX2.current) {
+      handleActive("prev");
     }
-   }
+  };
 
   return (
     <section className="slider-area pos-relative">
@@ -67,7 +68,10 @@ function SliderIndex2(props) {
             <i className="fas fa-arrow-left"></i>{" "}
           </button>
           <div className="slick-list">
-            <div className="slick-track" style={{ width: "700%", opacity: "1" }}>
+            <div
+              className="slick-track"
+              style={{ width: "700%", opacity: "1" }}
+            >
               <div
                 data-index="0"
                 className={
@@ -142,22 +146,22 @@ function SliderIndex2(props) {
                               <span className="old-price">$98.00</span>
                             </div>
                             <div className="slide-btn">
-                              <a
+                              <Link
                                 className="btn theme-btn"
                                 data-animation="fadeInLeft"
                                 data-delay=".9s"
-                                href="/shop"
+                                to="/shop"
                               >
                                 shop now
-                              </a>
-                              <a
+                              </Link>
+                              <Link
                                 className="btn white-btn"
                                 data-animation="fadeInRight"
                                 data-delay="1.1s"
-                                href="/shop"
+                                to="/shop"
                               >
                                 category
-                              </a>
+                              </Link>
                             </div>
                           </div>
                         </div>
@@ -241,22 +245,22 @@ function SliderIndex2(props) {
                               <span className="old-price">$98.00</span>
                             </div>
                             <div className="slide-btn">
-                              <a
+                              <Link
                                 className="btn theme-btn"
                                 data-animation="fadeInLeft"
                                 data-delay=".9s"
-                                href="/shop"
+                                to="/shop"
                               >
                                 shop now
-                              </a>
-                              <a
+                              </Link>
+                              <Link
                                 className="btn white-btn"
                                 data-animation="fadeInRight"
                                 data-delay="1.1s"
-                                href="/shop"
+                                to="/shop"
                               >
                                 category
-                              </a>
+                              </Link>
                             </div>
                           </div>
                         </div>
@@ -340,22 +344,22 @@ function SliderIndex2(props) {
                               <span className="old-price">$98.00</span>
                             </div>
                             <div className="slide-btn">
-                              <a
+                              <Link
                                 className="btn theme-btn"
                                 data-animation="fadeInLeft"
                                 data-delay=".9s"
-                                href="/shop"
+                                to="/shop"
                               >
                                 shop now
-                              </a>
-                              <a
+                              </Link>
+                              <Link
                                 className="btn white-btn"
                                 data-animation="fadeInRight"
                                 data-delay="1.1s"
-                                href="/shop"
+                                to="/shop"
                               >
                                 category
-                              </a>
+                              </Link>
                             </div>
                           </div>
                         </div>

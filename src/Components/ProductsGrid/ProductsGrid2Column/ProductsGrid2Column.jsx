@@ -331,7 +331,7 @@ function ProductsGrid2Column(props) {
                             <ul className="nav" role="tablist">
                               <li className="nav-item">
                                 <Link
-                                  href="#"
+                                  to="#"
                                   role="tab"
                                   data-rb-event-key="tum-0"
                                   aria-selected="true"
@@ -345,7 +345,7 @@ function ProductsGrid2Column(props) {
                               </li>
                               <li className="nav-item">
                                 <Link
-                                  href="#"
+                                  to="#"
                                   role="tab"
                                   data-rb-event-key="tum-1"
                                   aria-selected="false"
@@ -359,7 +359,7 @@ function ProductsGrid2Column(props) {
                               </li>
                               <li className="nav-item">
                                 <Link
-                                  href="#"
+                                  to="#"
                                   role="tab"
                                   data-rb-event-key="tum-2"
                                   aria-selected="false"
@@ -380,7 +380,7 @@ function ProductsGrid2Column(props) {
                           <div className="product-details ">
                             <div className="details-cat mb-10 d-flex align-items-center justify-content-between">
                               <div>
-                                <Link href="#">
+                                <Link to="#">
                                   {products[modalValue.current].category}
                                 </Link>
                               </div>
@@ -409,7 +409,7 @@ function ProductsGrid2Column(props) {
                                 </div>
                                 <ul className="shop-link shop-color">
                                   <li>
-                                    <Link href="#">
+                                    <Link to="#">
                                       <span
                                         className={products[
                                           modalValue.current
@@ -431,7 +431,7 @@ function ProductsGrid2Column(props) {
                                         : " "
                                     }
                                   >
-                                    <Link href="#">L</Link>
+                                    <Link to="#">L</Link>
                                   </li>
                                   <li
                                     className={
@@ -440,7 +440,7 @@ function ProductsGrid2Column(props) {
                                         : " "
                                     }
                                   >
-                                    <Link href="#">M</Link>
+                                    <Link to="#">M</Link>
                                   </li>
                                   <li
                                     className={
@@ -449,7 +449,7 @@ function ProductsGrid2Column(props) {
                                         : " "
                                     }
                                   >
-                                    <Link href="#">X</Link>
+                                    <Link to="#">X</Link>
                                   </li>
                                   <li
                                     className={
@@ -458,7 +458,7 @@ function ProductsGrid2Column(props) {
                                         : " "
                                     }
                                   >
-                                    <Link href="#">XL</Link>
+                                    <Link to="#">XL</Link>
                                   </li>
                                   <li
                                     className={
@@ -468,7 +468,7 @@ function ProductsGrid2Column(props) {
                                         : " "
                                     }
                                   >
-                                    <Link href="#">XXL</Link>
+                                    <Link to="#">XXL</Link>
                                   </li>
                                 </ul>
                               </div>

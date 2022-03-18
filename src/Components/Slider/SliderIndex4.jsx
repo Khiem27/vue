@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 SliderIndex4.propTypes = {};
 
@@ -133,22 +134,22 @@ function SliderIndex4(props) {
                               New Arrival
                             </h1>
                             <div className="slide-btn">
-                              <a
+                              <Link
                                 className="btn theme-btn"
                                 data-animation="fadeInLeft"
                                 data-delay=".6s"
-                                href="/shop"
+                                to="/shop"
                               >
                                 shop now
-                              </a>
-                              <a
+                              </Link>
+                              <Link
                                 className="btn white-btn"
                                 data-animation="fadeInRight"
                                 data-delay=".9s"
-                                href="/shop"
+                                to="/shop"
                               >
                                 category
-                              </a>
+                              </Link>
                             </div>
                           </div>
                         </div>
@@ -220,22 +221,22 @@ function SliderIndex4(props) {
                               Trendy Collection
                             </h1>
                             <div className="slide-btn">
-                              <a
+                              <Link
                                 className="btn theme-btn"
                                 data-animation="fadeInLeft"
                                 data-delay=".6s"
-                                href="/shop"
+                                to="/shop"
                               >
                                 shop now
-                              </a>
-                              <a
+                              </Link>
+                              <Link
                                 className="btn white-btn"
                                 data-animation="fadeInRight"
                                 data-delay=".9s"
-                                href="/shop"
+                                to="/shop"
                               >
                                 category
-                              </a>
+                              </Link>
                             </div>
                           </div>
                         </div>
@@ -307,22 +308,22 @@ function SliderIndex4(props) {
                               Men Collection
                             </h1>
                             <div className="slide-btn">
-                              <a
+                              <Link
                                 className="btn theme-btn"
                                 data-animation="fadeInLeft"
                                 data-delay=".6s"
-                                href="/shop"
+                                to="/shop"
                               >
                                 shop now
-                              </a>
-                              <a
+                              </Link>
+                              <Link
                                 className="btn white-btn"
                                 data-animation="fadeInRight"
                                 data-delay=".9s"
-                                href="/shop"
+                                to="/shop"
                               >
                                 category
-                              </a>
+                              </Link>
                             </div>
                           </div>
                         </div>

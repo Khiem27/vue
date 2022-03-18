@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { filterValueColor } from "./ProductsColorFilterSlice";
 
 ProductsColorFilter.propTypes = {};
@@ -35,34 +36,34 @@ function ProductsColorFilter(props) {
   return (
     <ul className="shop-link">
       <li>
-        <a onClick={clickBlack} className="text-capitalize c-pointer">
+        <Link to="#" onClick={clickBlack} className="text-capitalize c-pointer">
           <span className="black box-shadow-none"></span> black
-        </a>
+        </Link>
       </li>
       <li>
-        <a onClick={clickGreen} className="text-capitalize c-pointer">
+        <Link to="#" onClick={clickGreen} className="text-capitalize c-pointer">
           <span className="green box-shadow-none"></span> green
-        </a>
+        </Link>
       </li>
       <li>
-        <a onClick={clickBlue} className="text-capitalize c-pointer">
+        <Link to="#" onClick={clickBlue} className="text-capitalize c-pointer">
           <span className="blue box-shadow-none"></span> blue
-        </a>
+        </Link>
       </li>
       <li>
-        <a onClick={clickWhite} className="text-capitalize c-pointer">
+        <Link to="#" onClick={clickWhite} className="text-capitalize c-pointer">
           <span className="white box-shadow-none"></span> white
-        </a>
+        </Link>
       </li>
       <li>
-        <a onClick={clickRed} className="text-capitalize c-pointer">
+        <Link to="#" onClick={clickRed} className="text-capitalize c-pointer">
           <span className="red box-shadow-none"></span> red
-        </a>
+        </Link>
       </li>
       <li>
-        <a onClick={clickGray} className="text-capitalize c-pointer">
+        <Link to="#" onClick={clickGray} className="text-capitalize c-pointer">
           <span className="gray box-shadow-none"></span> gray
-        </a>
+        </Link>
       </li>
     </ul>
   );

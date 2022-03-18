@@ -74,12 +74,12 @@ function Cart(props) {
                               return (
                                 <tr>
                                   <td className="product-thumbnail">
-                                    <Link href="#">
+                                    <Link to="#">
                                       <img src={item.image} alt="cart" />
                                     </Link>
                                   </td>
                                   <td className="product-name">
-                                    <Link href="#">{item.title}</Link>
+                                    <Link to="#">{item.title}</Link>
                                   </td>
                                   <td className="product-price">
                                     <span className="amount">${item.price}</span>
@@ -144,7 +144,7 @@ function Cart(props) {
                           </form>
                         </div>
                         <div className="coupon2">
-                          <Link className="btn theme-btn" href="/checkout">
+                          <Link className="btn theme-btn" to="/checkout">
                             Submit
                           </Link>
                         </div>
@@ -163,7 +163,7 @@ function Cart(props) {
                             Total <span>${productsTotal}</span>
                           </li>
                         </ul>
-                        <Link className="btn theme-btn" href="/checkout">
+                        <Link className="btn theme-btn" to="/checkout">
                           Proceed to checkout
                         </Link>
                       </div>

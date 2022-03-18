@@ -28,50 +28,50 @@ function ProductFilterCategories(props) {
       <form>
         <ul className="shop-link">
           <li>
-            <a className="checkBox checkBox-K">
+            <a to="#" className="checkBox checkBox-K">
               <input
                 onClick={clickMenClothing}
                 type="radio"
                 id="menClothing"
                 name="filterRadio"
               />
-              <label for="menClothing">Men's clothing</label>
+              <label htmlFor="menClothing">Men's clothing</label>
             </a>
           </li>
 
           <li>
-            <a className="checkBox checkBox-K">
+            <a to="#" className="checkBox checkBox-K">
               <input
                 onClick={clickWomenClothing}
                 type="radio"
                 id="womenClothing"
                 name="filterRadio"
               />
-              <label for="womenClothing">Women's clothing</label>
+              <label htmlFor="womenClothing">Women's clothing</label>
             </a>
           </li>
 
           <li>
-            <a className="checkBox checkBox-K">
+            <a to="#" className="checkBox checkBox-K">
               <input
                 onClick={clickJewelery}
                 type="radio"
                 id="jewelery"
                 name="filterRadio"
               />
-              <label for="jewelery">Jewelery</label>
+              <label htmlFor="jewelery">Jewelery</label>
             </a>
           </li>
 
           <li>
-            <a className="checkBox checkBox-K">
+            <a to="#" className="checkBox checkBox-K">
               <input
                 onClick={clickElectronics}
                 type="radio"
                 id="electronics"
                 name="filterRadio"
               />
-              <label for="electronics">Electronics</label>
+              <label htmlFor="electronics">Electronics</label>
             </a>
           </li>
         </ul>

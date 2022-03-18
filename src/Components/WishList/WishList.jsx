@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { addToCart } from "../AddToCart/AddToCartSlice";
 import {
-  addFromLocal,
-  removeWishlist
+    addFromLocal,
+    removeWishlist
 } from "../AddToWishlist/AddToWishlistSlice";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
@@ -55,56 +55,56 @@ function WishList(props) {
       <Header />
       <WishlistTitle />
       {wishlistItemSlice.length !== 0 ? (
-        <section class="cart-area pt-100 pb-100">
-          <div class="container">
-            <div class="row">
-              <div class="col-12">
+        <section className="cart-area pt-100 pb-100">
+          <div className="container">
+            <div className="row">
+              <div className="col-12">
                 <form action="#">
-                  <div class="table-content table-responsive">
-                    <table class="table">
+                  <div className="table-content table-responsive">
+                    <table className="table">
                       <thead>
                         <tr>
-                          <th class="product-thumbnail">Images</th>
-                          <th class="cart-product-name">Product</th>
-                          <th class="product-price">Unit Price</th>
-                          <th class="product-quantity">Quantity</th>
-                          <th class="product-subtotal">Total</th>
-                          <th class="product-remove">Remove</th>
+                          <th className="product-thumbnail">Images</th>
+                          <th className="cart-product-name">Product</th>
+                          <th className="product-price">Unit Price</th>
+                          <th className="product-quantity">Quantity</th>
+                          <th className="product-subtotal">Total</th>
+                          <th className="product-remove">Remove</th>
                         </tr>
                       </thead>
                       <tbody>
                         {wishlistItemSlice.map((item, index) => {
                           return (
                             <tr key={index}>
-                              <td class="product-thumbnail">
+                              <td className="product-thumbnail">
                                 <Link to="#">
                                   <img src={item.image} alt="wishlist" />
                                 </Link>
                               </td>
-                              <td class="product-name">
+                              <td className="product-name">
                                 <Link to="#">{item.title}</Link>
                               </td>
-                              <td class="product-price">
-                                <span class="amount">${item.price}</span>
+                              <td className="product-price">
+                                <span className="amount">${item.price}</span>
                               </td>
-                              <td class="product-quantity">
+                              <td className="product-quantity">
                                 <Link
                                   onClick={() => handleSendProduct(index)}
-                                  class="btn theme-btn-2"
+                                  className="btn theme-btn-2"
                                   to="#"
                                 >
                                   Add to cart
                                 </Link>
                               </td>
-                              <td class="product-subtotal">
-                                <span class="amount">${item.price}</span>
+                              <td className="product-subtotal">
+                                <span className="amount">${item.price}</span>
                               </td>
-                              <td class="product-remove">
+                              <td className="product-remove">
                                 <Link
                                   to="#"
                                   onClick={() => handleRemoveItem(item.id)}
                                 >
-                                  <i class="fa fa-times"></i>
+                                  <i className="fa fa-times"></i>
                                 </Link>
                               </td>
                             </tr>
@@ -119,7 +119,7 @@ function WishList(props) {
           </div>
         </section>
       ) : (
-        <h2 class="pt-100 pb-50 text-center w-100">No Product Found</h2>
+        <h2 className="pt-100 pb-50 text-center w-100">No Product Found</h2>
       )}
       <Footer />
     </>

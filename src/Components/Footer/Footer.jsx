@@ -15,7 +15,7 @@ function Footer(props) {
                         <div className="col-xl-3 col-lg-5 col-md-6 ">
                             <div className="footer-widget mb-40">
                                 <div className="footer-logo">
-                                    <Link href="/">
+                                    <Link to="/">
                                         <div style={{"display":"inline-block","maxWidth":"100%","overflow":"hidden","position":"relative","boxSizing":"border-box","margin":"0px"}}>
                                             <div style={{"boxSizing":"border-box","display":"block","maxWidth":"100%"}}><img alt="" aria-hidden="true" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzUiIGhlaWdodD0iMjIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+" style={{"maxWidth":"100%","display":"block","margin":"0px","border":"none","padding":"0px"}}/></div>
                                             <img
@@ -80,7 +80,7 @@ function Footer(props) {
                         <div className="col-xl-3 col-lg-5 col-md-6">
                             <div className="footer-widget mb-40">
                                 <div className="footer-banner">
-                                    <Link href="/shop">
+                                    <Link to="/shop">
                                         <div style={{"display":"inline-block","maxWidth":"100%","overflow":"hidden","position":"relative","boxSizing":"border-box","margin":"0px"}}>
                                             <div style={{"boxSizing":"border-box","display":"block","maxWidth":"100%"}}><img alt="" aria-hidden="true" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDA1IiBoZWlnaHQ9IjIzNSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4=" style={{"maxWidth":"100%","display":"block","margin":"0px","border":"none","padding":"0px"}}/></div>
                                             <img

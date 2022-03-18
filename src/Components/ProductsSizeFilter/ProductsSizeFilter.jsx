@@ -32,33 +32,33 @@ function ProductsSizeFilter(props) {
     <form action="">
       <ul className="shop-link">
         <li>
-          <a className="checkBox">
+          <a to="#" className="checkBox">
             <input onClick={clickL} type="radio" id="L" name="filter" />{" "}
-            <label for="L">L</label>
+            <label htmlFor="L">L</label>
           </a>
         </li>
         <li>
-          <a className="checkBox">
+          <a to="#" className="checkBox">
             <input onClick={clickM} type="radio" id="M" name="filter" />{" "}
-            <label for="M">M</label>
+            <label htmlFor="M">M</label>
           </a>
         </li>
         <li>
-          <a className="checkBox">
+          <a to="#" className="checkBox">
             <input onClick={clickX} type="radio" id="X" name="filter" />{" "}
-            <label for="X">X</label>
+            <label htmlFor="X">X</label>
           </a>
         </li>
         <li>
-          <a className="checkBox">
+          <a to="#" className="checkBox">
             <input onClick={clickXL} type="radio" id="XL" name="filter" />{" "}
-            <label for="XL">XL</label>
+            <label htmlFor="XL">XL</label>
           </a>
         </li>
         <li>
-          <a className="checkBox">
+          <a to="#" className="checkBox">
             <input onClick={clickXXL} type="radio" id="XXL" name="filter" />{" "}
-            <label for="XXL">XXL</label>
+            <label htmlFor="XXL">XXL</label>
           </a>
         </li>
       </ul>

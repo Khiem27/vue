@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { filterValueTags } from "../ProductsTagsFilter/ProductsTagsFilterSlice";
 
 function ProductsTagsFilter(props) {
@@ -41,52 +42,52 @@ function ProductsTagsFilter(props) {
   return (
     <ul className="shop-tag">
       <li>
-        <a onClick={clickFurniture} className="text-capitalize ">
+        <Link to="#" onClick={clickFurniture} className="text-capitalize ">
           {" "}
           furniture{" "}
-        </a>
+        </Link>
       </li>
       <li>
-        <a onClick={clickLadies} className="text-capitalize ">
+        <Link to="#" onClick={clickLadies} className="text-capitalize ">
           {" "}
           ladies{" "}
-        </a>
+        </Link>
       </li>
       <li>
-        <a onClick={clickGent} className="text-capitalize ">
+        <Link to="#" onClick={clickGent} className="text-capitalize ">
           {" "}
           gent{" "}
-        </a>
+        </Link>
       </li>
       <li>
-        <a onClick={clickClothing} className="text-capitalize ">
+        <Link to="#" onClick={clickClothing} className="text-capitalize ">
           {" "}
           Clothing{" "}
-        </a>
+        </Link>
       </li>
       <li>
-        <a onClick={clickJacket} className="text-capitalize ">
+        <Link to="#" onClick={clickJacket} className="text-capitalize ">
           {" "}
           jacket{" "}
-        </a>
+        </Link>
       </li>
       <li>
-        <a onClick={clickTshart} className="text-capitalize ">
+        <Link to="#" onClick={clickTshart} className="text-capitalize ">
           {" "}
           tshart{" "}
-        </a>
+        </Link>
       </li>
       <li>
-        <a onClick={clickLamp} className="text-capitalize ">
+        <Link to="#" onClick={clickLamp} className="text-capitalize ">
           {" "}
           lamp{" "}
-        </a>
+        </Link>
       </li>
       <li>
-        <a onClick={clickChair} className="text-capitalize ">
+        <Link to="#" onClick={clickChair} className="text-capitalize ">
           {" "}
           chair{" "}
-        </a>
+        </Link>
       </li>
     </ul>
   );

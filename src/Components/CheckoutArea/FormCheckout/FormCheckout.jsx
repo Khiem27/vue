@@ -328,7 +328,7 @@ function FormCheckout(props) {
               </div>
               <div className="col-md-6">
                 <div className="checkout-form-list">
-                  <label for="fName">
+                  <label htmlFor="fName">
                     First Name <span className="required">*</span>
                   </label>
                   <input type="text" id="fName" name="fName" className="mb-0" />
@@ -336,7 +336,7 @@ function FormCheckout(props) {
               </div>
               <div className="col-md-6">
                 <div className="checkout-form-list">
-                  <label for="lName">
+                  <label htmlFor="lName">
                     Last Name <span className="required">*</span>
                   </label>
                   <input type="text" id="lName" name="lName" className="mb-0" />
@@ -344,7 +344,7 @@ function FormCheckout(props) {
               </div>
               <div className="col-md-12">
                 <div className="checkout-form-list">
-                  <label for="cName">
+                  <label htmlFor="cName">
                     Company Name <span className="required">*</span>
                   </label>
                   <input type="text" id="cName" name="cName" className="mb-0" />
@@ -352,7 +352,7 @@ function FormCheckout(props) {
               </div>
               <div className="col-md-12">
                 <div className="checkout-form-list">
-                  <label for="address">
+                  <label htmlFor="address">
                     Address <span className="required">*</span>
                   </label>
                   <input
@@ -375,7 +375,7 @@ function FormCheckout(props) {
               </div>
               <div className="col-md-12">
                 <div className="checkout-form-list">
-                  <label for="city">
+                  <label htmlFor="city">
                     Town / City <span className="required">*</span>
                   </label>
                   <input
@@ -389,7 +389,7 @@ function FormCheckout(props) {
               </div>
               <div className="col-md-6">
                 <div className="checkout-form-list">
-                  <label for="state">
+                  <label htmlFor="state">
                     State / County <span className="required">*</span>
                   </label>
                   <input
@@ -403,7 +403,7 @@ function FormCheckout(props) {
               </div>
               <div className="col-md-6">
                 <div className="checkout-form-list">
-                  <label for="zip">
+                  <label htmlFor="zip">
                     Postcode / Zip <span className="required">*</span>
                   </label>
                   <input
@@ -417,7 +417,7 @@ function FormCheckout(props) {
               </div>
               <div className="col-md-6">
                 <div className="checkout-form-list">
-                  <label for="email">
+                  <label htmlFor="email">
                     Email Address <span className="required">*</span>
                   </label>
                   <input type="email" id="email" name="email" className="mb-0" />
@@ -425,7 +425,7 @@ function FormCheckout(props) {
               </div>
               <div className="col-md-6">
                 <div className="checkout-form-list">
-                  <label for="phone">
+                  <label htmlFor="phone">
                     Phone <span className="required">*</span>
                   </label>
                   <input type="text" id="phone" name="phone" className="mb-0" />
@@ -493,13 +493,13 @@ function FormCheckout(props) {
                       <ul>
                         <li>
                           <input type="checkbox" id="flat" />{" "}
-                          <label for="flat">
+                          <label htmlFor="flat">
                             Flat Rate: <span className="amount">$7.00</span>
                           </label>
                         </li>
                         <li>
                           <input type="checkbox" id="shipping" />{" "}
-                          <label for="shipping">Free Shipping: $30.00</label>
+                          <label htmlFor="shipping">Free Shipping: $30.00</label>
                         </li>
                         <li></li>
                       </ul>

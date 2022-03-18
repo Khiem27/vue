@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  Link
-} from "react-router-dom";
+import { Link } from "react-router-dom";
 import MiniAuthentication from "../Authentication/MiniAuthentication/MiniAuthentication";
 import MiniCart from "../MiniCart/MiniCart";
 import ScrollUp from "../ScrollUp/ScrollUp";
@@ -24,24 +22,24 @@ function Header(props) {
   };
 
   const handleMenu1 = () => {
-    setSubmenu1(!submenu1)
-  }
+    setSubmenu1(!submenu1);
+  };
 
   const handleMenu2 = () => {
-    setSubmenu2(!submenu2)
-  }
+    setSubmenu2(!submenu2);
+  };
 
   const handleMenu22 = (id) => {
-    setSubmenu22(id)
-  }
+    setSubmenu22(id);
+  };
 
   const handleMenu3 = () => {
-    setSubmenu3(!submenu3)
-  }
+    setSubmenu3(!submenu3);
+  };
 
   const handleMenu4 = () => {
-    setSubmenu4(!submenu4)
-  }
+    setSubmenu4(!submenu4);
+  };
 
   const [pos, setPos] = useState(0);
   const [header, setHeader] = useState(0);
@@ -163,7 +161,9 @@ function Header(props) {
                       <Link to="/shop">Shop</Link>
                       <ul className="submenu ">
                         <li>
-                          <Link to="#" onClick={() => handleMenu22(1)}>Category View</Link>
+                          <Link to="#" onClick={() => handleMenu22(1)}>
+                            Category View
+                          </Link>
                           <ul className="submenu level-1">
                             <li>
                               <Link to="/shop">Shop 2 Column</Link>
@@ -183,7 +183,9 @@ function Header(props) {
                           </ul>
                         </li>
                         <li>
-                          <Link to="#" onClick={() => handleMenu22(2)}>Category View</Link>
+                          <Link to="#" onClick={() => handleMenu22(2)}>
+                            Category View
+                          </Link>
                           <ul className="submenu  level-1 ">
                             <li>
                               <Link to="/shop/left-sidebar">Sidebar Left</Link>
@@ -205,7 +207,9 @@ function Header(props) {
                           </ul>
                         </li>
                         <li>
-                          <Link to="#" onClick={() => handleMenu22(3)}>Products Types</Link>
+                          <Link to="#" onClick={() => handleMenu22(3)}>
+                            Products Types
+                          </Link>
                           <ul className="submenu  level-1 ">
                             <li>
                               <Link to="/shop/1">Simple Product</Link>
@@ -271,7 +275,10 @@ function Header(props) {
               <div className="header-right f-right">
                 <ul>
                   <li className="search-btn">
-                    <Link className="search-btn nav-search search-trigger" to="#">
+                    <Link
+                      className="search-btn nav-search search-trigger"
+                      to="#"
+                    >
                       <i className="fas fa-search"></i>
                     </Link>
                   </li>
@@ -304,29 +311,50 @@ function Header(props) {
                 <div className="mean-bar">
                   {clickCtn ? (
                     <Link
-                    to="#"
+                      to="#"
                       onClick={handleClickCtn}
                       className="meanmenu-reveal d-flex align-items-center justify-content-center fs-18"
                     >
                       X
                     </Link>
                   ) : (
-                    <Link to="#" onClick={handleClickCtn} className="meanmenu-reveal ">
+                    <Link
+                      to="#"
+                      onClick={handleClickCtn}
+                      className="meanmenu-reveal "
+                    >
                       <span></span>
                       <span></span>
                       <span></span>
                     </Link>
                   )}
-                  <nav className={clickCtn ? "mean-nav mobile-header block" : "mean-nav mobile-header "}>
+                  <nav
+                    className={
+                      clickCtn
+                        ? "mean-nav mobile-header block"
+                        : "mean-nav mobile-header "
+                    }
+                  >
                     <ul>
                       <li>
                         <Link to="/">Home</Link>
-                        {
-                          submenu1 ? <Link to="#" onClick={handleMenu1} className="mean-expand" >-</Link> : 
-                        <Link onClick={handleMenu1} className="mean-expand" to="#">
-                          +
-                        </Link>
-                        }
+                        {submenu1 ? (
+                          <Link
+                            to="#"
+                            onClick={handleMenu1}
+                            className="mean-expand"
+                          >
+                            -
+                          </Link>
+                        ) : (
+                          <Link
+                            onClick={handleMenu1}
+                            className="mean-expand"
+                            to="#"
+                          >
+                            +
+                          </Link>
+                        )}
                         <ul className={submenu1 ? "submenu block" : "submenu "}>
                           <li>
                             <Link to="/">Home Style 1</Link>
@@ -347,16 +375,27 @@ function Header(props) {
                       </li>
                       <li className="mega-menu">
                         <Link to="/shop">Shop</Link>
-                        {
-                          submenu2 ? <Link onClick={handleMenu2} className="mean-expand" >-</Link> : 
-                          <Link onClick={handleMenu2} className="mean-expand" to="#">
+                        {submenu2 ? (
+                          <Link onClick={handleMenu2} className="mean-expand">
+                            -
+                          </Link>
+                        ) : (
+                          <Link
+                            onClick={handleMenu2}
+                            className="mean-expand"
+                            to="#"
+                          >
                             +
                           </Link>
-                        }
+                        )}
                         <ul className={submenu2 ? "submenu block" : "submenu "}>
                           <li>
                             <Link to="#">Category View</Link>
-                            <ul className={submenu22 === 1 ? "submenu block" : "submenu "}>
+                            <ul
+                              className={
+                                submenu22 === 1 ? "submenu block" : "submenu "
+                              }
+                            >
                               <li>
                                 <Link to="/shop">Shop 2 Column</Link>
                               </li>
@@ -373,13 +412,21 @@ function Header(props) {
                                 <Link to="/shop/list">List View</Link>
                               </li>
                             </ul>
-                            <Link className="mean-expand" onClick={() => handleMenu22(1)} to="#">
+                            <Link
+                              className="mean-expand"
+                              onClick={() => handleMenu22(1)}
+                              to="#"
+                            >
                               +
                             </Link>
                           </li>
                           <li>
                             <Link to="#">Category View</Link>
-                            <ul className={submenu22 === 2 ? "submenu block" : "submenu "}>
+                            <ul
+                              className={
+                                submenu22 === 2 ? "submenu block" : "submenu "
+                              }
+                            >
                               <li>
                                 <Link to="/shop/left-sidebar">
                                   Sidebar Left
@@ -400,13 +447,21 @@ function Header(props) {
                                 <Link to="/wishlist">My Wishlist</Link>
                               </li>
                             </ul>
-                            <Link className="mean-expand" onClick={() => handleMenu22(2)} to="#">
+                            <Link
+                              className="mean-expand"
+                              onClick={() => handleMenu22(2)}
+                              to="#"
+                            >
                               +
                             </Link>
                           </li>
                           <li>
                             <Link to="#">Products Types</Link>
-                            <ul className={submenu22 === 3 ? "submenu block" : "submenu "}>
+                            <ul
+                              className={
+                                submenu22 === 3 ? "submenu block" : "submenu "
+                              }
+                            >
                               <li>
                                 <Link to="/shop/1">Simple Product</Link>
                               </li>
@@ -422,7 +477,11 @@ function Header(props) {
                                 <Link to="/compare">Compare</Link>
                               </li>
                             </ul>
-                            <Link className="mean-expand" onClick={() => handleMenu22(3)} to="#">
+                            <Link
+                              className="mean-expand"
+                              onClick={() => handleMenu22(3)}
+                              to="#"
+                            >
                               +
                             </Link>
                           </li>
@@ -432,7 +491,7 @@ function Header(props) {
                         <Link to="/products">Products </Link>
                       </li>
                       <li>
-                        <Link to="/blog" >Blog</Link>
+                        <Link to="/blog">Blog</Link>
                         <ul className={submenu3 ? "submenu block" : "submenu "}>
                           <li>
                             <Link to="/blog/col-2">Blog 2 Column</Link>
@@ -453,18 +512,26 @@ function Header(props) {
                             <Link to="/blog/10">Blog Details Video</Link>
                           </li>
                         </ul>
-                        {
-                         submenu3 ? <Link onClick={handleMenu3} className="mean-expand" to="#">
-                          -
-                        </Link>
-                          :
-                        <Link onClick={handleMenu3} className="mean-expand" to="#">
-                          +
-                        </Link>
-                        }
+                        {submenu3 ? (
+                          <Link
+                            onClick={handleMenu3}
+                            className="mean-expand"
+                            to="#"
+                          >
+                            -
+                          </Link>
+                        ) : (
+                          <Link
+                            onClick={handleMenu3}
+                            className="mean-expand"
+                            to="#"
+                          >
+                            +
+                          </Link>
+                        )}
                       </li>
                       <li>
-                        <Link to="#" >Pages</Link>
+                        <Link to="#">Pages</Link>
                         <ul className={submenu4 ? "submenu block" : "submenu "}>
                           <li>
                             <Link to="/about">About Us</Link>
@@ -494,15 +561,23 @@ function Header(props) {
                             <Link to="/order-success">Order Success</Link>
                           </li>
                         </ul>
-                        {
-                          submenu4 ? <Link onClick={handleMenu4} className="mean-expand" to="#">
-                          -
-                        </Link>
-                        :
-                        <Link onClick={handleMenu4} className="mean-expand" to="#">
-                          +
-                        </Link>
-                        }
+                        {submenu4 ? (
+                          <Link
+                            onClick={handleMenu4}
+                            className="mean-expand"
+                            to="#"
+                          >
+                            -
+                          </Link>
+                        ) : (
+                          <Link
+                            onClick={handleMenu4}
+                            className="mean-expand"
+                            to="#"
+                          >
+                            +
+                          </Link>
+                        )}
                       </li>
                       <li className="mean-last">
                         <Link to="/contact">Contact</Link>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 SliderIndex5.propTypes = {};
 
@@ -11,7 +12,7 @@ function SliderIndex5(props) {
             <div className="slick-list">
               <div
                 className="slick-track slick-track-index-5-ltk"
-                style={{ opacity: "1"}}
+                style={{ opacity: "1" }}
               >
                 <div
                   data-index="0"
@@ -51,14 +52,14 @@ function SliderIndex5(props) {
                               Winter Is Coming
                             </h1>
                             <div className="slide-btn">
-                              <a
+                              <Link
                                 className="btn theme-btn"
                                 data-animation="fadeInLeft"
                                 data-delay=".8s"
-                                href="/shop"
+                                to="/shop"
                               >
                                 shop now
-                              </a>
+                              </Link>
                             </div>
                           </div>
                         </div>
@@ -104,14 +105,14 @@ function SliderIndex5(props) {
                               Winter Is Coming
                             </h1>
                             <div className="slide-btn">
-                              <a
+                              <Link
                                 className="btn theme-btn"
                                 data-animation="fadeInLeft"
                                 data-delay=".8s"
-                                href="/shop"
+                                to="/shop"
                               >
                                 shop now
-                              </a>
+                              </Link>
                             </div>
                           </div>
                         </div>
@@ -157,14 +158,14 @@ function SliderIndex5(props) {
                               Winter Is Coming
                             </h1>
                             <div className="slide-btn">
-                              <a
+                              <Link
                                 className="btn theme-btn"
                                 data-animation="fadeInLeft"
                                 data-delay=".8s"
-                                href="/shop"
+                                to="/shop"
                               >
                                 shop now
-                              </a>
+                              </Link>
                             </div>
                           </div>
                         </div>

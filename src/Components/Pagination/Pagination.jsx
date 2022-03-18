@@ -39,20 +39,20 @@ function Pagination(props) {
   };
 
   return (
-    <div class="row">
-      <div class="col-12">
-        <div class="basic-pagination basic-pagination-2 text-center">
+    <div className="row">
+      <div className="col-12">
+        <div className="basic-pagination basic-pagination-2 text-center">
           <ul>
             <li>
               <Link onClick={() => doubleFuncDec(indexPagination)} to="#">
-                <i class="fas fa-angle-double-left"></i>
+                <i className="fas fa-angle-double-left"></i>
               </Link>
             </li>
             {value.map((number, index) => (
               <li
                 onClick={() => handleActivePagination(index)}
                 key={index}
-                class={indexPagination === index ? "active" : " "}
+                className={indexPagination === index ? "active" : " "}
               >
                 <Link onClick={() => paginate(index + 1)} to="#">
                   {index + 1}
@@ -61,7 +61,7 @@ function Pagination(props) {
             ))}
             <li>
               <Link onClick={() => doubleFuncInc(indexPagination)} to="#">
-                <i class="fas fa-angle-double-right"></i>
+                <i className="fas fa-angle-double-right"></i>
               </Link>
             </li>
           </ul>

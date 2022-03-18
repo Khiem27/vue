@@ -65,7 +65,7 @@ function ShopDetails(props) {
                         </div>
                         <div className="col-xl-6 col-lg-8">
                             <div className="product-details mb-30 pl-30">
-                                <div className="details-cat mb-20"><Link href="#">{product.brand}</Link></div>
+                                <div className="details-cat mb-20"><Link to="#">{product.brand}</Link></div>
                                 <h2 className="pro-details-title mb-15">{product.title}</h2>
                                 <div className="details-price mb-20">
                                     <span>${product.price} USD</span>
@@ -77,17 +77,17 @@ function ShopDetails(props) {
                                             <span>Colors</span>
                                         </div>
                                         <ul className="shop-link shop-color">
-                                            <li><Link href="#"><span className={product.color}></span></Link></li>
+                                            <li><Link to="#"><span className={product.color}></span></Link></li>
                                         </ul>
                                     </div>
                                     <div className="product-size variant-item modal-p-15">
                                         <div className="variant-name"><span>size</span></div>
                                         <ul className="shop-link shop-size">
-                                            <li className={product.size === "l" ? "active" : " "}><Link href="#">L</Link></li>
-                                            <li className={product.size === "m" ? "active" : " "}><Link href="#">M</Link></li>
-                                            <li className={product.size === "x" ? "active" : " "}><Link href="#">X</Link></li>
-                                            <li className={product.size === "xl" ? "active" : " "}><Link href="#">XL</Link></li>
-                                            <li className={product.size === "xxl" ? "active" : " "}><Link href="#">XXL</Link></li>
+                                            <li className={product.size === "l" ? "active" : " "}><Link to="#">L</Link></li>
+                                            <li className={product.size === "m" ? "active" : " "}><Link to="#">M</Link></li>
+                                            <li className={product.size === "x" ? "active" : " "}><Link to="#">X</Link></li>
+                                            <li className={product.size === "xl" ? "active" : " "}><Link to="#">XL</Link></li>
+                                            <li className={product.size === "xxl" ? "active" : " "}><Link to="#">XXL</Link></li>
                                         </ul>
                                     </div>
                                     <div className="product-desc variant-item">
@@ -147,13 +147,13 @@ function ShopDetails(props) {
                                             <div className="review-box mt-50">
                                                 <h4>Add a Review</h4>
                                                 <div className="your-rating mb-40"><span>Your Rating:</span>
-                                                    <div className="rating-list"><Link href="#"><i className="far fa-star"></i></Link><Link href="#"><i className="far fa-star"></i></Link><Link href="#"><i className="far fa-star"></i></Link><Link href="#"><i className="far fa-star"></i></Link><Link href="#"><i className="far fa-star"></i></Link></div>
+                                                    <div className="rating-list"><Link to="#"><i className="far fa-star"></i></Link><Link to="#"><i className="far fa-star"></i></Link><Link to="#"><i className="far fa-star"></i></Link><Link to="#"><i className="far fa-star"></i></Link><Link to="#"><i className="far fa-star"></i></Link></div>
                                                 </div>
                                                 <form className="review-form">
                                                     <div className="row">
-                                                        <div className="col-xl-12"><label for="message">YOUR REVIEW</label><textarea name="message" id="message" cols="30" rows="10"></textarea></div>
-                                                        <div className="col-xl-6"><label for="r-name">Name</label><input type="text" id="r-name"/></div>
-                                                        <div className="col-xl-6"><label for="r-email">Email</label><input type="email" id="r-email"/></div>
+                                                        <div className="col-xl-12"><label htmlFor="message">YOUR REVIEW</label><textarea name="message" id="message" cols="30" rows="10"></textarea></div>
+                                                        <div className="col-xl-6"><label htmlFor="r-name">Name</label><input type="text" id="r-name"/></div>
+                                                        <div className="col-xl-6"><label htmlFor="r-email">Email</label><input type="email" id="r-email"/></div>
                                                         <div className="col-xl-12"><button className="btn theme-btn">Add your Review</button></div>
                                                     </div>
                                                 </form>

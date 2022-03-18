@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 SliderIndex3.propTypes = {};
 
@@ -140,14 +141,14 @@ function SliderIndex3(props) {
                               2022
                             </h1>
                             <div className="slide-btn">
-                              <a
+                              <Link
                                 className="btn theme-btn"
                                 data-animation="fadeInLeft"
                                 data-delay=".8s"
-                                href="/shop"
+                                to="/shop"
                               >
                                 shop now
-                              </a>
+                              </Link>
                             </div>
                           </div>
                         </div>
@@ -226,14 +227,14 @@ function SliderIndex3(props) {
                               2022
                             </h1>
                             <div className="slide-btn">
-                              <a
+                              <Link
                                 className="btn theme-btn"
                                 data-animation="fadeInLeft"
                                 data-delay=".8s"
-                                href="/shop"
+                                to="/shop"
                               >
                                 shop now
-                              </a>
+                              </Link>
                             </div>
                           </div>
                         </div>
@@ -312,14 +313,14 @@ function SliderIndex3(props) {
                               2022
                             </h1>
                             <div className="slide-btn">
-                              <a
+                              <Link
                                 className="btn theme-btn"
                                 data-animation="fadeInLeft"
                                 data-delay=".8s"
-                                href="/shop"
+                                to="/shop"
                               >
                                 shop now
-                              </a>
+                              </Link>
                             </div>
                           </div>
                         </div>

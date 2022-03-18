@@ -91,7 +91,7 @@ function BlogDetails(props) {
                             title="YouTube video player"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen
+                            allowFullScreen
                           ></iframe>
                         </Box>
                       </Modal>
@@ -107,12 +107,12 @@ function BlogDetails(props) {
                         <i className="far fa-calendar-check"></i> {blogItems.date}{" "}
                       </span>
                       <span>
-                        <Link href="#">
+                        <Link to="#">
                           <i className="far fa-user"></i> MD. Salim Rana
                         </Link>
                       </span>
                       <span>
-                        <Link href="#">
+                        <Link to="#">
                           <i className="far fa-comments"></i> 2 Comments
                         </Link>
                       </span>
@@ -139,27 +139,27 @@ function BlogDetails(props) {
                       <div className="col-xl-8 col-lg-8 col-md-8 mb-15">
                         <div className="blog-post-tag">
                           <span>Releted Tags</span>
-                          <Link href="#">organic</Link>
-                          <Link href="#">Foods</Link>
-                          <Link href="#">tasty</Link>
+                          <Link to="#">organic</Link>
+                          <Link to="#">Foods</Link>
+                          <Link to="#">tasty</Link>
                         </div>
                       </div>
                       <div className="col-xl-4 col-lg-4 col-md-4 mb-15">
                         <div className="blog-share-icon text-left text-md-right">
                           <span>Share: </span>
-                          <Link href="#">
+                          <Link to="#">
                             <i className="fab fa-facebook-f"></i>
                           </Link>
-                          <Link href="#">
+                          <Link to="#">
                             <i className="fab fa-twitter"></i>
                           </Link>
-                          <Link href="#">
+                          <Link to="#">
                             <i className="fab fa-instagram"></i>
                           </Link>
-                          <Link href="#">
+                          <Link to="#">
                             <i className="fab fa-google-plus-g"></i>
                           </Link>
-                          <Link href="#">
+                          <Link to="#">
                             <i className="fab fa-vimeo-v"></i>
                           </Link>
                         </div>
@@ -176,14 +176,14 @@ function BlogDetails(props) {
                               <Link to={`/blog/${blogID - 1}`}>Prev Post</Link>
                             </span>
                             <h4>
-                              <Link href="/blog/1">{prevBlogItems.title}</Link>
+                              <Link to="/blog/1">{prevBlogItems.title}</Link>
                             </h4>
                           </div>
                         ) : null}
                       </div>
                       <div className="col-xl-2 col-lg-2 col-md-2 ">
                         <div className="bakix-filter text-left text-md-center mb-30">
-                          <Link href="#">
+                          <Link to="#">
                             <img
                               style={{ width: "40px" }}
                               src="https://vue-plum-chi.vercel.app/img/icon/filter.png"
@@ -199,7 +199,7 @@ function BlogDetails(props) {
                               <Link to={`/blog/${blogID + 1}`}>Next Post</Link>
                             </span>
                             <h4>
-                              <Link href="/blog/2">{nextBlogItems.title}</Link>
+                              <Link to="/blog/2">{nextBlogItems.title}</Link>
                             </h4>
                           </div>
                         ) : null}
@@ -217,19 +217,19 @@ function BlogDetails(props) {
                     <div className="author-text text-center">
                       <h3>MD. Salim Rana</h3>
                       <div className="author-icon">
-                        <Link href="#">
+                        <Link to="#">
                           <i className="fab fa-facebook-f"></i>
                         </Link>
-                        <Link href="#">
+                        <Link to="#">
                           <i className="fab fa-twitter"></i>
                         </Link>
-                        <Link href="#">
+                        <Link to="#">
                           <i className="fab fa-behance-square"></i>
                         </Link>
-                        <Link href="#">
+                        <Link to="#">
                           <i className="fab fa-youtube"></i>
                         </Link>
-                        <Link href="#">
+                        <Link to="#">
                           <i className="fab fa-vimeo-v"></i>
                         </Link>
                       </div>
@@ -260,7 +260,7 @@ function BlogDetails(props) {
                               <div className="avatar-name">
                                 <h5>Karon Balina</h5>
                                 <span>19TH MAY 2018</span>
-                                <Link className="reply" href="#">
+                                <Link className="reply" to="#">
                                   <i className="fas fa-reply"></i>Reply
                                 </Link>
                               </div>
@@ -293,7 +293,7 @@ function BlogDetails(props) {
                                   <div className="avatar-name">
                                     <h5>Karon Balina</h5>
                                     <span>19TH MAY 2018</span>
-                                    <Link className="reply" href="#">
+                                    <Link className="reply" to="#">
                                       <i className="fas fa-reply"></i>Reply
                                     </Link>
                                   </div>
@@ -322,7 +322,7 @@ function BlogDetails(props) {
                               <div className="avatar-name">
                                 <h5>Arista Williamson</h5>
                                 <span>19TH MAY 2018</span>
-                                <Link className="reply" href="#">
+                                <Link className="reply" to="#">
                                   <i className="fas fa-reply"></i>Reply
                                 </Link>
                               </div>
