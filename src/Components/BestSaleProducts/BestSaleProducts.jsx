@@ -127,6 +127,51 @@ function BestSaleProducts(props) {
     });
   };
 
+  // Slider
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+  const [slider, setMainSlider] = useState();
+
+  useEffect(() => {
+    const subSlider = document.querySelector(".slick-list-2");
+    setMainSlider(subSlider);
+  }, []);
+
+  const end = () => {
+    isDown = false;
+    slider.classList.remove("active");
+  };
+
+  const start = (e) => {
+    isDown = true;
+    slider.classList.add("active");
+    startX = e.pageX || e.touches[0].pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  };
+
+  const move = (e) => {
+    if (!isDown) return;
+
+    e.preventDefault();
+    const x = e.pageX || e.touches[0].pageX - slider.offsetLeft;
+    const dist = x - startX;
+    slider.scrollLeft = scrollLeft - dist;
+  };
+
+  (() => {
+    if (slider) {
+      slider.addEventListener("mousedown", start);
+      slider.addEventListener("touchstart", start);
+      slider.addEventListener("mousemove", move);
+      slider.addEventListener("touchmove", move);
+      slider.addEventListener("mouseleave", end);
+      slider.addEventListener("mouseup", end);
+      slider.addEventListener("touchend", end);
+    }
+  })();
+  // Slider end
+
   return (
     <>
       <section className="product-area box-90 pt-70 pb-40 slick-slider">
@@ -246,7 +291,7 @@ function BestSaleProducts(props) {
                         >
                           <i className="fas fa-arrow-left"></i>
                         </div>
-                        <div className="slick-list slick-list-1">
+                        <div className="slick-list slick-list-2">
                           <div
                             className="slick-track slick-track-brand-new-products slick-track-brand-new-products-2"
                             style={{
@@ -611,7 +656,7 @@ function BestSaleProducts(props) {
                     {electronics.length ? (
                       <div className="product-slider owl-carousel">
                         <div className="slick-slider slick-initialized">
-                          <div className="slick-list">
+                          <div className="slick-list slick-list-1">
                             <div
                               className="slick-track slick-track-brand-new-products slick-track-brand-new-products-2"
                               style={{
