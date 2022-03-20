@@ -5,17 +5,12 @@ import MiniCart from "../MiniCart/MiniCart";
 import ScrollUp from "../ScrollUp/ScrollUp";
 
 function Header(props) {
-  const [clickMenu, setClickMenu] = useState(false);
   const [clickCtn, setClickCtn] = useState(false);
   const [submenu1, setSubmenu1] = useState(false);
   const [submenu2, setSubmenu2] = useState(false);
   const [submenu22, setSubmenu22] = useState(false);
   const [submenu3, setSubmenu3] = useState(false);
   const [submenu4, setSubmenu4] = useState(false);
-
-  const handleClick = () => {
-    setClickMenu(!clickMenu);
-  };
 
   const handleClickCtn = () => {
     setClickCtn(!clickCtn);
@@ -64,10 +59,7 @@ function Header(props) {
     if (clickActiveSearch) {
       setClickActiveSearch(!clickActiveSearch);
     }
-    if (clickMenu) {
-    setClickMenu(!clickMenu);
-    }
-  })
+  });
 
   return (
     <header className="header-all-page">
@@ -81,13 +73,6 @@ function Header(props) {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-xl-2 col-lg-6 col-md-6 col-7 col-sm-3 d-flex align-items-center">
-              <div className="d-flex" onClick={handleClick}>
-                <div className="basic-bar cat-toggle">
-                  <span className="bar1"></span>
-                  <span className="bar2"></span>
-                  <span className="bar3"></span>
-                </div>
-              </div>
               <div className="logo mt-2">
                 <Link to="/">
                   <img
@@ -95,57 +80,6 @@ function Header(props) {
                     alt="Logo"
                   />
                 </Link>
-              </div>
-              <div
-                className={
-                  clickMenu
-                    ? "category-menu d-block block"
-                    : "category-menu d-block "
-                }
-              >
-                <h4>Category</h4>
-                <ul>
-                  <li>
-                    <Link className="text-capitalize" to="/shop">
-                      <i className="fas fa-cart-plus"></i>furniture
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="text-capitalize" to="/shop">
-                      <i className="fas fa-cart-plus"></i>ladies
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="text-capitalize" to="/shop">
-                      <i className="fas fa-cart-plus"></i>gent
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="text-capitalize" to="/shop">
-                      <i className="fas fa-cart-plus"></i>Clothing
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="text-capitalize" to="/shop">
-                      <i className="fas fa-cart-plus"></i>jacket
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="text-capitalize" to="/shop">
-                      <i className="fas fa-cart-plus"></i>tshart
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="text-capitalize" to="/shop">
-                      <i className="fas fa-cart-plus"></i>lamp
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="text-capitalize" to="/shop">
-                      <i className="fas fa-cart-plus"></i>chair
-                    </Link>
-                  </li>
-                </ul>
               </div>
             </div>
             <div className="col-xl-7 col-lg-6 col-md-8 col-8 d-none d-xl-block">
