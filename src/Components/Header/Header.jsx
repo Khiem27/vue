@@ -60,6 +60,15 @@ function Header(props) {
     setClickActiveSearch(!clickActiveSearch);
   };
 
+  window.addEventListener("scroll", () => {
+    if (clickActiveSearch) {
+      setClickActiveSearch(!clickActiveSearch);
+    }
+    if (clickMenu) {
+    setClickMenu(!clickMenu);
+    }
+  })
+
   return (
     <header className="header-all-page">
       {pos <= -400 ? <ScrollUp /> : null}

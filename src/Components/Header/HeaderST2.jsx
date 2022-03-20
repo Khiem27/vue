@@ -55,6 +55,21 @@ function HeaderST2(props) {
     setSubmenu4(!submenu4);
   };
 
+  const [clickActiveSearch, setClickActiveSearch] = useState(false);
+
+  const handleClickActiveSearch = () => {
+    setClickActiveSearch(!clickActiveSearch);
+  };
+
+  window.addEventListener("scroll", () => {
+    if (clickActiveSearch) {
+      setClickActiveSearch(!clickActiveSearch);
+    }
+    if (active) {
+      setActive(!active);
+    }
+  });
+
   return (
     <header className="header-all-page">
       {pos <= -400 ? <ScrollUp /> : null}
@@ -294,15 +309,24 @@ function HeaderST2(props) {
               <div className="header-right header-right-3 f-right">
                 <ul>
                   <li className="search-btn">
-                    <Link to="#" className="search-btn nav-search search-trigger">
+                    <Link
+                      onClick={handleClickActiveSearch}
+                      to="#"
+                      className="search-btn nav-search search-trigger"
+                    >
                       <i className="fas fa-search"></i>
                     </Link>
                   </li>
-                  <div className="search-wrap ">
+                  <div
+                    className={
+                      clickActiveSearch ? "search-wrap d-block" : "search-wrap "
+                    }
+                  >
                     <div className="search-inner">
                       <i
                         className="fas fa-times search-close"
                         id="search-close"
+                        onClick={handleClickActiveSearch}
                       ></i>
                       <div className="search-cell">
                         <form method="get">
@@ -396,7 +420,11 @@ function HeaderST2(props) {
                       <li className="mega-menu">
                         <Link to="/shop">Shop</Link>
                         {submenu2 ? (
-                          <Link to="#" onClick={handleMenu2} className="mean-expand">
+                          <Link
+                            to="#"
+                            onClick={handleMenu2}
+                            className="mean-expand"
+                          >
                             -
                           </Link>
                         ) : (

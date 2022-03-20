@@ -54,6 +54,21 @@ function HeaderST3(props) {
     setSubmenu4(!submenu4);
   };
 
+  const [clickActiveSearch, setClickActiveSearch] = useState(false);
+
+  const handleClickActiveSearch = () => {
+    setClickActiveSearch(!clickActiveSearch);
+  };
+
+  window.addEventListener("scroll", () => {
+    if (clickActiveSearch) {
+      setClickActiveSearch(!clickActiveSearch);
+    }
+    if (clickMenu) {
+      setClickMenu(!clickMenu);
+    }
+  });
+
   return (
     <header className="header-all-page">
       {pos <= -400 ? <ScrollUp /> : null}
@@ -153,7 +168,7 @@ function HeaderST3(props) {
                 <nav id="mobile-menu">
                   <ul>
                     <li>
-                      <Link to="#">Home</Link>
+                      <Link to="/">Home</Link>
                       <ul className="submenu">
                         <li>
                           <Link to="#">Home Style 1</Link>
@@ -302,15 +317,21 @@ function HeaderST3(props) {
                 <ul>
                   <li className="search-btn">
                     <Link
+                      onClick={handleClickActiveSearch}
                       className="search-btn nav-search search-trigger"
                       to="#"
                     >
                       <i className="fas fa-search"></i>
                     </Link>
                   </li>
-                  <div className="search-wrap ">
+                  <div
+                    className={
+                      clickActiveSearch ? "search-wrap d-block" : "search-wrap "
+                    }
+                  >
                     <div className="search-inner">
                       <i
+                        onClick={handleClickActiveSearch}
                         className="fas fa-times search-close"
                         id="search-close"
                       ></i>
