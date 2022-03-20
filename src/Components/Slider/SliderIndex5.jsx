@@ -17,7 +17,7 @@ function SliderIndex5(props) {
                 <div
                   data-index="0"
                   className="slick-slide slick-active slick-current slick-slide-index-51-ltk"
-                  tabindex="-1"
+                  tabIndex="-1"
                   aria-hidden="false"
                   style={{
                     outline: "none",
@@ -31,7 +31,7 @@ function SliderIndex5(props) {
                     <div
                       className="single-slider slide-height-5 pos-relative d-flex align-items-center"
                       data-background="https://vue-plum-chi.vercel.app/img/slider/slide6-3.jpg"
-                      tabindex="-1"
+                      tabIndex="-1"
                       style={{
                         width: "100%",
                         display: "inline-block",
@@ -70,7 +70,7 @@ function SliderIndex5(props) {
                 <div
                   data-index="1"
                   className="slick-slide slick-slide-index-52-ltk"
-                  tabindex="-1"
+                  tabIndex="-1"
                   aria-hidden="true"
                   style={{
                     outline: "none",
@@ -84,7 +84,7 @@ function SliderIndex5(props) {
                     <div
                       className="single-slider slide-height-5 pos-relative d-flex align-items-center"
                       data-background="https://vue-plum-chi.vercel.app/img/slider/slide6-2.jpg"
-                      tabindex="-1"
+                      tabIndex="-1"
                       style={{
                         width: "100%",
                         display: "inline-block",
@@ -123,7 +123,7 @@ function SliderIndex5(props) {
                 <div
                   data-index="2"
                   className="slick-slide slick-slide-index-53-ltk"
-                  tabindex="-1"
+                  tabIndex="-1"
                   aria-hidden="true"
                   style={{
                     outline: "none",
@@ -137,7 +137,7 @@ function SliderIndex5(props) {
                     <div
                       className="single-slider slide-height-5 pos-relative d-flex align-items-center"
                       data-background="https://vue-plum-chi.vercel.app/img/slider/slide6.jpg"
-                      tabindex="-1"
+                      tabIndex="-1"
                       style={{
                         width: "100%",
                         display: "inline-block",

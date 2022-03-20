@@ -79,7 +79,7 @@ function SliderIndex2(props) {
                     ? "slick-slide slick-active slick-current"
                     : "slick-slide"
                 }
-                tabindex="-1"
+                tabIndex="-1"
                 aria-hidden="false"
                 style={
                   active === 1
@@ -107,7 +107,7 @@ function SliderIndex2(props) {
                   <div
                     className="single-slider slider-2 slide-1-style slide-height-2 d-flex align-items-center"
                     data-background="https://vue-plum-chi.vercel.app/img/slider/slide2-1.jpg"
-                    tabindex="-1"
+                    tabIndex="-1"
                     style={{
                       width: "100%",
                       display: "inline-block",
@@ -178,7 +178,7 @@ function SliderIndex2(props) {
                     ? "slick-slide slick-active slick-current"
                     : "slick-slide"
                 }
-                tabindex="-1"
+                tabIndex="-1"
                 aria-hidden="true"
                 style={
                   active === 2
@@ -206,7 +206,7 @@ function SliderIndex2(props) {
                   <div
                     className="single-slider slider-2 slide-1-style slide-height-2 d-flex align-items-center"
                     data-background="https://vue-plum-chi.vercel.app/img/slider/slide2-2.jpg"
-                    tabindex="-1"
+                    tabIndex="-1"
                     style={{
                       width: "100%",
                       display: "inline-block",
@@ -277,7 +277,7 @@ function SliderIndex2(props) {
                     ? "slick-slide slick-active slick-current"
                     : "slick-slide"
                 }
-                tabindex="-1"
+                tabIndex="-1"
                 aria-hidden="true"
                 style={
                   active === 3
@@ -305,7 +305,7 @@ function SliderIndex2(props) {
                   <div
                     className="single-slider slider-2 slide-1-style slide-height-2 d-flex align-items-center"
                     data-background="https://vue-plum-chi.vercel.app/img/slider/slide2-3.jpg"
-                    tabindex="-1"
+                    tabIndex="-1"
                     style={{
                       width: "100%",
                       display: "inline-block",

@@ -56,7 +56,7 @@ function HeaderST2(props) {
   };
 
   return (
-    <header classNameName="header-all-page">
+    <header className="header-all-page">
       {pos <= -400 ? <ScrollUp /> : null}
       <div className="header-area header-3 pt-35 pb-35">
         <div className="container">
@@ -248,9 +248,6 @@ function HeaderST2(props) {
                             <li>
                               <Link to="/compare">Compare</Link>
                             </li>
-                            <li>
-                              <Link to="/order-success">Order Success</Link>
-                            </li>
                           </ul>
                         </li>
                         <li>
@@ -297,7 +294,7 @@ function HeaderST2(props) {
               <div className="header-right header-right-3 f-right">
                 <ul>
                   <li className="search-btn">
-                    <Link className="search-btn nav-search search-trigger">
+                    <Link to="#" className="search-btn nav-search search-trigger">
                       <i className="fas fa-search"></i>
                     </Link>
                   </li>
@@ -399,7 +396,7 @@ function HeaderST2(props) {
                       <li className="mega-menu">
                         <Link to="/shop">Shop</Link>
                         {submenu2 ? (
-                          <Link onClick={handleMenu2} className="mean-expand">
+                          <Link to="#" onClick={handleMenu2} className="mean-expand">
                             -
                           </Link>
                         ) : (
@@ -557,9 +554,6 @@ function HeaderST2(props) {
                         <Link to="#">Pages</Link>
                         <ul className={submenu4 ? "submenu block" : "submenu "}>
                           <li>
-                            <Link to="/about">About Us</Link>
-                          </li>
-                          <li>
                             <Link to="/contact">Contact Us</Link>
                           </li>
                           <li>
@@ -579,9 +573,6 @@ function HeaderST2(props) {
                           </li>
                           <li>
                             <Link to="/compare">Compare</Link>
-                          </li>
-                          <li>
-                            <Link to="/order-success">Order Success</Link>
                           </li>
                         </ul>
                         {submenu4 ? (

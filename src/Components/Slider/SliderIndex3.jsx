@@ -78,7 +78,7 @@ function SliderIndex3(props) {
                     ? "slick-slide slick-active slick-current"
                     : "slick-slide"
                 }
-                tabindex="-1"
+                tabIndex="-1"
                 aria-hidden="false"
                 style={
                   active === 1
@@ -105,7 +105,7 @@ function SliderIndex3(props) {
                 <div>
                   <div
                     className="single-slider d-flex align-items-center"
-                    tabindex="-1"
+                    tabIndex="-1"
                     style={{ width: "100%", display: "inline-block" }}
                   >
                     <div className="container">
@@ -164,7 +164,7 @@ function SliderIndex3(props) {
                     ? "slick-slide slick-active slick-current"
                     : "slick-slide"
                 }
-                tabindex="-1"
+                tabIndex="-1"
                 aria-hidden="true"
                 style={
                   active === 2
@@ -191,7 +191,7 @@ function SliderIndex3(props) {
                 <div>
                   <div
                     className="single-slider d-flex align-items-center"
-                    tabindex="-1"
+                    tabIndex="-1"
                     style={{ width: "100%", display: "inline-block" }}
                   >
                     <div className="container">
@@ -250,7 +250,7 @@ function SliderIndex3(props) {
                     ? "slick-slide slick-active slick-current"
                     : "slick-slide"
                 }
-                tabindex="-1"
+                tabIndex="-1"
                 aria-hidden="true"
                 style={
                   active === 3
@@ -277,7 +277,7 @@ function SliderIndex3(props) {
                 <div>
                   <div
                     className="single-slider d-flex align-items-center"
-                    tabindex="-1"
+                    tabIndex="-1"
                     style={{ width: "100%", display: "inline-block" }}
                   >
                     <div className="container">

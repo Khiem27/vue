@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ContactsArea from "../../Components/ContactsArea/ContactsArea";
 import FooterHome from "../../Components/Footer/FooterHome";
 import ContactsForm from "../../Components/Form/Contacts/ContactsForm";
@@ -9,6 +9,9 @@ import ContactsTitle from "../../Components/PageTitle/Contacts/ContactsTitle";
 Contacts.propTypes = {};
 
 function Contacts(props) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <Header />

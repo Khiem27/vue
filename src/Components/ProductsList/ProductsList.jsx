@@ -238,12 +238,13 @@ function ProductsList(props) {
                         <p>{item.description}</p>
                         <div className="product-action">
                           <Link
+                            to="#"
                             title="Shoppingb Cart"
                             onClick={() => handleSendProduct(index)}
                           >
                             <i className="fas fa-shopping-cart"></i>
                           </Link>
-                          <Link onClick={() => handleOpen(index)}>
+                          <Link to="#" onClick={() => handleOpen(index)}>
                             <i className="fas fa-eye"></i>
                           </Link>
                           <AddToWishlist dataProduct={item} />
@@ -280,7 +281,7 @@ function ProductsList(props) {
                 role="dialog"
                 aria-modal="true"
                 className="fade modal show"
-                tabindex="-1"
+                tabIndex="-1"
                 style={{
                   display: "block",
                   paddingLeft: "16px",

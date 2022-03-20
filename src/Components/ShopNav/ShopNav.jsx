@@ -25,13 +25,13 @@ function ShopNav(props) {
             <div className="shop-tab f-right">
                 <ul className="nav text-center nav" id="myTab" role="tablist">
                     <li className="nav-item">
-                        <Link onClick={clickDisplayActiveFalse} role="tab" data-rb-event-key="list" className={displayActive ? "nav-link" : "nav-link active"}>
+                        <Link to="#" onClick={clickDisplayActiveFalse} role="tab" data-rb-event-key="list" className={displayActive ? "nav-link" : "nav-link active"}>
                             <i className="fas fa-list-ul"></i>
                         </Link>
                     </li>
                     
                     <li className="nav-item">
-                        <Link onClick={clickDisplayActiveTrue} role="tab" data-rb-event-key="grid" className={displayActive ? "nav-link active" : "nav-link"}>
+                        <Link to="#" onClick={clickDisplayActiveTrue} role="tab" data-rb-event-key="grid" className={displayActive ? "nav-link active" : "nav-link"}>
                             <i className="fas fa-th-large"></i>
                         </Link>
                     </li>

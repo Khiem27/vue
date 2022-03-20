@@ -184,10 +184,10 @@ function ProductsGrid3Column(props) {
                           />
                         </Link>
                         <div className="product-action text-center">
-                          <Link onClick={() => handleSendProduct(index)}>
+                          <Link to="#" onClick={() => handleSendProduct(index)}>
                             <i className="fas fa-shopping-cart"></i>
                           </Link>
-                          <Link onClick={() => handleOpen(index)}>
+                          <Link to="#" onClick={() => handleOpen(index)}>
                             <i className="fas fa-eye"></i>
                           </Link>
                           <AddToCompare dataProduct={item} />
@@ -248,7 +248,7 @@ function ProductsGrid3Column(props) {
                 role="dialog"
                 aria-modal="true"
                 className="fade modal show"
-                tabindex="-1"
+                tabIndex="-1"
                 style={{
                   display: "block",
                   paddingLeft: "16px",

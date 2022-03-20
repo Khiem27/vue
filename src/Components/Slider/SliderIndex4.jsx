@@ -78,7 +78,7 @@ function SliderIndex4(props) {
                     ? "slick-slide slick-active slick-current"
                     : "slick-slide"
                 }
-                tabindex="-1"
+                tabIndex="-1"
                 aria-hidden="false"
                 style={
                   active === 1
@@ -106,7 +106,7 @@ function SliderIndex4(props) {
                   <div
                     className="single-slider slide-1-style slide-height-2 slide-height-4 d-flex align-items-center"
                     data-background="https://vue-plum-chi.vercel.app/img/slider/slide5.jpg"
-                    tabindex="-1"
+                    tabIndex="-1"
                     style={{
                       width: "100%",
                       display: "inline-block",
@@ -165,7 +165,7 @@ function SliderIndex4(props) {
                     ? "slick-slide slick-active slick-current"
                     : "slick-slide"
                 }
-                tabindex="-1"
+                tabIndex="-1"
                 aria-hidden="true"
                 style={
                   active === 2
@@ -193,7 +193,7 @@ function SliderIndex4(props) {
                   <div
                     className="single-slider slide-1-style slide-height-2 slide-height-4 d-flex align-items-center"
                     data-background="/img/slider/slide5-2.jpg"
-                    tabindex="-1"
+                    tabIndex="-1"
                     style={{
                       width: "100%",
                       display: "inline-block",
@@ -252,7 +252,7 @@ function SliderIndex4(props) {
                     ? "slick-slide slick-active slick-current"
                     : "slick-slide"
                 }
-                tabindex="-1"
+                tabIndex="-1"
                 aria-hidden="true"
                 style={
                   active === 3
@@ -280,7 +280,7 @@ function SliderIndex4(props) {
                   <div
                     className="single-slider slide-1-style slide-height-2 slide-height-4 d-flex align-items-center"
                     data-background="https://vue-plum-chi.vercel.app/img/slider/slide5-3.jpg"
-                    tabindex="-1"
+                    tabIndex="-1"
                     style={{
                       width: "100%",
                       display: "inline-block",

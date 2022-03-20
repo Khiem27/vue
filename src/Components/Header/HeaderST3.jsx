@@ -288,9 +288,6 @@ function HeaderST3(props) {
                         <li>
                           <Link to="/compare">Compare</Link>
                         </li>
-                        <li>
-                          <Link to="/order-success">Order Success</Link>
-                        </li>
                       </ul>
                     </li>
                     <li>
@@ -567,9 +564,6 @@ function HeaderST3(props) {
                         <Link to="#">Pages</Link>
                         <ul className={submenu4 ? "submenu block" : "submenu "}>
                           <li>
-                            <Link to="/about">About Us</Link>
-                          </li>
-                          <li>
                             <Link to="/contact">Contact Us</Link>
                           </li>
                           <li>
@@ -589,9 +583,6 @@ function HeaderST3(props) {
                           </li>
                           <li>
                             <Link to="/compare">Compare</Link>
-                          </li>
-                          <li>
-                            <Link to="/order-success">Order Success</Link>
                           </li>
                         </ul>
                         {submenu4 ? (

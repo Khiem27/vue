@@ -52,7 +52,7 @@ function Register(props) {
       enqueueSnackbar("Đăng nhập thành công", {
         variant: "success",
       });
-      window.location.reload();
+      window.location.href = "/";
     } else {
       enqueueSnackbar("Đăng nhập thất bại", {
         variant: "error",
@@ -75,6 +75,9 @@ function Register(props) {
     });
     window.location.reload();
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div>

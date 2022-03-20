@@ -3,7 +3,9 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import {
-  addFromLocal, removeFromCart, updateQuantity
+  addFromLocal,
+  removeFromCart,
+  updateQuantity
 } from "../AddToCart/AddToCartSlice";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
@@ -22,7 +24,7 @@ function Cart(props) {
       const action = addFromLocal(localParse);
       dispatch(action);
     }
-  },[dispatch]);
+  }, [dispatch]);
 
   const products = useSelector((state) => state.addToCart.products);
   const productsTotal = useSelector((state) => state.addToCart.cartTotal);
@@ -72,7 +74,7 @@ function Cart(props) {
                         {products.length !== 0
                           ? products.map((item, index) => {
                               return (
-                                <tr>
+                                <tr key={index}>
                                   <td className="product-thumbnail">
                                     <Link to="#">
                                       <img src={item.image} alt="cart" />
@@ -82,7 +84,9 @@ function Cart(props) {
                                     <Link to="#">{item.title}</Link>
                                   </td>
                                   <td className="product-price">
-                                    <span className="amount">${item.price}</span>
+                                    <span className="amount">
+                                      ${item.price}
+                                    </span>
                                   </td>
                                   <td className="product-quantity">
                                     <div className="cart-plus-minus">
@@ -106,10 +110,13 @@ function Cart(props) {
                                     </div>
                                   </td>
                                   <td className="product-subtotal">
-                                    <span className="amount">${item.total}</span>
+                                    <span className="amount">
+                                      ${item.total}
+                                    </span>
                                   </td>
                                   <td className="product-remove">
                                     <Link
+                                      to="#"
                                       onClick={() => handleRemoveItem(item.id)}
                                     >
                                       <i className="fa fa-times"></i>

@@ -54,6 +54,12 @@ function Header(props) {
     }
   });
 
+  const [clickActiveSearch, setClickActiveSearch] = useState(false);
+
+  const handleClickActiveSearch = () => {
+    setClickActiveSearch(!clickActiveSearch);
+  };
+
   return (
     <header className="header-all-page">
       {pos <= -400 ? <ScrollUp /> : null}
@@ -259,9 +265,6 @@ function Header(props) {
                         <li>
                           <Link to="/compare">Compare</Link>
                         </li>
-                        <li>
-                          <Link to="/order-success">Order Success</Link>
-                        </li>
                       </ul>
                     </li>
                     <li>
@@ -276,17 +279,23 @@ function Header(props) {
                 <ul>
                   <li className="search-btn">
                     <Link
+                      onClick={handleClickActiveSearch}
                       className="search-btn nav-search search-trigger"
                       to="#"
                     >
                       <i className="fas fa-search"></i>
                     </Link>
                   </li>
-                  <div className="search-wrap ">
+                  <div
+                    className={
+                      clickActiveSearch ? "search-wrap d-block" : "search-wrap "
+                    }
+                  >
                     <div className="search-inner">
                       <i
                         className="fas fa-times search-close"
                         id="search-close"
+                        onClick={handleClickActiveSearch}
                       ></i>
                       <div className="search-cell">
                         <form method="get">
@@ -534,9 +543,6 @@ function Header(props) {
                         <Link to="#">Pages</Link>
                         <ul className={submenu4 ? "submenu block" : "submenu "}>
                           <li>
-                            <Link to="/about">About Us</Link>
-                          </li>
-                          <li>
                             <Link to="/contact">Contact Us</Link>
                           </li>
                           <li>
@@ -556,9 +562,6 @@ function Header(props) {
                           </li>
                           <li>
                             <Link to="/compare">Compare</Link>
-                          </li>
-                          <li>
-                            <Link to="/order-success">Order Success</Link>
                           </li>
                         </ul>
                         {submenu4 ? (

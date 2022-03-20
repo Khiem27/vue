@@ -42,12 +42,12 @@ function Footer(props) {
                             <div className="footer-widget pl-50 mb-40">
                                 <h3>Social Media</h3>
                                 <ul className="footer-link">
-                                    <li><Link>Facebook</Link></li>
-                                    <li><Link>Twitter</Link></li>
-                                    <li><Link>Behance</Link></li>
-                                    <li><Link> Dribbble</Link></li>
-                                    <li><Link>Linkedin</Link></li>
-                                    <li><Link>Youtube</Link></li>
+                                    <li><Link to="#">Facebook</Link></li>
+                                    <li><Link to="#">Twitter</Link></li>
+                                    <li><Link to="#">Behance</Link></li>
+                                    <li><Link to="#"> Dribbble</Link></li>
+                                    <li><Link to="#">Linkedin</Link></li>
+                                    <li><Link to="#">Youtube</Link></li>
                                 </ul>
                             </div>
                         </div>
@@ -55,12 +55,12 @@ function Footer(props) {
                             <div className="footer-widget pl-30 mb-40">
                                 <h3>Location</h3>
                                 <ul className="footer-link">
-                                    <li><Link>New York</Link></li>
-                                    <li><Link>Tokyo</Link></li>
-                                    <li><Link>Dhaka</Link></li>
-                                    <li><Link> Chittagong</Link></li>
-                                    <li><Link>China</Link></li>
-                                    <li><Link>Japan</Link></li>
+                                    <li><Link to="#">New York</Link></li>
+                                    <li><Link to="#">Tokyo</Link></li>
+                                    <li><Link to="#">Dhaka</Link></li>
+                                    <li><Link to="#"> Chittagong</Link></li>
+                                    <li><Link to="#">China</Link></li>
+                                    <li><Link to="#">Japan</Link></li>
                                 </ul>
                             </div>
                         </div>
@@ -68,12 +68,12 @@ function Footer(props) {
                             <div className="footer-widget mb-40">
                                 <h3>About</h3>
                                 <ul className="footer-link">
-                                    <li><Link>Terms &amp; Conditions</Link></li>
-                                    <li><Link> Privacy Policy</Link></li>
-                                    <li><Link>Contact Us</Link></li>
-                                    <li><Link>FAQ</Link></li>
-                                    <li><Link>Wholesale</Link></li>
-                                    <li><Link>Direction</Link></li>
+                                    <li><Link to="#">Terms &amp; Conditions</Link></li>
+                                    <li><Link to="#"> Privacy Policy</Link></li>
+                                    <li><Link to="#">Contact Us</Link></li>
+                                    <li><Link to="#">FAQ</Link></li>
+                                    <li><Link to="#">Wholesale</Link></li>
+                                    <li><Link to="#">Direction</Link></li>
                                 </ul>
                             </div>
                         </div>
@@ -100,7 +100,7 @@ function Footer(props) {
                     <div className="row">
                         <div className="col-xl-12">
                             <div className="copyright text-center  ">
-                                <p>Copyright © 2022 <Link>BasicTheme</Link>. All Rights Reserved</p>
+                                <p>Copyright © 2022 <Link to="#">BasicTheme</Link>. All Rights Reserved</p>
                             </div>
                         </div>
                     </div>
