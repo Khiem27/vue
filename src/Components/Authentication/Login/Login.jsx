@@ -54,6 +54,7 @@ function Register(props) {
       });
       window.location.href = "/";
     } else {
+      localStorage.setItem("userLogin", JSON.stringify(""))
       enqueueSnackbar("Đăng nhập thất bại", {
         variant: "error",
       });
@@ -83,87 +84,87 @@ function Register(props) {
     <div>
       <Header />
       <LoginTitle />
-      <section className="login-area pt-100 pb-100">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-8 offset-lg-2">
-              <div className="basic-login">
-                {userData ? (
-                  userData.map((item, index) => {
-                    return (
-                      <h3 className="text-center mb-60">
-                        Hello {item.userName}
-                      </h3>
-                    );
-                  })
-                ) : (
-                  <h3 className="text-center mb-60">Signup From Here</h3>
-                )}
-                <form onSubmit={handleSubmit(onSubmit)}>
-                  {!userData ? (
-                    <>
-                      <label htmlFor="username">
-                        Username <span className="required">*</span>
-                      </label>
-                      <input
-                        id="username"
-                        placeholder="Enter Username ..."
-                        className="mb-0"
-                        {...register("userName", { required: true })}
-                      />
-                      <div
-                        id="val-username1-error"
-                        className="invalid-feedback animated fadeInUp mb-3"
-                        style={{ display: "block" }}
-                      >
-                        {errors.userName?.message}
-                      </div>
-
-                      {/* Pass */}
-                      <label htmlFor="email">
-                        Password <span className="required">*</span>
-                      </label>
-                      <input
-                        type="password"
-                        id="email"
-                        placeholder="Enter password..."
-                        className="mb-0"
-                        {...register("userPass", { required: true })}
-                      />
-                      <div
-                        id="val-username1-error"
-                        className="invalid-feedback animated fadeInUp mb-3"
-                        style={{ display: "block" }}
-                      >
-                        {errors.userPass?.message}
-                      </div>
-
-                      <button type="submit" className="btn theme-btn-2 w-100">
-                        Login Now
-                      </button>
-                      <div className="or-divide">
-                        <span>or</span>
-                      </div>
-                      {/* Tên đăng nhập */}
-                      <Link className="btn theme-btn w-100" to="/register">
-                        Register Now
-                      </Link>
-                    </>
+        <section className="login-area pt-100 pb-100">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-8 offset-lg-2">
+                <div className="basic-login">
+                  {userData ? (
+                    userData.map((item, index) => {
+                      return (
+                        <h3 className="text-center mb-60">
+                          Hello {item.userName}
+                        </h3>
+                      );
+                    })
                   ) : (
-                    <Link
-                      onClick={clickOut}
-                      className="btn theme-btn w-100"
-                      to="#"
-                    >
-                      LogOut
-                    </Link>
+                    <h3 className="text-center mb-60">Signup From Here</h3>
                   )}
-                </form>
+                  <form onSubmit={handleSubmit(onSubmit)}>
+                    {!userData ? (
+                      <>
+                        <label htmlFor="username">
+                          Username <span className="required">*</span>
+                        </label>
+                        <input
+                          id="username"
+                          placeholder="Enter Username ..."
+                          className="mb-0"
+                          {...register("userName", { required: true })}
+                        />
+                        <div
+                          id="val-username1-error"
+                          className="invalid-feedback animated fadeInUp mb-3"
+                          style={{ display: "block" }}
+                        >
+                          {errors.userName?.message}
+                        </div>
+
+                        {/* Pass */}
+                        <label htmlFor="email">
+                          Password <span className="required">*</span>
+                        </label>
+                        <input
+                          type="password"
+                          id="email"
+                          placeholder="Enter password..."
+                          className="mb-0"
+                          {...register("userPass", { required: true })}
+                        />
+                        <div
+                          id="val-username1-error"
+                          className="invalid-feedback animated fadeInUp mb-3"
+                          style={{ display: "block" }}
+                        >
+                          {errors.userPass?.message}
+                        </div>
+
+                        <button type="submit" className="btn theme-btn-2 w-100">
+                          Login Now
+                        </button>
+                        <div className="or-divide">
+                          <span>or</span>
+                        </div>
+                        {/* Tên đăng nhập */}
+                        <Link className="btn theme-btn w-100" to="/register">
+                          Register Now
+                        </Link>
+                      </>
+                    ) : (
+                      <Link
+                        onClick={clickOut}
+                        className="btn theme-btn w-100"
+                        to="#"
+                      >
+                        LogOut
+                      </Link>
+                    )}
+                  </form>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
     </div>
   );
 }
