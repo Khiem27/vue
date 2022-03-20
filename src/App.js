@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
-import Lottie from "react-lottie";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import * as animationData from "./99778-my-store-animated.json";
 import "./App.css";
 import Login from "./Components/Authentication/Login/Login";
 import Register from "./Components/Authentication/Register/Register";
@@ -33,20 +31,13 @@ function App() {
       setLoadingValue(true);
     }, 2000);
   }, []);
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
   return (
     <>
       {!loadingValue ? (
         <div id="preloader">
           <div className="preloader">
-            <Lottie options={defaultOptions} width={"200%"} height={"200%"} />
+            <span></span>
+            <span></span>
           </div>
         </div>
       ) : (
