@@ -14,13 +14,32 @@ import { regiterAction } from "./RegisterSlice";
 Register.propTypes = {};
 const schema = yup
   .object({
-    userName: yup.string().required("Vui lòng nhập tên đăng nhập"),
+    userName: yup
+      .string()
+      .required("Vui lòng nhập tên đăng nhập")
+      .min(2, "Tên đăng nhập phải trên 2 ký tự")
+      .test(
+        "Test khoảng trắng",
+        "Tên đăng nhập không được có khoảng trắng",
+        (data) => {
+          const lengthData = data.split(" ").length;
+          if (lengthData === 1) {
+            return data;
+          }
+        }
+      ),
     userEmail: yup
       .string()
       .email("Nhập đúng định dạng email")
       .required("Vui lòng nhập email"),
-    userPass: yup.string().required("Vui lòng nhập password"),
-    userRetypePass: yup.string().required("Vui lòng nhập lại password"),
+    userPass: yup
+      .string()
+      .required("Vui lòng nhập password")
+      .min(8, "Mật khẩu ít nhất 8 kí tự"),
+    userRetypePass: yup
+      .string()
+      .required("Vui lòng nhập lại password")
+      .oneOf([yup.ref("userPass")], "Mật khẩu không giống nhau"),
   })
   .required();
 
@@ -37,7 +56,7 @@ function Register(props) {
   });
 
   // Tao id cho user moi
-  const [idUser, setID] = useState()
+  const [idUser, setID] = useState();
   useEffect(() => {
     const getAllUser = async () => {
       const allUser = await UserApi.getAll();
@@ -46,8 +65,8 @@ function Register(props) {
       setID(keyAllUser.length + 1);
     };
     getAllUser();
-  })
-  
+  });
+
   const onSubmit = async (data) => {
     const newArr = {
       userName: data.userName,
@@ -66,7 +85,7 @@ function Register(props) {
       enqueueSnackbar("Đăng ký thành công", {
         variant: "success",
       });
-      window.location.reload();
+      window.location.href = "/login";
     } else {
       enqueueSnackbar("Đăng ký thất bại", {
         variant: "error",
@@ -126,6 +145,7 @@ function Register(props) {
                     Password <span className="required">*</span>
                   </label>
                   <input
+                    type="password"
                     id="email"
                     placeholder="Enter password..."
                     className="mb-0"
@@ -141,9 +161,10 @@ function Register(props) {
 
                   {/* Retype pass */}
                   <label htmlFor="email">
-                    Nhập lại password <span className="required">*</span>
+                    Retype password <span className="required">*</span>
                   </label>
                   <input
+                    type="password"
                     id="email"
                     placeholder="Enter password..."
                     className="mb-0"

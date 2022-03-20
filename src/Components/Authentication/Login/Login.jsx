@@ -1,7 +1,7 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { unwrapResult } from "@reduxjs/toolkit";
 import { useSnackbar } from "notistack";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
@@ -13,8 +13,24 @@ import { loginAction } from "./LoginSlice";
 Register.propTypes = {};
 const schema = yup
   .object({
-    userName: yup.string().required("Vui lòng nhập tên đăng nhập"),
-    userPass: yup.string().required("Vui lòng nhập password"),
+    userName: yup
+      .string()
+      .required("Vui lòng nhập tên đăng nhập")
+      .min(2, "Tên đăng nhập phải trên 2 ký tự")
+      .test(
+        "Test khoảng trắng",
+        "Tên đăng nhập không được có khoảng trắng",
+        (data) => {
+          const lengthData = data.split(" ").length;
+          if (lengthData === 1) {
+            return data;
+          }
+        }
+      ),
+    userPass: yup
+      .string()
+      .required("Vui lòng nhập password")
+      .min(8, "Mật khẩu ít nhất 8 kí tự"),
   })
   .required();
 
@@ -43,6 +59,23 @@ function Register(props) {
       });
     }
   };
+
+  const [userData, setUserData] = useState();
+
+  const getLocal = localStorage.getItem("userLogin");
+  useEffect(() => {
+    const parseLocal = JSON.parse(getLocal);
+    setUserData(parseLocal);
+  }, [getLocal]);
+
+  const clickOut = () => {
+    localStorage.setItem("userLogin", JSON.stringify(""));
+    enqueueSnackbar("Đăng xuất thành công", {
+      variant: "info",
+    });
+    window.location.reload();
+  };
+
   return (
     <div>
       <Header />
@@ -52,53 +85,76 @@ function Register(props) {
           <div className="row">
             <div className="col-lg-8 offset-lg-2">
               <div className="basic-login">
-                <h3 className="text-center mb-60">Signup From Here</h3>
+                {userData ? (
+                  userData.map((item, index) => {
+                    return (
+                      <h3 className="text-center mb-60">
+                        Hello {item.userName}
+                      </h3>
+                    );
+                  })
+                ) : (
+                  <h3 className="text-center mb-60">Signup From Here</h3>
+                )}
                 <form onSubmit={handleSubmit(onSubmit)}>
-                  {/* Tên đăng nhập */}
-                  <label htmlFor="username">
-                    Username <span className="required">*</span>
-                  </label>
-                  <input
-                    id="username"
-                    placeholder="Enter Username ..."
-                    className="mb-0"
-                    {...register("userName", { required: true })}
-                  />
-                  <div
-                    id="val-username1-error"
-                    className="invalid-feedback animated fadeInUp mb-3"
-                    style={{ display: "block" }}
-                  >
-                    {errors.userName?.message}
-                  </div>
+                  {!userData ? (
+                    <>
+                      <label htmlFor="username">
+                        Username <span className="required">*</span>
+                      </label>
+                      <input
+                        id="username"
+                        placeholder="Enter Username ..."
+                        className="mb-0"
+                        {...register("userName", { required: true })}
+                      />
+                      <div
+                        id="val-username1-error"
+                        className="invalid-feedback animated fadeInUp mb-3"
+                        style={{ display: "block" }}
+                      >
+                        {errors.userName?.message}
+                      </div>
 
-                  {/* Pass */}
-                  <label htmlFor="email">
-                    Password <span className="required">*</span>
-                  </label>
-                  <input
-                    id="email"
-                    placeholder="Enter password..."
-                    className="mb-0"
-                    {...register("userPass", { required: true })}
-                  />
-                  <div
-                    id="val-username1-error"
-                    className="invalid-feedback animated fadeInUp mb-3"
-                    style={{ display: "block" }}
-                  >
-                    {errors.userPass?.message}
-                  </div>
+                      {/* Pass */}
+                      <label htmlFor="email">
+                        Password <span className="required">*</span>
+                      </label>
+                      <input
+                        type="password"
+                        id="email"
+                        placeholder="Enter password..."
+                        className="mb-0"
+                        {...register("userPass", { required: true })}
+                      />
+                      <div
+                        id="val-username1-error"
+                        className="invalid-feedback animated fadeInUp mb-3"
+                        style={{ display: "block" }}
+                      >
+                        {errors.userPass?.message}
+                      </div>
 
-                  <button type="submit" className="btn theme-btn-2 w-100">
-                    Login Now
-                  </button>
-                  <div className="or-divide">
-                    <span>or</span>
-                  </div>
-                  <Link className="btn theme-btn w-100" to="/register">
-                    Register Now
-                  </Link>
+                      <button type="submit" className="btn theme-btn-2 w-100">
+                        Login Now
+                      </button>
+                      <div className="or-divide">
+                        <span>or</span>
+                      </div>
+                      {/* Tên đăng nhập */}
+                      <Link className="btn theme-btn w-100" to="/register">
+                        Register Now
+                      </Link>
+                    </>
+                  ) : (
+                    <Link
+                      onClick={clickOut}
+                      className="btn theme-btn w-100"
+                      to="#"
+                    >
+                      LogOut
+                    </Link>
+                  )}
                 </form>
               </div>
             </div>

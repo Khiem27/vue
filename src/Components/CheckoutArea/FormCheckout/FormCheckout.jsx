@@ -278,7 +278,7 @@ function FormCheckout(props) {
 
   const sendEmail = (e) => {
     e.preventDefault();
-
+    window.location.reload()
     emailjs
       .sendForm(
         "service_a3n51df",
@@ -331,7 +331,13 @@ function FormCheckout(props) {
                   <label htmlFor="fName">
                     First Name <span className="required">*</span>
                   </label>
-                  <input type="text" id="fName" name="fName" className="mb-0" />
+                  <input
+                    required
+                    type="text"
+                    id="fName"
+                    name="fName"
+                    className="mb-0"
+                  />
                 </div>
               </div>
               <div className="col-md-6">
@@ -339,7 +345,13 @@ function FormCheckout(props) {
                   <label htmlFor="lName">
                     Last Name <span className="required">*</span>
                   </label>
-                  <input type="text" id="lName" name="lName" className="mb-0" />
+                  <input
+                    required
+                    type="text"
+                    id="lName"
+                    name="lName"
+                    className="mb-0"
+                  />
                 </div>
               </div>
               <div className="col-md-12">
@@ -347,7 +359,13 @@ function FormCheckout(props) {
                   <label htmlFor="cName">
                     Company Name <span className="required">*</span>
                   </label>
-                  <input type="text" id="cName" name="cName" className="mb-0" />
+                  <input
+                    required
+                    type="text"
+                    id="cName"
+                    name="cName"
+                    className="mb-0"
+                  />
                 </div>
               </div>
               <div className="col-md-12">
@@ -356,6 +374,7 @@ function FormCheckout(props) {
                     Address <span className="required">*</span>
                   </label>
                   <input
+                    required
                     type="text"
                     id="address"
                     name="address"
@@ -367,6 +386,7 @@ function FormCheckout(props) {
               <div className="col-md-12">
                 <div className="checkout-form-list">
                   <input
+                    required
                     type="text"
                     placeholder="Apartment, suite, unit etc. (optional)"
                     name="asuo"
@@ -379,6 +399,7 @@ function FormCheckout(props) {
                     Town / City <span className="required">*</span>
                   </label>
                   <input
+                    required
                     type="text"
                     id="city"
                     name="city"
@@ -393,6 +414,7 @@ function FormCheckout(props) {
                     State / County <span className="required">*</span>
                   </label>
                   <input
+                    required
                     type="text"
                     id="state"
                     name="state"
@@ -407,6 +429,7 @@ function FormCheckout(props) {
                     Postcode / Zip <span className="required">*</span>
                   </label>
                   <input
+                    required
                     type="text"
                     id="zip"
                     name="zip"
@@ -420,7 +443,13 @@ function FormCheckout(props) {
                   <label htmlFor="email">
                     Email Address <span className="required">*</span>
                   </label>
-                  <input type="email" id="email" name="email" className="mb-0" />
+                  <input
+                    required
+                    type="email"
+                    id="email"
+                    name="email"
+                    className="mb-0"
+                  />
                 </div>
               </div>
               <div className="col-md-6">
@@ -428,7 +457,13 @@ function FormCheckout(props) {
                   <label htmlFor="phone">
                     Phone <span className="required">*</span>
                   </label>
-                  <input type="text" id="phone" name="phone" className="mb-0" />
+                  <input
+                    required
+                    type="text"
+                    id="phone"
+                    name="phone"
+                    className="mb-0"
+                  />
                 </div>
               </div>
               <div className="col-md-12"></div>
@@ -499,7 +534,9 @@ function FormCheckout(props) {
                         </li>
                         <li>
                           <input type="checkbox" id="shipping" />{" "}
-                          <label htmlFor="shipping">Free Shipping: $30.00</label>
+                          <label htmlFor="shipping">
+                            Free Shipping: $30.00
+                          </label>
                         </li>
                         <li></li>
                       </ul>
