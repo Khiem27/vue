@@ -1,42 +1,64 @@
-import {
-  BrowserRouter as Router, Route, Switch
-} from "react-router-dom";
-import './App.css';
+import { useEffect, useState } from "react";
+import Lottie from "react-lottie";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import * as animationData from "./99778-my-store-animated.json";
+import "./App.css";
 import Login from "./Components/Authentication/Login/Login";
 import Register from "./Components/Authentication/Register/Register";
-import Cart from './Components/Cart/Cart';
+import Cart from "./Components/Cart/Cart";
 import Compare from "./Components/Compare/Compare";
-import Header from './Components/Header/Header';
-import WishlistContainer from './Components/Wishlist Container/WishlistContainer';
-import WishlistContainerCompare from './Components/Wishlist Container/WishlistContainerCompare';
+import Header from "./Components/Header/Header";
+import WishlistContainer from "./Components/Wishlist Container/WishlistContainer";
+import WishlistContainerCompare from "./Components/Wishlist Container/WishlistContainerCompare";
 import WishList from "./Components/WishList/WishList";
-import Blog from './Layout/Blog/Blog';
-import BlogDetails from './Layout/Blog/BlogDetails';
-import Contacts from './Layout/Contacts/Contacts';
-import Home from './Layout/Home/Home';
-import Home2 from './Layout/Home/Home2';
-import Home3 from './Layout/Home/Home3';
-import Home4 from './Layout/Home/Home4';
-import Home5 from './Layout/Home/Home5';
-import Checkout from './Layout/Pages/Checkout/Checkout';
-import Products from './Layout/Products/Products';
-import Shop from './Layout/Shop/Shop';
-import ShopCol3 from './Layout/Shop/ShopCol3';
-import ShopDetails from './Layout/Shop/ShopDetails';
-import ShopList from './Layout/Shop/ShopList';
-import SidebarLeft from './Layout/Shop/SidebarLeft';
-
+import Blog from "./Layout/Blog/Blog";
+import BlogDetails from "./Layout/Blog/BlogDetails";
+import Contacts from "./Layout/Contacts/Contacts";
+import Home from "./Layout/Home/Home";
+import Home2 from "./Layout/Home/Home2";
+import Home3 from "./Layout/Home/Home3";
+import Home4 from "./Layout/Home/Home4";
+import Home5 from "./Layout/Home/Home5";
+import Checkout from "./Layout/Pages/Checkout/Checkout";
+import Products from "./Layout/Products/Products";
+import Shop from "./Layout/Shop/Shop";
+import ShopCol3 from "./Layout/Shop/ShopCol3";
+import ShopDetails from "./Layout/Shop/ShopDetails";
+import ShopList from "./Layout/Shop/ShopList";
+import SidebarLeft from "./Layout/Shop/SidebarLeft";
 function App() {
+  const [loadingValue, setLoadingValue] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoadingValue(true);
+    }, 2000);
+  }, []);
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
   return (
-    <Router>
-      <div className="App">
-        <WishlistContainer />
-        <WishlistContainerCompare />
-      </div>
+    <>
+      {!loadingValue ? (
+        <div id="preloader">
+          <div className="preloader">
+            <Lottie options={defaultOptions} width={"200%"} height={"200%"} />
+          </div>
+        </div>
+      ) : (
+        <Router>
+          <div className="App">
+            <WishlistContainer />
+            <WishlistContainerCompare />
+          </div>
 
-      <Switch>
+          <Switch>
             <Route path="/" exact>
-              <Home/>
+              <Home />
             </Route>
 
             <Route path="/blog" exact>
@@ -44,27 +66,27 @@ function App() {
             </Route>
 
             <Route path="/shop" exact>
-                <Shop />
+              <Shop />
             </Route>
-            
+
             <Route path="/shop/left-sidebar" exact>
-                <SidebarLeft />
+              <SidebarLeft />
             </Route>
 
             <Route path="/shop/sidebar-right" exact>
-                <ShopCol3 />
+              <ShopCol3 />
             </Route>
 
             <Route path="/shop/list" exact>
-                <ShopList />
+              <ShopList />
             </Route>
 
             <Route path="/products" exact>
-                <Products />
+              <Products />
             </Route>
 
             <Route path="/shop/col-3" exact>
-                <ShopCol3 />
+              <ShopCol3 />
             </Route>
 
             <Route path="/index-2" exact>
@@ -91,7 +113,6 @@ function App() {
               <Checkout />
             </Route>
 
-
             <Route path="/cart" exact>
               <Cart />
             </Route>
@@ -112,13 +133,12 @@ function App() {
               <WishList />
             </Route>
 
-
             <Route path="/shop/upcoming/:shopid" exact>
-                <ShopDetails />
+              <ShopDetails />
             </Route>
 
             <Route path="/blog/:blogID" exact>
-                <BlogDetails />
+              <BlogDetails />
             </Route>
 
             <Route path="/:cc" exact>
@@ -126,11 +146,12 @@ function App() {
             </Route>
 
             <Route path="/shop/:shopid" exact>
-                <ShopDetails />
+              <ShopDetails />
             </Route>
-      </Switch>
-    </Router>
-      
+          </Switch>
+        </Router>
+      )}
+    </>
   );
 }
 
